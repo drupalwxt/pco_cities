@@ -1,4 +1,3 @@
-uuid: c0381c8e-51ca-4dec-a177-f6402eab3ed9
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - field.storage.group.field_tags
     - group.type.challenge
     - taxonomy.vocabulary.challenge_tags
-_core:
-  default_config_hash: Cxwg1FH2ePWsCaLYU8V7gc6rh4-pP5LLvKCOw7rfeY0
 id: group.challenge.field_tags
 field_name: field_tags
 entity_type: group

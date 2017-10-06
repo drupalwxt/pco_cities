@@ -1,11 +1,8 @@
-uuid: 31c718e0-9013-429c-9c1f-ae97b18a9178
 langcode: en
 status: true
 dependencies:
   module:
     - group
-_core:
-  default_config_hash: DXN8VeenU5U8ldpNnRLZcsoVs9osSByNWwejIR69a48
 id: group.field_organization
 field_name: field_organization
 entity_type: group

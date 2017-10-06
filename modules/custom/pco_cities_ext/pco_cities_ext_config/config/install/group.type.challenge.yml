@@ -1,9 +1,6 @@
-uuid: b2c80b0f-afe5-43bf-8561-ceb2a2a94d8b
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: PxM4pL63LaI_DOSqhfrzgj9P0NWc57UpLe1zbrU8FxM
 id: challenge
 label: Challenge
 description: 'Challenges that exist on this platforms'

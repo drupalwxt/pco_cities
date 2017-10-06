@@ -1,4 +1,3 @@
-uuid: afce3b04-d7be-4c9c-822e-b1146f8e6595
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ third_party_settings:
       alt: alt
       title: title
       file: '0'
-_core:
-  default_config_hash: Gn22ljTP97ytfpUXAcle7ldWp72uHAsV5V-69lw_BMI
 id: group.challenge.field_challenge_image
 field_name: field_challenge_image
 entity_type: group

@@ -1,12 +1,9 @@
-uuid: 90f953c6-ad90-430c-b8b6-d6fb3b05943e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_email
     - paragraphs.paragraphs_type.contact
-_core:
-  default_config_hash: uYgROZMvUMAq06tBDblI8-sGkGC2lSBoelAAvV0I3_8
 id: paragraph.contact.field_email
 field_name: field_email
 entity_type: paragraph

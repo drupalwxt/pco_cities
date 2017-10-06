@@ -1,12 +1,9 @@
-uuid: 80c114ee-ae59-4d3c-a39a-35e3e7eba50d
 langcode: en
 status: true
 dependencies:
   module:
     - datetime
     - group
-_core:
-  default_config_hash: QqMtF2-ej3NhjPbn3Utl7ubl1jROzIWCfHRS5V-Mo1Y
 id: group.field_submission_open_date
 field_name: field_submission_open_date
 entity_type: group

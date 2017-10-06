@@ -1,4 +1,3 @@
-uuid: d4db70ab-a2d9-428f-b708-1ef37ab30dfd
 langcode: en
 status: true
 dependencies:
@@ -26,8 +25,6 @@ dependencies:
     - link
     - paragraphs
     - text
-_core:
-  default_config_hash: tVN87xbPENehsUy3qCokZit0RP6slEgZlicxrfiRx7s
 id: group.challenge.default
 targetEntityType: group
 bundle: challenge

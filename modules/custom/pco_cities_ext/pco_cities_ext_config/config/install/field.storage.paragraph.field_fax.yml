@@ -1,12 +1,9 @@
-uuid: 12acf9c3-a98e-4707-8f91-6732449f7a6f
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
     - telephone
-_core:
-  default_config_hash: kITqcYEYq4pwHtWmUCDU03ebdNu3kM50xAMhGjmNAMU
 id: paragraph.field_fax
 field_name: field_fax
 entity_type: paragraph

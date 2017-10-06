@@ -1,4 +1,3 @@
-uuid: 411af746-6dad-41dc-9ed4-3db26365d07e
 langcode: en
 status: true
 dependencies:
@@ -21,8 +20,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
-_core:
-  default_config_hash: 0qstWY0Izho-wwyYMf20jwXp5wYInNV4F7J_L6xl0vo
 id: group.challenge.news_and_events
 targetEntityType: group
 bundle: challenge

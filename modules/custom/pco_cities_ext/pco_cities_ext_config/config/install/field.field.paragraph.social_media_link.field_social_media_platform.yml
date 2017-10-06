@@ -1,4 +1,3 @@
-uuid: 99c8555f-eea7-4fa8-a49c-e58e4b58e848
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - field.storage.paragraph.field_social_media_platform
     - paragraphs.paragraphs_type.social_media_link
     - taxonomy.vocabulary.social_media_links
-_core:
-  default_config_hash: rxpbQ6ExVbibV0gQ2HzdYfIi73Wx82FnMYrAwAJ0JiU
 id: paragraph.social_media_link.field_social_media_platform
 field_name: field_social_media_platform
 entity_type: paragraph

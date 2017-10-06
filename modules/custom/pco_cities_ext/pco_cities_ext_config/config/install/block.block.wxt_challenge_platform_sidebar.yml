@@ -1,4 +1,3 @@
-uuid: a4eca53b-3528-43e1-b715-9e54d5849e67
 langcode: en
 status: false
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - system
   theme:
     - wxt_challenge_platform
-_core:
-  default_config_hash: vYfhg01TGuydiQE8651UK9ZT2J2wwB5QmBDTc81bv88
 id: wxt_challenge_platform_sidebar
 theme: wxt_challenge_platform
 region: sidebar_first

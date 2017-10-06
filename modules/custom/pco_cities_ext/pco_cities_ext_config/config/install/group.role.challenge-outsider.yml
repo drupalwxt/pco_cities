@@ -1,11 +1,8 @@
-uuid: 3295afc0-794a-454d-9052-d87c53aa1ec3
 langcode: en
 status: true
 dependencies:
   config:
     - group.type.challenge
-_core:
-  default_config_hash: yO7uIoa7ALe4p0TggnzTrMdqXoOrKzoq6kCfuCEHZG4
 id: challenge-outsider
 label: Outsider
 weight: -101

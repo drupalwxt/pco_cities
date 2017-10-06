@@ -1,11 +1,8 @@
-uuid: adb26f8d-52b6-475e-9496-b0c2299023a8
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-_core:
-  default_config_hash: UjJ_1OpL_4GVmK9t29GJ60UdU7HnAsXHLMutMgCEyEw
 id: paragraph.field_contact_introduction
 field_name: field_contact_introduction
 entity_type: paragraph

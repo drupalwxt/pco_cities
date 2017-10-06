@@ -1,11 +1,8 @@
-uuid: ad07229e-d431-4ca5-a794-b764cca06b9e
 langcode: en
 status: true
 dependencies:
   config:
     - group.type.challenge
-_core:
-  default_config_hash: '-QCWJlP8MXMBYFRvy3FDqiFkXl7-fuIOz9IXrm4IYvA'
 id: group.challenge.label
 field_name: label
 entity_type: group

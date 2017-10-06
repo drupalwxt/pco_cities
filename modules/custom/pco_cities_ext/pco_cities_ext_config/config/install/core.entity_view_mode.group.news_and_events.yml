@@ -1,4 +1,3 @@
-uuid: 2f7b16fc-d862-4570-a858-2f58863ccabc
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
 third_party_settings:
   lightning_core:
     description: ''
-_core:
-  default_config_hash: njyJRdb8kLWf7Pn1UDQGsYnCrpefSJPz_ogt9ijmjU8
 id: group.news_and_events
 label: 'News and Events'
 targetEntityType: group

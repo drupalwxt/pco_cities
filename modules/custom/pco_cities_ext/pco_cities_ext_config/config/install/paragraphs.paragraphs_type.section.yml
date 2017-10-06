@@ -1,9 +1,6 @@
-uuid: 03f71d6c-3ed8-4334-9c16-ea7d33fc1a68
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: XYDg2GpTGT0nt-qSS-rrF5TKG2hZdSV1QpiqJWkEfiY
 id: section
 label: Section
 icon_uuid: null

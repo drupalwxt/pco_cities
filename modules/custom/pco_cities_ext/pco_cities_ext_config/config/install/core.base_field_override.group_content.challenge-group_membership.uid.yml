@@ -1,11 +1,8 @@
-uuid: bfc72659-47ea-4766-ad87-7e4025cc544b
 langcode: en
 status: true
 dependencies:
   config:
     - group.content_type.challenge-group_membership
-_core:
-  default_config_hash: tRqH6-vcRvdZ86Zlu8hOiFX5lyZKoOfHq454n6_ueuM
 id: group_content.challenge-group_membership.uid
 field_name: uid
 entity_type: group_content

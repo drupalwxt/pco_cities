@@ -1,11 +1,8 @@
-uuid: 0716cbfb-5817-4bcb-aed3-1c032a588557
 langcode: en
 status: true
 dependencies:
   config:
     - group.type.challenge
-_core:
-  default_config_hash: S7QcfSwfRwSgXLWMG2iiW23WtUo6JXAmSkWSl60wkQk
 id: challenge-admin
 label: Admin
 weight: 100

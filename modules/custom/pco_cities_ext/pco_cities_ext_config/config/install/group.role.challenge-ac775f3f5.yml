@@ -1,4 +1,3 @@
-uuid: f58414ba-f8af-4809-8926-d04b57a74a82
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
   enforced:
     config:
       - user.role.creator
-_core:
-  default_config_hash: 69td3KfkFXy7SrjgT1EfF6T2cZus3BsTExbgQuuh8Ys
 id: challenge-ac775f3f5
 label: Creator
 weight: 3

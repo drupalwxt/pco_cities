@@ -1,12 +1,9 @@
-uuid: 5bd24b0c-fba4-4eb2-860d-978087270d52
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
     - text
-_core:
-  default_config_hash: M34i1vSMOoyBMvn2ZqsGTrLS1DhB-GvIQHZizKioeXY
 id: paragraph.field_section_content
 field_name: field_section_content
 entity_type: paragraph

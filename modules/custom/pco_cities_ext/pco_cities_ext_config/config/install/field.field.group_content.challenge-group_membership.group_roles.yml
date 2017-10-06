@@ -1,12 +1,9 @@
-uuid: 2ba74784-97e9-4b88-964f-e65587d16751
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.group_content.group_roles
     - group.content_type.challenge-group_membership
-_core:
-  default_config_hash: 8WMT6HzCQ8kfNZmDo5FKu4XarzBPZnYT1iAuBAsgCtg
 id: group_content.challenge-group_membership.group_roles
 field_name: group_roles
 entity_type: group_content

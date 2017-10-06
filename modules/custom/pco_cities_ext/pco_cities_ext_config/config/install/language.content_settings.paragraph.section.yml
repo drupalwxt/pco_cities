@@ -1,4 +1,3 @@
-uuid: 2dd8b24a-d2a9-4b3c-89d8-3c0bd0b085a4
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
-_core:
-  default_config_hash: T1g_ZHVdj0jOzcDiebmkcg98ktxZkze_4e9KvSgy4J4
 id: paragraph.section
 target_entity_type_id: paragraph
 target_bundle: section

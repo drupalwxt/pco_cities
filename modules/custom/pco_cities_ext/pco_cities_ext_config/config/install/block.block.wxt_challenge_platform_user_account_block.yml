@@ -1,4 +1,3 @@
-uuid: 72917764-09c7-4e49-8c5f-ca1293ed532d
 langcode: en
 status: false
 dependencies:
@@ -12,8 +11,6 @@ dependencies:
 third_party_settings:
   block_class:
     classes: ''
-_core:
-  default_config_hash: 8GCJO4MuQrCj0KIZ5iPdCU5Z5YaZskWJVAAA_oDzv_I
 id: wxt_challenge_platform_user_account_block
 theme: wxt_challenge_platform
 region: header

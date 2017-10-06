@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: challenge-platform-menu
+label: 'Challenge Platform Menu'
+description: ''
+locked: false

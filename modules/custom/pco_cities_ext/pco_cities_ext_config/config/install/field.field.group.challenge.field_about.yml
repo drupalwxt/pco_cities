@@ -1,4 +1,3 @@
-uuid: f3f8fd5a-89bb-4629-9e31-47a53719d62f
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - group.type.challenge
   module:
     - text
-_core:
-  default_config_hash: i6K013mOXAbQjYV0SxZLYyyPsj_8hBuz8mArb2npMSQ
 id: group.challenge.field_about
 field_name: field_about
 entity_type: group

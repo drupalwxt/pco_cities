@@ -1,4 +1,3 @@
-uuid: 862bbaeb-0186-4ba2-85c0-94e58d827376
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - ctools
     - group
     - language
-_core:
-  default_config_hash: X8UBc6jh3xh9RuEAkdYzqtIFEmXfV4LBjypjl8td4nc
 id: group_content
 label: 'Group content'
 type: 'canonical_entities:group_content'

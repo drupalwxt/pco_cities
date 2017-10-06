@@ -1,4 +1,3 @@
-uuid: da969b35-b40d-4c7f-a7aa-ad91dc6f99c4
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - group.type.challenge
   module:
     - user
-_core:
-  default_config_hash: tMp2ejlMWRaK-oliV7XGz6_mT66QbEsihUVxTNL8k_0
 id: challenge-group_membership
 label: 'Challenge: Group membership'
 description: 'Adds users to groups as members.'

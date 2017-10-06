@@ -1,4 +1,3 @@
-uuid: e67b5d37-6281-451d-b417-6059fd7264e5
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
   enforced:
     config:
       - user.role.administrator
-_core:
-  default_config_hash: adbxB23ivKJQdOJHal2JmZSu1NA-LBfHtl5jUCvhgZ4
 id: challenge-a416e6833
 label: Administrator
 weight: 2

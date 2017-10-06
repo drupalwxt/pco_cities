@@ -1,4 +1,3 @@
-uuid: bc9d928b-5559-4ecc-a611-7f1422851094
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.social_media_link
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: RIJPkEgRw-juwJnOkXODyVt7fkqFFfMQ_Fz8hjsQLlM
 id: group.challenge.field_social_media_links
 field_name: field_social_media_links
 entity_type: group

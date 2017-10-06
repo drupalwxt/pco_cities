@@ -1,12 +1,9 @@
-uuid: c6002479-3eec-48f1-b45d-8aa166fc9a78
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.group.field_organization
     - group.type.challenge
-_core:
-  default_config_hash: _-7uiRF77_jaHoKRFAAvXo5QP5uXDSUReA6IhY-VNr4
 id: group.challenge.field_organization
 field_name: field_organization
 entity_type: group

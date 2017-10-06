@@ -1,11 +1,8 @@
-uuid: 22cc32d6-c415-477d-b9b3-9c23a79e7348
 langcode: en
 status: true
 dependencies:
   config:
     - paragraphs.paragraphs_type.contact
-_core:
-  default_config_hash: jiYPxtfsBa7pKt7Becny7TLPO4O-tUAAqkjk5F6kfr0
 id: paragraph.contact.status
 field_name: status
 entity_type: paragraph

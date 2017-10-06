@@ -1,4 +1,3 @@
-uuid: 2a6047e6-a40f-4725-8704-2e8a3da8221e
 langcode: en
 status: true
 dependencies:
@@ -13,8 +12,6 @@ dependencies:
     - entity_reference_revisions
     - group
     - image
-_core:
-  default_config_hash: 8f4buKRGGMVvqiba-CLpPrzlQlkwqjih5nDDLSDgW_0
 id: challenge_page_contact
 label: 'Challenge Page: Contact'
 module: views

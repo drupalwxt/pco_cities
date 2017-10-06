@@ -1,12 +1,9 @@
-uuid: 0244b8ea-a9ed-4e4d-8a85-6dd265447537
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_contact_introduction
     - paragraphs.paragraphs_type.contact
-_core:
-  default_config_hash: MoB3cNBRGPOnNKUiKxhBdacrmjNG2IvbmQEXvVnTlk0
 id: paragraph.contact.field_contact_introduction
 field_name: field_contact_introduction
 entity_type: paragraph

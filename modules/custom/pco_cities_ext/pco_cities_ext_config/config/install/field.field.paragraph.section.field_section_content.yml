@@ -1,4 +1,3 @@
-uuid: 9d829e98-8923-4fed-beec-f86b80f02983
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - paragraphs.paragraphs_type.section
   module:
     - text
-_core:
-  default_config_hash: Hw-ouKg90lOYClK2NBBB1ZQtoXPPD_oxKoazO6WpGkk
 id: paragraph.section.field_section_content
 field_name: field_section_content
 entity_type: paragraph

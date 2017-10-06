@@ -1,12 +1,9 @@
-uuid: 84a50e8f-45f2-47f0-b8e0-7b5552ef7bbc
 langcode: en
 status: true
 dependencies:
   module:
     - group
     - text
-_core:
-  default_config_hash: 8rulAHA38cOzh_7oV4ZJLucZhIwJOoaAxGWhk8mRU28
 id: group.field_about
 field_name: field_about
 entity_type: group

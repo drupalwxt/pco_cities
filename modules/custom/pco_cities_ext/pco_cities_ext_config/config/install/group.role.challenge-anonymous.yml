@@ -1,11 +1,8 @@
-uuid: 5aa5297f-0673-4584-a497-4fc4e3c9fd75
 langcode: en
 status: true
 dependencies:
   config:
     - group.type.challenge
-_core:
-  default_config_hash: xmDy_XJkOJxDyXldPT2z8jL-npQi3OvC4DEbz0Ky5iM
 id: challenge-anonymous
 label: Anonymous
 weight: -102

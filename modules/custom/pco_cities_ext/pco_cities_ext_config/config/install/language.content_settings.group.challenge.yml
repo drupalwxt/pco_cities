@@ -1,4 +1,3 @@
-uuid: 4a1f2ba4-418d-4dc5-93d3-d8358843e3d5
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
-_core:
-  default_config_hash: kIq5VUV5BNmzeNQpLZrp2GR3ywNTBPrbdZtcQs46M1k
 id: group.challenge
 target_entity_type_id: group
 target_bundle: challenge

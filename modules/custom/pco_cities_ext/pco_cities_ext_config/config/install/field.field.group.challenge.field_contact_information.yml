@@ -1,4 +1,3 @@
-uuid: 9c7cdeea-51fc-4991-9a8b-4e1709f740d3
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.contact
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: 1G4_XTw2b4wgCnWVtx3RKJZ0EQxL9zjNL6uG8vVs88E
 id: group.challenge.field_contact_information
 field_name: field_contact_information
 entity_type: group

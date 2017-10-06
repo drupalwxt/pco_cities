@@ -1,4 +1,3 @@
-uuid: 1c1cbfed-7c52-4f90-a8ce-faf8ade19608
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - paragraphs.paragraphs_type.social_media_link
   module:
     - link
-_core:
-  default_config_hash: 8VTaf72pp2oVDqg1xeADPFSLWsUX8ftSPZ5sQO6xTtc
 id: paragraph.social_media_link.field_link
 field_name: field_link
 entity_type: paragraph

@@ -1,9 +1,6 @@
-uuid: 8a965181-9846-4f3f-a322-301dc2092abc
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: TBRosJKvHoHXGoYbPyF9zfR2di_gMdNN9LpstPknBhE
 id: contact
 label: Contact
 icon_uuid: null

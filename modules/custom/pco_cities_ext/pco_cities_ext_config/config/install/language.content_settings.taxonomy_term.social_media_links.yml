@@ -1,4 +1,3 @@
-uuid: 5a0a619f-d736-415c-ac23-49c820e86912
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
-_core:
-  default_config_hash: 5h3YVpxi6sh2srjb5p90DzTFzAAjUcUg-jMgzGe6z-8
 id: taxonomy_term.social_media_links
 target_entity_type_id: taxonomy_term
 target_bundle: social_media_links

@@ -1,4 +1,3 @@
-uuid: 42712049-52bd-47a7-91e7-555ea8d0112f
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.section
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: HaScihXx8y1euBcq5vZ5I1GoRD6UEzZnsh4FUYS90y4
 id: group.challenge.field_submissions_guidlines
 field_name: field_submissions_guidlines
 entity_type: group

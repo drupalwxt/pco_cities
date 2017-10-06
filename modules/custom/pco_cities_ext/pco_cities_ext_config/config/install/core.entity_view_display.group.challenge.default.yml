@@ -1,4 +1,3 @@
-uuid: 772794c6-1be1-43d0-9427-2422c185ed15
 langcode: en
 status: true
 dependencies:
@@ -25,8 +24,6 @@ dependencies:
     - image
     - link
     - text
-_core:
-  default_config_hash: ku7Kziwkahv-YrBUX2CgO5eyZLbqksvuVIDE5etBm74
 id: group.challenge.default
 targetEntityType: group
 bundle: challenge
@@ -34,7 +31,7 @@ mode: default
 content:
   field_about:
     weight: -3
-    label: above
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default

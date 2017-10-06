@@ -1,4 +1,3 @@
-uuid: 0eb37ba0-e331-4d3a-9245-99dedeade8c5
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - paragraphs.paragraphs_type.contact
   module:
     - telephone
-_core:
-  default_config_hash: na1oYmfGYH7ZzOpbN_W0lmTl7oyhLwPAZcJm10pDnyI
 id: paragraph.contact.field_fax
 field_name: field_fax
 entity_type: paragraph

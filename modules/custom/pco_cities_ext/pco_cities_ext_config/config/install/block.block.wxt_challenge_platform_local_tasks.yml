@@ -1,11 +1,8 @@
-uuid: 7c21c0f8-3ace-427a-97bc-4eba5c5b4610
 langcode: en
 status: true
 dependencies:
   theme:
     - wxt_challenge_platform
-_core:
-  default_config_hash: TKyCx27E7oaS-uP2m-9jWfcHJcfrOQhqfnNaU5k0IgM
 id: wxt_challenge_platform_local_tasks
 theme: wxt_challenge_platform
 region: header

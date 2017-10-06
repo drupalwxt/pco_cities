@@ -1,4 +1,3 @@
-uuid: 79cb42b3-ce1d-4d11-a300-ef6deb7bc8a9
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - group.type.challenge
   module:
     - double_field
-_core:
-  default_config_hash: qJYSmSj-2CO_oPqxFrv5oVys-C8vhY9QJmgoZS7ROSA
 id: group.challenge.field_prizes
 field_name: field_prizes
 entity_type: group

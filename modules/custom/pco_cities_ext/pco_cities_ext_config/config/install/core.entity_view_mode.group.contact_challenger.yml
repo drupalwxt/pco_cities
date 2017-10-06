@@ -1,4 +1,3 @@
-uuid: 8efc0dad-8b62-46e3-b205-ea602c86098f
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
 third_party_settings:
   lightning_core:
     description: ''
-_core:
-  default_config_hash: ASI1x4g-iU3Ia1g5h3SjVyTdwiFBoEwIgrTD5y5xI7g
 id: group.contact_challenger
 label: 'Contact Challenger'
 targetEntityType: group

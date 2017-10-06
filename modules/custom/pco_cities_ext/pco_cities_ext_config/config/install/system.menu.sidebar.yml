@@ -1,9 +1,6 @@
-uuid: e0d27d06-36c8-4ed7-a863-a2bb4a57003b
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: A2XK0-4Quv0QQmgxvy7zDunBjqrMA7eJrTcY8Pgl6Gg
 id: sidebar
 label: Sidebar
 description: 'Sidebar links.'

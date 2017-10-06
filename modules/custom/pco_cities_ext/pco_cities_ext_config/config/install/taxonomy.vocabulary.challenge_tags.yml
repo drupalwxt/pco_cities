@@ -1,9 +1,6 @@
-uuid: 275a5711-9ddb-46aa-a2f3-8400ae4e8cf5
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 6Iuq_2UqMV04yt7HK9QEyBY6NUCxCDshtBbD8f5Y3-8
 name: 'Challenge Tags'
 vid: challenge_tags
 description: 'Taxonomy tags related to challenges and their submissions'

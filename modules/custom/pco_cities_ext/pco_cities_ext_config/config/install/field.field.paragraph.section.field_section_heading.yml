@@ -1,12 +1,9 @@
-uuid: c36fa552-095c-4117-b3ce-bd972665af57
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_section_heading
     - paragraphs.paragraphs_type.section
-_core:
-  default_config_hash: JJ0_UiyQGMsQz8KNdGc8LK8l0HNl-1gsOFWq-7D3L5c
 id: paragraph.section.field_section_heading
 field_name: field_section_heading
 entity_type: paragraph

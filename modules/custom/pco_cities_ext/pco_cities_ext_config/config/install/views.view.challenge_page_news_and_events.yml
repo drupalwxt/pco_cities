@@ -1,4 +1,3 @@
-uuid: b14fa916-6f1e-4ccb-9852-9ea4af9fd00a
 langcode: en
 status: true
 dependencies:
@@ -12,8 +11,6 @@ dependencies:
     - entity_reference_revisions
     - group
     - image
-_core:
-  default_config_hash: W5R0azWLCPh2M-WiSl3JvPINg1m6x2XWUbzCus20sTU
 id: challenge_page_news_and_events
 label: 'Challenge Page: News and Events'
 module: views

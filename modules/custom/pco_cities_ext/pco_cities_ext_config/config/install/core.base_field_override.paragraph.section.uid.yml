@@ -1,11 +1,8 @@
-uuid: 82fcae86-b4ca-49bf-a6a3-3e6ca2ddfbb7
 langcode: en
 status: true
 dependencies:
   config:
     - paragraphs.paragraphs_type.section
-_core:
-  default_config_hash: 6Pvf7MQ-n7NFa6Q4l6l6Uxzp78hnW66mEPA_Iz6FmNI
 id: paragraph.section.uid
 field_name: uid
 entity_type: paragraph

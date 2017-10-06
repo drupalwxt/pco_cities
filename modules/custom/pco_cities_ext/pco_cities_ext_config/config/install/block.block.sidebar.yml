@@ -1,4 +1,3 @@
-uuid: 0453fe40-b03c-4870-b001-9214b60e83b8
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - system
   theme:
     - wxt_bootstrap
-_core:
-  default_config_hash: vYfhg01TGuydiQE8651UK9ZT2J2wwB5QmBDTc81bv88
 id: sidebar
 theme: wxt_bootstrap
 region: sidebar_first

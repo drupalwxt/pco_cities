@@ -1,12 +1,9 @@
-uuid: b2510890-53e4-4eef-a10a-806bacc57515
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
-_core:
-  default_config_hash: p5ZuUdYpzjj6yOImQB_fBzzFZp5_TlsoYEjNRqN0Y70
 id: paragraph.field_social_media_platform
 field_name: field_social_media_platform
 entity_type: paragraph
