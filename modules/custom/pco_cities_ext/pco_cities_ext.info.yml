@@ -8,3 +8,4 @@ package: 'PCO CITIES'
 dependencies:
   - drupal:wxt_ext_blog
   - drupal:wxt_ext_page
+  - drupal:pco_cities_ext_config

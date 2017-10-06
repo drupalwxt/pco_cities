@@ -1,0 +1,30 @@
+uuid: c0381c8e-51ca-4dec-a177-f6402eab3ed9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_tags
+    - group.type.challenge
+    - taxonomy.vocabulary.challenge_tags
+_core:
+  default_config_hash: Cxwg1FH2ePWsCaLYU8V7gc6rh4-pP5LLvKCOw7rfeY0
+id: group.challenge.field_tags
+field_name: field_tags
+entity_type: group
+bundle: challenge
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      challenge_tags: challenge_tags
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

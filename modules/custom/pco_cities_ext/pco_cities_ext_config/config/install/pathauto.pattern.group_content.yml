@@ -1,0 +1,38 @@
+uuid: 862bbaeb-0186-4ba2-85c0-94e58d827376
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - group
+    - language
+_core:
+  default_config_hash: X8UBc6jh3xh9RuEAkdYzqtIFEmXfV4LBjypjl8td4nc
+id: group_content
+label: 'Group content'
+type: 'canonical_entities:group_content'
+pattern: 'challenge/[group_content:group:id]/[group_content:pretty-path-key]/[group_content:id]'
+selection_criteria:
+  843a6c59-44ca-4510-8dcb-aebbba96f626:
+    id: 'entity_bundle:group_content'
+    bundles:
+      challenge-group_node-faq_page: challenge-group_node-faq_page
+      group_content_type_b3cef43203ecd: group_content_type_b3cef43203ecd
+    negate: false
+    context_mapping:
+      group_content: group_content
+    uuid: 843a6c59-44ca-4510-8dcb-aebbba96f626
+  2fcde729-5a75-4084-9ef4-d34a18c0b949:
+    id: language
+    langcodes:
+      en: en
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'group_content:langcode:language'
+    uuid: 2fcde729-5a75-4084-9ef4-d34a18c0b949
+selection_logic: and
+weight: -5
+relationships:
+  'group_content:langcode:language':
+    label: Language

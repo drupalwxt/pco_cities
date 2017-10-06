@@ -1,0 +1,18 @@
+uuid: ecf1952c-6a1d-4f37-9921-2cb5ca9299c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.challenge_tags
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+_core:
+  default_config_hash: MDyHgAXV3-ewao8STniy5qSd8cV1NHGp0FZ0f6cPCPs
+id: taxonomy_term.challenge_tags
+target_entity_type_id: taxonomy_term
+target_bundle: challenge_tags
+default_langcode: site_default
+language_alterable: false

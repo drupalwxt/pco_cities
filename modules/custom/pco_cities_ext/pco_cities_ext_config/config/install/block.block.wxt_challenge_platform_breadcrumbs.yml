@@ -1,0 +1,22 @@
+uuid: 89175949-3212-4922-95ec-b33225564d23
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wxt_challenge_platform
+_core:
+  default_config_hash: Jx3NwD_ieAzJWK8hQ-N23eqTllZrvEbm_slIFl0jf1g
+id: wxt_challenge_platform_breadcrumbs
+theme: wxt_challenge_platform
+region: breadcrumb
+weight: -7
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 56088dc5-6963-4811-ba82-abbd0f877dda
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.challenge
+  enforced:
+    config:
+      - user.role.reviewer
+_core:
+  default_config_hash: L1-960mH6Dss_CPBQFW-nQAyjE0p8qxhzEUbT-qQqw0
+id: challenge-d360ff30e
+label: Reviewer
+weight: 4
+internal: true
+audience: outsider
+group_type: challenge
+permissions_ui: false
+permissions: {  }

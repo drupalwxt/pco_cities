@@ -1,0 +1,23 @@
+uuid: 754b2239-a003-4eda-9d75-00110af050ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - group
+id: group
+label: Group
+type: 'canonical_entities:group'
+pattern: 'challenge/[group:id]'
+selection_criteria:
+  76bb52b3-aed3-44e1-84ec-594ed58e3493:
+    id: 'entity_bundle:group'
+    bundles:
+      challenge: challenge
+    negate: false
+    context_mapping:
+      group: group
+    uuid: 76bb52b3-aed3-44e1-84ec-594ed58e3493
+selection_logic: and
+weight: -5
+relationships: {  }

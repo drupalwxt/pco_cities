@@ -1,0 +1,22 @@
+uuid: c1c13cb3-c0e6-4b87-b91e-c44ab36c7d43
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.challenge
+  module:
+    - path
+_core:
+  default_config_hash: UgMs-UTgbxVnm6KAqNbxnuvbkN1XpBBcguUJmhvWgVs
+id: group.challenge.path
+field_name: path
+entity_type: group
+bundle: challenge
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

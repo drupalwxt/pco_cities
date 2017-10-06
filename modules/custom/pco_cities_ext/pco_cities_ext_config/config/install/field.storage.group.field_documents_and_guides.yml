@@ -1,0 +1,25 @@
+uuid: ff7f6243-f7bb-463d-8397-0087e7195213
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - group
+_core:
+  default_config_hash: qr7CjAgwShS5smMVFc-7lsEJah_ySx-Hxp-3yZnniTo
+id: group.field_documents_and_guides
+field_name: field_documents_and_guides
+entity_type: group
+type: file
+settings:
+  display_field: true
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

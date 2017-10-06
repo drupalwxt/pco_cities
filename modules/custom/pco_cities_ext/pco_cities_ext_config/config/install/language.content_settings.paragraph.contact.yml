@@ -1,0 +1,18 @@
+uuid: 7604d2c9-0514-4ed8-9435-431283f254e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.contact
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+_core:
+  default_config_hash: C6J69CFzWbm1MlujPm901PyPpVbN8hQmCl_9CNvtquA
+id: paragraph.contact
+target_entity_type_id: paragraph
+target_bundle: contact
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,11 @@
+uuid: 5029429c-6205-42ce-a009-55df07200da3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: oC7yM9mssLlA_xCB_rABXL3N-a4Cu8TMTOXheBQ7wKk
+name: 'Social Media Links'
+vid: social_media_links
+description: ''
+hierarchy: 0
+weight: 0

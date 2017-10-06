@@ -1,0 +1,54 @@
+uuid: 4a0b7734-cd52-4d3e-adfe-5bf5871e18a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact.field_contact_introduction
+    - field.field.paragraph.contact.field_email
+    - field.field.paragraph.contact.field_fax
+    - field.field.paragraph.contact.field_telephone
+    - paragraphs.paragraphs_type.contact
+  module:
+    - telephone
+    - workbench_moderation
+_core:
+  default_config_hash: eluYMrzfvy1gUDAWm2nhtUYF5LHBZa0I4OMQLGUYRoo
+id: paragraph.contact.default
+targetEntityType: paragraph
+bundle: contact
+mode: default
+content:
+  field_contact_introduction:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_email:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_fax:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_telephone:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

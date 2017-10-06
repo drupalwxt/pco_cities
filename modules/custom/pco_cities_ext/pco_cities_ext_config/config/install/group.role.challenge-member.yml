@@ -1,0 +1,16 @@
+uuid: eeaa5015-af04-40d4-a1aa-3964e46e7c64
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.challenge
+_core:
+  default_config_hash: QNFB7ZudoZxFtSEAldFxhs4oRgE6AgS4G4GD0us6gLc
+id: challenge-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: challenge
+permissions_ui: true
+permissions: {  }

@@ -1,0 +1,47 @@
+uuid: afce3b04-d7be-4c9c-822e-b1146f8e6595
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_challenge_image
+    - group.type.challenge
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
+_core:
+  default_config_hash: Gn22ljTP97ytfpUXAcle7ldWp72uHAsV5V-69lw_BMI
+id: group.challenge.field_challenge_image
+field_name: field_challenge_image
+entity_type: group
+bundle: challenge
+label: 'Challenge Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'challenge-images/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: 1MB
+  max_resolution: 1280x720
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

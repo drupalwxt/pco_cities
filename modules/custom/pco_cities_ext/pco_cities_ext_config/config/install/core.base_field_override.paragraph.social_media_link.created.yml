@@ -1,0 +1,20 @@
+uuid: bcd98b98-5460-4961-b561-46cbc74c3b50
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.social_media_link
+_core:
+  default_config_hash: 7G7Sx0VhZVkiaW44XVYOzpTKqFT1mQaJyJgQpnxEZ5Y
+id: paragraph.social_media_link.created
+field_name: created
+entity_type: paragraph
+bundle: social_media_link
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,22 @@
+uuid: 666971a0-18cf-48aa-8944-f30e4cf25dfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.contact
+_core:
+  default_config_hash: b4eQVhDYb-w3t8ysQISNnQhOcVjE_cUMuO_KQtPOzgo
+id: paragraph.contact.moderation_state
+field_name: moderation_state
+entity_type: paragraph
+bundle: contact
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,39 @@
+uuid: 79cb42b3-ce1d-4d11-a300-ef6deb7bc8a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_prizes
+    - group.type.challenge
+  module:
+    - double_field
+_core:
+  default_config_hash: qJYSmSj-2CO_oPqxFrv5oVys-C8vhY9QJmgoZS7ROSA
+id: group.challenge.field_prizes
+field_name: field_prizes
+entity_type: group
+bundle: challenge
+label: Prizes
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  first:
+    required: true
+    list: false
+    allowed_values: {  }
+    min: 1
+    max: null
+    on_label: 'On'
+    off_label: 'Off'
+  second:
+    required: true
+    list: false
+    allowed_values: {  }
+    min: 1
+    max: null
+    on_label: 'On'
+    off_label: 'Off'
+field_type: double_field

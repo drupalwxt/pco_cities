@@ -1,0 +1,22 @@
+uuid: 00588f43-4b1c-4760-9eb3-606ded1413f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - wxt_challenge_platform
+_core:
+  default_config_hash: 4eMiBJNSNMAbB-qQ8aoD-BtvjkUpZ7YUN9uBZty2724
+id: wxt_challenge_platform_help
+theme: wxt_challenge_platform
+region: help
+weight: -8
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,38 @@
+uuid: 74b658e7-d874-4ce6-ba5c-61d3cd9c5646
+langcode: en
+status: false
+dependencies:
+  module:
+    - block_class
+    - system
+    - wxt_library
+  theme:
+    - wxt_challenge_platform
+third_party_settings:
+  block_class:
+    classes: 'col-md-6 mrgn-tp-lg'
+_core:
+  default_config_hash: LoRQg8rv-CBPjB1VVPCDXFB4sNF92mCl-fLTjQrvYbo
+id: wxt_challenge_platform_sharewidgetblock
+theme: wxt_challenge_platform
+region: content_footer
+weight: -7
+provider: null
+plugin: share_widget_block
+settings:
+  id: share_widget_block
+  label: 'Share widget block'
+  provider: wxt_library
+  label_display: '0'
+  share_settings:
+    share_widget: ''
+  share_widget:
+    facebook: facebook
+    gmail: gmail
+    twitter: twitter
+visibility:
+  request_path:
+    id: request_path
+    pages: '/node/*'
+    negate: false
+    context_mapping: {  }

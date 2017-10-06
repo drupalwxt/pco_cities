@@ -1,0 +1,18 @@
+uuid: fd1412ca-6d29-43cd-8be5-9c8d78f78532
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.content_type.challenge-group_membership
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+_core:
+  default_config_hash: b2-aaeO6lTjrutFX7L7MlCLstd7o1tVLbuJrn3HVuGY
+id: group_content.challenge-group_membership
+target_entity_type_id: group_content
+target_bundle: challenge-group_membership
+default_langcode: site_default
+language_alterable: true

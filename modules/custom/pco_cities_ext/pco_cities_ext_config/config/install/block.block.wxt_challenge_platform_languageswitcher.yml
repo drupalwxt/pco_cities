@@ -1,0 +1,30 @@
+uuid: fd1e8426-d1b2-4e38-9d46-e7e7a58a8314
+langcode: en
+status: true
+dependencies:
+  module:
+    - wxt_library
+  theme:
+    - wxt_challenge_platform
+_core:
+  default_config_hash: ORnrlhtLfLeu0JNAjmxJPq-afZjXb-xbdoUuyxvVX5Y
+id: wxt_challenge_platform_languageswitcher
+theme: wxt_challenge_platform
+region: language_toggle
+weight: -8
+provider: null
+plugin: 'wxt_language_block:language_interface'
+settings:
+  id: 'wxt_language_block:language_interface'
+  label: 'WxT Language switcher'
+  provider: wxt_library
+  label_display: visible
+  wxt_theme: false
+  language_toggle:
+    theme-base: theme-base
+    theme-ogpl: theme-ogpl
+    theme-wet-boew: 0
+    theme-gcwu-fegc: 0
+    theme-gc-intranet: 0
+    theme-gcweb: 0
+visibility: {  }

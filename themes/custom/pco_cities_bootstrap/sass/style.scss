@@ -1,0 +1,361 @@
+
+// Media Query Mixins
+
+@mixin mobile_only  { @media ( max-width: 767px )  { @content; } }
+@mixin tablet       { @media ( min-width: 768px )  { @content; } }
+@mixin desktop      { @media ( min-width: 992px )  { @content; } }
+@mixin tv           { @media ( min-width: 1200px ) { @content; } }
+
+@mixin retina {
+	@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+    	only screen and (min--moz-device-pixel-ratio: 2),
+    	only screen and (-o-min-device-pixel-ratio: 2/1),
+    	only screen and (min-device-pixel-ratio: 2),
+    	only screen and (min-resolution: 192dpi),
+    	only screen and (min-resolution: 2dppx) {
+    		@content;
+  		}
+}
+
+$goc-blue: #335075;
+$goc-grey: #777;
+
+
+.page-sidebar-nav {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding:0;
+		border-left: #CCC 1px solid;
+		padding: 1rem 0 1rem 1.5rem;
+	}
+
+	li {
+		margin: 1.5rem 0;
+		line-height:1.8rem;
+	}
+
+	a {
+		text-decoration: none;
+		font-size: 1.35rem;
+		
+		color: $goc-blue;
+
+		&:hover {
+			color: #0000FF
+		}
+	}
+}
+
+.challenge-nav-container {
+	
+	    margin: 2rem 0;
+	    border-bottom: #CCC 1px solid;
+	
+
+	a {
+		padding: 1.5rem 1rem;
+		text-decoration: none;
+		color: $goc-blue;
+		text-transform:uppercase;
+		font-size: 1.25rem;
+		position: relative;
+
+		&::after {
+				display: block;
+				width: 100%;
+				position: absolute;
+				background: #CCC;
+				content: '';
+				height: 0px;
+				bottom:0;
+				transition: height 0.35s ease;
+			}
+
+		&:hover {
+			color: #0000FF;
+			&::after {
+				height: 5px;
+			}
+		}
+
+		&.active {
+			color: #333;
+			&::after {
+				height: 5px;
+			}
+
+
+		}
+	}
+
+}
+
+.challenge-header {
+	height: 25rem;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	
+
+	&:before {
+   		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: linear-gradient(to bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.5)); 
+  	}
+
+	@include tablet {
+		min-height: 35rem;
+		margin-bottom: 2rem;
+	}
+
+
+
+	.challenge-title-wrapper {
+		text-align: center;
+		color: #FFF;
+		text-shadow: 0 0 2px #000;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		width: 100%;
+
+
+
+		@include desktop {
+			text-align: left;
+			left: 50%;
+			bottom: 0;
+			transform: translateX(-50%) translateY(0);
+			margin-bottom: 2rem;
+			top: auto;
+		}
+	}
+
+	h1 {
+		border-bottom: none;
+		margin: 0 auto;
+	}
+}
+
+.cp--main-container {
+	overflow-x:hidden;
+	margin-bottom: 2rem;
+}
+
+.challenge-details {
+	border-bottom: $goc-blue 5px solid;
+	margin-bottom: 3rem;
+
+	@include desktop {
+		border: $goc-blue 1px solid;
+	}
+
+	.field--label {
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	
+	.field--name-field-tags {
+		
+		.field__items {
+			margin: 1rem 0 ;
+		}
+
+		.field--item {
+			display: inline-block;
+			margin: 0.15rem;
+		}
+
+		a {
+			background-color: $goc-blue;
+		padding: 0.75rem 1rem;
+		color: #FFF;
+		text-decoration: none;
+		font-size: 1rem;
+		border-radius: 0.5rem;
+		text-shadow: 0 0 2px rgba(0,0,0,0.5);
+		}
+
+	}
+}
+
+.challenge-detail-item {
+	padding: 1.25rem 1.5rem 1.25rem 1.5rem;
+	border-bottom: $goc-grey 1px dashed;
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+// CHallenge updates
+
+.challenge-updates {
+	border-top: $goc-grey 4px solid;
+	margin-top: 2rem;
+
+	.view-content {
+		background: #FFF;
+		box-shadow: 0 0 10px rgba(0,0,0,0.15);
+		margin: 1rem 0;
+
+	}
+
+	.views-row {
+		border-bottom: #CCC 1px dotted;
+		
+		&:last-child {
+			border-bottom-color: white;
+		}
+	}
+
+	.cp-update-date {
+		text-transform: uppercase;
+		color: #777;
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.cp-title {
+		font-size: 1.75rem;
+		color: $goc-blue;
+	}
+
+	 a { 
+	 	text-decoration: none;
+	 	padding: 1.5rem 2rem;
+	 	display: block;
+
+	 	&:hover {
+	 		background: rgba($goc-blue, 0.05);
+	 	}
+	 }
+	
+}
+
+
+
+
+/// Field specific styling
+.field--name-field-documents-and-guides {
+	.file-link {padding: 0.5rem 0;}
+	.file-icon .icon { padding-left: 0;}
+}
+
+
+// HOMEPAGE STYLE
+.path-frontpage {
+
+	h2 {
+		text-align: center;
+		font-size: 3.5rem;
+		margin-bottom: 3rem;
+		font-weight: 100;
+	}
+	#block-challengeplatformintroblock {
+		text-align: center;
+		background: linear-gradient(rgba($goc-blue, 0.45), rgba($goc-blue, 0.45)), 
+					url('../assets/challenge-platform-header-bg1.png');
+		background-repeat:repeat;
+		background-attachment: fixed;
+		color: #FFF;
+		padding: 8rem 0 8rem 0;
+
+		h2 {
+			@include tablet {
+				margin-bottom:4rem;
+			}
+
+			@include desktop {
+				font-size: 4rem;
+				line-height: 5rem;
+				margin: 0 12rem 5rem 12rem;
+			}
+		}
+
+		p {
+			@include tablet {
+				font-size: 2rem;
+				font-weight: 100;
+				line-height: 3.25rem;
+			}
+			@include desktop {
+				
+				margin: 0 12rem;
+			}
+		}
+	}
+
+	#block-views-block-challenge-listing-front-page-listing {
+		margin-bottom: 3rem;
+
+		.challenge-item {
+		    display: block;
+		    margin: 1rem;
+		    background: #FFF;
+		    box-shadow: 0 0 2px rgba(0,0,0,0.35);
+		    text-decoration: none;
+		    transition: all 0.3s ease;
+
+    		&:hover { box-shadow: 0 0 10px rgba(0,0,0,0.25)}
+    	}
+
+    	.center-block {
+    		float: none;
+    	}
+
+		.challenge-item--image {
+			height: 20rem;
+			overflow: hidden;
+		}
+
+		.challenge-item--content {
+			padding: 1.75rem;
+		}
+
+		.challenge-item--title {
+			font-size: 1.75rem;
+			margin-bottom: 1rem;
+		}
+
+		.challenge-item--org {
+			font-size: 1rem;
+			text-transform:uppercase;
+			color: #999;
+			font-weight:500;
+		}
+
+		.img-responsive {
+			height: inherit;
+			object-fit: cover;
+		}
+	}
+	
+	#block-challengeplatformhelpandguides {
+		background: linear-gradient(rgba(darken($goc-blue, 0.7), 0.5), rgba(darken($goc-blue, 0.7), 0.5)), 
+					url('../assets/triangles.png');
+		background-repeat:repeat;
+		background-attachment: fixed;
+		color: #FFF;
+		padding: 3rem 0 3rem 0;
+
+		p {
+			margin: 1rem auto;
+			max-width:80rem;
+			text-align: center;
+		}
+
+		.btn {
+			margin: 0.5rem;
+		}
+	}
+}

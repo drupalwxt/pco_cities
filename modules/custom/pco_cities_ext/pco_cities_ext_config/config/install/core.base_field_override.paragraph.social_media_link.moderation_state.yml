@@ -1,0 +1,22 @@
+uuid: 1e33d35c-c4c8-4aa6-9f8a-d8aea1497eec
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.social_media_link
+_core:
+  default_config_hash: QN05BcFnGAZAanD5CLe_ciql6rGtHTLBzOjthNS5oMk
+id: paragraph.social_media_link.moderation_state
+field_name: moderation_state
+entity_type: paragraph
+bundle: social_media_link
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

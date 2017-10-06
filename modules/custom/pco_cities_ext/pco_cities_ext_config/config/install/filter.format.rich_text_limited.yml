@@ -1,0 +1,19 @@
+uuid: ca57c411-c924-4067-bb0d-e7e154a71058
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: UgWTWmpDyi4qgAinVj_uk26bRdkSI_bbJ18xSyNTrCI
+name: 'Rich Text Limited'
+format: rich_text_limited
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
+      filter_html_help: true
+      filter_html_nofollow: false

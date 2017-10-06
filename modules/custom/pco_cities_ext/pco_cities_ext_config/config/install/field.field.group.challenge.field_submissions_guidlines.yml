@@ -1,0 +1,36 @@
+uuid: 42712049-52bd-47a7-91e7-555ea8d0112f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_submissions_guidlines
+    - group.type.challenge
+    - paragraphs.paragraphs_type.section
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: HaScihXx8y1euBcq5vZ5I1GoRD6UEzZnsh4FUYS90y4
+id: group.challenge.field_submissions_guidlines
+field_name: field_submissions_guidlines
+entity_type: group
+bundle: challenge
+label: 'Submissions Guidlines'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      section: section
+    target_bundles_drag_drop:
+      frequently_asked_question:
+        weight: 3
+        enabled: false
+      section:
+        enabled: true
+        weight: 4
+field_type: entity_reference_revisions

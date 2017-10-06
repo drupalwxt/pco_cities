@@ -1,0 +1,25 @@
+uuid: f86a9f22-6dc9-4470-bc2d-d3a4400568d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_news_events
+    - group.type.challenge
+_core:
+  default_config_hash: snzYb1rMybiY0wqYO4FLMfy7mFUFCUzWSU1pkjApaoM
+id: group.challenge.field_news_events
+field_name: field_news_events
+entity_type: group
+bundle: challenge
+label: 'News, Events, and Announcements'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

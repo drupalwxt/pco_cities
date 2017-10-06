@@ -1,0 +1,29 @@
+uuid: 3b0348e5-5add-4513-abed-82d2b6d3aefc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_documents_and_guides
+    - group.type.challenge
+  module:
+    - file
+_core:
+  default_config_hash: q4nZ55uyXt3jQ99lfyeV8m7nVhcwownxstOVUFVPMB4
+id: group.challenge.field_documents_and_guides
+field_name: field_documents_and_guides
+entity_type: group
+bundle: challenge
+label: 'Documents and Guides'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'challenge-docs/[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: '25 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

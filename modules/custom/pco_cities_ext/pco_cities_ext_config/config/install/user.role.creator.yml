@@ -1,0 +1,43 @@
+uuid: 621df508-6f3d-4442-9790-19296d8543fc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DDay3FSb-tzOCqH2x7aies6xlhyDS5wSbTwX34VbEKo
+id: creator
+label: Creator
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access browse_content entity browser pages'
+  - 'access browse_content_modal entity browser pages'
+  - 'access comments'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access panels in-place editing'
+  - 'access shortcuts'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'create article content'
+  - 'create content translations'
+  - 'delete own article content'
+  - 'dropzone upload files'
+  - 'edit own article content'
+  - 'edit own comments'
+  - 'post comments'
+  - 'translate article node'
+  - 'translate service node'
+  - 'update content translations'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use needs_review_needs_review transition'
+  - 'use text format full_html'
+  - 'use text format rich_text'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view article revisions'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view the administration theme'

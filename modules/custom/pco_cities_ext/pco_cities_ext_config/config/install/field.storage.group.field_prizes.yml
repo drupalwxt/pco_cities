@@ -1,0 +1,32 @@
+uuid: 2c4ab69c-c4de-4029-816b-0090259b076d
+langcode: en
+status: true
+dependencies:
+  module:
+    - double_field
+    - group
+_core:
+  default_config_hash: o0_lHL3BLwypFlMYMdUvrCxdOseJoSZpn1PkeXPrFUA
+id: group.field_prizes
+field_name: field_prizes
+entity_type: group
+type: double_field
+settings:
+  storage:
+    first:
+      type: integer
+      maxlength: 255
+      precision: 10
+      scale: 2
+    second:
+      type: numeric
+      maxlength: 255
+      precision: 20
+      scale: 2
+module: double_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

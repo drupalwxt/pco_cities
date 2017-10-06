@@ -1,0 +1,20 @@
+uuid: 43714b1e-585b-454c-bd40-74bf151c94e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.challenge
+_core:
+  default_config_hash: kdn36THWhJkD_D0-E2Gb1v_hWtBPlt7BVuUqhYs4e_g
+id: group.challenge.created
+field_name: created
+entity_type: group
+bundle: challenge
+label: 'Created on'
+description: 'The time that the group was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

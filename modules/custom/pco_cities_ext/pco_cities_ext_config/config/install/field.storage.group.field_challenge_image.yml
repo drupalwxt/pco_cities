@@ -1,0 +1,32 @@
+uuid: 03b1de00-6109-4443-959d-ac8048fc061f
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - group
+    - image
+_core:
+  default_config_hash: '-gFoCayX73sGbzu2J57k6p-kT1rU5hfyY7gThaH40pI'
+id: group.field_challenge_image
+field_name: field_challenge_image
+entity_type: group
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

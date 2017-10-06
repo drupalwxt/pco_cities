@@ -1,0 +1,26 @@
+uuid: 0716cbfb-5817-4bcb-aed3-1c032a588557
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.challenge
+_core:
+  default_config_hash: S7QcfSwfRwSgXLWMG2iiW23WtUo6JXAmSkWSl60wkQk
+id: challenge-admin
+label: Admin
+weight: 100
+internal: false
+audience: member
+group_type: challenge
+permissions_ui: true
+permissions:
+  - 'access content overview'
+  - 'administer group'
+  - 'delete group'
+  - 'edit group'
+  - 'administer members'
+  - 'update own group_membership content'
+  - 'leave group'
+  - 'view group_membership content'
+  - 'view group'
+  - 'access group_node overview'

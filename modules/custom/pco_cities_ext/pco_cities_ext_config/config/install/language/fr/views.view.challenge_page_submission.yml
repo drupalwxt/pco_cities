@@ -1,0 +1,51 @@
+display:
+  default:
+    display_title: Maître
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      fields:
+        label:
+          separator: ', '
+        field_submissions_guidlines:
+          separator: ', '
+        view_group:
+          text: voir
+        field_challenge_image:
+          separator: ', '
+        field_organization:
+          separator: ', '
+      arguments:
+        id:
+          exception:
+            title: Tout
+  submission_info:
+    display_options:
+      fields:
+        label:
+          separator: ', '
+        field_submissions_guidlines:
+          separator: ', '
+        view_group:
+          text: voir
+        field_challenge_image:
+          separator: ', '
+        field_organization:
+          separator: ', '
+        field_contact_information:
+          separator: ', '
+        field_faq:
+          separator: ', '
+        id:
+          separator: ', '
+        field_news_events:
+          separator: ', '
+      arguments:
+        id:
+          exception:
+            title: Tout

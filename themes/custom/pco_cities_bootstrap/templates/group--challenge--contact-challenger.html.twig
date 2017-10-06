@@ -1,0 +1,78 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a group.
+ *
+ * Available variables:
+ * - group: The group entity with limited access to object properties and
+ *   methods. Only "getter" methods (method names starting with "get", "has",
+ *   or "is") and a few common methods such as "id" and "label" are available.
+ *   Calling other methods (such as group.delete) will result in an exception.
+ * - label: The title of the group.
+ * - content: All group items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the
+ *   printing of a given child element.
+ * - url: Direct URL of the current group.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - group: The current template type (also known as a "theming hook").
+ *   - group--[type]: The current group type. For example, if the group is a
+ *     "Classroom" it would result in "group--classroom". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - group--[view_mode]: The View Mode of the group; for example, a
+ *     teaser would result in: "group--teaser", and full: "group--full".
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ *
+ * @see template_preprocess_group()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% extends "group--challenge--full.html.twig" %}
+
+{% block challengeNav %}
+    {% if 
+            (content.field_submissions_guidlines['#title']  or 
+            content.field_faq['#title']                     or 
+            content.field_contact_information['#title']) 
+        %}
+
+         <div class="row challenge-nav-container">
+             <nav>
+                <ul class="list-inline">
+                    <li><a href="{{url}}">{{content.field_about['#title']}}</a></li>
+
+                    {% if content.field_submissions_guidlines['#title'] %}
+                        <li><a href="{{url}}/info">{{content.field_submissions_guidlines['#title']}}</a></li>
+                    {% endif %}
+
+                    {% if content.field_news_events[0]['#markup'] == '1'  %}
+                        <li><a href="{{url}}/news-nouvelles">{{content.field_news_events['#title']}}</a></li>
+                    {% endif %}
+
+                    {% if content.field_contact_information['#title'] %}
+                        <li><a href="{{url}}/contact" class="active">{{content.field_contact_information['#title']}}</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block challengeContent %}
+    <div class="submission-guidelines-content">
+        {{ content.field_contact_information }}
+    </div>
+{% endblock %}

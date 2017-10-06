@@ -1,0 +1,10 @@
+uuid: adca0839-413b-4550-8c7c-c9c77536b367
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mmUuHIn5eQYuiU7OI5z-Th35VcT2YA6Ru2CMEidvv9Y
+id: brand
+label: Brand
+description: 'Brand menu.'
+locked: false

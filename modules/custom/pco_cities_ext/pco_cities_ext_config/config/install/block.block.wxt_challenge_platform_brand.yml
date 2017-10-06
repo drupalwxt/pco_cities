@@ -1,0 +1,30 @@
+uuid: 06d8eac5-1093-4649-ab15-33087877048d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.brand
+  module:
+    - block_class
+    - system
+  theme:
+    - wxt_challenge_platform
+third_party_settings:
+  block_class:
+    classes: ''
+_core:
+  default_config_hash: yA2ceTKyWYK9PAZQ8NriHRNrt6TpcuCuWbo4nI-EKCk
+id: wxt_challenge_platform_brand
+theme: wxt_challenge_platform
+region: branding
+weight: 0
+provider: null
+plugin: 'system_menu_block:brand'
+settings:
+  id: 'system_menu_block:brand'
+  label: Brand
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

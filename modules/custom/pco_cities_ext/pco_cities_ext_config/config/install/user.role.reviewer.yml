@@ -1,0 +1,48 @@
+uuid: 4e65e32d-ee2a-4871-914f-b90ae9e58f0e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7hEXqETj8EPMS4PPTUJ9YNV2nD3_2skA_bd85-mFfbU
+id: reviewer
+label: Reviewer
+weight: 4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'create article content'
+  - 'create content translations'
+  - 'delete all revisions'
+  - 'delete any article content'
+  - 'delete article revisions'
+  - 'delete content translations'
+  - 'delete own article content'
+  - 'dropzone upload files'
+  - 'edit any article content'
+  - 'edit own article content'
+  - 'edit own comments'
+  - 'revert all revisions'
+  - 'revert article revisions'
+  - 'translate article node'
+  - 'translate employee node'
+  - 'translate service node'
+  - 'update content translations'
+  - 'use archived_published transition'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_needs_review transition'
+  - 'use needs_review_published transition'
+  - 'use published_archived transition'
+  - 'use published_draft transition'
+  - 'use published_published transition'
+  - 'use text format full_html'
+  - 'use text format rich_text'
+  - 'view all revisions'
+  - 'view article revisions'
+  - 'view own unpublished content'

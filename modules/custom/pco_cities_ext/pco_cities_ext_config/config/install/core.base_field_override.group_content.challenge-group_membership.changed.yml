@@ -1,0 +1,20 @@
+uuid: 7a8c4d84-1d09-4fc5-a775-f8db7b064146
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.content_type.challenge-group_membership
+_core:
+  default_config_hash: gI6eoA6bRNf-i2Fs9dZ9oEH51HthYLKFepCBuuQq900
+id: group_content.challenge-group_membership.changed
+field_name: changed
+entity_type: group_content
+bundle: challenge-group_membership
+label: 'Changed on'
+description: 'The time that the group content was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

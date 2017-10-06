@@ -1,0 +1,34 @@
+uuid: a4eca53b-3528-43e1-b715-9e54d5849e67
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.sidebar
+  module:
+    - node
+    - system
+  theme:
+    - wxt_challenge_platform
+_core:
+  default_config_hash: vYfhg01TGuydiQE8651UK9ZT2J2wwB5QmBDTc81bv88
+id: wxt_challenge_platform_sidebar
+theme: wxt_challenge_platform
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'system_menu_block:sidebar'
+settings:
+  id: 'system_menu_block:sidebar'
+  label: Sidebar
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

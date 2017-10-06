@@ -1,0 +1,28 @@
+uuid: 3af3351b-087a-4ca3-b779-215922a888e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.paragraphs_comments
+    - field.field.comment.paragraphs_comments.comment_body
+  module:
+    - text
+_core:
+  default_config_hash: 8b-_K2-RhpW1w68EhYYr3Laze4W3oq_7kR3Y-I19BMQ
+id: comment.paragraphs_comments.default
+targetEntityType: comment
+bundle: paragraphs_comments
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

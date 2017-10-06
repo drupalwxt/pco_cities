@@ -1,0 +1,29 @@
+uuid: 829cad79-4e7c-44c6-ba6c-20e5482b2ec8
+langcode: en
+status: false
+dependencies:
+  module:
+    - block_class
+    - wxt_library
+  theme:
+    - wxt_challenge_platform
+third_party_settings:
+  block_class:
+    classes: col-md-6
+_core:
+  default_config_hash: AQV6s27dQ0LdVbNwwlt2kjIhjZNGg7v8VqTSyUpZqfg
+id: wxt_challenge_platform_datemodifiedblock
+theme: wxt_challenge_platform
+region: content_footer
+weight: -8
+provider: null
+plugin: date_modified_block
+settings:
+  id: date_modified_block
+  label: 'Date Modified'
+  provider: wxt_library
+  label_display: '0'
+  date_format:
+    page: page
+  date_modified: tiny
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: da969b35-b40d-4c7f-a7aa-ad91dc6f99c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.challenge
+  module:
+    - user
+_core:
+  default_config_hash: tMp2ejlMWRaK-oliV7XGz6_mT66QbEsihUVxTNL8k_0
+id: challenge-group_membership
+label: 'Challenge: Group membership'
+description: 'Adds users to groups as members.'
+group_type: challenge
+content_plugin: group_membership
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: true

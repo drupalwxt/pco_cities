@@ -1,0 +1,37 @@
+uuid: dea86596-8ad8-44cc-961d-acf5532293ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+    - wxt_library
+  theme:
+    - wxt_challenge_platform
+third_party_settings:
+  block_class:
+    classes: ''
+_core:
+  default_config_hash: tKnxXzEgiZt4P1kSKifNzbrryhog9XteiDVXbdjt0rc
+id: wxt_challenge_platform_content
+theme: wxt_challenge_platform
+region: content
+weight: -11
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
+  panels_title:
+    id: panels_title
+    enabled: 0
+    negate: false
+    context_mapping: {  }

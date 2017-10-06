@@ -1,0 +1,18 @@
+uuid: eb1edfc1-d7dc-4535-9833-f38e499af225
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Es1FqhsRcTKgbEEI3rytw2xUUV_zCFMhFyqsGFUbmQA
+id: user
+label: User
+description: ''
+use_admin_theme: false
+path: '/user/{user}'
+access_logic: and
+access_conditions: {  }
+parameters:
+  user:
+    machine_name: user
+    type: 'entity:user'
+    label: User

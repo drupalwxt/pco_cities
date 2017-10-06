@@ -1,0 +1,50 @@
+uuid: 69b84745-e81f-4278-925c-cb4defa0b80d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact.field_contact_introduction
+    - field.field.paragraph.contact.field_email
+    - field.field.paragraph.contact.field_fax
+    - field.field.paragraph.contact.field_telephone
+    - paragraphs.paragraphs_type.contact
+  module:
+    - telephone
+_core:
+  default_config_hash: jiiK1Fb0bnIhXOMAX7g5V9t9w9OU62xNg60bJ-HHieY
+id: paragraph.contact.default
+targetEntityType: paragraph
+bundle: contact
+mode: default
+content:
+  field_contact_introduction:
+    weight: 0
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_email:
+    weight: 4
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_fax:
+    weight: 2
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_telephone:
+    weight: 1
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+hidden: {  }

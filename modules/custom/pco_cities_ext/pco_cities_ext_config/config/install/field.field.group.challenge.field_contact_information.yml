@@ -1,0 +1,42 @@
+uuid: 9c7cdeea-51fc-4991-9a8b-4e1709f740d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_contact_information
+    - group.type.challenge
+    - paragraphs.paragraphs_type.contact
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 1G4_XTw2b4wgCnWVtx3RKJZ0EQxL9zjNL6uG8vVs88E
+id: group.challenge.field_contact_information
+field_name: field_contact_information
+entity_type: group
+bundle: challenge
+label: 'Contact Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contact: contact
+    target_bundles_drag_drop:
+      contact:
+        enabled: true
+        weight: 5
+      frequently_asked_question:
+        weight: 6
+        enabled: false
+      section:
+        weight: 7
+        enabled: false
+      social_media_link:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

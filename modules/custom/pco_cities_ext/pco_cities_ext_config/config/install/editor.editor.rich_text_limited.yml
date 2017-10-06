@@ -1,0 +1,73 @@
+uuid: 6486e2d9-9ae9-4eb3-956a-bc245af73a33
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.rich_text_limited
+  module:
+    - ckeditor
+_core:
+  default_config_hash: Df4aeN6IUB6glCo3WoSI6MCb4A8CgePZE3NMyEH_sE0
+format: rich_text_limited
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - SpecialChar
+        -
+          name: Tools
+          items:
+            - PasteFromWord
+            - Maximize
+            - RemoveFormat
+            - Source
+  plugins:
+    drupallink:
+      linkit_enabled: false
+      linkit_profile: ''
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+    codemirror:
+      enable: false
+      mode: htmlmixed
+      theme: default
+      lineNumbers: true
+      lineWrapping: true
+      matchBrackets: true
+      autoCloseTags: true
+      autoCloseBrackets: true
+      enableSearchTools: true
+      enableCodeFolding: true
+      enableCodeFormatting: true
+      autoFormatOnStart: true
+      autoFormatOnModeChange: true
+      autoFormatOnUncomment: true
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

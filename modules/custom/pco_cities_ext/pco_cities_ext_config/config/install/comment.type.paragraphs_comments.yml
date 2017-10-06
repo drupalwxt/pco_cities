@@ -1,0 +1,10 @@
+uuid: 8c6deb94-f1db-44b7-9f8e-d2dae52c40ff
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 37192XZc2JKTwsSfrl5bfqb2B_HZtw3Osm8Lqq9iDuQ
+id: paragraphs_comments
+label: 'Paragraphs comments'
+target_entity_type_id: paragraph
+description: 'Allows commenting on paragraphs'

@@ -1,0 +1,21 @@
+schemas:
+  bootstrap: 8000
+  wxt_bootstrap: 8000
+cdn_provider: ''
+breadcrumb_home: 1
+_core:
+  default_config_hash: RFQO7KdW7L3Oj1E1D6tMr9keE4T_V7I8S9C-A3wMvNA
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: profiles/wxt/favicon.ico
+  url: 'http://challenge.dev/profiles/wxt/favicon.ico'
+  use_default: false
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: profiles/wxt/wxt.svg
+  url: ''
+  use_default: false

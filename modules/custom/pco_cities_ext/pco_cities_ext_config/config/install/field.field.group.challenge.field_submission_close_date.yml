@@ -1,0 +1,23 @@
+uuid: dea6aa35-ea74-404a-a890-a714d86697b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_submission_close_date
+    - group.type.challenge
+  module:
+    - datetime
+_core:
+  default_config_hash: iyJBusZDIpuGNZ2QM9PZDwNKR9euixLLFyOMr_OhV4o
+id: group.challenge.field_submission_close_date
+field_name: field_submission_close_date
+entity_type: group
+bundle: challenge
+label: 'Submission Close Date'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

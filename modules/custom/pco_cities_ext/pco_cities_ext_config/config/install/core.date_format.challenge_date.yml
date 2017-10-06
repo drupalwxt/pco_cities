@@ -1,0 +1,10 @@
+uuid: ab493636-ce26-4e1b-a6b5-dcd5d5be958e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DCpnYUw_Z2jp9GALy6dZrT7kI6aKF0BiOGssDJKa1mg
+id: challenge_date
+label: 'Challenge Date'
+locked: false
+pattern: 'F j, Y'

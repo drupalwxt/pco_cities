@@ -1,0 +1,22 @@
+uuid: b9bb8e3c-02d2-414d-9d3b-ab471922a338
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - media_entity
+_core:
+  default_config_hash: E-MI-Rez2u6b4I0HtNJPERb_24msooCIUZpppDWFLO8
+id: block_content.field_spotlight_media
+field_name: field_spotlight_media
+entity_type: block_content
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

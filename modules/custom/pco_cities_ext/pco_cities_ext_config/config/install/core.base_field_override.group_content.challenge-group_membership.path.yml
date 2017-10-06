@@ -1,0 +1,22 @@
+uuid: 3387b0bd-cc95-4308-b3bc-7abd71ab757b
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.content_type.challenge-group_membership
+  module:
+    - path
+_core:
+  default_config_hash: CXJKQ50x3aQHiVDC04oUK5wMthLtBrv9ndzk_QIG00A
+id: group_content.challenge-group_membership.path
+field_name: path
+entity_type: group_content
+bundle: challenge-group_membership
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,16 @@
+uuid: b63f4af9-7325-4b20-9a0d-e890fd994e8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Views specifically for the submission info'
+_core:
+  default_config_hash: PLlYautPSTNR4NiA5LDtPs0APWMf1VkQch-MWvgaSVw
+id: group.submission_information
+label: 'Submission Information'
+targetEntityType: group
+cache: true
