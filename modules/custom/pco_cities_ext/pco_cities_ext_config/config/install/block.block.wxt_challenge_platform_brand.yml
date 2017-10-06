@@ -7,12 +7,12 @@ dependencies:
     - block_class
     - system
   theme:
-    - wxt_challenge_platform
+    - pco_cities_bootstrap
 third_party_settings:
   block_class:
     classes: ''
-id: wxt_challenge_platform_brand
-theme: wxt_challenge_platform
+id: pco_cities_bootstrap_brand
+theme: pco_cities_bootstrap
 region: branding
 weight: 0
 provider: null

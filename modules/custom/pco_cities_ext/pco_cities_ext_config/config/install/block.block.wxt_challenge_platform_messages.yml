@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - wxt_challenge_platform
-id: wxt_challenge_platform_messages
-theme: wxt_challenge_platform
+    - pco_cities_bootstrap
+id: pco_cities_bootstrap_messages
+theme: pco_cities_bootstrap
 region: highlighted
 weight: -8
 provider: null

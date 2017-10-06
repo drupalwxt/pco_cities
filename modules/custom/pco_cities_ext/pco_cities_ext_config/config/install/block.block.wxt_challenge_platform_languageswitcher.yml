@@ -4,9 +4,9 @@ dependencies:
   module:
     - wxt_library
   theme:
-    - wxt_challenge_platform
-id: wxt_challenge_platform_languageswitcher
-theme: wxt_challenge_platform
+    - pco_cities_bootstrap
+id: pco_cities_bootstrap_languageswitcher
+theme: pco_cities_bootstrap
 region: language_toggle
 weight: -8
 provider: null

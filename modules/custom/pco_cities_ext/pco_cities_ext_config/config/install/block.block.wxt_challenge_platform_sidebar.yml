@@ -7,9 +7,9 @@ dependencies:
     - node
     - system
   theme:
-    - wxt_challenge_platform
-id: wxt_challenge_platform_sidebar
-theme: wxt_challenge_platform
+    - pco_cities_bootstrap
+id: pco_cities_bootstrap_sidebar
+theme: pco_cities_bootstrap
 region: sidebar_first
 weight: -8
 provider: null

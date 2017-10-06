@@ -15,4 +15,4 @@ logo:
 schemas:
   bootstrap: 8000
   wxt_bootstrap: 8000
-  wxt_challenge_platform: 8000
+  pco_cities_bootstrap: 8000

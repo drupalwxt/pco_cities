@@ -2,9 +2,9 @@ langcode: en
 status: false
 dependencies:
   theme:
-    - wxt_challenge_platform
-id: wxt_challenge_platform_local_actions
-theme: wxt_challenge_platform
+    - pco_cities_bootstrap
+id: pco_cities_bootstrap_local_actions
+theme: pco_cities_bootstrap
 region: header
 weight: -10
 provider: null

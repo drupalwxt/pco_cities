@@ -9,12 +9,12 @@ dependencies:
     - views
     - wxt_library
   theme:
-    - wxt_challenge_platform
+    - pco_cities_bootstrap
 third_party_settings:
   block_class:
     classes: ''
 id: views_block__challenge_listing_front_page_listing
-theme: wxt_challenge_platform
+theme: pco_cities_bootstrap
 region: content
 weight: -9
 provider: null

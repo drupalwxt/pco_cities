@@ -4,9 +4,9 @@ dependencies:
   module:
     - wxt_library
   theme:
-    - wxt_challenge_platform
-id: wxt_challenge_platform_wxtsearchform
-theme: wxt_challenge_platform
+    - pco_cities_bootstrap
+id: pco_cities_bootstrap_wxtsearchform
+theme: pco_cities_bootstrap
 region: search
 weight: -7
 provider: null

@@ -5,12 +5,12 @@ dependencies:
     - block_class
     - wxt_library
   theme:
-    - wxt_challenge_platform
+    - pco_cities_bootstrap
 third_party_settings:
   block_class:
     classes: col-md-6
-id: wxt_challenge_platform_datemodifiedblock
-theme: wxt_challenge_platform
+id: pco_cities_bootstrap_datemodifiedblock
+theme: pco_cities_bootstrap
 region: content_footer
 weight: -8
 provider: null

@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - wxt_challenge_platform
-id: wxt_challenge_platform_main_menu
-theme: wxt_challenge_platform
+    - pco_cities_bootstrap
+id: pco_cities_bootstrap_main_menu
+theme: pco_cities_bootstrap
 region: navigation
 weight: -8
 provider: null

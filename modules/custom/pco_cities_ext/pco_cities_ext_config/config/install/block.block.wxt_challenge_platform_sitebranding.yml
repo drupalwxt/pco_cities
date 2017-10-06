@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - wxt_challenge_platform
-id: wxt_challenge_platform_sitebranding
-theme: wxt_challenge_platform
+    - pco_cities_bootstrap
+id: pco_cities_bootstrap_sitebranding
+theme: pco_cities_bootstrap
 region: banner
 weight: -7
 provider: null
