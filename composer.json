@@ -250,7 +250,8 @@
         "cweagans/composer-patches": "^1.6.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drupalwxt/wxt": "2.0.0-beta3",
-        "harvesthq/chosen": "1.6.1"
+        "harvesthq/chosen": "1.6.1",
+        "drupal/double_field": "^3.0"
     },
     "autoload": {
         "psr-4": {
