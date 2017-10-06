@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pco_cities_bootstrap
+id: pco_cities_bootstrap_messages
+theme: pco_cities_bootstrap
+region: highlighted
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'

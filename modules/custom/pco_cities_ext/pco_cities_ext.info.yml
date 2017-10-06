@@ -1,0 +1,10 @@
+name: 'PCO CITIES Extend'
+description: 'Wrapper module for enabling all of the PCO CITIES Extensions.'
+type: module
+core: 8.x
+package: 'PCO CITIES'
+
+# Required modules
+dependencies:
+  - drupal:wxt_ext_blog
+  - drupal:wxt_ext_page

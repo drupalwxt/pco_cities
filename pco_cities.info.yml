@@ -1,0 +1,22 @@
+name: 'PCO Cities'
+description: 'A Drupal distribution created to leverage the Web Experience Toolkit.'
+type: profile
+core: 8.x
+distribution:
+  name: 'PCO Cities'
+
+# Base profile
+base profile: wxt
+
+# Language
+keep_english: true
+
+# Required modules
+dependencies:
+  # custom (pco_cities)
+  - drupal:pco_cities_core
+
+themes:
+  - bartik
+  - seven
+  - pco_cities_bootstrap

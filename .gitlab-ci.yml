@@ -1,0 +1,57 @@
+stages:
+  - build
+  - package
+  - deploy
+
+# 2x performance boost as vfs in dind is slow
+# https://docs.docker.com/engine/userguide/storagedriver/overlayfs-driver/
+# https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues/1698#note_15746725
+# https://gitlab.com/gitlab-org/gitlab-ce/issues/17861#note_12991518
+variables:
+  DOCKER_DRIVER: overlay
+  PROJECT_NAME: statcan-adsd-wcms/pco_cities
+
+# cache:
+#   untracked: true
+
+image: sylus/gitlab-ci
+
+services:
+  - sylus/gitlab-ci:dind
+
+before_script:
+  # Docker configuration
+  - docker info
+  # Run ssh-agent (inside the build environment)
+  - eval $(ssh-agent -s)
+  # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
+  - echo "${SSH_PRIVATE_KEY}" | ssh-add -
+  # For Docker builds disable host key checking. Be aware that by adding that
+  # you are suspectible to man-in-the-middle attacks.
+  # WARNING: Use this only with the Docker executor, if you use it with shell
+  # you will overwrite your user's SSH config.
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+build_job:
+  stage: build
+  script:
+    - apk add --update jq
+    - echo "Building ${PROJECT_NAME} test runner"
+    # Lets set-up our helper repository with all the docker config and use correct version in composer.json.
+    - git clone --branch 8.x http://gitlab.ssc.etg.gc.ca/statcan-adsd-wcms/site-pco-cities.git
+    - cd site-pco-cities
+    # Install PCO Cities
+    - export PR_BRANCH=$(curl -s "http://gitlab.ssc.etg.gc.ca/api/v4/projects/${CI_PROJECT_ID}/merge_requests?private_token=${OAUTH_TOKEN}&state=opened" | jq -r ".[]|select(.sha == \"$CI_COMMIT_SHA\")|.source_branch")
+    - export PR_ID=$(curl -s "http://gitlab.ssc.etg.gc.ca/api/v4/projects/${CI_PROJECT_ID}/merge_requests?private_token=${OAUTH_TOKEN}&state=opened" | jq -r ".[]|select(.sha == \"$CI_COMMIT_SHA\")|.iid")
+    - export BRANCH=$(if [ "$PR_ID" == "" ]; then echo ${CI_COMMIT_REF_NAME}; else echo ${PR_BRANCH}; fi)
+    - export COMPOSER_EXIT_ON_PATCH_FAILURE=1
+    - composer global require "hirak/prestissimo:^0.3"
+    - composer require "statcan-adsd-wcms/pco_cities:dev-$BRANCH#$CI_COMMIT_SHA"
+    - export COMPOSE_HTTP_TIMEOUT=200
+    - make build
+    - docker-compose -f docker-compose-ci.yml up -d
+    - docker ps -a
+    - sleep 20
+    - make drupal_install
+    - make test

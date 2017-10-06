@@ -1,0 +1,10 @@
+services:
+  pco_cities.extender:
+    class: '\Drupal\pco_cities\Extender'
+    arguments:
+      - '@app.root'
+      - '@site.path'
+  pco_cities.form_helper:
+    class: '\Drupal\pco_cities\FormHelper'
+    arguments:
+      - '@element_info'

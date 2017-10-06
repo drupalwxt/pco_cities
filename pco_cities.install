@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions for the PCO CITIES installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function pco_cities_install() {
+  _pco_cities_setup_themes();
+  _pco_cities_setup_branding();
+  _pco_cities_setup_base_configurations();
+}
+
+/**
+ * Setup base site configurations.
+ */
+function _pco_cities_setup_base_configurations() {
+  // Ensure the translation fields are created in the database.
+  \Drupal::service('entity.definition_update_manager')->applyUpdates();
+}
+
+/**
+ * Set up the default branding.
+ */
+function _pco_cities_setup_branding() {
+  // Set the path to the logo, favicon and README file based on install
+  // directory.
+  $pco_cities_path = drupal_get_path('profile', 'pco_cities');
+  \Drupal::configFactory()
+    ->getEditable('system.theme.global')
+    ->set('logo', [
+      'path' => $pco_cities_path . '/pco_cities.svg',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
+    ->set('favicon', [
+      'mimetype' => 'image/vnd.microsoft.icon',
+      'path' => $pco_cities_path . '/favicon.ico',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
+    ->save(TRUE);
+}
+
+/**
+ * Setup the themes.
+ */
+function _pco_cities_setup_themes() {
+  // Set the default and admin theme.
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', 'pco_cities_bootstrap')
+    ->set('admin', 'seven')
+    ->save(TRUE);
+
+  // Enable the admin theme.
+  \Drupal::configFactory()
+    ->getEditable('node.settings')
+    ->set('use_admin_theme', TRUE)
+    ->save(TRUE);
+}
