@@ -1,5 +1,0 @@
-name: 'Challenge Platform Config Import'
-description: 'CP Customizations'
-type: module
-core: 8.x
-package: 'PCO CITIES'

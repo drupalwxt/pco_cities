@@ -2,26 +2,23 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:cdd8fb8d-adf1-4208-8eb2-6b931b7c5dd0'
+    - 'block_content:basic:ea9aa5e8-a9ab-4b86-af3c-64d596498c2b'
   module:
     - block_class
     - block_content
     - system
     - wxt_library
-  theme:
-    - pco_cities_bootstrap
 third_party_settings:
   block_class:
     classes: ''
-id: challengeplatformhelpandguides
-theme: pco_cities_bootstrap
+id: challengeplatformintroblock
 region: content
-weight: -8
+weight: -10
 provider: null
-plugin: 'block_content:cdd8fb8d-adf1-4208-8eb2-6b931b7c5dd0'
+plugin: 'block_content:ea9aa5e8-a9ab-4b86-af3c-64d596498c2b'
 settings:
-  id: 'block_content:cdd8fb8d-adf1-4208-8eb2-6b931b7c5dd0'
-  label: 'Help and Guides'
+  id: 'block_content:ea9aa5e8-a9ab-4b86-af3c-64d596498c2b'
+  label: 'Challenge Platform Intro Block'
   provider: block_content
   label_display: '0'
   status: true

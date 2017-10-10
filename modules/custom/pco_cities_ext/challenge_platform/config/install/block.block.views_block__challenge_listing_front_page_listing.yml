@@ -1,31 +1,33 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - views.view.challenge_listing
   module:
     - block_class
     - system
+    - views
     - wxt_library
-  theme:
-    - pco_cities_bootstrap
 third_party_settings:
   block_class:
     classes: ''
-id: pco_cities_bootstrap_content
-theme: pco_cities_bootstrap
+id: views_block__challenge_listing_front_page_listing
 region: content
-weight: -11
+weight: -9
 provider: null
-plugin: system_main_block
+plugin: 'views_block:challenge_listing-front_page_listing'
 settings:
-  id: system_main_block
-  label: 'Main page content'
-  provider: system
-  label_display: '0'
+  id: 'views_block:challenge_listing-front_page_listing'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
 visibility:
   request_path:
     id: request_path
     pages: '<front>'
-    negate: true
+    negate: false
     context_mapping: {  }
   panels_title:
     id: panels_title

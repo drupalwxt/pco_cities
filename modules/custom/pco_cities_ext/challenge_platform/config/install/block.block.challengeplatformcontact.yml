@@ -1,31 +1,29 @@
 langcode: en
-status: true
+status: false
 dependencies:
-  config:
-    - views.view.challenge_listing
+  content:
+    - 'block_content:basic:267ae2f6-e1a9-48e2-908b-e4c618f86946'
   module:
     - block_class
+    - block_content
     - system
-    - views
     - wxt_library
-  theme:
-    - pco_cities_bootstrap
 third_party_settings:
   block_class:
     classes: ''
-id: views_block__challenge_listing_front_page_listing
-theme: pco_cities_bootstrap
+id: challengeplatformcontact
 region: content
-weight: -9
+weight: -7
 provider: null
-plugin: 'views_block:challenge_listing-front_page_listing'
+plugin: 'block_content:267ae2f6-e1a9-48e2-908b-e4c618f86946'
 settings:
-  id: 'views_block:challenge_listing-front_page_listing'
-  label: ''
-  provider: views
+  id: 'block_content:267ae2f6-e1a9-48e2-908b-e4c618f86946'
+  label: 'Challenge Platform Contact'
+  provider: block_content
   label_display: visible
-  views_label: ''
-  items_per_page: none
+  status: true
+  info: ''
+  view_mode: full
 visibility:
   request_path:
     id: request_path

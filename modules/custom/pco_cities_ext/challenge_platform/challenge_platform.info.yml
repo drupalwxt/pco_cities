@@ -1,0 +1,38 @@
+name: 'Challenge Platform'
+description: 'Challenge Platform Features Export'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - block_class
+  - block_content
+  - content_translation
+  - ctools
+  - datetime
+  - double_field
+  - entity_browser
+  - entity_reference_revisions
+  - field
+  - field_formatter
+  - file
+  - group
+  - help
+  - image
+  - language
+  - lightning_core
+  - link
+  - metatag
+  - node
+  - panelizer
+  - paragraphs
+  - path
+  - pathauto
+  - system
+  - taxonomy
+  - telephone
+  - text
+  - user
+  - views
+  - workbench_moderation
+  - wxt_library
+version: 8.x-1.5-beta1
