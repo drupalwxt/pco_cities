@@ -8,10 +8,13 @@ dependencies:
     - block_content
     - system
     - wxt_library
+  theme:
+    - pco_cities_bootstrap
 third_party_settings:
   block_class:
     classes: ''
 id: challengeplatformcontact
+theme: pco_cities_bootstrap
 region: content
 weight: -7
 provider: null
