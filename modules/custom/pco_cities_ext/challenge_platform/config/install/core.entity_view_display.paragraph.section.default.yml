@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.section.field_section_content
-    - field.field.paragraph.section.field_section_heading
+    - field.field.paragraph.section.field_section_body
+    - field.field.paragraph.section.field_section_title
     - paragraphs.paragraphs_type.section
   module:
     - text
@@ -12,16 +12,16 @@ targetEntityType: paragraph
 bundle: section
 mode: default
 content:
-  field_section_content:
+  field_section_body:
     weight: 1
-    label: visually_hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_section_heading:
+  field_section_title:
     weight: 0
-    label: visually_hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }

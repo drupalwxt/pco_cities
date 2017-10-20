@@ -1,0 +1,168 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.challenge_steps.field_challengesteps
+    - field.field.node.challenge_steps.field_challengesteps_intro
+    - node.type.challenge_steps
+  module:
+    - entity_reference_revisions
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        blocks:
+          11d75718-d061-482f-b4fc-738026d33736:
+            id: 'entity_field:node:field_challengesteps'
+            label: Steps
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_revisions_entity_view
+              settings:
+                view_mode: default
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: left
+            weight: 1
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 11d75718-d061-482f-b4fc-738026d33736
+          72826307-25cf-4905-8430-2e135ee9e235:
+            id: 'entity_field:node:field_challengesteps_intro'
+            label: 'Introductory Text'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: left
+            weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 72826307-25cf-4905-8430-2e135ee9e235
+          4611a177-e879-463d-af3d-c410c76326c0:
+            id: 'views_block:challenge_content_blocks-challenge_title_blocks'
+            label: ''
+            provider: views
+            label_display: '0'
+            views_label: ''
+            items_per_page: none
+            region: top
+            weight: -10
+            uuid: 4611a177-e879-463d-af3d-c410c76326c0
+            context_mapping: {  }
+          2a87b6db-c9c2-44e4-b38d-5bab05486499:
+            id: 'system_menu_block:challenges'
+            label: Challenges
+            provider: system
+            label_display: '0'
+            level: 2
+            depth: 2
+            region: right
+            weight: 0
+            uuid: 2a87b6db-c9c2-44e4-b38d-5bab05486499
+            context_mapping: {  }
+          4e853ecd-2ec5-4cd1-91ec-bf38cc9b4014:
+            id: 'entity_field:node:title'
+            label: Title
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            region: left
+            weight: -1
+            uuid: 4e853ecd-2ec5-4cd1-91ec-bf38cc9b4014
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+        id: panels_variant
+        label: Default
+        uuid: 5f8d2451-2269-438d-9b88-717f3fb57248
+        weight: 0
+        layout: bs_2col_stacked
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            left:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+                col-md-8: col-md-8
+              add_region_classes: 1
+              attributes: ''
+            right:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+                col-md-4: col-md-4
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+        page_title: ''
+        storage_type: panelizer_default
+        storage_id: 'node:challenge_steps:default:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
+id: node.challenge_steps.default
+targetEntityType: node
+bundle: challenge_steps
+mode: default
+content:
+  field_challengesteps:
+    type: entity_reference_revisions_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_challengesteps_intro:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

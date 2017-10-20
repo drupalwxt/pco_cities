@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_step_completed
+    - paragraphs.paragraphs_type.challenge_step
+id: paragraph.challenge_step.field_step_completed
+field_name: field_step_completed
+entity_type: paragraph
+bundle: challenge_step
+label: Completed
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

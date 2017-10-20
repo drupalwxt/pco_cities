@@ -1,0 +1,49 @@
+// Header Block for challenge and their subsequent pages
+.challenge--title-block {
+
+    border-bottom: #CCC 1px solid;
+    padding: 4rem 2rem 4rem 2rem;
+
+
+    h1 {
+        border-bottom: none;
+        font-size: 7rem;
+        margin: 1rem 0 3rem 0;
+        font-weight: 100;
+    }
+
+    .department {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+
+    .dates {
+        margin-top: 1rem;
+    }
+}
+
+// Challenge landing page video field
+.field--name-field-challenge-video {
+    margin: 2rem 0;
+}
+
+.field--name-field-challenge-description {
+
+    @include desktop {
+        margin-top: 4rem;
+    }
+}
+
+// Panelizer styles
+.block-region-left {
+    @include desktop {
+        padding-left: 2rem;
+    }
+}
+
+.block-region-right {
+    @include desktop {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}

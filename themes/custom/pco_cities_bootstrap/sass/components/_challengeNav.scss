@@ -1,0 +1,36 @@
+.challenge-nav {
+
+
+
+    a {
+        color: $link-color;
+        padding: 0.5rem 1rem 0.5rem 2.5rem !important;
+
+        &:hover {
+            background: none !important;
+            color: $link-color-hover;
+        }
+
+
+    }
+
+    li.active > a {
+        font-weight: 600;
+    }
+
+    .expanded.active {
+        border-top: $goc-grey 1px solid;
+
+        @include desktop {
+            border-top: none;
+            margin-top: 4rem;
+        }
+
+        & > a {
+            padding-left: 0.5rem !important;
+            font-weight: 300 !important;
+        }
+    }
+
+
+}

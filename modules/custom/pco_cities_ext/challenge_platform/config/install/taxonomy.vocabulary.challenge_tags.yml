@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Challenge Tags'
-vid: challenge_tags
-description: 'Taxonomy tags related to challenges and their submissions'
-hierarchy: 0
-weight: 0

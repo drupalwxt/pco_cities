@@ -3,6 +3,6 @@ status: true
 dependencies: {  }
 id: section
 label: Section
-icon_uuid: null
-description: 'Section shown on a submission guide page'
+icon_uuid: 10c2c4e7-0eee-42c3-b04c-a9473d1dcaf6
+description: ''
 behavior_plugins: {  }

@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: challenge_date
-label: 'Challenge Date'
-locked: false
-pattern: 'F j, Y'

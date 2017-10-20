@@ -1,0 +1,20 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sectionedpage.field_sectionpage_content
+    - node.type.sectionedpage
+  module:
+    - user
+id: node.sectionedpage.teaser
+targetEntityType: node
+bundle: sectionedpage
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_sectionpage_content: true
+  langcode: true

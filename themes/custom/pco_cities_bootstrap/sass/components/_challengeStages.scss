@@ -1,0 +1,115 @@
+
+
+.field--name-field-challengesteps {
+    margin: 2rem 8rem;
+
+    .timeline-event {
+        display: block;
+        position: relative;
+        padding: 2rem 4rem;
+
+
+        &::before {
+            display: block;
+            content: '';
+            height: 100%;
+            width: 3px;
+            background: $timeline-border-color;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+
+        &::after {
+            display: block;
+            content: '';
+            height: 4rem;
+            width: 4rem;
+            position: absolute;
+            top:50%;
+            left:-2rem;
+            border-radius: 50%;
+            border: $timeline-border-color 3px solid;
+            transform: translateY(-50%);
+            background: $content-bg-color;
+        }
+
+        &.completed::after {
+            background: $timeline-completed-color;
+        }
+
+
+        .timeline--event-name {
+            font-weight: bold;
+        }
+
+        .timeline--event-date {
+            color: #777;
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+
+        .timeline--description {
+            margin-top: 1rem;
+            font-size: 1.45rem;
+            line-height: 2.25rem;
+        }
+
+        .timeline--triangle--outer {
+            position: absolute;
+            content: '';
+                display: block;
+                height: 0;
+                width: 0;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-right: 15px solid $timeline-border-color;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 3.5rem;
+                position: absolute;
+        }
+
+        .timeline--triangle--inner {
+            position: absolute;
+            content: '';
+            display: block;
+            height: 0;
+            width: 0;
+            border-top: 14px solid transparent;
+            border-bottom: 14px solid transparent;
+            border-right: 14px solid $timeline-bubble-fill;
+            position: absolute;
+            top: -14px;
+            left: 3px;
+
+
+        }
+
+        .timeline--triangle--inner {}
+
+        .timeline--event--container {
+            border: $timeline-border-color 2px solid;
+            padding: 2rem;
+            margin-left: 10px;
+            position: relative;
+            border-radius: $std-border-radius;
+            background: $timeline-bubble-fill;
+        }
+
+    }
+
+    .timeline-event:first-child::before {transform: translateY(50%); }
+    .timeline-event:last-child::before {height:50%; }
+
+    // Current stage
+
+    & > .timeline-event.completed + .timeline-event:not(.completed) {
+        position: relative;
+
+        &::after {
+            background: $timeline-current-color;
+        }
+    }
+
+}

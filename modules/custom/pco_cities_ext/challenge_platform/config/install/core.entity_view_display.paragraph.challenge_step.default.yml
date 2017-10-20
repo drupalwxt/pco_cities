@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.challenge_step.field_step_completed
+    - field.field.paragraph.challenge_step.field_step_date
+    - field.field.paragraph.challenge_step.field_step_description
+    - field.field.paragraph.challenge_step.field_step_title
+    - paragraphs.paragraphs_type.challenge_step
+  module:
+    - datetime
+id: paragraph.challenge_step.default
+targetEntityType: paragraph
+bundle: challenge_step
+mode: default
+content:
+  field_step_completed:
+    weight: 2
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_step_date:
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'd F Y'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_step_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_step_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

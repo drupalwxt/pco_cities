@@ -1,0 +1,197 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.challenge.field_challenge_date_end
+    - field.field.node.challenge.field_challenge_date_start
+    - field.field.node.challenge.field_challenge_department
+    - field.field.node.challenge.field_challenge_description
+    - field.field.node.challenge.field_challenge_image
+    - field.field.node.challenge.field_challenge_video
+    - node.type.challenge
+  module:
+    - datetime
+    - image
+    - panelizer
+    - text
+    - user
+    - video_embed_field
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        blocks:
+          6d6ee4f6-da24-4a13-9c58-641041a50e73:
+            id: 'entity_field:node:field_challenge_description'
+            label: Description
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: left
+            weight: -10
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 6d6ee4f6-da24-4a13-9c58-641041a50e73
+          dad53dba-b29b-4183-8401-da48e88ae8b6:
+            id: 'entity_field:node:field_challenge_video'
+            label: Video
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: video_embed_field_video
+              settings:
+                autoplay: false
+                responsive: true
+                width: 854
+                height: 480
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: left
+            weight: -10
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: dad53dba-b29b-4183-8401-da48e88ae8b6
+          e57e5920-08c3-4023-97fe-9e02d318573a:
+            id: 'system_menu_block:challenges'
+            label: Challenges
+            provider: system
+            label_display: '0'
+            level: 2
+            depth: 2
+            region: right
+            weight: -4
+            uuid: e57e5920-08c3-4023-97fe-9e02d318573a
+            context_mapping: {  }
+          c33b6988-6712-4df0-90b6-7c88c4cab356:
+            id: 'views_block:challenge_content_blocks-challenge_title_blocks'
+            label: ''
+            provider: views
+            label_display: '0'
+            views_label: ''
+            items_per_page: none
+            region: top
+            weight: 0
+            uuid: c33b6988-6712-4df0-90b6-7c88c4cab356
+            context_mapping: {  }
+        id: panels_variant
+        label: Default
+        uuid: 1c6488c5-2320-4181-bf2c-927a40c30593
+        weight: 0
+        layout: bs_2col_stacked
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            left:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+                col-md-8: col-md-8
+              add_region_classes: 1
+              attributes: ''
+            right:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+                col-md-4: col-md-4
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+        page_title: ''
+        storage_type: panelizer_default
+        storage_id: 'node:challenge:default:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
+id: node.challenge.default
+targetEntityType: node
+bundle: challenge
+mode: default
+content:
+  field_challenge_date_end:
+    weight: 105
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: challenge_date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_challenge_date_start:
+    weight: 104
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: challenge_date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_challenge_department:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_challenge_description:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_challenge_image:
+    weight: 108
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_challenge_video:
+    weight: 103
+    label: above
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
