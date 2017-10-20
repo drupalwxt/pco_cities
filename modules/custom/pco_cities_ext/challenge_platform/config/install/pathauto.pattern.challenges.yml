@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: challenges
+label: Challenges
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:menu-link]'
+selection_criteria:
+  f95eaa6e-2767-416e-8978-7a2a22ea3068:
+    id: node_type
+    bundles:
+      challenge: challenge
+      challenge_page: challenge_page
+      challenge_steps: challenge_steps
+    negate: false
+    context_mapping:
+      node: node
+    uuid: f95eaa6e-2767-416e-8978-7a2a22ea3068
+  b5b92f25-3714-4bc1-94f4-98ec6730bd64:
+    id: language
+    langcodes:
+      en: en
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: b5b92f25-3714-4bc1-94f4-98ec6730bd64
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

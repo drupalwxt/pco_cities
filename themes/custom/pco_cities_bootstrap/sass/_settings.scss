@@ -1,0 +1,50 @@
+// Colour Pallet
+
+$primary-color: #007897;
+$secondary-color: #053046;
+
+$goc-blue: #335075;
+$goc-grey: #777777;
+
+$white: #F3F3F3;
+$black: #000000;
+
+$content-bg-color: #EDEDED;
+
+$link-color: $primary-color;
+$link-color-hover: lighten($link-color, 20);
+
+// Navigation
+$nav-color          : $primary-color;
+$nav-color-active   : $secondary-color;
+
+
+// Challenge Section Pages Settings
+
+// Challenge Listing Settings
+$std-border-radius: 0.5rem;
+
+// Challenge Timeline
+$timeline-not-completed-color: #FFF;
+$timeline-completed-color: #555;
+$timeline-border-color: #CCC;
+
+$timeline-current-color: $primary-color;
+
+$timeline-bubble-fill: $white;
+
+// Font Imports
+@include font-face("HKGrotesk", "fonts/HKGrotesk-Bold",600);
+@include font-face("HKGrotesk", "fonts/HKGrotesk-BoldItalic", 600, italic);
+
+@include font-face("HKGrotesk", "fonts/HKGrotesk-SemiBold",500);
+@include font-face("HKGrotesk", "fonts/HKGrotesk-SemiBoldItalic",500, italic);
+
+
+@include font-face("HKGrotesk", "fonts/HKGrotesk-Medium",400);
+@include font-face("HKGrotesk", "fonts/HKGrotesk-MediumItalic",400, italic);
+
+@include font-face("HKGrotesk", "fonts/HKGrotesk-Regular",300);
+
+@include font-face("HKGrotesk", " fonts/HKGrotesk-Light",100);
+@include font-face("HKGrotesk", " fonts/HKGrotesk-LightItalic",100, italic);

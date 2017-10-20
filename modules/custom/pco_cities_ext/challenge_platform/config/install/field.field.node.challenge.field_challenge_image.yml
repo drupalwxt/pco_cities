@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenge_image
+    - node.type.challenge
+  module:
+    - image
+id: node.challenge.field_challenge_image
+field_name: field_challenge_image
+entity_type: node
+bundle: challenge
+label: 'Challenge Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'challenge-images/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png jpg jpeg'
+  max_filesize: 300KB
+  max_resolution: 1920x1080
+  min_resolution: 1280x720
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: 432835d2-aeda-4ac3-8718-a1d80828091b
+    alt: 'Challenge Image'
+    title: ''
+    width: 1920
+    height: 1080
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

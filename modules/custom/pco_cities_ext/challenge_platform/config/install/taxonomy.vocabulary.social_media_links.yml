@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Social Media Links'
-vid: social_media_links
-description: ''
-hierarchy: 0
-weight: 0

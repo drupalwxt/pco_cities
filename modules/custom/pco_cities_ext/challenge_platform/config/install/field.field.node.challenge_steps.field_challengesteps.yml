@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challengesteps
+    - node.type.challenge_steps
+    - paragraphs.paragraphs_type.challenge_step
+  module:
+    - entity_reference_revisions
+id: node.challenge_steps.field_challengesteps
+field_name: field_challengesteps
+entity_type: node
+bundle: challenge_steps
+label: Steps
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      challenge_step: challenge_step
+    target_bundles_drag_drop:
+      challenge_step:
+        enabled: true
+        weight: 3
+      section:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

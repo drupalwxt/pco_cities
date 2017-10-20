@@ -1,0 +1,25 @@
+.path-frontpage {
+
+    h1 {
+        border-bottom: none;
+        margin: 5rem 2rem 0rem 2rem;
+    }
+
+    .field--name-body {
+        border-bottom: $black 1px solid;
+
+        p {
+            font-size: 2rem;
+            margin: 3rem;
+            max-width: 85rem;
+        }
+    }
+
+    .block-region-content .tabs {
+        display: none;
+    }
+
+    .block-views-blockchallenge-listing-block-1 {
+        padding: 0 2rem;
+    }
+}

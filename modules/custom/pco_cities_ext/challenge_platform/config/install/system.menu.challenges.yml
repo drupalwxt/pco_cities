@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: challenges
+label: Challenges
+description: 'Menu of all the challenges'
+locked: false
