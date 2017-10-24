@@ -4,70 +4,76 @@
  * Defines gulp tasks to be run by Gulp task runner.
  */
 
-/* eslint-env node */
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync');
 
-var gulp = require('gulp');
+// Browser Sync Settings
+const browserSyncProxy = 'http://pco-challenge.dev';
+const browserSyncPort = 3000;
 
-// ========== CONFIG ==========
+// Child Process for running drush commands
+const childProcess = require('child_process');
 
-var sassSrcDir = 'sass';
-var sassDestDir = 'css';
-
-// Patterns that Sass should watch for reprocessing.
-// Glob pattern documentation: https://github.com/isaacs/node-glob.
-var sassWatchPatterns = [
-  sassSrcDir + '/**.scss'
-];
-
-// Host:port that the backend server (Apache, Nginx..) is listening on.
-var reloadBackend = 'localhost:8081';
-
-// Port used for main web connection.
-var reloadFrontendPort = 8080;
-
-// Patterns that reload server should watch for changes.
-
-// Note: Any stylesheet compiled by Sass shouldn't need to be watched here
-// because they should be injected into the HTML automatically by the
-// 'sass' task.
-var reloadWatchPatterns = [
-  '/**/*.@(png|jpe?g|gif|ico|svg|tiff)'
-];
-
-// ========== SASS ==========
-var sass = require('gulp-sass');
-
-gulp.task('sass', function () {
+// Drush Commands
+gulp.task('drush:cr', function(done){
   'use strict';
-  return gulp.src(sassSrcDir + '/*.scss')
-    .pipe(sass(/*{outputStyle: 'compressed'}*/).on('error', sass.logError))
-    .pipe(gulp.dest(sassDestDir))
+
+  return childProcess.spawn('drush', ['cr'], {stdio: 'inherit'})
+          .on('close', done);
+});
+
+// Browser Sync Manual Reload
+gulp.task('browserSyncReload', function() {
+  'use strict';
+
+  browserSync.reload();
+});
+
+// SASS Compilation
+gulp.task('sass', function() {
+  'use strict';
+
+  gulp.src('sass/style.scss')
+    .pipe(sass({ outputStyle: 'compressed' })
+      .on('error', sass.logError))
+    .pipe(gulp.dest('css'))
     .pipe(browserSync.stream());
 });
 
-gulp.task('sass:watch', ['sass'], function () {
+gulp.task('sass:watch', ['sass'], function(){
   'use strict';
-  gulp.watch(sassWatchPatterns, ['sass']);
+
+  gulp.watch('sass/**/**.scss', ['sass']);
 });
 
-// ========== BROWSER-SYNC / RELOAD ==========
+// Browser Sync
+gulp.task('browser-sync', function(){
+  'use strict';
 
-var browserSync = require('browser-sync');
-var reload  = browserSync.reload;
+  browserSync({
+    proxy: browserSyncProxy,
+    port: browserSyncPort
+  });
 
-gulp.task('browser-sync', function() {
-    'use strict';
-    browserSync({
-        proxy: reloadBackend,
-        port: reloadFrontendPort,
-        open: true,
-        notify: false
-    });
 });
 
-// ========== MAIN WATCH ==========
+// Template File Changes
+gulp.task('twig:watch', function(){
+  'use strict';
 
-gulp.task('watch', ['browser-sync', 'sass:watch'], function () {
-    'use strict';
-    gulp.watch(reloadWatchPatterns, reload);
+  gulp.watch('templates/**/**.html.twig', ['drush:cr', 'browserSyncReload']);
 });
+
+// Assets Watch
+gulp.task('assets:watch', function(){
+  'use strict';
+
+  gulp.watch(['assets/**/**.*'], ['drush:cr','browserSyncReload']);
+});
+
+// Default Task
+gulp.task('default', ['sass']);
+
+// Dev Environment tasks
+gulp.task('dev', ['browser-sync','sass:watch','twig:watch','assets:watch']);
