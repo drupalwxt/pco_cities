@@ -31,6 +31,9 @@ bower_components/
 *.sass-cache*
 **/sass/*.css
 
+#Compiled CSS
+**/css/*.css
+
 # PCO Cities
 test-results
 files_private/
