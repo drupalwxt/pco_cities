@@ -17,7 +17,7 @@ cdn_provider: ''
 # Allow for breadcrumb to be shown.
 breadcrumb_home: 1
 # GCWeb settings.
-wxt_gcweb_cdn: 1
-wxt_gcweb_cdn_goc_init: 1
-wxt_gcweb_footer: 0
-wxt_gcweb_search: 1
+wxt_gcweb_cdn: 0
+wxt_gcweb_cdn_goc_init: 0
+wxt_gcweb_footer: 1
+wxt_gcweb_search: 0
