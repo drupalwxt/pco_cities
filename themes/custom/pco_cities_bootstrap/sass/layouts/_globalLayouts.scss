@@ -1,63 +1,68 @@
 
 .beta-banner {
-  background-color: $black;
-  padding: 1.25rem;
-  color: $white;
-  font-size: .8em;
+  background-color  : $black;
+  color             : $white;
+  font-size         : 0.8em;
+  padding           : 1.25rem;
 
   span.pill {
-    padding: 2px 4px;
-    color: $black;
-    background-color: #ecc933;
-    margin-right: 0.5rem;
+    background-color : #ecc933;
+    color            : $black;
+    margin-right     : 0.5rem;
+    padding          : 2px 4px;
   }
 }
 
-#wb-bc { background-color: #fff; }
+#wb-bc {
+  background-color : #fffff;
+}
 
 #wb-sm {
-  background-color: $primary-color;
+  background-color : $primary-color;
 
   .menu {
     text-shadow: none;
 
-    .wb-navcurr { background-color: $nav-color-active !important; }
+    .wb-navcurr {
+      background-color: $nav-color-active !important;
+    }
 
-    li a:hover { background-color: $nav-color-active !important; }
+    li a:hover {
+      background-color: $nav-color-active !important;
+    }
+
   }
 
 }
 
 #wb-bnr {
-
-    @include desktop {
-        padding-top: 1.45rem;
-        padding-bottom: 1rem;
-    }
+  @include desktop {
+      padding-bottom : 1rem;
+      padding-top    : 1.45rem;
+  }
 }
 
 #wb-glb-mn {
-    @media  screen and (min-width: 767px) { margin-top: 8px; }
-
-    @media  screen and (max-width: 767px) { margin-top: 8px; }
-    @media screen and (max-width: 479px) {margin-top:0;}
+  @media screen and (min-width: 767px) { margin-top: 8px; }
+  @media screen and (max-width: 767px) { margin-top: 8px; }
+  @media screen and (max-width: 479px) { margin-top: 0;   }
 }
 
 .langbar {
-    @include desktop {
-        margin-top:0.25rem;
-    }
+  @include desktop {
+    margin-top:0.25rem;
+  }
 }
 
 header {
-    .brand img, .brand object {
-        height: 1.5em;
-    }
+  .brand img, .brand object {
+    height: 1.5em;
+  }
 
-    #wb-lng a.language-link {
-       font-size: .9em;
-       text-decoration: none;
-    }
+  #wb-lng a.language-link {
+    font-size: .9em;
+    text-decoration: none;
+  }
 }
 
 
