@@ -21,6 +21,15 @@
   background-color : #fff;
 }
 
+#wb-sttl {
+
+  margin: 20px 0 20px 0;
+
+  &:visited {
+    color: #000;
+  }
+}
+
 #wb-sm {
   background-color : #fff;
   color: #000;
@@ -42,6 +51,7 @@
       border: none;
       width: 20%;
       float: left;
+      background-color: #fff !important;
     }
 
     li:last-child {
