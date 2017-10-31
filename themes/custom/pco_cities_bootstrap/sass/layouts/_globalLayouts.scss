@@ -99,9 +99,15 @@ header {
     height: 1.5em;
   }
 
-  #wb-lng a.language-link {
-    font-size: .9em;
-    text-decoration: none;
+  #wb-lng {
+    a.language-link {
+      color: #000;
+      font-size: .9em;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
