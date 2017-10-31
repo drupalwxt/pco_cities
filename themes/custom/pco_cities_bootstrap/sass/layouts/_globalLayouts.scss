@@ -106,8 +106,11 @@ header {
 }
 
 .toc-section {
-  text-transform: uppercase;
+  height: 80px;
+  line-height: 80px;
+  vertical-align: center;
   a {
+    text-transform: uppercase;
     display: inline-block;
     margin-right: 30px;
   }
