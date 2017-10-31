@@ -56,11 +56,15 @@
  * @see html.html.twig
  */
 #}
+
+{# ----------- END HEADER CONTENT ----------- #}
+
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 
 <div class="beta-banner">
   <div class="container">
-    <span class="pill">BETA</span> This is a new service, we are constantly improving.
+    <span class="pill">{{"BETA" | t}}</span>
+    {{ "This is a new service, we are constantly improving." | t}}
   </div>
 </div>
 
@@ -140,9 +144,6 @@
 
 
 
-
-
-
         {# Highlighted #}
         {% if page.highlighted %}
           {% block highlighted  %}
@@ -165,18 +166,37 @@
             {# Header #}
             {% if page.header %}
               {% block header %}
+
+                {# if frontpage #}
+                {% if is_front %}
+                  <div class="homepage--header">
+                    <h1>
+                      {{ "Help us solve Canada’s biggest challenges." | t }}
+                      <span class="small">{{"The Government of Canada wants innovative solutions to economic, environmental, and social problems." | t}}</span>
+                    </h1>
+
+                    <div class="homepage--header--actionlinks">
+                      <ul>
+                        <li><a href="/challenges">{{"See the challenges" | t }}</a></li>
+                        <li><a href="/how-it-works">{{"How it works" | t }}</a></li>
+                      </ul>
+                    </div>
+                </div>
+                {% endif %}
+
                 {{ page.header }}
               {% endblock %}
             {% endif %}
 
             <section>
 
-              {# Breadcrumbs #}
+              {# Breadcrumbs
               {% if breadcrumb %}
                 {% block breadcrumb %}
                   {{ breadcrumb }}
                 {% endblock %}
               {% endif %}
+              #}
 
               {# Action Links #}
               {% if action_links %}
