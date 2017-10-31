@@ -22,11 +22,14 @@
 }
 
 #wb-sttl {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 
-  margin: 20px 0 20px 0;
-
-  &:visited {
-    color: #000;
+  a {
+    font-weight: bold;
+    &:visited {
+      color: #000;
+    }
   }
 }
 
@@ -37,40 +40,37 @@
 
   .menu {
     text-shadow: none;
-    table-layout: fixed;
 
     .wb-navcurr {
       background-color: $nav-color-active !important;
     }
 
-    li:first-child {
-      left: -10px;
-    }
-
     li {
-      border: none;
-      width: 20%;
       float: left;
       background-color: #fff !important;
-    }
-
-    li:last-child {
       border: none;
-    }
+      margin-right: 40px;
 
-    li a {
-      color: #000;
-      text-transform: uppercase;
-      text-align: left;
-      padding: 6px 10px;
-      display: inline;
-    }
+      &:first-child {
+        margin-left: -10px;
+      }
 
-    li a:hover {
-      color: #fff;
-      background-color: $nav-color-active !important;
-    }
+      &:last-child {
+        border: none;
+      }
 
+      a {
+        color: #000;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 6px 10px;
+        display: inline;
+        &:hover, &:active {
+          color: #fff;
+          background-color: $nav-color-active !important;
+        }
+      }
+    }
   }
 
 }
