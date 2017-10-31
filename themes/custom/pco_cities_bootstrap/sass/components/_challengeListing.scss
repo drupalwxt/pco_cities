@@ -4,48 +4,57 @@
     }
 }
 
-.challenge-item {
-    box-shadow: 0 0 2px rgba(0,0,0,0.1);
-    margin: 2rem 0;
-    border: $secondary-color 2px solid;
-    background: #FFF;
-    transition: box-shadow 0.15s ease-in-out;
+.challenge-item--container {
+    &:nth-child(0n+1) .challenge-item {margin-right: 0.75em}
+    &:nth-child(2n) .challenge-item {margin-left: 0.75em}
+}
 
-    &:hover {
-        box-shadow: 0 0 15px rgba(0,0,0,0.25);
-        border-color: $primary-color;
-    }
+
+.challenge-item {
+    //box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+    border: $icc-blue 2px solid;
+    background: #FFF;
+
+
 
     .content {
-        padding: 2rem;
+        padding: 2.25rem 2.5rem;
+        font-weight: 700;
+        color: $black;
     }
 
     .title {
-        font-size: 3rem;
+        font-size: 3.25rem;
         line-height: 4.5rem;
-        color: $black;
+        font-weight: 600;
+        color: $white;
+        background: $icc-blue;
+        padding: 4em 0.8em 0.35em 0.8em;
     }
 
 
 
     .dates {
-        font-size: 1.25rem;
-        font-weight: 300;
-        color: $black;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 0.75em;
     }
 
     .department {
-        font-size: 1.5rem;
-        color: $black;
-    }
+        font-size: 1.65rem;
 
+        text-transform: uppercase;
+
+    }
+    /*
     .image {
         height: 16rem;
         overflow: hidden;
 
         img {object-fit: cover;}
     }
-
+    */
     .details {
         margin-top: 2rem;
     }
