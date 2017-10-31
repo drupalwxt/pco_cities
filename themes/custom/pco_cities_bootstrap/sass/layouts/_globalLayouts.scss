@@ -27,6 +27,11 @@
 
   a {
     font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: #000 1px solid;
+
     &:visited {
       color: #000;
     }
