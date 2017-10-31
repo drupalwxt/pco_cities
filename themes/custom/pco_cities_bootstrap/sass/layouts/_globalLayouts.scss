@@ -105,5 +105,11 @@ header {
   }
 }
 
-
+.toc-section {
+  text-transform: uppercase;
+  a {
+    display: inline-block;
+    margin-right: 30px;
+  }
+}
 
