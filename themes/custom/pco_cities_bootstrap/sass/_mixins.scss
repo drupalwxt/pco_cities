@@ -18,14 +18,7 @@
 }
 
 
-// Typography Conversion Functions
-@function pt-to-em($value) {
-    @return $value/12;
-}
 
-@function letterspacing-to-em($value) {
-    @return $value/1000;
-}
 
 // Font Imports
 
