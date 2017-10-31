@@ -21,6 +21,12 @@
 
   .block-views-blockchallenge-listing-block-1 {
       padding : 0 2rem;
+
+      .block-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.4em;
+      }
   }
 }
 
@@ -34,6 +40,7 @@
   background-position: top center;
   padding: 4em 4em;
   position: relative;
+
 
   h1 {
     font-size: 2.1em;
@@ -53,7 +60,7 @@
 
 }
 
-.homepage--header--content {}
+
 
 .homepage--header--actionlinks {
   margin-top: 2.5em;

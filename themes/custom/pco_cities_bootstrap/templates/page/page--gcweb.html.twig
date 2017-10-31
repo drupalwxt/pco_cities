@@ -135,6 +135,25 @@
   {% endblock %}
 {% endif %}
 
+{# if frontpage #}
+{% if is_front %}
+  <div class="homepage--header ">
+    <div class="homepage--header--content container">
+    <h1 id="wb-cont" property="name">
+      {{ "Help us solve Canada’s biggest challenges." | t }}
+      <span class="small">{{"The Government of Canada wants innovative solutions to <strong>economic</strong>, <strong>environmental</strong>, and <strong>social</strong> problems." | t}}</span>
+    </h1>
+
+    <div class="homepage--header--actionlinks">
+      <ul class="list-inline">
+        <li><a href="/challenges">{{"See the challenges" | t }}</a></li>
+        <li><a href="/how-it-works">{{"How it works" | t }}</a></li>
+      </ul>
+    </div>
+    </div>
+</div>
+{% endif %}
+
 {# Main #}
 {% block main %}
   <div class="pcocp-container">
@@ -159,6 +178,9 @@
             page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
           ]
         %}
+
+
+
         <main role="main" property="mainContentOfPage" {{ content_attributes.addClass(content_classes, 'main-container', container, 'js-quickedit-main-content') }}>
           <section class="inner">
 
@@ -166,24 +188,7 @@
             {% if page.header %}
               {% block header %}
 
-                {# if frontpage #}
-                {% if is_front %}
-                  <div class="homepage--header">
-                    <div class="homepage--header--content">
-                    <h1>
-                      {{ "Help us solve Canada’s biggest challenges." | t }}
-                      <span class="small">{{"The Government of Canada wants innovative solutions to <strong>economic</strong>, <strong>environmental</strong>, and <strong>social</strong> problems." | t}}</span>
-                    </h1>
 
-                    <div class="homepage--header--actionlinks">
-                      <ul class="list-inline">
-                        <li><a href="/challenges">{{"See the challenges" | t }}</a></li>
-                        <li><a href="/how-it-works">{{"How it works" | t }}</a></li>
-                      </ul>
-                    </div>
-                    </div>
-                </div>
-                {% endif %}
 
                 {{ page.header }}
               {% endblock %}
