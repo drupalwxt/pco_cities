@@ -120,14 +120,22 @@ header {
   }
 }
 
-.toc-section {
-  height: 80px;
-  line-height: 80px;
-  vertical-align: center;
-  a {
-    text-transform: uppercase;
-    display: inline-block;
-    margin-right: 30px;
+#wb-info {
+  nav {
+    padding: 0;
+    height: 80px;
+    line-height: 80px;
+    vertical-align: center;
+    li {
+      height: auto;
+      width: auto;
+      margin: 0;
+    }
+    a {
+      color: #000;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-right: 30px;
+    }
   }
 }
-
