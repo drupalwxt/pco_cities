@@ -9,3 +9,4 @@ dependencies:
   - drupal:wxt_ext_blog
   - drupal:wxt_ext_page
   - drupal:challenge_platform
+  - drupal:pco_content
