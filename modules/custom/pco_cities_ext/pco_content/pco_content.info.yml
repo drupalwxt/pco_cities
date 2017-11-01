@@ -1,0 +1,8 @@
+name: 'PCO Content'
+type: module
+hidden: TRUE
+description: 'Default content'
+package: PCO Content
+core: 8.x
+dependencies:
+  - default_content:default_content
