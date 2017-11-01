@@ -46,6 +46,10 @@
   .menu {
     text-shadow: none;
 
+    @media screen and (max-width: 1199px) {
+      border-right: none;
+    }
+
     .wb-navcurr {
       background-color: $nav-color-active !important;
     }
