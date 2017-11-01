@@ -204,7 +204,9 @@
 
 // Panelizer styles
 
-
+.bs-region--top {
+  margin-bottom: 1em;
+}
 .block-region-right {
   @include desktop {
     padding-left: 2rem;
