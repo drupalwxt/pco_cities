@@ -1,0 +1,177 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/en\/how-it-works?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 6
+        }
+    ],
+    "uuid": [
+        {
+            "value": "dae4f8a4-1607-4373-9d9c-9ecec1c5a208"
+        }
+    ],
+    "vid": [
+        {
+            "value": 9
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "page"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "How it works",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d8200104-848b-415a-be63-66c6d12e4b7a"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d8200104-848b-415a-be63-66c6d12e4b7a"
+                    }
+                ]
+            }
+        ]
+    },
+    "created": [
+        {
+            "value": 1509553101,
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1509553350,
+            "lang": "en"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": 1509553350
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| PCO Challenge Platform",
+                "canonical_url": "http:\/\/default\/en\/how-it-works",
+                "description": "Challenges offer funding and other resources to help innovators put their ideas into action.\n\nThe Government of Canada is issuing challenges to Canadians and global innovators to generate innovative solutions to some of the biggest issues that face Canadians and their communities. These challenges reward the best ideas and focus on achieving stronger social, environmental, and economic outcomes for citizens."
+            }
+        }
+    ],
+    "moderation_state": [
+        {
+            "target_id": "published",
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<h2>Challenges offer funding and other resources to help innovators put their ideas into action.<\/h2>\r\n\r\n<p>The Government of Canada is issuing challenges to Canadians and global innovators to generate innovative solutions to some of the biggest issues that face Canadians and their communities. These challenges reward the best ideas and focus on achieving stronger social, environmental, and economic outcomes for citizens.<\/p>\r\n\r\n<p>In general, prize rewards available through each challenge will fall under the rules that pertain to grants and contributions funding within the Government of Canada and the Terms and Conditions of the Impact Canada Initiative led by the Privy Council Office.<\/p>\r\n\r\n<h2>Challenges are issued by Government of Canada departments.<\/h2>\r\n\r\n<p>At this time, only Government of Canada departments are able to post challenges on this website. These challenges will cover economic, social and environmental issues in the Government of Canadas top priority areas.<\/p>\r\n\r\n<p>Our vision is to build a platform for collaborative challenges across the Government of Canada that include partnerships with provinces and territories, municipalities, Indigenous governments, and non-government organizations.<\/p>\r\n\r\n<h2>Ideas and solutions can come from a diverse group of innovators.\u2028<\/h2>\r\n\r\n<p>With a variety of challenges covering a range of topics, innovators and problem solvers from all sectors (not-for-profit, academia, industry, government, etc.) are encouraged to search through challenges to find issues that are of interest. Where it makes sense, organizations from different sectors could work together to take a fresh look at an old problem.<\/p>\r\n\r\n<h2>A good response depends on the specific challenge.<\/h2>\r\n\r\n<p>There is no one formula that can be applied to respond to a challenge. The most important thing is to understand the specific rules and requirements that pertain to each challenge to put forward a solid response. In general, though, a response will need to show that real impact has been achieved and that outcomes for citizens can, or have been, improved in a measurable way.<\/p>\r\n\r\n<h2>Each challenge will have a specific process to follow.<\/h2>\r\n\r\n<p>This could include a number of different possibilities, from submitting ideas that are evaluated by expert juries, to offering a prize reward for the first organization to achieve a particular outcome. A challenge will customize its processes and funding opportunities in a way that best helps achieve a solution to a particular problem.<\/p>\r\n",
+            "format": "rich_text",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1509553228,
+            "last_comment_name": null,
+            "last_comment_uid": 1,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ]
+}

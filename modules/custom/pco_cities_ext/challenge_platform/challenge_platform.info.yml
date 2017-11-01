@@ -26,5 +26,6 @@ dependencies:
   - views
   - workbench_moderation
   - wxt_library
+  - default_content
 version: 8.x-1.0
 description: 'Challenge Platform Feature Export (Node Entity Based Implementation)'

@@ -1,0 +1,174 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/en\/home?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 7
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a265979e-ba76-45a0-acc7-ed71a154e47c"
+        }
+    ],
+    "vid": [
+        {
+            "value": 11
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "landing_page"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Welcome to the Impact Canada Challenge Platform",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d8200104-848b-415a-be63-66c6d12e4b7a"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d8200104-848b-415a-be63-66c6d12e4b7a"
+                    }
+                ]
+            }
+        ]
+    },
+    "created": [
+        {
+            "value": 1509554027,
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1509554126,
+            "lang": "en"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": 1509554126
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| PCO Challenge Platform",
+                "canonical_url": "http:\/\/default\/en\/home",
+                "description": "Innovating to Solve Canada\u2019s Big Challenges: The Government of Canada is seeking innovative solutions to address persistent economic, environmental and social problems."
+            }
+        }
+    ],
+    "moderation_state": [
+        {
+            "target_id": "published",
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Innovating to Solve Canada\u2019s Big Challenges: The Government of Canada is seeking innovative solutions to address persistent economic, environmental and social problems.<\/p>\r\n",
+            "format": "rich_text",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "panelizer": [
+        {
+            "view_mode": "full",
+            "default": "__bundle_default__",
+            "panels_display": [],
+            "lang": "en"
+        }
+    ]
+}
