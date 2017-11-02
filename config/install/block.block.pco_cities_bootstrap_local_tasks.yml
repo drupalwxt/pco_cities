@@ -1,0 +1,22 @@
+uuid: 2f19e9df-853a-4200-873a-458aeb5a0657
+langcode: en
+status: false
+dependencies:
+  theme:
+    - pco_cities_bootstrap
+_core:
+  default_config_hash: 88SblcBfmnUQ4AZLXGBiQTh5iQFqdbV-iKLFbXJGsU4
+id: pco_cities_bootstrap_local_tasks
+theme: pco_cities_bootstrap
+region: header
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
