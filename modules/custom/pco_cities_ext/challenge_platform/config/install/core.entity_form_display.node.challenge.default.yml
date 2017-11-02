@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
     - field.field.node.challenge.field_challenge_image
-    - field.field.node.challenge.field_challenge_video
+    - field.field.node.challenge.field_challenge_sidebar_content
     - image.style.thumbnail
     - node.type.challenge
   module:
@@ -15,7 +15,6 @@ dependencies:
     - image
     - path
     - text
-    - video_embed_field
     - workbench_moderation
 id: node.challenge.default
 targetEntityType: node
@@ -59,11 +58,13 @@ content:
       progress_indicator: throbber
     region: content
     third_party_settings: {  }
-  field_challenge_video:
-    weight: 3
-    settings: {  }
+  field_challenge_sidebar_content:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-    type: video_embed_field_textfield
+    type: text_textarea
     region: content
   langcode:
     type: language_select

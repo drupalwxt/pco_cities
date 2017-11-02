@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
     - field.field.node.challenge.field_challenge_image
-    - field.field.node.challenge.field_challenge_video
+    - field.field.node.challenge.field_challenge_sidebar_content
     - node.type.challenge
   module:
     - datetime
@@ -15,7 +15,6 @@ dependencies:
     - panelizer
     - text
     - user
-    - video_embed_field
 third_party_settings:
   panelizer:
     enable: true
@@ -42,27 +41,6 @@ third_party_settings:
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: 6d6ee4f6-da24-4a13-9c58-641041a50e73
-          dad53dba-b29b-4183-8401-da48e88ae8b6:
-            id: 'entity_field:node:field_challenge_video'
-            label: Video
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: hidden
-              type: video_embed_field_video
-              settings:
-                autoplay: false
-                responsive: true
-                width: 854
-                height: 480
-              third_party_settings: {  }
-              weight: 0
-              region: content
-            region: left
-            weight: -10
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
-            uuid: dad53dba-b29b-4183-8401-da48e88ae8b6
           e57e5920-08c3-4023-97fe-9e02d318573a:
             id: 'system_menu_block:challenges'
             label: Challenges
@@ -85,18 +63,22 @@ third_party_settings:
             weight: -1
             uuid: c33b6988-6712-4df0-90b6-7c88c4cab356
             context_mapping: {  }
-          a2ecaf96-5dde-4a7f-832c-193915bd141d:
-            id: 'block_content:efc7d91f-79b8-43b3-a907-c3ede7e0b7f1'
-            label: 'Challenge Details: Smart Cities'
-            provider: block_content
+          3af750a4-65b6-464a-ba8a-9659077ec314:
+            id: 'entity_field:node:field_challenge_sidebar_content'
+            label: 'Sidebar Content'
+            provider: ctools_block
             label_display: '0'
-            status: true
-            info: ''
-            view_mode: full
+            formatter:
+              label: visually_hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
             region: right
             weight: 0
-            uuid: a2ecaf96-5dde-4a7f-832c-193915bd141d
-            context_mapping: {  }
+            uuid: 3af750a4-65b6-464a-ba8a-9659077ec314
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
         id: panels_variant
         label: Default
         uuid: 1c6488c5-2320-4181-bf2c-927a40c30593
@@ -189,16 +171,12 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-  field_challenge_video:
-    weight: 103
+  field_challenge_sidebar_content:
+    weight: 109
     label: above
-    settings:
-      responsive: true
-      width: 854
-      height: 480
-      autoplay: true
+    settings: {  }
     third_party_settings: {  }
-    type: video_embed_field_video
+    type: text_default
     region: content
   links:
     weight: 100
