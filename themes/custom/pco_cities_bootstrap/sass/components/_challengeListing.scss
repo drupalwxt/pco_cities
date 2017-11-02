@@ -5,8 +5,11 @@
 }
 
 .challenge-item--container {
-    &:nth-child(0n+1) .challenge-item {margin-right: 0.75em}
-    &:nth-child(2n) .challenge-item {margin-left: 0.75em}
+
+    @include tablet {
+        &:nth-child(0n+1) .challenge-item {margin-right: 0.75em}
+        &:nth-child(2n) .challenge-item {margin-left: 0.75em}
+    }
 }
 
 
