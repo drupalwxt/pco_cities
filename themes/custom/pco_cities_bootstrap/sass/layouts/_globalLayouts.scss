@@ -139,3 +139,25 @@ header {
     }
   }
 }
+
+
+.page--title-block {
+  border-bottom   : #CCC 1px solid;
+  padding         : 3.75rem 0 2.5rem 0;
+  background: $icc-blue;
+  color: $white;
+
+  h1 {
+    border-bottom   : none;
+    font-size: 2.1em;
+    line-height: 110%;
+    padding:0;
+    font-weight     : 600;
+    color: $white;
+    margin          : 0 0 0.15em 0;
+  }
+}
+
+.basic-page--content {
+  margin-top: 1em;
+}
