@@ -4,30 +4,38 @@
 
 .challenge-nav {
     margin-bottom: 0rem;
+    list-style: none;
+    padding-left: 0;
+    margin-left: -5px;
 
     a {
         color: #000;
         text-decoration: none;
-        padding: 1em 0.1em 1.2em 0.1em !important;
+        padding: 0.5em 0.1em 0.5em 0.1em !important;
         display: inline-block;
         position: relative;
         font-size: 0.95em;
         font-weight: 600;
 
-        &:hover {
-            background: none !important;
-            color: $link-color-hover;
+        @include tablet {
+            padding: 1em 0.1em 1.2em 0.1em !important;
         }
-
 
     }
 
-    li {
+    & > li {
+
         padding:0;
-        margin: 0 2em;
+        margin: 0;
+        display: block;
 
         &:first-child {
             margin-left: 0;
+        }
+
+        @include tablet {
+            display: inline-block;
+            margin: 0 2em;
         }
 
     }
@@ -45,7 +53,11 @@
                 width: 100%;
                 height: 5px;
                 position: absolute;
-                bottom: 1.1em;
+                bottom: 0.5em;
+
+                @include tablet {
+                    bottom: 1.1em;
+                }
             }
 
             &.expanded a:after{ height: 0px; }
@@ -59,7 +71,9 @@
             width: 100%;
             height: 5px;
             position: absolute;
-            bottom: 1.1em;
+            bottom: 0.5em;
+
+            @include tablet { bottom: 1.1em; }
         }
     }
 }
