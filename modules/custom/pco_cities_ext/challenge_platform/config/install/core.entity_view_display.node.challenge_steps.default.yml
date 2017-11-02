@@ -62,7 +62,7 @@ third_party_settings:
             views_label: ''
             items_per_page: none
             region: top
-            weight: -10
+            weight: -2
             uuid: 4611a177-e879-463d-af3d-c410c76326c0
             context_mapping: {  }
           2a87b6db-c9c2-44e4-b38d-5bab05486499:
@@ -72,8 +72,8 @@ third_party_settings:
             label_display: '0'
             level: 2
             depth: 2
-            region: right
-            weight: 0
+            region: top
+            weight: -1
             uuid: 2a87b6db-c9c2-44e4-b38d-5bab05486499
             context_mapping: {  }
           4e853ecd-2ec5-4cd1-91ec-bf38cc9b4014:
@@ -132,7 +132,7 @@ third_party_settings:
                 col-sm-12: col-sm-12
               add_region_classes: 1
               attributes: ''
-        page_title: ''
+        page_title: null
         storage_type: panelizer_default
         storage_id: 'node:challenge_steps:default:default'
         builder: ipe

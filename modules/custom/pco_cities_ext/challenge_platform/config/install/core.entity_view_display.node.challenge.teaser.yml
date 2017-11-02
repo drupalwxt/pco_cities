@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.challenge.field_challenge_date_start
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
+    - field.field.node.challenge.field_challenge_image
     - field.field.node.challenge.field_challenge_video
     - node.type.challenge
   module:
@@ -50,5 +51,6 @@ content:
 hidden:
   field_challenge_date_start: true
   field_challenge_department: true
+  field_challenge_image: true
   field_challenge_video: true
   langcode: true

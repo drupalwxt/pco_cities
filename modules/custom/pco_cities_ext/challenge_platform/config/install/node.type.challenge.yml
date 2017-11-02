@@ -8,9 +8,9 @@ third_party_settings:
     available_menus:
       - challenges
     parent: 'challenges:'
-name: 'Challenge Landing Page'
+name: Challenge
 type: challenge
-description: 'Challenge Landing Page'
+description: 'A challenge on this platform. This can also be called a challenge landing page.'
 help: ''
 new_revision: true
 preview_mode: 0

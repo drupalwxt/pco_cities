@@ -70,8 +70,8 @@ third_party_settings:
             label_display: '0'
             level: 2
             depth: 2
-            region: right
-            weight: -4
+            region: top
+            weight: 0
             uuid: e57e5920-08c3-4023-97fe-9e02d318573a
             context_mapping: {  }
           c33b6988-6712-4df0-90b6-7c88c4cab356:
@@ -82,8 +82,20 @@ third_party_settings:
             views_label: ''
             items_per_page: none
             region: top
-            weight: 0
+            weight: -1
             uuid: c33b6988-6712-4df0-90b6-7c88c4cab356
+            context_mapping: {  }
+          a2ecaf96-5dde-4a7f-832c-193915bd141d:
+            id: 'block_content:efc7d91f-79b8-43b3-a907-c3ede7e0b7f1'
+            label: 'Challenge Details: Smart Cities'
+            provider: block_content
+            label_display: '0'
+            status: true
+            info: ''
+            view_mode: full
+            region: right
+            weight: 0
+            uuid: a2ecaf96-5dde-4a7f-832c-193915bd141d
             context_mapping: {  }
         id: panels_variant
         label: Default
@@ -108,14 +120,14 @@ third_party_settings:
               wrapper: div
               classes:
                 col-sm-12: col-sm-12
-                col-md-8: col-md-8
+                col-md-7: col-md-7
               add_region_classes: 1
               attributes: ''
             right:
               wrapper: div
               classes:
                 col-sm-12: col-sm-12
-                col-md-4: col-md-4
+                col-md-5: col-md-5
               add_region_classes: 1
               attributes: ''
             bottom:
