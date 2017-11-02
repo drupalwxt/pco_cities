@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
     - field.field.node.challenge.field_challenge_image
+    - field.field.node.challenge.field_challenge_sidebar_content
     - node.type.challenge
   module:
     - datetime
@@ -51,4 +52,5 @@ hidden:
   field_challenge_date_start: true
   field_challenge_department: true
   field_challenge_image: true
+  field_challenge_sidebar_content: true
   langcode: true

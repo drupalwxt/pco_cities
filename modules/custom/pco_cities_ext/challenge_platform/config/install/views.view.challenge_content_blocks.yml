@@ -3,11 +3,9 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_challenge_department
-    - field.storage.node.field_challenge_sidebar_content
     - node.type.challenge
   module:
     - node
-    - text
     - user
 id: challenge_content_blocks
 label: 'Challenge Content Blocks'
