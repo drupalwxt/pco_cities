@@ -34,6 +34,7 @@
 </div>
 
 {# Nav Macro #}
+
 {% macro menu_links(items, attributes, menu_level) %}
 
   {% import _self as menus %}
@@ -45,8 +46,14 @@
       {%
         set item_classes = [
           item.in_active_trail ? 'active',
+          item.is_expanded ? 'expanded'
         ]
       %}
+
+      {% set thisPath = path('<current>') %}
+      {% if thisPath in item.url %}
+      YES
+      {% endif %}
 
       {% if item.is_expanded or item.in_active_trail or (menu_level > 0) %}
         {% if item.below %}
