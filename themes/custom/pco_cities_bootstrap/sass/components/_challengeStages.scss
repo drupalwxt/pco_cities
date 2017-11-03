@@ -1,7 +1,36 @@
+.node--type-challenge_steps {
+    h2 {
+        text-align: center;
+    }
 
+    .field--name-field-challengesteps-intro {
+        text-align: center;
+        max-width: 75rem;
+        margin: 0 auto;
+
+        p {
+            display: block;
+
+        }
+    }
+}
 
 .field--name-field-challengesteps {
     margin: 2rem 8rem;
+    overflow-y: hidden;
+
+    &::after {
+        display: block;
+        content: '';
+        width: 5rem;
+        height: 8px;
+        background: #AAAAAA;
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
 
     .timeline-event {
         display: block;
@@ -13,103 +42,82 @@
             display: block;
             content: '';
             height: 100%;
-            width: 3px;
-            background: $timeline-border-color;
+            width: 8px;
+            background: #AAAAAA;
             position: absolute;
             top:0;
-            left:0;
+            left:50%;
+            transform: translateX(-50%) translateY(4rem);
         }
 
         &::after {
             display: block;
             content: '';
-            height: 4rem;
-            width: 4rem;
+            height: 1.75rem;
+            width: 1.75rem;
             position: absolute;
-            top:50%;
-            left:-2rem;
+            top:4rem;
+            left:50%;
             border-radius: 50%;
-            border: $timeline-border-color 3px solid;
-            transform: translateY(-50%);
-            background: $content-bg-color;
+            border: #FFF 2px solid;
+            transform: translateY(-50%) translateX(-50%);
+            background: #7c7c7c;
         }
 
         &.completed::after {
-            background: $timeline-completed-color;
+            background: #4293ae;
+        }
+
+        &.completed::before {
+            background: #4293ae;
+        }
+
+
+        &.completed .timeline--event-name {
+            background: #3f94a9;
         }
 
 
         .timeline--event-name {
             font-weight: bold;
+            color: #FFF;
+            background: #7c7c7c;
+            padding: 0.5rem 1rem;
+            display: block;
+
         }
 
         .timeline--event-date {
-            color: #777;
-            font-weight: 400;
-            font-size: 1.5rem;
+            color: #000;
+            font-weight: 600;
+            font-size: 0.85em;
+            padding: 0rem 1.25rem 0.25rem 1.25rem;
         }
 
         .timeline--description {
-            margin-top: 1rem;
+            padding: 0.75rem 1.25rem 0 1.25rem;
             font-size: 1.45rem;
             line-height: 2.25rem;
+            color: #202020;
         }
-
-        .timeline--triangle--outer {
-            position: absolute;
-            content: '';
-                display: block;
-                height: 0;
-                width: 0;
-                border-top: 15px solid transparent;
-                border-bottom: 15px solid transparent;
-                border-right: 15px solid $timeline-border-color;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 3.5rem;
-                position: absolute;
-        }
-
-        .timeline--triangle--inner {
-            position: absolute;
-            content: '';
-            display: block;
-            height: 0;
-            width: 0;
-            border-top: 14px solid transparent;
-            border-bottom: 14px solid transparent;
-            border-right: 14px solid $timeline-bubble-fill;
-            position: absolute;
-            top: -14px;
-            left: 3px;
-
-
-        }
-
-        .timeline--triangle--inner {}
 
         .timeline--event--container {
-            border: $timeline-border-color 2px solid;
-            padding: 2rem;
-            margin-left: 10px;
+            padding: 0 2rem;
+            margin-left: 8%;
             position: relative;
-            border-radius: $std-border-radius;
-            background: $timeline-bubble-fill;
+            width: 40%;
+        }
+
+        &:nth-child(odd) .timeline--event--container {
+            margin-left: 53%;
         }
 
     }
 
-    .timeline-event:first-child::before {transform: translateY(50%); }
-    .timeline-event:last-child::before {height:50%; }
+    .timeline-event:first-child::before {transform: translateY(4rem) translateX(-50%);; }
+    .timeline-event:last-child::before {}
 
-    // Current stage
 
-    & > .timeline-event.completed + .timeline-event:not(.completed) {
-        position: relative;
 
-        &::after {
-            background: $timeline-current-color;
-        }
-    }
 
 }
