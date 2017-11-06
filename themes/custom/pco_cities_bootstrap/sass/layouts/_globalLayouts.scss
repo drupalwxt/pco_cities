@@ -74,6 +74,8 @@
         text-align: left;
         padding: 6px 10px;
         display: inline;
+        letter-spacing: 1px;
+
         &:hover, &:active {
           color: #fff;
           background-color: $nav-color-active !important;

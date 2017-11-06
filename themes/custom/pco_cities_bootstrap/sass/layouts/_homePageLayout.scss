@@ -41,6 +41,10 @@
   padding: 4em 4em;
   position: relative;
 
+  @include desktop {
+    background-position: center center;
+  }
+
 
   h1 {
     font-size: 2.1em;
