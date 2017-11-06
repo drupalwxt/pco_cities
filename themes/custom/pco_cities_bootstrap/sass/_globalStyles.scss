@@ -58,13 +58,6 @@ main {
       font-weight: 300;
     }
 
-    ul:not([class]), ol:not([class]) {
-      li {
-        line-height     : 2.25rem;
-        margin-bottom   : 1.75rem;
-      }
-    }
-
     h1, h2, h3, h4, h5, p, ol, ul, li {
       font-family: 'HKGrotesk-Light', 'Helvetica', 'Arial', san-serif;
     }
