@@ -63,5 +63,8 @@
     {% if content.field_step_description|render %}
       <div class="timeline--description">{{content.field_step_description}}</div>
     {% endif %}
+    {% if content.field_step_completed['#items'].value %}
+      <div class="wb-inv">{{'This step is completed' | t}}</div>
+    {% endif %}
   </div>
 </div>
