@@ -7,8 +7,18 @@
 .challenge-item--container {
 
     @include tablet {
-        &:nth-child(0n+1) .challenge-item {margin-right: 0.75em}
-        &:nth-child(2n) .challenge-item {margin-left: 0.75em}
+        &:nth-child(odd) {
+            padding-left: 0;
+            & .challenge-item {
+                margin-right: 0.75em !important;
+            }
+        }
+        &:nth-child(even) {
+            padding-right: 0;
+            & .challenge-item {
+                margin-left: 0.75em;
+            }
+        }
     }
 }
 
