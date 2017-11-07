@@ -16,67 +16,75 @@
 }
 
 .field--name-field-challengesteps {
-    margin: 2rem 8rem;
+    margin: 2rem 0;
     overflow-y: hidden;
 
-    &::after {
-        display: block;
-        content: '';
-        width: 5rem;
-        height: 8px;
-        background: #AAAAAA;
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
+    @include desktop {
+        margin: 2rem 8rem;
 
+
+        &::after {
+            display: block;
+            content: '';
+            width: 5rem;
+            height: 8px;
+            background: #AAAAAA;
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
     }
 
     .timeline-event {
         display: block;
         position: relative;
-        padding: 2rem 4rem;
+        padding: 1rem 0rem;
 
-
-        &::before {
-            display: block;
-            content: '';
-            height: 100%;
-            width: 8px;
-            background: #AAAAAA;
-            position: absolute;
-            top:0;
-            left:50%;
-            transform: translateX(-50%) translateY(4rem);
+        @include desktop {
+            padding: 2rem 4rem;
         }
 
-        &::after {
-            display: block;
-            content: '';
-            height: 1.75rem;
-            width: 1.75rem;
-            position: absolute;
-            top:4rem;
-            left:50%;
-            border-radius: 50%;
-            border: #FFF 2px solid;
-            transform: translateY(-50%) translateX(-50%);
-            background: #7c7c7c;
-        }
+        @include desktop {
+            &::before {
+                display: block;
+                content: '';
+                height: 100%;
+                width: 8px;
+                background: #AAAAAA;
+                position: absolute;
+                top:0;
+                left:50%;
+                transform: translateX(-50%) translateY(4rem);
+            }
 
-        &.completed::after {
-            background: #4293ae;
-        }
+            &::after {
+                display: block;
+                content: '';
+                height: 1.75rem;
+                width: 1.75rem;
+                position: absolute;
+                top:4rem;
+                left:50%;
+                border-radius: 50%;
+                border: #FFF 2px solid;
+                transform: translateY(-50%) translateX(-50%);
+                background: #7c7c7c;
+            }
 
-        &.completed::before {
-            background: #4293ae;
-        }
+            &.completed::after {
+                background: #4293ae;
+            }
 
+            &.completed::before {
+                background: #4293ae;
+            }
+        }
 
         &.completed .timeline--event-name {
-            background: #3f94a9;
+                background: #3f94a9;
         }
-
 
         .timeline--event-name {
             font-weight: bold;
@@ -84,7 +92,6 @@
             background: #7c7c7c;
             padding: 0.5rem 1rem;
             display: block;
-
         }
 
         .timeline--event-date {
@@ -103,18 +110,25 @@
 
         .timeline--event--container {
             padding: 0 2rem;
-            margin-left: 8%;
             position: relative;
-            width: 40%;
+
+
+            @include desktop {
+                margin-left: 8%;
+                width: 40%;
+            }
         }
 
         &:nth-child(odd) .timeline--event--container {
-            margin-left: 53%;
+
+            @include desktop {
+                margin-left: 53%;
+            }
         }
 
     }
 
-    .timeline-event:first-child::before {transform: translateY(4rem) translateX(-50%);; }
+    .timeline-event:first-child::before {transform: translateY(4rem) translateX(-50%);}
     .timeline-event:last-child::before {}
 
 
