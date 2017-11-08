@@ -4,6 +4,9 @@
   padding         : 3.75rem 0 2.5rem 0;
   background: $icc-blue;
   color: $white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
   h1 {
     border-bottom   : none;
