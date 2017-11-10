@@ -252,7 +252,7 @@ display:
           type: datetime_custom
           settings:
             timezone_override: ''
-            date_format: 'd F Y'
+            date_format: 'M d Y'
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -316,7 +316,7 @@ display:
           type: datetime_custom
           settings:
             timezone_override: ''
-            date_format: 'd F Y'
+            date_format: 'M d Y'
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -377,10 +377,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: image_url
           settings:
             image_style: ''
-            image_link: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -584,6 +583,7 @@ display:
       defaults:
         title: false
         header: false
+        css_class: false
       header:
         area:
           id: area
@@ -595,9 +595,10 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<h1>Challenges</h1>\n<p>Help us solve some of Canada’s biggest challenges.<br> \nExplore, search and respond to a challenge. </p>\n"
+            value: "<div class=\"page--title-block\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-xs-12\"><h1 id=\"wb-cont\">[current-page:title]</h1></div>\n            </div>\n        </div>\n    </div>\n<div class=\"container mrgn-tp-md\">\n<p>Help solve some of Canada’s biggest challenges. Through the Impact Canada Initiative, the Government of Canada wants to engage a diverse range of innovators and problem solvers to help improve outcomes for Canadians.  Search our challenges to find out where you can have an impact.</p>\n</div>"
             format: rich_text
           plugin_id: text
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:

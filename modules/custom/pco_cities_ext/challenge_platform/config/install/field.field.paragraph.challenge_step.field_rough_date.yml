@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rough_date
+    - paragraphs.paragraphs_type.challenge_step
+id: paragraph.challenge_step.field_rough_date
+field_name: field_rough_date
+entity_type: paragraph
+bundle: challenge_step
+label: 'Rough Date'
+description: 'eg Summer 2018 (will only display if no date specified above)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

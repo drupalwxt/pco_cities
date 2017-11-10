@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.challenge_step.field_rough_date
     - field.field.paragraph.challenge_step.field_step_completed
     - field.field.paragraph.challenge_step.field_step_date
     - field.field.paragraph.challenge_step.field_step_description
@@ -15,6 +16,14 @@ targetEntityType: paragraph
 bundle: challenge_step
 mode: default
 content:
+  field_rough_date:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_step_completed:
     weight: 8
     settings:

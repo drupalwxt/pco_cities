@@ -30,8 +30,8 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
               region: content
-            region: left
-            weight: 0
+            region: right
+            weight: -1
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: db41ae5f-3c3c-4509-b58d-a432dfbbc5fb
@@ -69,8 +69,8 @@ third_party_settings:
                 link_to_entity: false
               third_party_settings: {  }
               weight: 0
-            region: left
-            weight: -1
+            region: right
+            weight: -2
             uuid: a74e70a9-8a64-41e5-97d7-7cd274c6ca58
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -85,8 +85,8 @@ third_party_settings:
               settings: {  }
               third_party_settings: {  }
               weight: 0
-            region: right
-            weight: 0
+            region: left
+            weight: -10
             uuid: a756cc3c-4aba-4346-8192-5a4472a0b617
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -113,16 +113,16 @@ third_party_settings:
               wrapper: div
               classes:
                 col-sm-12: col-sm-12
-                col-md-8: col-md-8
+                col-md-4: col-md-4
               add_region_classes: 1
-              attributes: ''
+              attributes: class|col-md-push-8
             right:
               wrapper: div
               classes:
                 col-sm-12: col-sm-12
-                col-md-4: col-md-4
+                col-md-8: col-md-8
               add_region_classes: 1
-              attributes: ''
+              attributes: class|col-md-pull-4
             bottom:
               wrapper: div
               classes:
