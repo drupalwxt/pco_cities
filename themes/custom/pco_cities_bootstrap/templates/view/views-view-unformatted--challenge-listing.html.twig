@@ -17,10 +17,21 @@
  * @ingroup themeable
  */
 #}
+
+
+{% set challenge_listing_classes = [
+    "col-xs-12",
+    rows|length == 1 ? "col-md-12",
+    rows|length == 2 ? "col-md-6",
+    rows|length >= 3 ? "col-md-4",
+    "challenge-item--container"
+    ]
+%}
+
 <div class="container">
     <div class="row">
         {% for row in rows %}
-            <div class="col-xs-12 col-md-6 challenge-item--container">{{ row.content }}</div>
+            <div {{attributes.addClass(challenge_listing_classes)}}>{{ row.content }}</div>
         {% endfor %}
     </div>
 </div>
