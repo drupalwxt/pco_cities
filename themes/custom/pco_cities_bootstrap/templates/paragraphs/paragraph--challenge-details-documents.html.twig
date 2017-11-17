@@ -49,8 +49,10 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <h4 class="field-label">{{content.field_title['#items'][0].value}}</h4>
-      {{ content.field_body }}
+      <h4 class="field-label">{{content.field_title.0}}</h4>
+      {{ content.field_document_title.0 }}
+      {{ content.field_challengedetails_document.0 }}
+      {{ content.field_url }}
     {% endblock %}
   </div>
 {% endblock paragraph %}
