@@ -53,64 +53,30 @@
   padding: 0.75em 0;
   font-size: 0.9em;
 
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
   .field-label {
     color: #007897;
     font-size:0.85em;
     font-weight: 600;
     display: block;
+    margin-bottom: 0.5em;
   }
 
-  &.dates {
-
-    .dates--open, .dates--close {
-      display: inline-block;
-
-      .field-value {
-        font-size: 1.25em;
-      }
-    }
-
-    .dates--open {
-      margin-right: 1.15em;
-      position: relative;
-
-      &:after {
-        content:'';
-        display: block;
-        width: 1.25em;
-        height: 1px;
-        background: #000;
-        position: absolute;
-        right: -1.75em;
-        bottom: 25%;
-      }
-    }
-
-    .dates--close {
-      margin-left: 1.15em;
-    }
-  }
-
-  &.whoCanApply .participant-list {
-    padding-left: 1em;
+  & ul {
+    margin-left: 1em;
 
     li {
       line-height: 1.5em;
       position:relative;
+      margin-bottom: 0.25em !important;
 
       &:before {
         content: '\25A0';
-    color: #007897;
-    padding-right: 0.5em;
-    font-size: 0.75em;
-    position: absolute;
-    top: -0.1em;
-    left:-1.15em;
+        color: #007897;
+        padding-right: 0.5em;
+        font-size: 0.75em;
+        position: absolute;
+        top: -0.1em;
+        left:-1.15em;
       }
     }
   }
@@ -168,9 +134,6 @@
 }
 
 // Challenge landing page video field
-.field--name-field-challenge-video {
-  margin: 2rem 0;
-}
 
 .field--name-field-challenge-description {
   @include desktop {

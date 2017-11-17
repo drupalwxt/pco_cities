@@ -54,7 +54,7 @@
     'challengeDetails'
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
+<div {{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
   {% if label %}
@@ -64,7 +64,10 @@
   {% endif %}
   {{ title_suffix }}
 
+  <div class="challengeDetails--detailFields">
   {% block content %}
     {{ content }}
   {% endblock %}
+  </div>
+
 </div>
