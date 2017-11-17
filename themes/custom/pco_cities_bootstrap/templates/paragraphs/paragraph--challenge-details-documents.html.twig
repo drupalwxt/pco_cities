@@ -44,18 +44,24 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     'challengeDetails--detail',
+    'documents'
   ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <h4 class="field-label">{{content.field_title.0}}</h4>
+
       {% if content.field_challengedetails_document|render %}
-      <a href="{{content.field_challengedetails_document.0}}">{{ content.field_document_title.0 }}</a> <span class="file-type-pdf">PDF</span>
+        <a href="{{content.field_challengedetails_document.0}}">{{ content.field_document_title.0 }} (PDF)</a>
 
-      <a href="{{ content.field_url.0 }}">HTML Version</a>
+        {% if content.field_url | render %}
+          <a href="{{ content.field_url.0 }}">HTML Version</a>
+        {% endif %}
+
+      {% else %}
+        <a href="{{content.field_url.0}}">{{ content.field_document_title.0 }}</a>
       {% endif %}
-
 
     {% endblock %}
   </div>

@@ -49,18 +49,6 @@
 }
 
 .challengeDetails--detail {
-  border-bottom: rgba(#007897, 0.75) 1px dashed;
-  padding: 0.75em 0;
-  font-size: 0.9em;
-
-  .field-label {
-    color: #007897;
-    font-size:0.85em;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 0.5em;
-  }
-
   & ul {
     margin-left: 1em;
 
@@ -88,7 +76,7 @@
     border-bottom: #000 1px solid;
   }
 
-  &.submit a.challenge-button {
+  & a.challenge-button {
     color: #FFF;
     background: #007897;
     padding: 0.5em 0;
@@ -101,27 +89,55 @@
     border-radius: 0.5em;
     margin: 0.75em 0;
   }
+}
 
-  &.tags {
-    .tag-list {
-      margin-bottom: 0;
-      li {
-        display: inline-block;
-        margin: 0.35em 0.1em;
-      }
+.challengeDetails--detail, .challengeDetails .views-field-field-tags {
+  border-bottom: rgba(#007897, 0.75) 1px dashed;
+  padding: 0.75em 0;
+  font-size: 0.9em;
 
-      a {
-        display:block;
-        background: #DDD;
-        padding: 0em 1em;
-        border-radius: 3em;
-        text-decoration: none;
-        color: #000;
-        font-weight: 600;
-        font-size: 0.85em;
-      }
-    }
+  .field-label, .views-label-field-tags {
+    color: #007897;
+    font-size:0.85em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5em;
   }
+}
+
+.challengeDetails .views-field-field-tags {
+  border-bottom: none !important;
+}
+
+.challengeDetails .views-field-field-tags {
+
+  ul {
+    margin-bottom: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0.35em 0.1em;
+    background: #DDD;
+    padding: 0em 1em;
+    border-radius: 3em;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+
+  a {
+    display:block;
+    background: #DDD;
+    padding: 0em 1em;
+    border-radius: 3em;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+
 }
 
 .challengeDetails--detailFields {
@@ -160,8 +176,6 @@
   }
 
 }
-
-
 
 // Panelizer styles
 
