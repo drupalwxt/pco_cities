@@ -8,7 +8,7 @@ third_party_settings:
     available_menus:
       - challenges
     parent: 'challenges:'
-name: 'Challenge Timeline Page'
+name: 'Challenge Timeline'
 type: challenge_steps
 description: 'Page that displays the steps to the challenge'
 help: ''

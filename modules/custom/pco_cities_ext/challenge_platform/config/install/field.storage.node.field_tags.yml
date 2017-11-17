@@ -2,17 +2,17 @@ langcode: en
 status: true
 dependencies:
   module:
-    - datetime
     - node
-id: node.field_challenge_date_end
-field_name: field_challenge_date_end
+    - taxonomy
+id: node.field_tags
+field_name: field_tags
 entity_type: node
-type: datetime
+type: entity_reference
 settings:
-  datetime_type: date
-module: datetime
+  target_type: taxonomy_term
+module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

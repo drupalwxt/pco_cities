@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.challenge.field_challenge_date_end
-    - field.field.node.challenge.field_challenge_date_start
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
+    - field.field.node.challenge.field_challenge_details
     - field.field.node.challenge.field_challenge_image
-    - field.field.node.challenge.field_challenge_sidebar_content
+    - field.field.node.challenge.field_single_line_teaser
+    - field.field.node.challenge.field_tags
     - node.type.challenge
   module:
-    - datetime
+    - entity_reference_revisions
     - image
     - panelizer
     - text
@@ -37,7 +37,7 @@ third_party_settings:
               weight: 0
               region: content
             region: left
-            weight: -10
+            weight: -9
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: 6d6ee4f6-da24-4a13-9c58-641041a50e73
@@ -63,22 +63,17 @@ third_party_settings:
             weight: -1
             uuid: c33b6988-6712-4df0-90b6-7c88c4cab356
             context_mapping: {  }
-          3af750a4-65b6-464a-ba8a-9659077ec314:
-            id: 'entity_field:node:field_challenge_sidebar_content'
-            label: 'Sidebar Content'
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: visually_hidden
-              type: text_default
-              settings: {  }
-              third_party_settings: {  }
-              weight: 0
+          2ec7b64a-b1fb-4c14-842e-35551f879655:
+            id: 'views_block:challenge_content_blocks-block_1'
+            label: ''
+            provider: views
+            label_display: visible
+            views_label: ''
+            items_per_page: none
             region: right
             weight: 0
-            uuid: 3af750a4-65b6-464a-ba8a-9659077ec314
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
+            uuid: 2ec7b64a-b1fb-4c14-842e-35551f879655
+            context_mapping: {  }
         id: panels_variant
         label: Default
         uuid: 1c6488c5-2320-4181-bf2c-927a40c30593
@@ -101,15 +96,15 @@ third_party_settings:
             left:
               wrapper: div
               classes:
-                col-sm-12: col-sm-12
-                col-md-7: col-md-7
+                col-sm-6: col-sm-6
+                col-md-8: col-md-8
               add_region_classes: 1
               attributes: ''
             right:
               wrapper: div
               classes:
-                col-sm-12: col-sm-12
-                col-md-5: col-md-5
+                col-sm-6: col-sm-6
+                col-md-4: col-md-4
               add_region_classes: 1
               attributes: ''
             bottom:
@@ -121,7 +116,7 @@ third_party_settings:
         page_title: ''
         storage_type: panelizer_default
         storage_id: 'node:challenge:default:default'
-        builder: ipe
+        builder: standard
         pattern: panelizer
         static_context: {  }
 id: node.challenge.default
@@ -129,27 +124,9 @@ targetEntityType: node
 bundle: challenge
 mode: default
 content:
-  field_challenge_date_end:
-    weight: 105
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: challenge_date
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_challenge_date_start:
-    weight: 104
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: challenge_date
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_challenge_department:
     weight: 107
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -157,26 +134,44 @@ content:
     region: content
   field_challenge_description:
     weight: 106
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_challenge_details:
+    type: entity_reference_revisions_entity_view
+    weight: 109
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_challenge_image:
     weight: 108
-    label: above
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
     region: content
-  field_challenge_sidebar_content:
-    weight: 109
+  field_single_line_teaser:
+    weight: 110
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: text_default
+    type: string
+    region: content
+  field_tags:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100

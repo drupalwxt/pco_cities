@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: challenges
-label: 'Challenge Menu'
-description: 'Menu of all the challenges and their subpages'
+label: Challenges
+description: 'Menu of all the challenges'
 locked: false

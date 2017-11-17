@@ -10,7 +10,7 @@ third_party_settings:
     parent: 'challenges:'
 name: 'Challenge Subpage'
 type: challenge_page
-description: 'A subpage within a challenge'
+description: 'A regular page within a challenge that has a title and body field'
 help: ''
 new_revision: true
 preview_mode: 1

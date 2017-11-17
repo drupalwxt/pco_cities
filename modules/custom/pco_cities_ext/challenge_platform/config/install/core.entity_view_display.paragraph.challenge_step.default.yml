@@ -2,27 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.challenge_step.field_rough_date
     - field.field.paragraph.challenge_step.field_step_completed
     - field.field.paragraph.challenge_step.field_step_date
     - field.field.paragraph.challenge_step.field_step_description
     - field.field.paragraph.challenge_step.field_step_title
     - paragraphs.paragraphs_type.challenge_step
-  module:
-    - datetime
 id: paragraph.challenge_step.default
 targetEntityType: paragraph
 bundle: challenge_step
 mode: default
 content:
-  field_rough_date:
-    weight: 4
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_step_completed:
     weight: 2
     label: hidden
@@ -37,10 +26,9 @@ content:
     weight: 3
     label: hidden
     settings:
-      timezone_override: ''
-      date_format: 'M d Y'
+      link_to_entity: false
     third_party_settings: {  }
-    type: datetime_custom
+    type: string
     region: content
   field_step_description:
     weight: 1

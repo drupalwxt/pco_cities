@@ -1,8 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
-id: challenge_step
-label: 'Challenge Step'
+id: challenge_details_documents
+label: 'Challenge Details Document Section'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

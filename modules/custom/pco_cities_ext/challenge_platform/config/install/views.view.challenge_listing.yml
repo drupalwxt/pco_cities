@@ -2,14 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_challenge_date_end
-    - field.storage.node.field_challenge_date_start
     - field.storage.node.field_challenge_department
     - field.storage.node.field_challenge_image
+    - field.storage.node.field_single_line_teaser
     - node.type.challenge
     - system.menu.challenges
   module:
-    - datetime
     - image
     - node
     - user
@@ -200,134 +198,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_challenge_date_end:
-          id: field_challenge_date_end
-          table: node__field_challenge_date_end
-          field: field_challenge_date_end
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_custom
-          settings:
-            timezone_override: ''
-            date_format: 'M d Y'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_challenge_date_start:
-          id: field_challenge_date_start
-          table: node__field_challenge_date_start
-          field: field_challenge_date_start
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_custom
-          settings:
-            timezone_override: ''
-            date_format: 'M d Y'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         field_challenge_image:
           id: field_challenge_image
           table: node__field_challenge_image
@@ -442,6 +312,69 @@ display:
           absolute: true
           entity_type: node
           plugin_id: node_path
+        field_single_line_teaser:
+          id: field_single_line_teaser
+          table: node__field_single_line_teaser
+          field: field_single_line_teaser
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -507,10 +440,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_challenge_date_end'
-        - 'config:field.storage.node.field_challenge_date_start'
         - 'config:field.storage.node.field_challenge_department'
         - 'config:field.storage.node.field_challenge_image'
+        - 'config:field.storage.node.field_single_line_teaser'
   block_1:
     display_plugin: block
     id: block_1
@@ -561,10 +493,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_challenge_date_end'
-        - 'config:field.storage.node.field_challenge_date_start'
         - 'config:field.storage.node.field_challenge_department'
         - 'config:field.storage.node.field_challenge_image'
+        - 'config:field.storage.node.field_single_line_teaser'
   page_1:
     display_plugin: page
     id: page_1
@@ -607,7 +538,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_challenge_date_end'
-        - 'config:field.storage.node.field_challenge_date_start'
         - 'config:field.storage.node.field_challenge_department'
         - 'config:field.storage.node.field_challenge_image'
+        - 'config:field.storage.node.field_single_line_teaser'

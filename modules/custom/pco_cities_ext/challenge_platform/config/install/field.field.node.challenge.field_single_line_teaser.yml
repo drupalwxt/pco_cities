@@ -2,19 +2,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_challenge_sidebar_content
+    - field.storage.node.field_single_line_teaser
     - node.type.challenge
-  module:
-    - text
-id: node.challenge.field_challenge_sidebar_content
-field_name: field_challenge_sidebar_content
+id: node.challenge.field_single_line_teaser
+field_name: field_single_line_teaser
 entity_type: node
 bundle: challenge
-label: 'Sidebar Content'
+label: 'Single Line Teaser'
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string

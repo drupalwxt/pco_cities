@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.node.challenge_page.body
-    - field.field.node.challenge_page.field_challenge_sidebar_content
     - node.type.challenge_page
   module:
     - panelizer
@@ -30,8 +29,8 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
               region: content
-            region: right
-            weight: -1
+            region: left
+            weight: 0
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: db41ae5f-3c3c-4509-b58d-a432dfbbc5fb
@@ -43,7 +42,7 @@ third_party_settings:
             views_label: ''
             items_per_page: none
             region: top
-            weight: -1
+            weight: 0
             uuid: b66a4117-89f6-4e91-8dc7-890047c7e159
             context_mapping: {  }
           99aa877a-8fa6-4bef-9262-e051ddc8a100:
@@ -53,7 +52,7 @@ third_party_settings:
             label_display: '0'
             level: 2
             depth: 2
-            region: top
+            region: right
             weight: 0
             uuid: 99aa877a-8fa6-4bef-9262-e051ddc8a100
             context_mapping: {  }
@@ -69,25 +68,9 @@ third_party_settings:
                 link_to_entity: false
               third_party_settings: {  }
               weight: 0
-            region: right
-            weight: -2
-            uuid: a74e70a9-8a64-41e5-97d7-7cd274c6ca58
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
-          a756cc3c-4aba-4346-8192-5a4472a0b617:
-            id: 'entity_field:node:field_challenge_sidebar_content'
-            label: 'Sidebar Content'
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: visually_hidden
-              type: text_default
-              settings: {  }
-              third_party_settings: {  }
-              weight: 0
             region: left
-            weight: -10
-            uuid: a756cc3c-4aba-4346-8192-5a4472a0b617
+            weight: -1
+            uuid: a74e70a9-8a64-41e5-97d7-7cd274c6ca58
             context_mapping:
               entity: '@panelizer.entity_context:entity'
         id: panels_variant
@@ -113,16 +96,16 @@ third_party_settings:
               wrapper: div
               classes:
                 col-sm-12: col-sm-12
-                col-md-4: col-md-4
+                col-md-8: col-md-8
               add_region_classes: 1
-              attributes: class|col-md-push-8
+              attributes: ''
             right:
               wrapper: div
               classes:
                 col-sm-12: col-sm-12
-                col-md-8: col-md-8
+                col-md-4: col-md-4
               add_region_classes: 1
-              attributes: class|col-md-pull-4
+              attributes: ''
             bottom:
               wrapper: div
               classes:
@@ -146,13 +129,6 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_challenge_sidebar_content:
-    weight: 102
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
     region: content
   links:
     weight: 100
