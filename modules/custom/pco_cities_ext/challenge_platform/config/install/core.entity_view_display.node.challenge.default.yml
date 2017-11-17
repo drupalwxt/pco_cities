@@ -63,8 +63,8 @@ third_party_settings:
             weight: -1
             uuid: c33b6988-6712-4df0-90b6-7c88c4cab356
             context_mapping: {  }
-          2ec7b64a-b1fb-4c14-842e-35551f879655:
-            id: 'views_block:challenge_content_blocks-block_1'
+          b08a378e-be22-4b74-ad3f-96b23e8d864d:
+            id: 'views_block:challenge_content_blocks-challenge_details_block'
             label: ''
             provider: views
             label_display: visible
@@ -72,7 +72,7 @@ third_party_settings:
             items_per_page: none
             region: right
             weight: 0
-            uuid: 2ec7b64a-b1fb-4c14-842e-35551f879655
+            uuid: b08a378e-be22-4b74-ad3f-96b23e8d864d
             context_mapping: {  }
         id: panels_variant
         label: Default
@@ -96,15 +96,15 @@ third_party_settings:
             left:
               wrapper: div
               classes:
-                col-sm-6: col-sm-6
-                col-md-8: col-md-8
+                col-sm-12: col-sm-12
+                col-md-7: col-md-7
               add_region_classes: 1
               attributes: ''
             right:
               wrapper: div
               classes:
-                col-sm-6: col-sm-6
-                col-md-4: col-md-4
+                col-sm-12: col-sm-12
+                col-md-5: col-md-5
               add_region_classes: 1
               attributes: ''
             bottom:

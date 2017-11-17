@@ -350,9 +350,9 @@ display:
       tags:
         - 'config:field.storage.node.field_challenge_department'
         - 'config:field.storage.node.field_challenge_image'
-  block_1:
+  challenge_details_block:
     display_plugin: block
-    id: block_1
+    id: challenge_details_block
     display_title: 'Challenge Details Block'
     position: 2
     display_options:
