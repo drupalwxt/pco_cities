@@ -9,7 +9,7 @@ const sass = require('gulp-sass');
 const browserSync = require('browser-sync');
 
 // Browser Sync Settings
-const browserSyncProxy = 'http://site-pco.dev';
+const browserSyncProxy = 'http://pco-site-r2.dev/';
 const browserSyncPort = 3000;
 
 // Child Process for running drush commands
