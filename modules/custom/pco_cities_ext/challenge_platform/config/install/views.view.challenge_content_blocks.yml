@@ -460,7 +460,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
@@ -481,7 +481,7 @@ display:
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: separator
+          multi_type: ul
           separator: ', '
           field_api_classes: false
           plugin_id: field
