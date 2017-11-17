@@ -32,8 +32,8 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
               region: content
-            region: left
-            weight: 1
+            region: main
+            weight: -7
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: 11d75718-d061-482f-b4fc-738026d33736
@@ -49,8 +49,8 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
               region: content
-            region: left
-            weight: 0
+            region: main
+            weight: -8
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: 72826307-25cf-4905-8430-2e135ee9e235
@@ -62,7 +62,7 @@ third_party_settings:
             views_label: ''
             items_per_page: none
             region: top
-            weight: -10
+            weight: -2
             uuid: 4611a177-e879-463d-af3d-c410c76326c0
             context_mapping: {  }
           2a87b6db-c9c2-44e4-b38d-5bab05486499:
@@ -72,8 +72,8 @@ third_party_settings:
             label_display: '0'
             level: 2
             depth: 2
-            region: right
-            weight: 0
+            region: top
+            weight: -1
             uuid: 2a87b6db-c9c2-44e4-b38d-5bab05486499
             context_mapping: {  }
           4e853ecd-2ec5-4cd1-91ec-bf38cc9b4014:
@@ -88,8 +88,8 @@ third_party_settings:
                 link_to_entity: false
               third_party_settings: {  }
               weight: 0
-            region: left
-            weight: -1
+            region: main
+            weight: -9
             uuid: 4e853ecd-2ec5-4cd1-91ec-bf38cc9b4014
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -97,41 +97,8 @@ third_party_settings:
         label: Default
         uuid: 5f8d2451-2269-438d-9b88-717f3fb57248
         weight: 0
-        layout: bs_2col_stacked
-        layout_settings:
-          layout:
-            wrapper: div
-            classes:
-              row: row
-            add_layout_class: 1
-            attributes: ''
-          regions:
-            top:
-              wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-              add_region_classes: 1
-              attributes: ''
-            left:
-              wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-                col-md-8: col-md-8
-              add_region_classes: 1
-              attributes: ''
-            right:
-              wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-                col-md-4: col-md-4
-              add_region_classes: 1
-              attributes: ''
-            bottom:
-              wrapper: div
-              classes:
-                col-sm-12: col-sm-12
-              add_region_classes: 1
-              attributes: ''
+        layout: bs_1col_stacked
+        layout_settings: {  }
         page_title: ''
         storage_type: panelizer_default
         storage_id: 'node:challenge_steps:default:default'
