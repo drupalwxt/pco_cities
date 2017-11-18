@@ -104,10 +104,12 @@
             line-height: 2.25rem;
             color: #202020;
             margin-top: 0.25em;
+
+            p {margin-bottom: 1.25em;}
         }
 
         .timeline--event--container {
-            padding: 0 2rem;
+            padding: 0 0.5rem;
             position: relative;
 
         }
