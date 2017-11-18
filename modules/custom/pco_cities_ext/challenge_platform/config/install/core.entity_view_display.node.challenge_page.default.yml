@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.challenge_page.body
+    - field.field.node.challenge_page.field_challenge_sidebar_content
     - node.type.challenge_page
   module:
     - panelizer
@@ -42,7 +43,7 @@ third_party_settings:
             views_label: ''
             items_per_page: none
             region: top
-            weight: 0
+            weight: -1
             uuid: b66a4117-89f6-4e91-8dc7-890047c7e159
             context_mapping: {  }
           99aa877a-8fa6-4bef-9262-e051ddc8a100:
@@ -52,7 +53,7 @@ third_party_settings:
             label_display: '0'
             level: 2
             depth: 2
-            region: right
+            region: top
             weight: 0
             uuid: 99aa877a-8fa6-4bef-9262-e051ddc8a100
             context_mapping: {  }
@@ -136,4 +137,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_challenge_sidebar_content: true
   langcode: true
