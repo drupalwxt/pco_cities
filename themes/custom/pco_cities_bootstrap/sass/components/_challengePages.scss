@@ -1,3 +1,18 @@
+/*
+  Photo with text utility classes
+
+  ---- IMPLEMENTATION ----
+
+  <div class="photo-with-text">
+    <-- DRUPAL EMBEDED ENTITY GOES HERE (1) -->
+    <div class="text">YOUR TEXT GOES HERE</div>
+  </div>
+
+  (1) This is the embeded entity that drupal provides of the image.
+      This is likely going to be an image wrapped in an article tag.
+
+*/
+
 .photo-with-text {
   img {
     width: 100%;
@@ -31,4 +46,6 @@
     }
   }
 }
+
+
 
