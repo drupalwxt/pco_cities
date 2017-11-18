@@ -98,7 +98,33 @@ third_party_settings:
         uuid: 5f8d2451-2269-438d-9b88-717f3fb57248
         weight: 0
         layout: bs_1col_stacked
-        layout_settings: {  }
+        layout_settings:
+          layout:
+            wrapper: div
+            classes:
+              row: row
+            add_layout_class: 1
+            attributes: ''
+          regions:
+            top:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
+            main:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+                col-md-12: col-md-12
+              add_region_classes: 1
+              attributes: ''
+            bottom:
+              wrapper: div
+              classes:
+                col-sm-12: col-sm-12
+              add_region_classes: 1
+              attributes: ''
         page_title: ''
         storage_type: panelizer_default
         storage_id: 'node:challenge_steps:default:default'
