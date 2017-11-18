@@ -1,24 +1,10 @@
-.node--type-challenge_steps {
-
-
-    .field--name-field-challengesteps-intro {
-
-
-        p {
-            display: block;
-
-        }
-    }
-}
+// Styles for challenge timeline
 
 .field--name-field-challengesteps {
     margin: 2rem 0;
     overflow-y: hidden;
 
     @include desktop {
-        //margin: 2rem 8rem;
-
-
         &::after {
             display: block;
             content: '';
@@ -27,9 +13,7 @@
             background: #AAAAAA;
             position: absolute;
             bottom: 2rem;
-
             transform: translateX(0.73rem);
-
         }
     }
 
@@ -38,9 +22,7 @@
         position: relative;
         padding: 1rem 0rem;
 
-        @include desktop {
-            padding: 2rem 4rem;
-        }
+        @include desktop { padding: 2rem 4rem; }
 
         @include desktop {
             &::before {
@@ -69,18 +51,10 @@
                 background: #7c7c7c;
             }
 
-            &.completed::after {
-                background: #4293ae;
-            }
-
-            &.completed::before {
-                background: #4293ae;
-            }
+            &.completed::after, &.completed::before { background: #4293ae; }
         }
 
-        &.completed .timeline--event-name {
-                color: #3f94a9;
-        }
+        &.completed .timeline--event-name { color: #3f94a9; }
 
         .timeline--event-name {
             font-weight: 500;
@@ -105,21 +79,15 @@
             color: #202020;
             margin-top: 0.25em;
 
-            p {margin-bottom: 1.25em;}
+            p { margin-bottom: 1.25em; }
         }
 
         .timeline--event--container {
             padding: 0 0.5rem;
             position: relative;
-
         }
-
     }
 
     .timeline-event:first-child::before {transform: translateY(4rem);}
-    .timeline-event:last-child::before {}
-
-
-
 
 }

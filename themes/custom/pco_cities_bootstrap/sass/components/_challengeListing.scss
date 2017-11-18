@@ -1,67 +1,59 @@
 .view-challenge-listing {
-    a {
-        text-decoration: none !important;
-    }
+  a { text-decoration: none !important; }
 }
 
 .challenge-item--container {
 
-    @include tablet {
-        &:nth-child(odd) {
-            padding-left: 0;
-            & .challenge-item {
-                margin-right: 0.75em !important;
-            }
-        }
-        &:nth-child(even) {
-            padding-right: 0;
-            & .challenge-item {
-                margin-left: 0.75em;
-            }
-        }
+  @include tablet {
+    &:nth-child(odd) {
+      padding-left: 0;
+
+      & .challenge-item { margin-right: 0.75em !important; }
     }
+
+    &:nth-child(even) {
+      padding-right: 0;
+
+      & .challenge-item { margin-left: 0.75em; }
+    }
+  }
 }
 
-
 .challenge-item {
-    //box-shadow: 0 0 2px rgba(0,0,0,0.1);
-    margin: 2rem 0;
-    border: $icc-blue 2px solid;
-    background: #FFF;
+  margin: 2rem 0;
+  border: $icc-blue 2px solid;
+  background: #FFF;
 
+  .content {
+    padding: 2.25rem 2.5rem;
+    font-weight: 700;
+    color: $black;
+  }
 
+  .title {
+    font-size: 3.25rem;
+    line-height: 4.5rem;
+    font-weight: 600;
+    color: $white;
+    background: $icc-blue;
+    padding: 4em 0.8em 0.35em 0.8em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 
-    .content {
-        padding: 2.25rem 2.5rem;
-        font-weight: 700;
-        color: $black;
-    }
+  .teaser {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 0.75em;
+  }
 
-    .title {
-        font-size: 3.25rem;
-        line-height: 4.5rem;
-        font-weight: 600;
-        color: $white;
-        background: $icc-blue;
-        padding: 4em 0.8em 0.35em 0.8em;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
+  .department {
+    font-size: 1.65rem;
+    text-transform: uppercase;
+  }
 
-    .teaser {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-top: 0.75em;
-    }
-
-    .department {
-        font-size: 1.65rem;
-        text-transform: uppercase;
-
-    }
-
-    .details {
-        margin-top: 2rem;
-    }
+  .details {
+    margin-top: 2rem;
+  }
 }

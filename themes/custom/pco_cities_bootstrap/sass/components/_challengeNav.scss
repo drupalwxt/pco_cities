@@ -1,79 +1,68 @@
-.challengeNav--container {
-    border-bottom: #EDEDED 3px solid;
-}
+.challengeNav--container { border-bottom: #EDEDED 3px solid; }
 
 .challenge-nav {
-    margin-bottom: 0rem;
-    list-style: none;
-    padding-left: 0;
-    margin-left: -5px;
+  margin-bottom: 0rem;
+  list-style: none;
+  padding-left: 0;
+  margin-left: -5px;
 
-    a {
-        color: #000;
-        text-decoration: none;
-        padding: 0.5em 0.1em 0.5em 0.1em !important;
-        display: inline-block;
-        position: relative;
-        font-size: 0.95em;
-        font-weight: 600;
+  a {
+    color: #000;
+    text-decoration: none;
+    padding: 0.5em 0.1em 0.5em 0.1em !important;
+    display: inline-block;
+    position: relative;
+    font-size: 0.95em;
+    font-weight: 600;
 
-        @include tablet {
-            padding: 1em 0.1em 1.2em 0.1em !important;
-        }
+    @include tablet { padding: 1em 0.1em 1.2em 0.1em !important; }
+  }
 
+  & > li {
+    padding:0;
+    margin: 0;
+    display: block;
+
+    &:first-child { margin-left: 0; }
+
+    @include tablet {
+      display: inline-block;
+      margin: 0 2em;
     }
+  }
 
-    & > li {
+  .active {
 
-        padding:0;
-        margin: 0;
+    // CSS Mechanism to get the active states to show properly
+    // Applies to pages that are not of type challenge
+    body:not(.page-node-type-challenge) & {
+
+      a:after {
+        content: '';
         display: block;
+        background: #007897;
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        bottom: 0.5em;
 
-        &:first-child {
-            margin-left: 0;
-        }
+        @include tablet { bottom: 1.1em; }
+      }
 
-        @include tablet {
-            display: inline-block;
-            margin: 0 2em;
-        }
-
+      &.expanded a:after{ height: 0px; }
     }
 
-    .active {
+    // Override for pages that are of type challenge
+    body.page-node-type-challenge & a:after {
+      content: '';
+      display: block;
+      background: #007897;
+      width: 100%;
+      height: 5px;
+      position: absolute;
+      bottom: 0.5em;
 
-        // CSS Mechanism to get the active states to show properly
-        // Applies to pages that are not of type challenge
-        body:not(.page-node-type-challenge) & {
-
-            a:after {
-                content: '';
-                display: block;
-                background: #007897;
-                width: 100%;
-                height: 5px;
-                position: absolute;
-                bottom: 0.5em;
-
-                @include tablet {
-                    bottom: 1.1em;
-                }
-            }
-
-            &.expanded a:after{ height: 0px; }
-        }
-
-        // Override for pages that are of type challenge
-        body.page-node-type-challenge & a:after {
-            content: '';
-            display: block;
-            background: #007897;
-            width: 100%;
-            height: 5px;
-            position: absolute;
-            bottom: 0.5em;
-
-            @include tablet { bottom: 1.1em; }
-        }
+      @include tablet { bottom: 1.1em; }
     }
+  }
 }
