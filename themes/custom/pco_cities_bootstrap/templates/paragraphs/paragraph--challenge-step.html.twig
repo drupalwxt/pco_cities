@@ -48,7 +48,6 @@
 
 
 <div {{attributes.addClass(event_classes) }}>
-
   <div class="timeline--event--container">
     {% if content.field_step_title|render %}
       <div class="timeline--event-name">{{content.field_step_title}}</div>
@@ -56,12 +55,10 @@
 
     {% if content.field_step_date|render %}
       <div class="timeline--event-date">{{content.field_step_date}}</div>
-    {% elseif content.field_rough_date|render %}
-        <div class="timeline--event-date">{{ content.field_rough_date }}</div>
     {% endif %}
 
-    {% if content.field_step_description|render %}
-      <div class="timeline--description">{{content.field_step_description}}</div>
+    {% if content.field_body|render %}
+      <div class="timeline--description">{{content.field_body}}</div>
     {% endif %}
     {% if content.field_step_completed['#items'].value %}
       <div class="wb-inv">{{'This step is completed' | t}}</div>

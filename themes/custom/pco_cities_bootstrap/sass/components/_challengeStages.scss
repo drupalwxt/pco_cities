@@ -1,12 +1,8 @@
 .node--type-challenge_steps {
-    h2 {
-        text-align: center;
-    }
+
 
     .field--name-field-challengesteps-intro {
-        text-align: center;
-        max-width: 75rem;
-        margin: 0 auto;
+
 
         p {
             display: block;
@@ -20,19 +16,19 @@
     overflow-y: hidden;
 
     @include desktop {
-        margin: 2rem 8rem;
+        //margin: 2rem 8rem;
 
 
         &::after {
             display: block;
             content: '';
-            width: 5rem;
+            width: 3rem;
             height: 8px;
             background: #AAAAAA;
             position: absolute;
             bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
+
+            transform: translateX(0.73rem);
 
         }
     }
@@ -51,25 +47,25 @@
                 display: block;
                 content: '';
                 height: 100%;
-                width: 8px;
+                width: 10px;
                 background: #AAAAAA;
                 position: absolute;
                 top:0;
-                left:50%;
-                transform: translateX(-50%) translateY(4rem);
+                left:1em;
+                transform: translateY(4rem);
             }
 
             &::after {
                 display: block;
                 content: '';
-                height: 1.75rem;
-                width: 1.75rem;
+                height: 2.5rem;
+                width: 2.5rem;
                 position: absolute;
-                top:4rem;
-                left:50%;
+                top:4.5rem;
+                left:1em;
                 border-radius: 50%;
-                border: #FFF 2px solid;
-                transform: translateY(-50%) translateX(-50%);
+                border: #FFF 3px solid;
+                transform: translateY(-50%) translateX(-0.73rem);
                 background: #7c7c7c;
             }
 
@@ -83,52 +79,42 @@
         }
 
         &.completed .timeline--event-name {
-                background: #3f94a9;
+                color: #3f94a9;
         }
 
         .timeline--event-name {
-            font-weight: bold;
-            color: #FFF;
-            background: #7c7c7c;
+            font-weight: 500;
+            color: #7c7c7c;
             padding: 0.5rem 1rem;
             display: block;
+            font-size:1.4em;
         }
 
         .timeline--event-date {
             color: #000;
-            font-weight: 600;
-            font-size: 0.85em;
+            font-weight: 700;
+            font-size: 0.95em;
             padding: 0rem 1.25rem 0.25rem 1.25rem;
+            margin-top: 0.25em;
         }
 
         .timeline--description {
             padding: 0.75rem 1.25rem 0 1.25rem;
-            font-size: 1.45rem;
+            font-size: 1em;
             line-height: 2.25rem;
             color: #202020;
+            margin-top: 0.25em;
         }
 
         .timeline--event--container {
             padding: 0 2rem;
             position: relative;
 
-
-            @include desktop {
-                margin-left: 8%;
-                width: 40%;
-            }
-        }
-
-        &:nth-child(odd) .timeline--event--container {
-
-            @include desktop {
-                margin-left: 53%;
-            }
         }
 
     }
 
-    .timeline-event:first-child::before {transform: translateY(4rem) translateX(-50%);}
+    .timeline-event:first-child::before {transform: translateY(4rem);}
     .timeline-event:last-child::before {}
 
 
