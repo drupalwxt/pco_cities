@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.challenge_banner
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
     - field.field.node.challenge.field_challenge_details
@@ -10,14 +11,12 @@ dependencies:
     - field.field.node.challenge.field_tags
     - node.type.challenge
   module:
-    - entity_reference_revisions
     - image
     - panelizer
-    - text
     - user
 third_party_settings:
   panelizer:
-    enable: true
+    enable: false
     custom: false
     allow: false
     default: default
@@ -193,64 +192,31 @@ third_party_settings:
         builder: standard
         pattern: panelizer
         static_context: {  }
-id: node.challenge.default
+id: node.challenge.challenge_banner
 targetEntityType: node
 bundle: challenge
-mode: default
+mode: challenge_banner
 content:
   field_challenge_department:
-    weight: 107
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_challenge_description:
-    weight: 106
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_challenge_details:
-    type: entity_reference_revisions_entity_view
-    weight: 109
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_challenge_image:
-    weight: 108
+    weight: 1
     label: hidden
     settings:
       image_style: ''
-      image_link: ''
     third_party_settings: {  }
-    type: image
+    type: image_url
     region: content
-  field_single_line_teaser:
-    weight: 110
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_tags:
-    weight: 111
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  field_challenge_description: true
+  field_challenge_details: true
+  field_single_line_teaser: true
+  field_tags: true
   langcode: true
+  links: true
