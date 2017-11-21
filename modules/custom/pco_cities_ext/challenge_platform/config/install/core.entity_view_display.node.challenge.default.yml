@@ -109,7 +109,7 @@ third_party_settings:
             provider: ctools_block
             label_display: '0'
             formatter:
-              label: hidden
+              label: visually_hidden
               type: entity_reference_revisions_entity_view
               settings:
                 view_mode: default
@@ -126,7 +126,7 @@ third_party_settings:
             provider: ctools_block
             label_display: '0'
             formatter:
-              label: above
+              label: visually_hidden
               type: entity_reference_label
               settings:
                 link: false

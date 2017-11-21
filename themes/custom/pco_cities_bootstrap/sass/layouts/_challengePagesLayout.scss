@@ -105,17 +105,17 @@
   }
 }
 
-.challengeDetails .views-field-field-tags {
+.challengeDetails--detail.no-border {
   border-bottom: none !important;
 }
 
-.challengeDetails .views-field-field-tags {
+.challengeDetails .challenge--tags {
 
   ul {
     margin-bottom: 0;
   }
 
-  li {
+  li, .field__items .field--item {
     display: inline-block;
     margin: 0.35em 0.1em;
     background: #DDD;

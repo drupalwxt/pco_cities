@@ -45,6 +45,16 @@
  * @see template_process()
  */
 #}
+
+<div class="challengeDetails">
+  <div class="challengeDetails--title"><h3>{{ content.field['#title'] }}</h3></div>
+  <div class="challengeDetails--detailFields">
+    {{content.field}}
+
+
+{#
+
+
 {%
   set classes = [
     'block',
@@ -64,3 +74,5 @@
     {{ content }}
   {% endblock %}
 </section>
+  #}
+
