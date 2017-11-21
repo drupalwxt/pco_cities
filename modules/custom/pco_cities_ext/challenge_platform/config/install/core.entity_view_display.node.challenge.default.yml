@@ -52,17 +52,6 @@ third_party_settings:
             weight: 1
             uuid: e57e5920-08c3-4023-97fe-9e02d318573a
             context_mapping: {  }
-          b08a378e-be22-4b74-ad3f-96b23e8d864d:
-            id: 'views_block:challenge_content_blocks-challenge_details_block'
-            label: ''
-            provider: views
-            label_display: visible
-            views_label: ''
-            items_per_page: none
-            region: right
-            weight: 0
-            uuid: b08a378e-be22-4b74-ad3f-96b23e8d864d
-            context_mapping: {  }
           ecb37b05-6edb-4621-88e9-1ddee5e10c58:
             id: 'entity_field:node:field_challenge_image'
             label: 'Challenge Image'
@@ -233,7 +222,7 @@ content:
     region: content
   field_single_line_teaser:
     weight: 110
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -241,7 +230,7 @@ content:
     region: content
   field_tags:
     weight: 111
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
