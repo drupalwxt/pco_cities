@@ -7,8 +7,8 @@
 
     <div class="homepage--header--actionlinks">
       <ul class="list-inline">
-        <li><a href="/about">{{"About" | t }}</a></li>
-        <li><a href="/how-it-works">{{"How it works" | t }}</a></li>
+        <li><a href="{{ path('entity.node.canonical', { 'node': 3 }) }}">{{"About" | t }}</a></li>
+        <li><a href="{{ path('entity.node.canonical', { 'node': 1 }) }}">{{"How it works" | t }}</a></li>
       </ul>
     </div>
   </div>
