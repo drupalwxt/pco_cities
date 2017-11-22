@@ -96,26 +96,27 @@
   padding: 0.75em 0;
   font-size: 0.9em;
 
-  .field-label, .views-label-field-tags {
+  .field-label, .views-label-field-tags, h4 {
     color: #007897;
     font-size:0.85em;
     font-weight: 600;
     display: block;
     margin-bottom: 0.5em;
+    line-height : 1em;
   }
 }
 
-.challengeDetails .views-field-field-tags {
+.challengeDetails--detail.no-border {
   border-bottom: none !important;
 }
 
-.challengeDetails .views-field-field-tags {
+.challengeDetails .challenge--tags {
 
   ul {
     margin-bottom: 0;
   }
 
-  li {
+  li, .field__items .field--item {
     display: inline-block;
     margin: 0.35em 0.1em;
     background: #DDD;

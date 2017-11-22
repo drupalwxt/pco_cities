@@ -12,6 +12,7 @@ dependencies:
   - file
   - image
   - language
+  - lightning_core
   - link
   - menu_ui
   - node

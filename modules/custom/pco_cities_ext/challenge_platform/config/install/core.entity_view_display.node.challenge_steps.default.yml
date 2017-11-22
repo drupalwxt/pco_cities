@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.challenge_steps.field_challengesteps
     - field.field.node.challenge_steps.field_challengesteps_intro
+    - field.field.node.challenge_steps.field_parent_challenge
     - node.type.challenge_steps
   module:
     - entity_reference_revisions
@@ -54,17 +55,6 @@ third_party_settings:
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: 72826307-25cf-4905-8430-2e135ee9e235
-          4611a177-e879-463d-af3d-c410c76326c0:
-            id: 'views_block:challenge_content_blocks-challenge_title_blocks'
-            label: ''
-            provider: views
-            label_display: '0'
-            views_label: ''
-            items_per_page: none
-            region: top
-            weight: -2
-            uuid: 4611a177-e879-463d-af3d-c410c76326c0
-            context_mapping: {  }
           2a87b6db-c9c2-44e4-b38d-5bab05486499:
             id: 'system_menu_block:challenges'
             label: Challenges
@@ -91,6 +81,23 @@ third_party_settings:
             region: main
             weight: -9
             uuid: 4e853ecd-2ec5-4cd1-91ec-bf38cc9b4014
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          f14f4796-4a63-4b21-b635-655368febeda:
+            id: 'entity_field:node:field_parent_challenge'
+            label: Challenge
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_entity_view
+              settings:
+                view_mode: challenge_banner
+              third_party_settings: {  }
+              weight: 0
+            region: top
+            weight: -2
+            uuid: f14f4796-4a63-4b21-b635-655368febeda
             context_mapping:
               entity: '@panelizer.entity_context:entity'
         id: panels_variant
@@ -151,6 +158,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_parent_challenge:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100

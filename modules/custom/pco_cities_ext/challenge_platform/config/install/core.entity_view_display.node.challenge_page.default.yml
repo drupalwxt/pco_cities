@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.challenge_page.body
     - field.field.node.challenge_page.field_challenge_sidebar_content
+    - field.field.node.challenge_page.field_parent_challenge
     - node.type.challenge_page
   module:
     - panelizer
@@ -35,17 +36,6 @@ third_party_settings:
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: db41ae5f-3c3c-4509-b58d-a432dfbbc5fb
-          b66a4117-89f6-4e91-8dc7-890047c7e159:
-            id: 'views_block:challenge_content_blocks-challenge_title_blocks'
-            label: ''
-            provider: views
-            label_display: '0'
-            views_label: ''
-            items_per_page: none
-            region: top
-            weight: -1
-            uuid: b66a4117-89f6-4e91-8dc7-890047c7e159
-            context_mapping: {  }
           99aa877a-8fa6-4bef-9262-e051ddc8a100:
             id: 'system_menu_block:challenges'
             label: Challenges
@@ -72,6 +62,39 @@ third_party_settings:
             region: left
             weight: -1
             uuid: a74e70a9-8a64-41e5-97d7-7cd274c6ca58
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          1dda9631-d094-46e9-8395-cd042b5fb21e:
+            id: 'entity_field:node:field_challenge_sidebar_content'
+            label: 'Sidebar Content'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: visually_hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: right
+            weight: 0
+            uuid: 1dda9631-d094-46e9-8395-cd042b5fb21e
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          e1e0d7a9-e95b-4cf1-9301-140fb31ec311:
+            id: 'entity_field:node:field_parent_challenge'
+            label: Challenge
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_entity_view
+              settings:
+                view_mode: challenge_banner
+              third_party_settings: {  }
+              weight: 0
+            region: top
+            weight: 0
+            uuid: e1e0d7a9-e95b-4cf1-9301-140fb31ec311
             context_mapping:
               entity: '@panelizer.entity_context:entity'
         id: panels_variant
@@ -130,6 +153,14 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_parent_challenge:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100

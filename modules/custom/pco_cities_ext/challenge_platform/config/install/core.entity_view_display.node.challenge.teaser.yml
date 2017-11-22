@@ -1,15 +1,18 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
+    - field.field.node.challenge.field_challenge_details
     - field.field.node.challenge.field_challenge_image
+    - field.field.node.challenge.field_single_line_teaser
+    - field.field.node.challenge.field_tags
     - node.type.challenge
   module:
+    - image
     - panelizer
-    - text
     - user
 third_party_settings:
   panelizer:
@@ -22,20 +25,26 @@ targetEntityType: node
 bundle: challenge
 mode: teaser
 content:
-  field_challenge_description:
-    type: text_trimmed
-    weight: 2
-    region: content
-    label: visually_hidden
-    settings:
-      trim_length: 250
-    third_party_settings: {  }
-  links:
+  field_challenge_department:
+    type: string
     weight: 0
     region: content
-    settings: {  }
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_challenge_image:
+    type: image_url
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
     third_party_settings: {  }
 hidden:
-  field_challenge_department: true
-  field_challenge_image: true
+  field_challenge_description: true
+  field_challenge_details: true
+  field_single_line_teaser: true
+  field_tags: true
   langcode: true
+  links: true
