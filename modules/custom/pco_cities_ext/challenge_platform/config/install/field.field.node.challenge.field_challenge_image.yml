@@ -27,7 +27,7 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: 432835d2-aeda-4ac3-8718-a1d80828091b
+    uuid: ''
     alt: 'Challenge Image'
     title: ''
     width: 1920

@@ -9,7 +9,7 @@ const sass = require('gulp-sass');
 const browserSync = require('browser-sync');
 
 // Browser Sync Settings
-const browserSyncProxy = 'http://pco-challenge.dev';
+const browserSyncProxy = 'http://challenge.dev/';
 const browserSyncPort = 3000;
 
 // Child Process for running drush commands
@@ -44,7 +44,7 @@ gulp.task('sass', function() {
 gulp.task('sass:watch', ['sass'], function(){
   'use strict';
 
-  gulp.watch('sass/**/**.scss', ['sass']);
+  gulp.watch('sass/**/**.scss', ['sass','drush:cr', 'browserSyncReload']);
 });
 
 // Browser Sync

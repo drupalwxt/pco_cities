@@ -11,5 +11,5 @@ third_party_settings:
 id: paragraph.challenge_step
 target_entity_type_id: paragraph
 target_bundle: challenge_step
-default_langcode: site_default
+default_langcode: current_interface
 language_alterable: true

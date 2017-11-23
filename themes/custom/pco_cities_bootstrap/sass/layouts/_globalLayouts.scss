@@ -13,24 +13,75 @@
   }
 }
 
+.navbar-default {
+  background-color: #fff;
+}
+
 #wb-bc {
-  background-color : #fffff;
+  background-color : #fff;
+}
+
+#wb-sttl {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  a {
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: #000 1px solid;
+
+    &:visited {
+      color: #000;
+    }
+  }
 }
 
 #wb-sm {
-  background-color : $primary-color;
+  background-color : #fff;
+  color: #000;
+  border-bottom: 5px solid $nav-color-active;
 
   .menu {
     text-shadow: none;
+
+    @media screen and (max-width: 1199px) {
+      border-right: none;
+    }
 
     .wb-navcurr {
       background-color: $nav-color-active !important;
     }
 
-    li a:hover {
-      background-color: $nav-color-active !important;
-    }
+    li {
+      float: left;
+      background-color: #fff !important;
+      border: none;
+      margin-left: 6%;
 
+      &:first-child {
+        margin-left: -10px;
+      }
+
+      &:last-child {
+        border: none;
+      }
+
+      a {
+        color: #000;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 6px 10px;
+        display: inline;
+        letter-spacing: 1px;
+
+        &:hover, &:active {
+          color: #fff;
+          background-color: $nav-color-active !important;
+        }
+      }
+    }
   }
 
 }
@@ -59,11 +110,56 @@ header {
     height: 1.5em;
   }
 
-  #wb-lng a.language-link {
-    font-size: .9em;
-    text-decoration: none;
+  #wb-lng {
+    a.language-link {
+      color: #000;
+      font-size: .9em;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#wb-info {
+  nav {
+    padding: 0;
+    height: 80px;
+    line-height: 80px;
+    vertical-align: center;
+    li {
+      height: auto;
+      width: auto;
+      margin: 0;
+    }
+    a {
+      color: #000;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-right: 30px;
+    }
   }
 }
 
 
+.page--title-block {
+  border-bottom   : #CCC 1px solid;
+  padding         : 3.75rem 0 2.5rem 0;
+  background: $icc-blue;
+  color: $white;
 
+  h1 {
+    border-bottom   : none;
+    font-size: 2.1em;
+    line-height: 110%;
+    padding:0;
+    font-weight     : 600;
+    color: $white;
+    margin          : 0 0 0.15em 0;
+  }
+}
+
+.basic-page--content {
+  margin-top: 1em;
+}

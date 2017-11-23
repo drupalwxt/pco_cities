@@ -8,7 +8,7 @@ third_party_settings:
     available_menus:
       - challenges
     parent: 'challenges:'
-name: 'Challenge Page'
+name: 'Challenge Subpage'
 type: challenge_page
 description: 'A regular page within a challenge that has a title and body field'
 help: ''

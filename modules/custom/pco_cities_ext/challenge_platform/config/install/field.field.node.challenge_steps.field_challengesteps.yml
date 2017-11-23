@@ -27,7 +27,10 @@ settings:
       challenge_step:
         enabled: true
         weight: 3
-      section:
+      challenge_details_documents:
         weight: 4
+        enabled: false
+      challenge_details_text_section:
+        weight: 5
         enabled: false
 field_type: entity_reference_revisions

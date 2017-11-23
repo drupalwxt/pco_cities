@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Banner for challenge Subpages'
+id: node.challenge_banner
+label: 'Challenge Banner'
+targetEntityType: node
+cache: true

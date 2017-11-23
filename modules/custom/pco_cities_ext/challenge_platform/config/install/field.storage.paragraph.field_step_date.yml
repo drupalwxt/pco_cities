@@ -2,15 +2,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - datetime
     - paragraphs
 id: paragraph.field_step_date
 field_name: field_step_date
 entity_type: paragraph
-type: datetime
+type: string
 settings:
-  datetime_type: date
-module: datetime
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

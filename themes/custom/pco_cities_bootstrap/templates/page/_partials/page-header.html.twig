@@ -1,0 +1,66 @@
+{% if page.navigation or page.navigation_collapsible %}
+  {% block navbar %}
+
+    {%
+      set navbar_classes = [
+        'navbar',
+        theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
+        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : '',
+      ]
+    %}
+    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+      <div id="wb-bnr" class="{{ container }}">
+        <div class="row">
+          {{ page.banner }}
+          <div class="col-md-6 langbar">
+            <section id="wb-lng" class="visible-md visible-lg text-right">
+              <h2 class="wb-inv">{{ 'Language selection'|t }}</h2>
+              <div class="row">
+                <div class="col-md-12">
+                    {{ page.language_toggle }}
+                </div>
+              </div>
+            </section>
+          </div>
+          <section class="wb-mb-links col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
+            <h2>{{ 'Search and menus'|t }}</h2>
+            <ul class="list-inline text-right chvrn">
+              <li>
+                <a href="#mb-pnl" title="{{ 'Search and menus'|t }}" aria-controls="mb-pnl" class="overlay-lnk" role="button">
+                  <span class="glyphicon glyphicon-search">
+                    <span class="glyphicon glyphicon-th-list">
+                      <span class="wb-inv">{{ 'Search and menus'|t }}</span>
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <div id="mb-pnl"></div>
+          </section>
+          {{ page.search }}
+        </div>
+        <div class="row">
+          <div id="wb-sttl" class="col-md-12">
+            <a href="{{ url('<front>') }}">{{ 'Impact Canada Challenge Platform'|t }}</a>
+          </div>
+        </div>
+      </div>
+      {% if gcweb_cdn and gcweb_cdn_url %}
+        <nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="{{ gcweb_cdn_url }}{{ language }}.html" typeof="SiteNavigationElement">
+          <div class="pnl-strt {{ container }} nvbar">
+            <h2 class="wb-inv">{{ 'Topics Menu'|t }}</h2>
+           {{ page.navigation }}
+          </div>
+        </nav>
+      {% else %}
+        <nav role="navigation"{{ attributes.setAttribute('id', 'wb-sm').removeClass('clearfix').addClass('wb-menu', 'visible-md', 'visible-lg')|without('role', 'aria-labelledby') }} data-trgt="mb-pnl">
+          <div class="pnl-strt {{ container }} nvbar">
+            <h2 class="wb-inv">{{ 'Topics Menu'|t }}</h2>
+            {{ page.navigation }}
+          </div>
+        </nav>
+      {% endif %}
+      {{ page.breadcrumb }}
+    </header>
+  {% endblock %}
+{% endif %}

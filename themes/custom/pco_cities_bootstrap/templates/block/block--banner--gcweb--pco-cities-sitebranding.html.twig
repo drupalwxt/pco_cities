@@ -17,10 +17,9 @@
 #}
 {% block content %}
   <div class="brand col-xs-8 col-sm-9 col-md-6">
-    <a href="{{ url('<front>') }}">
-      <object id="header-logo" data='{{ logo_svg }}' role="img" tabindex="-1" type="image/svg+xml">
-        <img alt="{{ 'Government of Canada'|t }}" src="{{ logo }}"  />
-      </object>
+    <a href="//www.canada.ca">
+      <object id="header-logo" data='{{ logo_svg }}' tabindex="-1" type="image/svg+xml"></object>
+      <span class="wb-inv">{{ 'Government of Canada'|t }}</span>
     </a>
   </div>
 {% endblock %}

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_single_line_teaser
+    - node.type.challenge
+id: node.challenge.field_single_line_teaser
+field_name: field_single_line_teaser
+entity_type: node
+bundle: challenge
+label: 'Single Line Teaser'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

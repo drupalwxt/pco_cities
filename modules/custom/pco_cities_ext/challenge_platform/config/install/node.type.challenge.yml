@@ -8,10 +8,10 @@ third_party_settings:
     available_menus:
       - challenges
     parent: 'challenges:'
-name: 'Challenge Landing Page'
+name: Challenge
 type: challenge
 description: 'Challenge Landing Page'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 0
 display_submitted: false

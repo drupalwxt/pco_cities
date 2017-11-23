@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenge_details_block
+    - node.type.challenge
+  module:
+    - text
+id: node.challenge.field_challenge_details_block
+field_name: field_challenge_details_block
+entity_type: node
+bundle: challenge
+label: 'Challenge Details'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

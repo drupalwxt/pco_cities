@@ -1,0 +1,39 @@
+wxt_gcweb_footer: 1
+_core:
+  default_config_hash: uvyDUSc8-z1adZCntSwcTPcmGUgS9ulRogCyWzY-NjE
+schemas:
+  bootstrap: 8000
+  wxt_bootstrap: 8000
+  pco_cities_bootstrap: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: profiles/pco_cities/favicon.ico
+  url: 'http://challenge.dev/profiles/pco_cities/favicon.ico'
+  use_default: false
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: profiles/pco_cities/pco_cities.svg
+  url: ''
+  use_default: false
+wxt_skip_link_primary_text: 'Skip to main content'
+wxt_skip_link_secondary_text: 'Skip to "About this site"'
+breadcrumb: '0'
+region_wells:
+  branding: ''
+  breadcrumb: ''
+  language_toggle: ''
+  banner: ''
+  navigation: ''
+  navigation_collapsible: ''
+  header: ''
+  highlighted: ''
+  help: ''
+  content: ''
+  content_footer: ''
+  footer: ''
+table_responsive: '-1'
+table: ''

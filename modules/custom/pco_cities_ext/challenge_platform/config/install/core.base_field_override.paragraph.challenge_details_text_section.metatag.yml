@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.challenge_details_text_section
+id: paragraph.challenge_details_text_section.metatag
+field_name: metatag
+entity_type: paragraph
+bundle: challenge_details_text_section
+label: Metatags
+description: 'The metatags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

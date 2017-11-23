@@ -1,13 +1,15 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - field.storage.node.field_challenge_date_end
-    - field.storage.node.field_challenge_date_start
     - field.storage.node.field_challenge_department
+    - field.storage.node.field_challenge_details
+    - field.storage.node.field_challenge_image
+    - field.storage.node.field_tags
     - node.type.challenge
   module:
-    - datetime
+    - entity_reference_revisions
+    - image
     - node
     - user
 id: challenge_content_blocks
@@ -53,7 +55,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 1
+          items_per_page: 0
           offset: 0
       style:
         type: default
@@ -188,10 +190,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_challenge_date_end:
-          id: field_challenge_date_end
-          table: node__field_challenge_date_end
-          field: field_challenge_date_end
+        field_challenge_image:
+          id: field_challenge_image
+          table: node__field_challenge_image
+          field: field_challenge_image
           relationship: none
           group_type: group
           admin_label: ''
@@ -236,76 +238,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_custom
+          click_sort_column: target_id
+          type: image_url
           settings:
-            timezone_override: ''
-            date_format: 'd F Y'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_challenge_date_start:
-          id: field_challenge_date_start
-          table: node__field_challenge_date_start
-          field: field_challenge_date_start
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_custom
-          settings:
-            timezone_override: ''
-            date_format: 'd F Y'
-          group_column: value
+            image_style: ''
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -411,18 +348,148 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_challenge_date_end'
-        - 'config:field.storage.node.field_challenge_date_start'
         - 'config:field.storage.node.field_challenge_department'
-  challenge_title_blocks:
+        - 'config:field.storage.node.field_challenge_image'
+  challenge_details_block:
     display_plugin: block
-    id: challenge_title_blocks
-    display_title: 'Challenge Content Blocks'
-    position: 1
+    id: challenge_details_block
+    display_title: 'Challenge Details Block'
+    position: 2
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      display_description: 'Challenge Content Blocks'
+      fields:
+        field_challenge_details:
+          id: field_challenge_details
+          table: node__field_challenge_details
+          field: field_challenge_details
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_revisions_entity_view
+          settings:
+            view_mode: default
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: ul
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_tags:
+          id: field_tags
+          table: node__field_tags
+          field: field_tags
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Tags
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: h4
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: ul
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      defaults:
+        fields: false
+        title: false
+      display_description: ''
+      title: 'Challenge Details'
     cache_metadata:
       max-age: -1
       contexts:
@@ -432,6 +499,25 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_challenge_date_end'
-        - 'config:field.storage.node.field_challenge_date_start'
+        - 'config:field.storage.node.field_challenge_details'
+        - 'config:field.storage.node.field_tags'
+  challenge_title_blocks:
+    display_plugin: block
+    id: challenge_title_blocks
+    display_title: 'Challenge Title Block'
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      display_description: 'Challenge Title Block'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
         - 'config:field.storage.node.field_challenge_department'
+        - 'config:field.storage.node.field_challenge_image'

@@ -11,9 +11,9 @@ h1 {
 
 h2 {
   color       : $black;
-  font-size   : 3.75rem;
-  font-weight : 300;
-  line-height : 5rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 4rem;
 }
 
 h3 {
@@ -25,18 +25,27 @@ h3 {
 
 h4 {
   color       : $black;
-  font-size   : 1rem;
-  font-weight : normal;
-  line-height : 1rem;
+  font-size   : 2rem;
+  font-weight : bold;
+  line-height : 3rem;
   margin      : 0;
+
 }
 
 h5 {
   color       : $black;
-  font-size   : 1rem;
-  font-weight : normal;
-  line-height : 1rem;
-  margin      : 0;
+  font-size   : 1.85rem;
+  font-weight : 600;
+  line-height : 2.5rem;
+  margin      : 4rem 0 0.5rem 0;
+}
+
+h6 {
+  color       : $black;
+  font-size   : 1.5rem;
+  font-weight : 600;
+  line-height : 2.25rem;
+  margin      : 3rem 0 0.5rem 0;
 }
 
 
@@ -46,12 +55,13 @@ a:not([class]) {
   color: $primary-color;
 }
 
+
+
 main {
     color           : $black;
     font-size       : 1.75rem;
     font-weight     : normal;
-    line-height     : 3rem;
-    margin-bottom   : 4rem;
+    padding-bottom   : 4rem;
 
     @include desktop {
       font-weight: 300;
@@ -59,7 +69,6 @@ main {
 
     ul:not([class]), ol:not([class]) {
       li {
-        line-height     : 2.25rem;
         margin-bottom   : 1.75rem;
       }
     }
@@ -70,7 +79,11 @@ main {
 }
 
 .pcocp-container {
-  background: $content-bg-color;
+
+  .path-frontpage & {
+    background: #EDEDED;
+  }
+
 }
 
 body {

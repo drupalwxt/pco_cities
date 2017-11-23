@@ -20,6 +20,71 @@
   }
 
   .block-views-blockchallenge-listing-block-1 {
-      padding : 0 2rem;
+
+      .block-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.4em;
+        margin-bottom: 0;
+      }
+  }
+}
+
+
+// Homepage Header Blocks
+.homepage--header{
+
+  background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../assets/cp-frontpage-bk.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 4em 4em;
+  position: relative;
+
+  @include desktop {
+    background-position: center center;
+  }
+
+
+  h1 {
+    font-size: 2.1em;
+    font-weight: 600;
+    color: $white;
+    margin: 0;
+  }
+
+  .small {
+    display: block;
+    font-size: 0.65em;
+    max-width: 34em;
+    margin-top: 0.65em;
+    line-height: 1.25em;
+    color: $white;
+  }
+
+  .header--photocredit {
+    color: $white;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.65em;
+    font-weight: 100;
+  }
+
+}
+
+
+
+.homepage--header--actionlinks {
+  margin-top: 2.5em;
+
+  a {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: $white 1px solid;
+    margin-right: 2em;
   }
 }

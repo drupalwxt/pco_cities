@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_challengedetails_document
+    - paragraphs.paragraphs_type.challenge_details_documents
+  module:
+    - file
+id: paragraph.challenge_details_documents.field_challengedetails_document
+field_name: field_challengedetails_document
+entity_type: paragraph
+bundle: challenge_details_documents
+label: Document
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'challenge-documents/[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: '10 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

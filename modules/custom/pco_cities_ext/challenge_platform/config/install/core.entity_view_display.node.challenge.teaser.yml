@@ -3,14 +3,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.challenge.field_challenge_date_end
-    - field.field.node.challenge.field_challenge_date_start
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
-    - field.field.node.challenge.field_challenge_video
+    - field.field.node.challenge.field_challenge_details
+    - field.field.node.challenge.field_challenge_image
+    - field.field.node.challenge.field_single_line_teaser
+    - field.field.node.challenge.field_tags
     - node.type.challenge
   module:
-    - datetime
     - panelizer
     - text
     - user
@@ -25,15 +25,6 @@ targetEntityType: node
 bundle: challenge
 mode: teaser
 content:
-  field_challenge_date_end:
-    type: datetime_default
-    weight: 1
-    region: content
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
   field_challenge_description:
     type: text_trimmed
     weight: 2
@@ -48,7 +39,9 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_challenge_date_start: true
   field_challenge_department: true
-  field_challenge_video: true
+  field_challenge_details: true
+  field_challenge_image: true
+  field_single_line_teaser: true
+  field_tags: true
   langcode: true

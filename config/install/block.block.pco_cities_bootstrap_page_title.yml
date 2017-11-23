@@ -1,0 +1,19 @@
+langcode: en
+status: false
+dependencies:
+  theme:
+    - pco_cities_bootstrap
+_core:
+  default_config_hash: mjH4xief6JtBhgKD_GIVdb7140nGGkwRtIOMfOwDOWA
+id: pco_cities_bootstrap_page_title
+theme: pco_cities_bootstrap
+region: header
+weight: -9
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.challenge_details_documents
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.challenge_details_documents
+target_entity_type_id: paragraph
+target_bundle: challenge_details_documents
+default_langcode: current_interface
+language_alterable: true

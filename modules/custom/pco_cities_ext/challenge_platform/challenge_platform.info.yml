@@ -12,6 +12,7 @@ dependencies:
   - file
   - image
   - language
+  - lightning_core
   - link
   - menu_ui
   - node
@@ -20,10 +21,12 @@ dependencies:
   - path
   - pathauto
   - system
+  - taxonomy
   - text
   - user
   - video_embed_field
   - views
+  - views_bootstrap
   - workbench_moderation
   - wxt_library
 version: 8.x-1.0

@@ -1,0 +1,19 @@
+langcode: en
+status: false
+dependencies:
+  theme:
+    - pco_cities_bootstrap
+_core:
+  default_config_hash: hAKlsORQ__VRwDwAGwBqQqdPWLEk3yxTVjOXEVNomj8
+id: pco_cities_bootstrap_local_actions
+theme: pco_cities_bootstrap
+region: header
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.challenge_details_documents.field_challengedetails_document
+    - field.field.paragraph.challenge_details_documents.field_document_title
+    - field.field.paragraph.challenge_details_documents.field_title
+    - field.field.paragraph.challenge_details_documents.field_url
+    - paragraphs.paragraphs_type.challenge_details_documents
+  module:
+    - file
+    - link
+    - workbench_moderation
+id: paragraph.challenge_details_documents.default
+targetEntityType: paragraph
+bundle: challenge_details_documents
+mode: default
+content:
+  field_challengedetails_document:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_document_title:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_url:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

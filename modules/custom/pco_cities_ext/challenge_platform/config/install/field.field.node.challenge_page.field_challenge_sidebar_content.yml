@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenge_sidebar_content
+    - node.type.challenge_page
+  module:
+    - text
+id: node.challenge_page.field_challenge_sidebar_content
+field_name: field_challenge_sidebar_content
+entity_type: node
+bundle: challenge_page
+label: 'Sidebar Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

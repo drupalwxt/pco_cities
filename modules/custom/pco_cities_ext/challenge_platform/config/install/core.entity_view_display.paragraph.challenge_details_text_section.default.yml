@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.challenge_details_text_section.field_body
+    - field.field.paragraph.challenge_details_text_section.field_title
+    - paragraphs.paragraphs_type.challenge_details_text_section
+  module:
+    - text
+id: paragraph.challenge_details_text_section.default
+targetEntityType: paragraph
+bundle: challenge_details_text_section
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

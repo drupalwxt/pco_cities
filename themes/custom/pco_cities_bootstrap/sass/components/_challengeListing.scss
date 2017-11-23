@@ -1,53 +1,59 @@
 .view-challenge-listing {
-        a {
-        text-decoration: none !important;
+  a { text-decoration: none !important; }
+}
 
+.challenge-item--container {
+
+  @include tablet {
+    &:nth-child(odd) {
+      padding-left: 0;
+
+      & .challenge-item { margin-right: 0.75em !important; }
     }
+
+    &:nth-child(even) {
+      padding-right: 0;
+
+      & .challenge-item { margin-left: 0.75em; }
+    }
+  }
 }
 
 .challenge-item {
-    box-shadow: 0 0 2px rgba(0,0,0,0.1);
-    margin: 2rem 0;
-    border: $secondary-color 2px solid;
-    background: #FFF;
-    transition: box-shadow 0.15s ease-in-out;
+  margin: 2rem 0;
+  border: $icc-blue 2px solid;
+  background: #FFF;
 
-    &:hover {
-        box-shadow: 0 0 15px rgba(0,0,0,0.25);
-        border-color: $primary-color;
-    }
+  .content {
+    padding: 2.25rem 2.5rem;
+    font-weight: 700;
+    color: $black;
+  }
 
-    .content {
-        padding: 2rem;
-    }
+  .title {
+    font-size: 3.25rem;
+    line-height: 4.5rem;
+    font-weight: 600;
+    color: $white;
+    background: $icc-blue;
+    padding: 4em 0.8em 0.35em 0.8em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 
-    .title {
-        font-size: 3rem;
-        line-height: 4.5rem;
-        color: $black;
-    }
+  .teaser {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 0.75em;
+  }
 
+  .department {
+    font-size: 1.65rem;
+    text-transform: uppercase;
+  }
 
-
-    .dates {
-        font-size: 1.25rem;
-        font-weight: 300;
-        color: $black;
-    }
-
-    .department {
-        font-size: 1.5rem;
-        color: $black;
-    }
-
-    .image {
-        height: 16rem;
-        overflow: hidden;
-
-        img {object-fit: cover;}
-    }
-
-    .details {
-        margin-top: 2rem;
-    }
+  .details {
+    margin-top: 2rem;
+  }
 }

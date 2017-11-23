@@ -3,6 +3,6 @@ status: true
 dependencies: {  }
 id: challenge_step
 label: 'Challenge Step'
-icon_uuid: 82fd0249-786e-4c8e-a3f1-ecac405b3de9
+icon_uuid: null
 description: ''
 behavior_plugins: {  }
