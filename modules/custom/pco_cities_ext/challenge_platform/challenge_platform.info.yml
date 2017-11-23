@@ -26,6 +26,7 @@ dependencies:
   - user
   - video_embed_field
   - views
+  - views_bootstrap
   - workbench_moderation
   - wxt_library
 version: 8.x-1.0
