@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
     - field.field.node.challenge.field_challenge_details
+    - field.field.node.challenge.field_challenge_details_block
     - field.field.node.challenge.field_challenge_image
     - field.field.node.challenge.field_single_line_teaser
     - field.field.node.challenge.field_tags
@@ -52,13 +53,13 @@ third_party_settings:
             weight: 1
             uuid: e57e5920-08c3-4023-97fe-9e02d318573a
             context_mapping: {  }
-          ecb37b05-6edb-4621-88e9-1ddee5e10c58:
+          20f6dd48-dfb6-4f57-8bd9-3df0a2665f3f:
             id: 'entity_field:node:field_challenge_image'
             label: 'Challenge Image'
             provider: ctools_block
             label_display: '0'
             formatter:
-              label: hidden
+              label: visually_hidden
               type: image_url
               settings:
                 image_style: ''
@@ -66,10 +67,10 @@ third_party_settings:
               weight: 0
             region: top
             weight: -2
-            uuid: ecb37b05-6edb-4621-88e9-1ddee5e10c58
+            uuid: 20f6dd48-dfb6-4f57-8bd9-3df0a2665f3f
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          598ebcf1-5923-413e-afe8-2b8fb4651c70:
+          1d969932-bf07-4a05-8c1b-c470c8400594:
             id: 'entity_field:node:title'
             label: Title
             provider: ctools_block
@@ -83,10 +84,10 @@ third_party_settings:
               weight: 0
             region: top
             weight: -1
-            uuid: 598ebcf1-5923-413e-afe8-2b8fb4651c70
+            uuid: 1d969932-bf07-4a05-8c1b-c470c8400594
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          0af54031-c55c-4a66-9dad-626c8f9b3862:
+          1ce23b14-125f-4dfa-84c1-3042d22cd4bd:
             id: 'entity_field:node:field_challenge_department'
             label: Department
             provider: ctools_block
@@ -100,27 +101,10 @@ third_party_settings:
               weight: 0
             region: top
             weight: 0
-            uuid: 0af54031-c55c-4a66-9dad-626c8f9b3862
+            uuid: 1ce23b14-125f-4dfa-84c1-3042d22cd4bd
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          fff08c37-7563-4151-9e79-9b900d09fce9:
-            id: 'entity_field:node:field_challenge_details'
-            label: 'Challenge Details'
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: visually_hidden
-              type: entity_reference_revisions_entity_view
-              settings:
-                view_mode: default
-              third_party_settings: {  }
-              weight: 0
-            region: right
-            weight: 0
-            uuid: fff08c37-7563-4151-9e79-9b900d09fce9
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
-          ed6074d2-3e4f-4a7e-aa4e-574663cf0908:
+          df67b36c-fba9-4540-a479-3c8745ec402c:
             id: 'entity_field:node:field_tags'
             label: Tags
             provider: ctools_block
@@ -134,7 +118,23 @@ third_party_settings:
               weight: 0
             region: right
             weight: 0
-            uuid: ed6074d2-3e4f-4a7e-aa4e-574663cf0908
+            uuid: df67b36c-fba9-4540-a479-3c8745ec402c
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          af406e09-f8d0-4905-b736-66c54e539657:
+            id: 'entity_field:node:field_challenge_details_block'
+            label: 'Challenge Details'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: right
+            weight: 0
+            uuid: af406e09-f8d0-4905-b736-66c54e539657
             context_mapping:
               entity: '@panelizer.entity_context:entity'
         id: panels_variant
@@ -211,6 +211,13 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
+  field_challenge_details_block:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_challenge_image:
     weight: 108
     label: hidden
@@ -222,7 +229,7 @@ content:
     region: content
   field_single_line_teaser:
     weight: 110
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -230,7 +237,7 @@ content:
     region: content
   field_tags:
     weight: 111
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }

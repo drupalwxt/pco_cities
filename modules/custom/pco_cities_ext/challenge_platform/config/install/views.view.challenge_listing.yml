@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_challenge_image
     - field.storage.node.field_single_line_teaser
     - node.type.challenge
-    - system.menu.challenges
   module:
     - image
     - node
@@ -375,73 +374,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        promote:
-          id: promote
-          table: node_field_revision
-          field: promote
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: boolean
-            format_custom_true: ''
-            format_custom_false: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: node
-          entity_field: promote
-          plugin_id: field
       filters:
         status:
           value: '1'
@@ -463,6 +395,46 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
       sorts:
         created:
           id: created
@@ -530,7 +502,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<div class="row"><div class="col-xs-12"><a href="/challenges" class="views-footer--link">View All Challenges</a></div></div>'
+            value: ''
             format: full_html
           plugin_id: text
       defaults:
@@ -563,25 +535,34 @@ display:
         - 'config:field.storage.node.field_challenge_department'
         - 'config:field.storage.node.field_challenge_image'
         - 'config:field.storage.node.field_single_line_teaser'
-  page_1:
-    display_plugin: page
-    id: page_1
-    display_title: 'Challenge Listing Pages'
-    position: 1
+  block_3:
+    display_plugin: block
+    id: block_3
+    display_title: 'New Challenge Listing'
+    position: 2
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      path: challenges
-      menu:
-        type: normal
-        title: Challenges
-        menu_name: challenges
       display_description: ''
-      title: Challenges
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: ''
+            format: full_html
+          plugin_id: text
       defaults:
+        footer: false
         title: false
         header: false
-        css_class: false
+      title: ''
       header:
         area:
           id: area
@@ -593,10 +574,9 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"page--title-block\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-xs-12\"><h1 id=\"wb-cont\">[current-page:title]</h1></div>\n            </div>\n        </div>\n    </div>\n<div class=\"container mrgn-tp-md\">\n<p>Help solve some of Canada’s biggest challenges. Through the Impact Canada Initiative, the Government of Canada wants to engage a diverse range of innovators and problem solvers to help improve outcomes for Canadians.  Search our challenges to find out where you can have an impact.</p>\n</div>"
+            value: "\n"
             format: rich_text
           plugin_id: text
-      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:

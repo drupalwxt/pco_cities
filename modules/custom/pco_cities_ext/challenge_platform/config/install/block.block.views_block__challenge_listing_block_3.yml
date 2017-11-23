@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.challenge_listing
+  module:
+    - block_class
+    - system
+    - views
+    - wxt_library
+  theme:
+    - pco_cities_bootstrap
+third_party_settings:
+  block_class:
+    classes: ''
+id: views_block__challenge_listing_block_3
+theme: pco_cities_bootstrap
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:challenge_listing-block_3'
+settings:
+  id: 'views_block:challenge_listing-block_3'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/challenges\r\n/defis"
+    negate: false
+    context_mapping: {  }
+  panels_title:
+    id: panels_title
+    enabled: 0
+    negate: false
+    context_mapping: {  }

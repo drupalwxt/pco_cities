@@ -83,7 +83,7 @@ third_party_settings:
             uuid: 4e853ecd-2ec5-4cd1-91ec-bf38cc9b4014
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          f14f4796-4a63-4b21-b635-655368febeda:
+          40f90830-b667-4217-a9ad-0efe028b1ec7:
             id: 'entity_field:node:field_parent_challenge'
             label: Challenge
             provider: ctools_block
@@ -97,7 +97,7 @@ third_party_settings:
               weight: 0
             region: top
             weight: -2
-            uuid: f14f4796-4a63-4b21-b635-655368febeda
+            uuid: 40f90830-b667-4217-a9ad-0efe028b1ec7
             context_mapping:
               entity: '@panelizer.entity_context:entity'
         id: panels_variant

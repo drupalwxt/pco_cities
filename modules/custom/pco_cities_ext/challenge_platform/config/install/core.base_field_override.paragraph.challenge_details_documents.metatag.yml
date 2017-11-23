@@ -2,17 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_document_title
     - paragraphs.paragraphs_type.challenge_details_documents
-id: paragraph.challenge_details_documents.field_document_title
-field_name: field_document_title
+id: paragraph.challenge_details_documents.metatag
+field_name: metatag
 entity_type: paragraph
 bundle: challenge_details_documents
-label: 'Document Title'
-description: ''
-required: true
+label: Metatags
+description: 'The metatags for the entity.'
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: map
