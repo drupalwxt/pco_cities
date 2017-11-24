@@ -29,7 +29,6 @@
   {% endif %}
 
 <div class="container">
-  <div class="row">
     {% if left.content %}
     <{{ left.wrapper }}{{ left.attributes }}>
       {{ left.content }}
@@ -41,7 +40,6 @@
       {{ right.content }}
     </{{ right.wrapper }}>
     {% endif %}
-  </div>
 </div>
 
   {% if bottom.content %}
