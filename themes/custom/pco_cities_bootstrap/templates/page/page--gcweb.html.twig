@@ -72,11 +72,6 @@
 
   {# frontpage banner #}
 
-    {% if is_front %}
-      {% include 'page-front-header.html.twig' %}
-    {% endif %}
-
-
   {# Highlighted #}
   {% if page.highlighted %}
     {% block highlighted  %}
@@ -107,20 +102,11 @@
       {% endblock %}
     {% endif %}
 
-    {# Content #}
-    {% if is_front %}
-      <div class="container">
-    {% endif %}
-
     {% block content %}
       <a id="main-content"></a>
       {{ page.content }}
       {{ page.content_footer }}
     {% endblock %}
-
-    {% if is_front %}
-      </div>
-    {% endif %}
 
   </main>
 </div>
