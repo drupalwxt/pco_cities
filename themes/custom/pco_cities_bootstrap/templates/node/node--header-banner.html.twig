@@ -66,13 +66,9 @@
  */
 #}
 
-<div class="challenge--title-block" style="background-image:url('{{content.field_challenge_image.0}}')">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1 id="wb-content" property="name">{{label.0}}</h1>
-        <div class="department">{{content.field_challenge_department.0}}</div>
-      </div>
-    </div>
+<div class="homepage--header" style="background-image: url('{{content.field_background_image.0}}')">
+  <div class="homepage--header--content container">
+    {{content.body}}
   </div>
+  <div class="header--photocredit"><strong>{{content.field_photo_credit['#title']}}</strong>: {{content.field_photo_credit.0}}</div>
 </div>
