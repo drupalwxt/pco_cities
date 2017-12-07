@@ -44,7 +44,60 @@
   }
 }
 
-// Timeline
+
+/*
+  Timeline
+
+  ---- IMPLEMENTATION ----
+
+  <ul>
+    <li>
+      <div>
+        <h3>Title of Event</h3>
+        <p><strong>Date</strong></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+      </div>
+    </li>
+
+    <!-- THIS IS FOR A COMPLETED STAGE, add "completed" class to li -->
+    <li class="completed">
+      <div>
+        <h3>Title of Event</h3>
+        <p><strong>Date</strong></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+      </div>
+    </li>
+  </ul>
+
+*/
 ul.timeline {
   list-style  : none;
   margin      : 0;
@@ -86,51 +139,44 @@ ul.timeline {
       }
 
       &::after {
-        border: #FFF 3px solid;
-        content: '';
-        display: block;
-
-        height: 2.5rem;
-        width: 2.5rem;
-        position: absolute;
-        top:4.5rem;
-        left:1em;
-        border-radius: 50%;
-
-        transform: translateY(-50%) translateX(-0.73rem);
-        background: #7c7c7c;
+        background      : #7c7c7c;
+        border          : #FFF 3px solid;
+        border-radius   : 50%;
+        content         : '';
+        display         : block;
+        height          : 2.5rem;
+        left            : 1em;
+        position        : absolute;
+        top             : 4.5rem;
+        transform       : translateY(-50%) translateX(-0.73rem);
+        width           : 2.5rem;
       }
 
-      &.completed::after, &.completed::before { background: #4293ae; }
+      &.completed::after,
+      &.completed::before { background : #4293ae; }
     }
 
     & > div {
-      padding: 0 0.5rem;
-      position: relative;
+      padding   : 0 0.5rem;
+      position  : relative;
 
-      @include desktop {
-        margin-top:-2.75rem;
-      }
+      @include desktop { margin-top:-3rem; }
 
       & > h3 {
-        font-weight: 500;
-        color: #7c7c7c;
-        padding: 0.5rem 1rem;
-        display: block;
-        font-size:1.4em;
-        margin-bottom: 0;
+        color           : #7c7c7c;
+        display         : block;
+        font-weight     : 500;
+        font-size       : 1.4em;
+        margin-bottom   : 0;
+        padding         : 0.5rem 1rem;
       }
 
       & > p {
-        padding: 0.75rem 1.25rem 0 1.25rem;
-        font-size: 1em;
-        line-height: 2.25rem;
-        color: #202020;
-
+        color           : #202020;
+        font-size       : 1em;
+        line-height     : 2.25rem;
+        padding         : 0.75rem 1.25rem 0 1.25rem;
       }
     }
   }
 }
-
-
-
