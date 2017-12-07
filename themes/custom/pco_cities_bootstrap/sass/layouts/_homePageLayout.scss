@@ -1,52 +1,42 @@
 .path-frontpage {
 
   h1 {
-    border-bottom   : none;
-    margin          : 5rem 2rem 0rem 2rem;
+    border-bottom : none;
+    margin        : 5rem 2rem 0rem 2rem;
   }
 
-  .field--name-body {
-    p {
-      font-size   : 2rem;
-      margin      : 3rem;
-      max-width   : 85rem;
-    }
+  .field--name-body p {
+    font-size   : 2rem;
+    margin      : 3rem;
+    max-width   : 85rem;
   }
 
-  .block-region-content .tabs {
-      display : none;
-  }
+  .block-region-content .tabs { display : none; }
 }
 
-.block-views-blockchallenge-listing-block-1 {
-
-  .block-title {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.4em;
-    margin-bottom: 0;
-  }
+.block-views-blockchallenge-listing-block-1 .block-title {
+  text-transform  : uppercase;
+  font-weight     : 700;
+  font-size       : 1.4em;
+  margin-bottom   : 0;
 }
 
 // Homepage Header Blocks
 .homepage--header{
 
-  background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../assets/cp-frontpage-bk.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  padding: 4em 4em;
-  position: relative;
+  background-size     : cover;
+  background-repeat   : no-repeat;
+  background-position : top center;
+  padding             : 4em 4em;
+  position            : relative;
 
-  @include desktop {
-    background-position: center center;
-  }
+  @include desktop { background-position: center center; }
 
 
   h1 {
+    color   : $white;
     font-size: 2.1em;
     font-weight: 600;
-    color: $white;
     margin: 0;
   }
 

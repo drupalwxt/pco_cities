@@ -51,26 +51,18 @@ h6 {
 
 // Global classes
 
-a:not([class]) {
-  color: $primary-color;
-}
-
-
+a:not([class]) { color: $primary-color; }
 
 main {
     color           : $black;
     font-size       : 1.75rem;
     font-weight     : normal;
-    padding-bottom   : 4rem;
+    padding-bottom  : 4rem;
 
-    @include desktop {
-      font-weight: 300;
-    }
+    @include desktop { font-weight: 300; }
 
-    ul:not([class]), ol:not([class]) {
-      li {
-        margin-bottom   : 1.75rem;
-      }
+    ul:not([class]) li, ol:not([class]) li {
+      margin-bottom   : 1.75rem;
     }
 
     h1, h2, h3, h4, h5, p, ol, ul, li {
