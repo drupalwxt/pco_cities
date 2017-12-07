@@ -16,6 +16,11 @@
     line-height     : 110%;
     margin          : 0 0 0.15em 0;
     padding         : 0;
+
+    a {
+      color           : $white;
+      text-decoration : none;
+    }
   }
 
   .department {
