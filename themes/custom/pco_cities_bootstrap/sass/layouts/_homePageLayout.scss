@@ -22,6 +22,19 @@
 }
 
 // Homepage Header Block
+/*
+ * <h1 id="wb-content" property="name">
+ *    Main Title Text
+ *    <span class="small">Sub h1 title</span>
+ * </h1>
+ *
+ * <ul class="list-inline">
+ *  <li><a href="#">Link Text</li></li>
+ *  <li><a href="#">Link Text</li></li>
+ * </ul>
+ *
+ */
+
 .homepage--header{
   padding   : 4em 4em;
   position  : relative;
