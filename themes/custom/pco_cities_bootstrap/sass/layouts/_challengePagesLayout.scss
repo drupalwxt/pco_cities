@@ -1,142 +1,136 @@
 // Header Block for challenge and their subsequent pages
 .challenge--title-block {
-  border-bottom   : #CCC 1px solid;
-  padding         : 3.75rem 0 2.5rem 0;
-  background: $icc-blue;
-  color: $white;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background          : $icc-blue;
+  background-position : center center;
+  background-repeat   : no-repeat;
+  background-size     : cover;
+  border-bottom       : #CCC 1px solid;
+  color               : $white;
+  padding             : 3.75rem 0 2.5rem 0;
 
   h1 {
     border-bottom   : none;
-    font-size: 2.1em;
-    line-height: 110%;
-    padding:0;
+    color           : $white;
+    font-size       : 2.1em;
     font-weight     : 600;
-    color: $white;
+    line-height     : 110%;
     margin          : 0 0 0.15em 0;
+    padding         : 0;
   }
 
   .department {
-    font-size   : 1em;
-    font-weight : 600;
-    text-transform: uppercase;
+    font-size       : 1em;
+    font-weight     : 600;
+    text-transform  : uppercase;
   }
 
-  .dates {
-    margin-top: 1rem;
-  }
+  .dates { margin-top : 1rem; }
 }
 
 // Challenge Details
 .challengeDetails{
-  border: #007897 5px solid;
-  margin-top: 3em;
+  border      : #007897 5px solid;
+  margin-top  : 3em;
 }
 
 .challengeDetails--title {
-  border-bottom: #007897 5px solid;
-  padding: 0.75em 2em 0.45em 2em;
+  border-bottom   : #007897 5px solid;
+  padding         : 0.75em 2em 0.45em 2em;
 
   h3 {
-    margin:0 !important;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-size      : 1.1em;
+    font-weight    : 600;
+    margin         : 0 !important;
+    letter-spacing : 2px;
+    text-transform : uppercase;
   }
 }
 
 .challengeDetails--detail {
   & ul {
-    margin-left: 1em;
+    margin-left : 1em;
 
     li {
-      line-height: 1.5em;
-      position:relative;
-      margin-bottom: 0.25em !important;
+      line-height     : 1.5em;
+      margin-bottom   : 0.25em !important;
+      position        : relative;
 
       &:before {
-        content: '\25A0';
-        color: #007897;
-        padding-right: 0.5em;
-        font-size: 0.75em;
-        position: absolute;
-        top: -0.1em;
-        left:-1.15em;
+        content       : '\25A0';
+        color         : #007897;
+        padding-right : 0.5em;
+        font-size     : 0.75em;
+        position      : absolute;
+        top           : -0.1em;
+        left          : -1.15em;
       }
     }
   }
 
   &.documents a {
-    font-weight: 600;
-    text-decoration: none;
-    color: #000;
-    border-bottom: #000 1px solid;
+    border-bottom   : #000 1px solid;
+    color           : #000;
+    font-weight     : 600;
+    text-decoration : none;
   }
 
   & a.challenge-button {
-    color: #FFF;
-    background: #007897;
-    padding: 0.5em 0;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 400;
-    letter-spacing: 1px;
-    border-radius: 0.5em;
-    margin: 0.75em 0;
+    background      : #007897;
+    border-radius   : 0.5em;
+    color           : #FFF;
+    display         : block;
+    font-size       : 1.2em;
+    font-weight     : 400;
+    letter-spacing  : 1px;
+    margin          : 0.75em 0;
+    padding         : 0.5em 0;
+    text-align      : center;
+    text-decoration : none;
   }
 }
 
 .challengeDetails--detail, .challengeDetails .views-field-field-tags {
-  border-bottom: rgba(#007897, 0.75) 1px dashed;
-  padding: 0.75em 0;
-  font-size: 0.9em;
+  border-bottom : rgba(#007897, 0.75) 1px dashed;
+  font-size     : 0.9em;
+  padding       : 0.75em 0;
 
   .field-label, .views-label-field-tags, h4 {
-    color: #007897;
-    font-size:0.85em;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 0.5em;
-    line-height : 1em;
+    color         : #007897;
+    display       : block;
+    font-size     : 0.85em;
+    font-weight   : 600;
+    line-height   : 1em;
+    margin-bottom : 0.5em;
   }
 }
 
-.challengeDetails--detail.no-border {
-  border-bottom: none !important;
-}
+.challengeDetails--detail.no-border { border-bottom: none !important; }
 
 .challengeDetails .challenge--tags {
 
-  ul {
-    margin-bottom: 0;
-  }
+  ul { margin-bottom: 0; }
 
   li, .field__items .field--item {
-    display: inline-block;
-    margin: 0.35em 0.1em;
-    background: #DDD;
-    padding: 0em 1em;
-    border-radius: 3em;
-    text-decoration: none;
-    color: #000;
-    font-weight: 600;
-    font-size: 0.85em;
+    background      : #DDD;
+    border-radius   : 3em;
+    color           : #000;
+    display         : inline-block;
+    font-size       : 0.85em;
+    font-weight     : 600;
+    margin          : 0.35em 0.1em;
+    padding         : 0em 1em;
+    text-decoration : none;
   }
 
   a {
-    display:block;
-    background: #DDD;
-    padding: 0em 1em;
-    border-radius: 3em;
-    text-decoration: none;
-    color: #000;
-    font-weight: 600;
-    font-size: 0.85em;
+    background      : #DDD;
+    border-radius   : 3em;
+    color           : #000;
+    display         : block;
+    font-size       : 0.85em;
+    font-weight     : 600;
+    padding         : 0em 1em;
+    text-decoration : none;
   }
 
 }
@@ -144,18 +138,11 @@
 .challengeDetails--detailFields {
   padding: 1.5em 2em;
 
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
+  ul { list-style-type: none; padding-left: 0; }
 }
 
-// Challenge landing page video field
-
 .field--name-field-challenge-description {
-  @include desktop {
-    margin-top: 4rem;
-  }
+  @include desktop { margin-top: 4rem; }
 }
 
 // Content Styles
@@ -164,27 +151,22 @@
   .field--type-text-with-summary {
 
     h2 {
-      font-size: 3rem;
-      font-weight: 600;
-      line-height: 4rem;
+      font-size   : 3rem;
+      font-weight : 600;
+      line-height : 4rem;
     }
 
     p.lead {
-      font-size: 1.15em;
-      font-weight: 500;
-      line-height: 1.45em;
+      font-size   : 1.15em;
+      font-weight : 500;
+      line-height : 1.45em;
     }
   }
-
 }
 
 // Panelizer styles
+.bs-region--top { margin-bottom: 1em; }
 
-.bs-region--top {
-  margin-bottom: 1em;
-}
 .block-region-right {
-  @include desktop {
-    padding-left: 2rem;
-  }
+  @include desktop { padding-left: 2rem; }
 }
