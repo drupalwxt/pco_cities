@@ -82,3 +82,14 @@ body {
   background-color: #fff;
   font-family: 'HKGrotesk-Regular', 'Helvetica', 'Arial', san-serif;
 }
+
+.path-user main{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 750px;
+
+  @include tablet { width: 970px; }
+  @include desktop { width: 1170px; }
+}
