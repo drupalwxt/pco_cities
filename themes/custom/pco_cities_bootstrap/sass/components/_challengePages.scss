@@ -44,5 +44,93 @@
   }
 }
 
+// Timeline
+ul.timeline {
+  list-style  : none;
+  margin      : 0;
+  overflow-y  : hidden;
+  padding     : 0;
+  position    : relative;
+
+  @include desktop {
+    &::after {
+      background  : #AAA;
+      bottom      : 0;
+      content     : '';
+      display     : block;
+      height      : 8px;
+      position    : absolute;
+      transform   : translateX(0.73rem);
+      width       : 3rem;
+    }
+  }
+
+  & > li {
+    display   : block;
+    padding   : 1rem 0rem;
+    position  : relative;
+
+    @include desktop {
+      padding: 2rem 4rem;
+
+      &::before {
+        background  : #AAA;
+        content     : '';
+        display     : block;
+        height      : 100%;
+        left        : 1em;
+        position    : absolute;
+        top         : 0;
+        transform   : translateY(4rem);
+        width       : 10px;
+      }
+
+      &::after {
+        border: #FFF 3px solid;
+        content: '';
+        display: block;
+
+        height: 2.5rem;
+        width: 2.5rem;
+        position: absolute;
+        top:4.5rem;
+        left:1em;
+        border-radius: 50%;
+
+        transform: translateY(-50%) translateX(-0.73rem);
+        background: #7c7c7c;
+      }
+
+      &.completed::after, &.completed::before { background: #4293ae; }
+    }
+
+    & > div {
+      padding: 0 0.5rem;
+      position: relative;
+
+      @include desktop {
+        margin-top:-2.75rem;
+      }
+
+      & > h3 {
+        font-weight: 500;
+        color: #7c7c7c;
+        padding: 0.5rem 1rem;
+        display: block;
+        font-size:1.4em;
+        margin-bottom: 0;
+      }
+
+      & > p {
+        padding: 0.75rem 1.25rem 0 1.25rem;
+        font-size: 1em;
+        line-height: 2.25rem;
+        color: #202020;
+
+      }
+    }
+  }
+}
+
 
 
