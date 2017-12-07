@@ -33,16 +33,26 @@
     color       : $white;
     font-size   : 2.1em;
     font-weight : 600;
-    margin      : 0;
+    margin      : 0 0 1em 0;
+
+    & .small {
+      color       : $white;
+      display     : block;
+      font-size   : 0.65em;
+      max-width   : 34em;
+      margin-top  : 0.65em;
+      line-height : 1.25em;
+    }
   }
 
-  .small {
-    color       : $white;
-    display     : block;
-    font-size   : 0.65em;
-    max-width   : 34em;
-    margin-top  : 0.65em;
-    line-height : 1.25em;
+  a {
+    border-bottom   : $white 1px solid;
+    color           : $white;
+    font-size       : 0.9em;
+    font-weight     : 600;
+    text-decoration : none;
+    text-transform  : uppercase;
+    margin-right    : 2em;
   }
 
   .header--photocredit {
@@ -52,19 +62,5 @@
     font-weight : 100;
     position    : absolute;
     right       : 1.5rem;
-  }
-}
-
-.homepage--header--actionlinks {
-  margin-top: 2.5em;
-
-  a {
-    border-bottom: $white 1px solid;
-    color: $white;
-    font-size: 0.9em;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-right: 2em;
   }
 }
