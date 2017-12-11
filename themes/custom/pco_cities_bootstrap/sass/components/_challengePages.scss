@@ -14,24 +14,21 @@
 */
 
 .photo-with-text {
-  img {
-    width: 100%;
-    height: auto;
-  }
+  img { height: auto; width: 100%; }
 
   &.rounded img { border-radius: 1em; }
 
   & > .text {
-    color: #FFF;
-    display: block;
-    font-size: 1.5em;
-    font-weight: 600;
-    left: 50%;
-    position: absolute;
-    text-align: center;
-    text-shadow: 0px 0px 2px rgba(0,0,0,1);
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    color       : #FFF;
+    display     : block;
+    font-size   : 1.5em;
+    font-weight : 600;
+    left        : 50%;
+    position    : absolute;
+    text-align  : center;
+    text-shadow : 0px 0px 2px rgba(0,0,0,1);
+    top         : 50%;
+    transform   : translateY(-50%) translateX(-50%);
 
     &.small   { font-size:   1.25em; }
     &.smaller { font-size:   1em;    }
@@ -41,11 +38,148 @@
     &.thin    { font-weight: 400;    }
 
     &.black {
-      color: #000;
-      text-shadow: 0 0 rgba(0,0,0,0);
+      color       : #000;
+      text-shadow : 0 0 rgba(0,0,0,0);
     }
   }
 }
 
 
+/*
 
+ =================================
+  Timeline
+ =================================
+
+  ---- IMPLEMENTATION ----
+
+  <ul class="timeline">
+    <li>
+      <div>
+        <h3>Title of Event</h3>
+        <p><strong>Date</strong></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+      </div>
+    </li>
+
+    <!-- THIS IS FOR A COMPLETED STAGE, add "completed" class to li -->
+    <li class="completed">
+      <div>
+        <h3>Title of Event</h3>
+        <p><strong>Date</strong></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin sapien ipsum, scelerisque at eros sit amet, congue ultrices ante.
+          enean nec ante non velit placerat rhoncus. Nulla orci leo, scelerisque
+          tempus pretium ut, semper sit amet nisi.
+        </p>
+      </div>
+    </li>
+  </ul>
+
+*/
+ul.timeline {
+  list-style  : none;
+  margin      : 0;
+  overflow-y  : hidden;
+  padding     : 0;
+  position    : relative;
+
+  @include desktop {
+    &::after {
+      background  : #AAA;
+      bottom      : 0;
+      content     : '';
+      display     : block;
+      height      : 8px;
+      position    : absolute;
+      transform   : translateX(0.73rem);
+      width       : 3rem;
+    }
+  }
+
+  & > li {
+    display   : block;
+    padding   : 1rem 0rem;
+    position  : relative;
+
+    @include desktop {
+      padding: 2rem 4rem;
+
+      &::before {
+        background  : #AAA;
+        content     : '';
+        display     : block;
+        height      : 100%;
+        left        : 1em;
+        position    : absolute;
+        top         : 0;
+        transform   : translateY(4rem);
+        width       : 10px;
+      }
+
+      &::after {
+        background      : #7c7c7c;
+        border          : #FFF 3px solid;
+        border-radius   : 50%;
+        content         : '';
+        display         : block;
+        height          : 2.5rem;
+        left            : 1em;
+        position        : absolute;
+        top             : 4.5rem;
+        transform       : translateY(-50%) translateX(-0.73rem);
+        width           : 2.5rem;
+      }
+
+      &.completed::after,
+      &.completed::before { background : #4293ae; }
+    }
+
+    & > div {
+      padding   : 0 0.5rem;
+      position  : relative;
+
+      @include desktop { margin-top:-3rem; }
+
+      & > h3 {
+        color           : #7c7c7c;
+        display         : block;
+        font-weight     : 500;
+        font-size       : 1.4em;
+        margin-bottom   : 0;
+        padding         : 0.5rem 1rem;
+      }
+
+      & > p {
+        color           : #202020;
+        font-size       : 1em;
+        line-height     : 2.25rem;
+        padding         : 0.75rem 1.25rem 0 1.25rem;
+      }
+    }
+  }
+}

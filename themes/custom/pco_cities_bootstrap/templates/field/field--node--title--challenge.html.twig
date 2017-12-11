@@ -23,6 +23,6 @@
 #}
 <h1{{ attributes }}>
   {%- for item in items -%}
-    {{ item.content }}
+    <a href="{{ url('<current>') }}">{{ item.content }}</a>
   {%- endfor -%}
 </h1>

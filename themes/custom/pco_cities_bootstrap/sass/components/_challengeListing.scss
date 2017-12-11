@@ -1,5 +1,5 @@
-.view-challenge-listing {
-  a { text-decoration: none !important; }
+.view-challenge-listing a {
+  text-decoration: none !important;
 }
 
 .challenge-item--container {
@@ -20,40 +20,38 @@
 }
 
 .challenge-item {
-  margin: 2rem 0;
-  border: $icc-blue 2px solid;
-  background: #FFF;
+  background  : #FFF;
+  border      : $icc-blue 2px solid;
+  margin      : 2rem 0;
 
   .content {
-    padding: 2.25rem 2.5rem;
-    font-weight: 700;
-    color: $black;
+    color       : $black;
+    font-weight : 700;
+    padding     : 2.25rem 2.5rem;
   }
 
   .title {
-    font-size: 3.25rem;
-    line-height: 4.5rem;
-    font-weight: 600;
-    color: $white;
-    background: $icc-blue;
-    padding: 4em 0.8em 0.35em 0.8em;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background          : $icc-blue;
+    background-repeat   : no-repeat;
+    background-size     : cover;
+    background-position : center center;
+    color               : $white;
+    font-size           : 3.25rem;
+    font-weight         : 600;
+    line-height         : 4.5rem;
+    padding             : 4em 0.8em 0.35em 0.8em;
   }
 
   .teaser {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-top: 0.75em;
+    font-size     : 2rem;
+    font-weight   : 600;
+    margin-top    : 0.75em;
   }
 
   .department {
-    font-size: 1.65rem;
-    text-transform: uppercase;
+    font-size       : 1.65rem;
+    text-transform  : uppercase;
   }
 
-  .details {
-    margin-top: 2rem;
-  }
+  .details { margin-top: 2rem; }
 }
