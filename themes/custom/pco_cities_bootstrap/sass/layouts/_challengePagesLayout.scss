@@ -1,4 +1,20 @@
 // Header Block for challenge and their subsequent pages
+
+#subsite-title {
+  border-bottom   : none;
+  color           : $white;
+  font-size       : 2.1em;
+  font-weight     : 600;
+  line-height     : 110%;
+  margin          : 0 0 0.15em 0;
+  padding         : 0;
+
+  a {
+    color           : $white;
+    text-decoration : none;
+  }
+}
+
 .challenge--title-block {
   background          : $icc-blue;
   background-position : center center;
@@ -7,21 +23,6 @@
   border-bottom       : #CCC 1px solid;
   color               : $white;
   padding             : 3.75rem 0 2.5rem 0;
-
-  h1 {
-    border-bottom   : none;
-    color           : $white;
-    font-size       : 2.1em;
-    font-weight     : 600;
-    line-height     : 110%;
-    margin          : 0 0 0.15em 0;
-    padding         : 0;
-
-    a {
-      color           : $white;
-      text-decoration : none;
-    }
-  }
 
   .department {
     font-size       : 1em;
