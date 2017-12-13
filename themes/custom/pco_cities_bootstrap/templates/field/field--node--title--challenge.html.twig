@@ -21,8 +21,10 @@
  * @ingroup themeable
  */
 #}
-<h1{{ attributes }}>
+{# <h1{{ attributes }}> #}
+<div id="subsite-title">
   {%- for item in items -%}
     <a href="{{ url('<current>') }}">{{ item.content }}</a>
   {%- endfor -%}
-</h1>
+</div>
+{# </h1> #}
