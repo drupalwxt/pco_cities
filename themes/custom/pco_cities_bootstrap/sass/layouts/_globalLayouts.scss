@@ -62,7 +62,7 @@
         text-transform  : uppercase;
         text-align      : left;
 
-        &:hover, &:active {
+        &:hover, &:active, &:focus {
           background-color : $nav-color-active !important;
           color            : #fff;
         }
