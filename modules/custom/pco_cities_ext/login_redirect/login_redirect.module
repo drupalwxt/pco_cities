@@ -11,8 +11,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 /**
  * Implements hook_help().
  */
-function login_redirect_help($route_name, RouteMatchInterface $route_match)
-{
+function login_redirect_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     // Main module help for the loginredirect module.
     case 'help.page.login_redirect':
@@ -25,8 +24,7 @@ function login_redirect_help($route_name, RouteMatchInterface $route_match)
   }
 }
 
-function login_redirect_user_login($account)
-{
+function login_redirect_user_login($account) {
   if (!isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset') {
 
     $config = Drupal::config('login_redirect.settings');
