@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Contains loginredirect.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_help().
+ */
+function login_redirect_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the loginredirect module.
+    case 'help.page.login_redirect':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function login_redirect_user_login($account) {
+    if (!isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset') {
+
+        $config = Drupal::config('login_redirect.settings');
+
+        $user_roles = $account->getRoles();
+
+        foreach($user_roles as $user_role) {
+            if ($path = $config->get('login_redirect.' . $user_role)) {
+                $response = new RedirectResponse($path);
+                $response->send();
+                return;
+            }
+        }
+
+        if ($path = $config->get('login_redirect.default')) {
+            $response = new RedirectResponse($path);
+            $response->send();
+            return;
+        }
+
+        /* DEFAULT handled by drupal */
+    }
+}

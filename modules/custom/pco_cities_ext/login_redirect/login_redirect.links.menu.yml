@@ -1,0 +1,6 @@
+login_redirect.admin:
+  title: 'Login Redirect'
+  description: 'Configure Login Redirects by Role'
+  parent: system.admin_config_system
+  route_name: login_redirect.config
+  weight: 100

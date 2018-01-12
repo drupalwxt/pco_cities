@@ -1,0 +1,5 @@
+name: Login Redirect
+type: module
+description: Configure redirect after login
+core: 8.x
+package: pco cities

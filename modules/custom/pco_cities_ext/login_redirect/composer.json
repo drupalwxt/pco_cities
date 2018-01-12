@@ -1,0 +1,14 @@
+{
+  "name": "drupal/login_redirect",
+  "type": "drupal-module",
+  "description": "Configure Login Redirect by role",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/login_redirect",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/login_redirect",
+    "source": "http://cgit.drupalcode.org/login_redirect"
+  },
+  "require": { }
+}
