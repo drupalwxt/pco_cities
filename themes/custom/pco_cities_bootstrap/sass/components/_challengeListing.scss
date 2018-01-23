@@ -2,27 +2,11 @@
   text-decoration: none !important;
 }
 
-.challenge-item--container {
 
-  @include tablet {
-    &:nth-child(odd) {
-      padding-left: 0;
-
-      & .challenge-item { margin-right: 0.75em !important; }
-    }
-
-    &:nth-child(even) {
-      padding-right: 0;
-
-      & .challenge-item { margin-left: 0.75em; }
-    }
-  }
-}
 
 .challenge-item {
   background  : #FFF;
   border      : $icc-blue 2px solid;
-  margin      : 2rem 0;
 
   .content {
     color       : $black;
@@ -35,11 +19,15 @@
     background-repeat   : no-repeat;
     background-size     : cover;
     background-position : center center;
-    color               : $white;
-    font-size           : 3.25rem;
-    font-weight         : 600;
-    line-height         : 4.5rem;
-    padding             : 4em 0.8em 0.35em 0.8em;
+    height: 10em;
+
+    p {
+      color               : $white;
+      font-size           : 3.25rem;
+      font-weight         : 600;
+      line-height         : 4.5rem;
+      padding             : 0.35em 0.8em;
+    }
   }
 
   .teaser {

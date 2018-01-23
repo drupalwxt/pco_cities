@@ -24,15 +24,14 @@
     rows|length == 1 ? "col-md-12",
     rows|length == 2 ? "col-md-6",
     rows|length >= 3 ? "col-md-4",
-    "challenge-item--container"
+    "challenge-item--container",
+    "mrgn-bttm-lg"
     ]
 %}
 
-<div class="container">
-    <div class="row">
-        {% for row in rows %}
-            <div {{attributes.addClass(challenge_listing_classes)}}>{{ row.content }}</div>
-        {% endfor %}
-    </div>
+<div class="row wb-eqht">
+    {% for row in rows %}
+        <div {{attributes.addClass(challenge_listing_classes)}}>{{ row.content }}</div>
+    {% endfor %}
 </div>
 
