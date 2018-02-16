@@ -1,0 +1,46 @@
+<!-- Add you custom twig html here -->
+
+<div data-block-plugin-id="entity_field:node:field_challenge_image"
+     class="block block-ctools-block block-entity-fieldnodefield-challenge-image clearfix challenge--title-block"
+     style="background-image: url({{ challenge.image }})">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <section data-block-plugin-id="entity_field:node:title"
+                         class="block block-ctools-block block-entity-fieldnodetitle clearfix">
+
+                    <div id="subsite-title"><a
+                                href="https://challenge-dev.test/en/challenges/smart-cities">{{ challenge.title }}</a>
+                    </div>
+
+                </section>
+
+                <div class="department">{{ challenge.department.value }}</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+Whatever: {{ whatever }}
+
+{{ challenge.node.menu }}
+
+<div class="container">
+    <p>Have you read the <a href="">submission guidelines</a>?</p>
+
+    <h1 class="h2 mrgn-bttm-0">{{ 'Ready to submit?' | t }}</h1>
+    <p>Here's what we need from you:</p>
+
+    {{ form }}
+
+    {{ form.challenge }}
+    {{ form.elements.title }}
+    {{ form.summary }}
+    {{ form.primary_contact_name }}
+    {{ form.primary_contact_email }}
+    {{ form.link }}
+    {{ form.agree }}
+    {{ form.actions }}
+</div>

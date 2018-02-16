@@ -1,0 +1,14 @@
+{
+  "name": "drupal/challenge_submission",
+  "type": "drupal-module",
+  "description": "My Awesome Module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/challenge_submission",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/challenge_submission",
+    "source": "http://cgit.drupalcode.org/challenge_submission"
+  },
+  "require": { }
+}

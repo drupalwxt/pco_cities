@@ -1,0 +1,97 @@
+<?php
+
+/**
+ * @file
+ * Contains challenge_submission.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function challenge_submission_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    // Main module help for the challenge_submission module.
+    case 'help.page.challenge_submission':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/*
+function challenge_submission_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#theme'] = 'challenge-submission';
+} */
+
+/**
+ * Implements hook_theme().
+ */
+function challenge_submission_theme()
+{
+  return [
+    'challenge-submission' => [
+      'variables' => [
+        'whatever' => 'HUzzah',
+        'form' => NULL,
+        'challenge' => NULL,
+      ],
+      'render element' => 'form'
+    ],
+  ];
+}
+
+function challenge_submission_schema()
+{
+  $schema['challenge_submission'] = [
+    'fields' => [
+      'csid' => [
+        'type' => 'serial',
+        'not null' => TRUE
+      ],
+      'challenge' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ],
+      'title' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ],
+      'summary' => [
+        'type' => 'text'
+      ],
+      'primary_contact_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ],
+      'primary_contact_email' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ],
+      'fid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0
+      ],
+      'link' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE
+      ]
+    ],
+    'primary key' => ['csid']
+  ];
+
+  return $schema;
+}

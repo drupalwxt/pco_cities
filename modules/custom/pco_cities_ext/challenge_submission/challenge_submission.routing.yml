@@ -1,0 +1,7 @@
+challenge_submission.submission_form:
+  path: '/challenges/{challenge}/submission'
+  defaults:
+    _form: '\Drupal\challenge_submission\Form\SubmissionForm'
+    _title: 'Challenge Submission'
+  requirements:
+    _access: 'TRUE'
