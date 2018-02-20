@@ -10,7 +10,7 @@ dependencies:
   module:
     - file
     - link
-    - workbench_moderation
+    - content_moderation
 id: paragraph.challenge_details_documents.default
 targetEntityType: paragraph
 bundle: challenge_details_documents

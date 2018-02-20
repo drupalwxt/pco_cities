@@ -16,7 +16,7 @@ dependencies:
     - paragraphs
     - path
     - text
-    - workbench_moderation
+    - content_moderation
 id: node.challenge.default
 targetEntityType: node
 bundle: challenge

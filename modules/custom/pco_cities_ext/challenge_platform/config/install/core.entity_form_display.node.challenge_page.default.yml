@@ -9,7 +9,7 @@ dependencies:
   module:
     - path
     - text
-    - workbench_moderation
+    - content_moderation
 id: node.challenge_page.default
 targetEntityType: node
 bundle: challenge_page

@@ -27,7 +27,7 @@ dependencies:
   - video_embed_field
   - views
   - views_bootstrap
-  - workbench_moderation
+  - content_moderation
   - wxt_library
 version: 8.x-1.0
 description: 'Challenge Platform Feature Export (Node Entity Based Implementation)'

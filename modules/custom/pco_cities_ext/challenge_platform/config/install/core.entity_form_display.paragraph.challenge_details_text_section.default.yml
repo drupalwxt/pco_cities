@@ -7,7 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.challenge_details_text_section
   module:
     - text
-    - workbench_moderation
+    - content_moderation
 id: paragraph.challenge_details_text_section.default
 targetEntityType: paragraph
 bundle: challenge_details_text_section

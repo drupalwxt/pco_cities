@@ -9,7 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.challenge_step
   module:
     - text
-    - workbench_moderation
+    - content_moderation
 id: paragraph.challenge_step.default
 targetEntityType: paragraph
 bundle: challenge_step
