@@ -249,7 +249,7 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "drupalwxt/wxt": "2.0.1",
+        "drupalwxt/wxt": "dev-pre-2.0.0-upgrade",
         "harvesthq/chosen": "1.6.1"
     },
     "autoload": {
