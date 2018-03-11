@@ -4,14 +4,12 @@ dependencies:
   config:
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
-    - field.field.node.challenge.field_challenge_details
     - field.field.node.challenge.field_challenge_details_block
     - field.field.node.challenge.field_challenge_image
     - field.field.node.challenge.field_single_line_teaser
     - field.field.node.challenge.field_tags
     - node.type.challenge
   module:
-    - entity_reference_revisions
     - image
     - panelizer
     - text
@@ -50,7 +48,7 @@ third_party_settings:
             level: 2
             depth: 2
             region: top
-            weight: 1
+            weight: 0
             uuid: e57e5920-08c3-4023-97fe-9e02d318573a
             context_mapping: {  }
           20f6dd48-dfb6-4f57-8bd9-3df0a2665f3f:
@@ -66,7 +64,7 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
             region: top
-            weight: -2
+            weight: -3
             uuid: 20f6dd48-dfb6-4f57-8bd9-3df0a2665f3f
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -83,7 +81,7 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
             region: top
-            weight: -1
+            weight: -2
             uuid: 1d969932-bf07-4a05-8c1b-c470c8400594
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -100,7 +98,7 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
             region: top
-            weight: 0
+            weight: -1
             uuid: 1ce23b14-125f-4dfa-84c1-3042d22cd4bd
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -137,6 +135,17 @@ third_party_settings:
             uuid: af406e09-f8d0-4905-b736-66c54e539657
             context_mapping:
               entity: '@panelizer.entity_context:entity'
+          4c25e93e-1ded-4cdb-ae05-ba4ae76816cc:
+            id: local_tasks_block
+            label: Tabs
+            provider: core
+            label_display: '0'
+            primary: true
+            secondary: true
+            region: top
+            weight: 1
+            uuid: 4c25e93e-1ded-4cdb-ae05-ba4ae76816cc
+            context_mapping: {  }
         id: panels_variant
         label: Default
         uuid: 1c6488c5-2320-4181-bf2c-927a40c30593
@@ -201,15 +210,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_challenge_details:
-    type: entity_reference_revisions_entity_view
-    weight: 109
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
     region: content
   field_challenge_details_block:
     weight: 112
