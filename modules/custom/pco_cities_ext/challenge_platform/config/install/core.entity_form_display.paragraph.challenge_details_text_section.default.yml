@@ -7,7 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.challenge_details_text_section
   module:
     - text
-    - content_moderation
 id: paragraph.challenge_details_text_section.default
 targetEntityType: paragraph
 bundle: challenge_details_text_section
@@ -29,6 +28,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  translation:
+    weight: 10
     region: content
 hidden:
   created: true

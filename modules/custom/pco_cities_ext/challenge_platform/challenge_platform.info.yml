@@ -4,6 +4,7 @@ core: 8.x
 dependencies:
   - block
   - block_class
+  - content_moderation
   - content_translation
   - datetime
   - entity_browser
@@ -27,7 +28,6 @@ dependencies:
   - video_embed_field
   - views
   - views_bootstrap
-  - content_moderation
   - wxt_library
 version: 8.x-1.0
 description: 'Challenge Platform Feature Export (Node Entity Based Implementation)'

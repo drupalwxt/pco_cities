@@ -562,6 +562,7 @@ display:
         footer: false
         title: false
         header: false
+        css_class: false
       title: ''
       header:
         area:
@@ -577,6 +578,7 @@ display:
             value: "\n"
             format: rich_text
           plugin_id: text
+      css_class: container
     cache_metadata:
       max-age: -1
       contexts:

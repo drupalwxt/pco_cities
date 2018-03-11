@@ -4,7 +4,6 @@ dependencies:
   config:
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
-    - field.field.node.challenge.field_challenge_details
     - field.field.node.challenge.field_challenge_details_block
     - field.field.node.challenge.field_challenge_image
     - field.field.node.challenge.field_single_line_teaser
@@ -12,11 +11,10 @@ dependencies:
     - image.style.thumbnail
     - node.type.challenge
   module:
+    - content_moderation
     - image
-    - paragraphs
     - path
     - text
-    - content_moderation
 id: node.challenge.default
 targetEntityType: node
 bundle: challenge
@@ -39,20 +37,8 @@ content:
     third_party_settings: {  }
     type: text_textarea_with_summary
     region: content
-  field_challenge_details:
-    type: entity_reference_paragraphs
-    weight: 6
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    region: content
   field_challenge_details_block:
-    weight: 26
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
@@ -76,7 +62,7 @@ content:
     type: string_textfield
     region: content
   field_tags:
-    weight: 7
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -85,21 +71,28 @@ content:
     type: language_select
     weight: 0
     region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 11
     settings: {  }
+    region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
-  promote:
+  status:
     type: boolean_checkbox
-    weight: 11
-    region: content
     settings:
       display_label: true
+    weight: 12
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 1
@@ -109,13 +102,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -124,4 +117,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  promote: true
   sticky: true
