@@ -15,6 +15,4 @@ function submission_form_module_theme() {
       'template' => 'submission-form-theme-page',
     ],
   ];
-
-  return $theme;
 }
