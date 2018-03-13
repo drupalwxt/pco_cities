@@ -1,0 +1,5 @@
+submission_form_module.submission_form:
+  title: 'Test Form'
+  description: 'Set the Default Count variable'
+  route_name: submission_form_module.test_form
+  parent: system.admin_config_system
