@@ -29,7 +29,17 @@ class SubmissionForm extends FormBase {
 
     $form['summary'] = [
       '#type' => 'textarea',
-      '#attributes' => ['class' => ['full-width'], 'drupal-field-name' => ['Summary'], 'data-rule-maxlength' => ['1200']],
+      '#attributes' => [
+        'class' => [
+          'full-width',
+        ],
+        'drupal-field-name' => [
+          'Summary',
+        ],
+        'data-rule-maxlength' => [
+          '1200',
+        ],
+      ],
       '#required' => TRUE,
       '#maxlength' => 1200,
     ];

@@ -7,7 +7,7 @@ use Drupal\Core\Controller\ControllerBase;
 
 class SubmissionFormModuleController extends ControllerBase {
 
-  public function submission_success_page($challenge) {
+  public function submissionSuccessPage($challenge) {
 
     $challenge_slug = \Drupal::request()->get('challenge');
     $path = \Drupal::service('path.alias_manager')->getPathByAlias('/challenges/' . $challenge_slug);
@@ -35,7 +35,7 @@ class SubmissionFormModuleController extends ControllerBase {
     return $page;
   }
 
-  public function submission_form_page($challenge) {
+  public function submissionFormPage($challenge) {
     $challenge_slug = \Drupal::request()->get('challenge');
     $submission_error = \Drupal::request()->get('error');
 
