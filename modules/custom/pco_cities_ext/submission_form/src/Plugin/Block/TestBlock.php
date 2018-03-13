@@ -5,15 +5,15 @@ namespace Drupal\submission_form_module\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 
-    /**
-     * Test Block.
-     *
-     * @Block(
-     *   id = "test_block",
-     *   admin_label = @Translation("Test Block"),
-     *   category = @Translation("System")
-     * )
-     */
+/**
+ * Test Block.
+ *
+ * @Block(
+ *   id = "test_block",
+ *   admin_label = @Translation("Test Block"),
+ *   category = @Translation("System")
+ * )
+ */
 class TestBlock extends BlockBase {
 
   public function defaultConfiguration() {
@@ -31,7 +31,7 @@ class TestBlock extends BlockBase {
   }
 
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['enabled'] = (bool)$form_state->getValue('enabled');
+    $this->configuration['enabled'] = (bool) $form_state->getValue('enabled');
   }
 
   public function build() {
@@ -45,4 +45,5 @@ class TestBlock extends BlockBase {
       '#markup' => $message,
     ];
   }
+
 }
