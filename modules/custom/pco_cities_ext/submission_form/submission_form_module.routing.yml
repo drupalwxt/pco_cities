@@ -2,7 +2,7 @@ submission_form_module.submission_success_page:
   path: '/challenges/{challenge}/submission/success'
   defaults:
     _controller: 'Drupal\submission_form_module\Controller\SubmissionFormModuleController::submission_success_page'
-    _title: 'Submission Form'
+    _title: 'Submission Success'
   requirements:
     _permission: 'access content'
 

@@ -34,9 +34,9 @@ class SubmissionForm extends FormBase {
 
     $form['summary'] = [
       '#type' => 'textarea',
-      '#attributes' => array('class' => array('full-width'), 'drupal-field-name' => array('Summary'), 'data-rule-maxlength' => array('150')),
+      '#attributes' => array('class' => array('full-width'), 'drupal-field-name' => array('Summary'), 'data-rule-maxlength' => array('1200')),
       '#required' => true,
-      '#maxlength' => 150
+      '#maxlength' => 1200
     ];
 
     $form['proposal'] = [
@@ -47,7 +47,7 @@ class SubmissionForm extends FormBase {
       '#upload_location' => 'public://proposals/',
       '#required' => true,
       '#upload_validators' => [
-        'file_validate_size' => array((1024 * 1024) * 25),
+        'file_validate_size' => array(25 * 1024 * 1024),
         'file_validate_extensions' => array('pdf docx'),
       ]
     ];
@@ -55,14 +55,13 @@ class SubmissionForm extends FormBase {
     $form['proposal_image'] = [
       '#type' => 'managed_file',
       '#size' => 20,
-      '#multiple' => TRUE,
       '#description' => t('.jpg and .png formats only'),
       '#upload_location' => 'public://proposals/images',
       '#required' => true,
       '#upload_validators' => [
-        'file_validate_size' => array((1024 * 1024)),
+        'file_validate_size' => array(25 * 1024 * 1024),
         'file_validate_image_resolution' => array('1920x1080'),
-        'file_validate_extensions' => array('gif jpg jpeg png'),
+        'file_validate_extensions' => array('gif png jpg jpeg'),
       ]
     ];
 
@@ -73,13 +72,13 @@ class SubmissionForm extends FormBase {
 
     $form['primary_contact_name'] = [
       '#type' => 'textfield',
-      '#attributes' => array('class' => array('full-width'), 'drupal-field-name' => array('Primary Contact Name')),
+      '#attributes' => array('class' => array('full-width'), 'drupal-field-name' => array('Full Name')),
       '#required' => true
     ];
 
     $form['primary_contact_email'] = [
       '#type' => 'textfield',
-      '#attributes' => array('class' => array('full-width'), 'drupal-field-name' => array('Primary Contact Email')),
+      '#attributes' => array('class' => array('full-width'), 'drupal-field-name' => array('Email Address')),
       '#required' => true
     ];
 
@@ -87,12 +86,18 @@ class SubmissionForm extends FormBase {
       '#type' => 'checkbox',
       '#required' => true,
       '#attributes' => array('drupal-field-name' => array('Terms & Conditions')),
+      '#theme_wrappers'   => array(), //Removes the wrapper
+      '#prefix'           => '<div class="form-item form-group">',
+      '#suffix'           => '<label> I have read the <a href="/en/terms-and-conditions">Terms and Conditions</a> and the <a href="/en/privacy">Privacy Policy</a> and agree to both.</label></div>',
     ];
 
     $form['guidelines_agreement'] = [
       '#type' => 'checkbox',
       '#required' => true,
       '#attributes' => array('drupal-field-name' => array('Guidelines')),
+      '#theme_wrappers'   => array(), //Removes the wrapper
+      '#prefix'           => '<div class="form-item form-group">',
+      '#suffix'           => '<label> I have read the <a href="#">Submission Guidelines.</a></label></div>',
     ];
 
     $form['actions']['submit'] = [

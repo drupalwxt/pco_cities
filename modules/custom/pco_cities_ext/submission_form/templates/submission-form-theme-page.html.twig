@@ -20,9 +20,7 @@
     <div class="container mrgn-tp-lg">
       <div class="col-md-8">
 
-        {% if form['#submission_success'] == false %}
-
-        {% if form['#submission_error'] != false %}
+        {% if form['#submission_success'] == false %} {% if form['#submission_error'] != false %}
         <section class="alert alert-danger alert-danger-list">
           <h5>Unexpected error occured
           </h5>
@@ -66,34 +64,32 @@
           <div class="form-group mrgn-tp-xl">
             <h3>Proposal</h3>
             <p>
-                <strong>Title</strong>
-              </p>
+              <strong>Title</strong>
+            </p>
             {{ form.title }}
           </div>
           <div class="field-group mrgn-tp-lg">
             <p>
-                <strong>Summary</strong>
-              </p>
+              <strong>Summary</strong>
+            </p>
             <p>Provide a short description (150 words) of your project.</p>
             {{ form.summary }}
             <div class="word-count">
-              <span class="summary-word-count"></span>/{{ form.summary['#maxlength'] }}</div>
+              <span class="summary-word-count"></span>/150
+            </div>
           </div>
 
           <div class="field-group mrgn-tp-xl">
             <h3>Proposal Files</h3>
             <p class="mrgn-tp-md">
               <strong>Upload your proposal</strong>
-              <br/> Submit your documents as Microsoft Word or .PDF
-              <br/> Maximum 25 MB file size
+              <p class="small">Requirements: .DOCX or .PDF, and a maximum of 25 MB per file.</p>
             </p>
+
             {{ form.proposal }}
             <p class="mrgn-tp-xl">
               <strong class="mrgn-tp-lg">Upload a project image</strong>
-              <br/> Submit your image as .JPG, .JPEG, or .PNG
-              <br/> At least 1920 pixels wide by 1080 pixels tall
-              <br/> Maximum 25 MB file size
-              <br/> No text in the image
+              <p class="small">Requirements: .PNG, .JPG, or .JPEG, no text, and a minimum of 1920x1080 pixels.</p>
             </p>
             {{ form.proposal_image }}
             <p class="mrgn-tp-lg">
@@ -105,44 +101,54 @@
 
           <div class="field-group mrgn-tp-xl">
             <h3>Submission Guidelines</h3>
-            {{ form.guidelines_agreement }} I have read the
-            <a href="#">Submission Guidelines.</a>
+            {{ form.guidelines_agreement }}
           </div>
           <div class="field-group mrgn-tp-xl">
             <h3>Terms & Conditions</h3>
-            {{ form.terms_agreement }} I have read the
-            <a href="/en/terms-and-conditions">Terms and Conditions</a> and the
-            <a href="/en/privacy">Privacy Policy</a> and agree to both.
+            {{ form.terms_agreement }}
           </div>
 
           {{ form.actions.submit }} {{ form.form_build_id }} {{ form.form_token }} {{ form.form_id }}
         </form>
       </div>
-      {% endif %}
+      {% endif %} {% if form['#submission_success'] == true %}
+      <section class="alert alert-success alert-success-list">
+        <h4>Your application has been received.
+        </h4>
+        An email confirmation has been sent to
+        <strong>{{ form['#submission_email'] }}</strong>.
+      </section>
 
-      {% if form['#submission_success'] == true %}
-        <section class="alert alert-success alert-success-list">
-          <h4>Your application has been received.
-          </h4>
-          An email confirmation has been sent to <strong>{{ form['#submission_email'] }}</strong>.
-        </section>
-
-        <div class="mrgn-tp-lg">
+      <div class="mrgn-tp-lg">
         <h4>What happens next?</h4>
         <p class="mrgn-tp-md">Your application will be reviewed and the challenge owners will be in touch.</p>
         <a class="mrgn-tp-lg form-link" href="#">Stay up to date on this challenge</a>
-        </div>
-        <div class="brdr-bttm mrgn-tp-lg"></div>
-        <h3>Give Feedback</h3>
-        <p>Overall, how was your experience with the service you received today?</p>
+      </div>
 
-        <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdyw3SGXUjZytBHMkMNbzD9dP1mJm41hK5YkAu9nzmuP2GUEQ/formResponse?embedded=true" target="_self" method="POST" id="mG61Hd">
+
+      <div class="brdr-bttm mrgn-tp-lg"></div>
+      <h3>Give Feedback</h3>
+      <section id="google-form-submit" class="hidden mrgn-tp-lg">
+        <p>Thank you for taking the time to give us feedback! We are listening and constantly improving.</p>
+      </section>
+
+
+
+      <section id="google-feedback-form">
+        <p>Overall, how was your experience with the service you received today?</p>
+        <form class="google-form" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdyw3SGXUjZytBHMkMNbzD9dP1mJm41hK5YkAu9nzmuP2GUEQ/formResponse?embedded=true"
+          target="_self" method="POST" id="mG61Hd">
           <div class="field-group mrgn-tp-md">
-            <input type="radio" name="entry.626865550" value="Great" checked required> Great<br/>
-            <input type="radio" name="entry.626865550" value="Good" required> Good<br/>
-            <input type="radio" name="entry.626865550" value="Okay" required> Okay<br/>
-            <input type="radio" name="entry.626865550" value="Bad" required> Bad<br/>
-            <input type="radio" name="entry.626865550" value="Terrible" required> Terrible<br/>
+            <input type="radio" name="entry.626865550" value="Great" required> Great
+            <br/>
+            <input type="radio" name="entry.626865550" value="Good" required> Good
+            <br/>
+            <input type="radio" name="entry.626865550" value="Okay" required> Okay
+            <br/>
+            <input type="radio" name="entry.626865550" value="Bad" required> Bad
+            <br/>
+            <input type="radio" name="entry.626865550" value="Terrible" required> Terrible
+            <br/>
           </div>
           <div class="field-group mrgn-tp-lg">
             <p>What would give you more confidence in this service?</p>
@@ -151,6 +157,8 @@
           <p class="small">Please don't include any personal or financial information like your social insurance number or passport ID.</p>
           <button class="mrgn-tp-lg btn-submit-feedback button js-form-submit form-submit btn-primary btn" type="submit" value="Submit">Submit</button>
         </form>
+      </section>
+
       {% endif %}
     </div>
   </div>

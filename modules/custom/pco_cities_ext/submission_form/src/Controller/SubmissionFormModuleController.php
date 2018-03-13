@@ -20,15 +20,6 @@ class SubmissionFormModuleController extends ControllerBase {
     $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
     $result = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->id()]);
 
-    /* Code to render the node menu, inject into our own template string */
-    /*
-      $node = \Drupal::entityManager()->getStorage('node')->load($nodeid);
-      $view_builder = \Drupal::entityManager()->getViewBuilder('node');
-      $renderarray = $view_builder->view($node, 'full');
-      $html = \Drupal::service('renderer')->renderRoot($renderarray);
-    */
-
-
     $page['#theme'] = 'submission_form_module_page_theme';
     $page['#attached']['library'][] = 'submission_form_module/submission-form';
 
@@ -40,13 +31,6 @@ class SubmissionFormModuleController extends ControllerBase {
     $page['#submission_email'] = \Drupal::request()->get('email');
 
     return $page;
-
-    $message = $this->t('This is the success page. Email was sent.', [
-      '%from' => $from,
-      '%to' => $to,
-    ]);
-
-    return ['#markup' => $message];
   }
 
   public function submission_form_page($challenge) {
@@ -61,22 +45,12 @@ class SubmissionFormModuleController extends ControllerBase {
       throw new NotFoundHttpException();
     }
 
-    //$submission_email = $node->get('field_submission_email')->getValue();
-
     $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
     $result = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->id()]);
 
-    /* Code to render the node menu, inject into our own template string. May or may not be needed in future. */
-    /*
-      $node = \Drupal::entityManager()->getStorage('node')->load($nodeid);
-      $view_builder = \Drupal::entityManager()->getViewBuilder('node');
-      $renderarray = $view_builder->view($node, 'full');
-      $html = \Drupal::service('renderer')->renderRoot($renderarray);
-    */
-
     $form = \Drupal::formBuilder()->getForm('Drupal\submission_form_module\Form\SubmissionForm');
 
-    //Wrap the theme in WET4 validation
+    //Wrap the theme with WET4 validation tag
     $form['#prefix'] = '<div class="wb-frmvld">';
     $form['#suffix'] = '</div>';
 

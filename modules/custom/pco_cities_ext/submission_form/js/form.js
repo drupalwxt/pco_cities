@@ -1,5 +1,10 @@
 (function ($) {
   $(document).ready(function () {
+
+    //Add accepts (this is handled by Drupal, but Drupal tears off the accept. We will add it here.)
+    setTimeout(function() {$('#edit-proposal-image-upload').children('input').attr('accept', '.jpg,.png')});
+    setTimeout(function() {$('#edit-proposal-upload').children('input').attr('accept', '.docx,.pdf,.doc')});
+
     //Handlers for forms
     $('input, textarea, select').on('focusout', function () {
       $('.form-item').removeClass('group-error');
@@ -20,18 +25,41 @@
     });
 
     //Textarea word count
-    $(".summary-word-count").html($("textarea").val().length);
+    $(".summary-word-count").html($('textarea').val().split(' ').length);
 
     //Textarea red text after maxlength
     $("textarea").keyup(function () {
       var maxlength = 150; // specify the maximum length
-      $(".summary-word-count").html($("textarea").val().length);
+      var words = this.value.match(/\S+/g).length;
 
-      if ($("textarea").val().length > maxlength) {
+      $(".summary-word-count").html(words);
+
+      if (words > maxlength) {
         $("textarea").css('color', 'red');
+        console.log("hi");
       } else {
+        console.log("hi 2");
         $("textarea").css('color', 'black');
       }
+    });
+
+    //Ajax Submit Handler for Google Form
+    $(".google-form").submit(function(e) {
+
+      var url = $('.google-form').attr('action');
+
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: $(".google-form").serialize(),
+        complete: function()
+        {
+          $('#google-form-submit').removeClass('hidden');
+          $('#google-feedback-form').hide();
+        }
+      });
+
+      e.preventDefault();
     });
   });
 
@@ -46,25 +74,28 @@
 
     //Selects all invalid fields and adds parent
     $('.error').each(function () {
-      var message = 'The <strong>' + $(this).attr('drupal-field-name') + '</strong> field is required.'
+      var message = '<strong>' + $(this).attr('drupal-field-name') + '</strong> field is required.'
       $(this).closest('.form-item').addClass('group-error');
       $(this).closest('.form-item').append('<p class="group-error-description">' + message + '</p>');
     });
 
     //Add additional validation
-    if ($('textarea').val().length > 150) {
-      $('textarea').addClass('error');
-      $('textarea').closest('.form-item').addClass('group-error');
-      var message = 'The <strong>' + $('textarea').attr('drupal-field-name') + '</strong> is over the character limit.'
-      $('textarea').closest('.form-item').append('<p class="group-error-description">' + message + '</p>')
+    if ($('textarea').val().split(' ').length > 150) {
+      if(!$('textarea').hasClass('error')) {
+        $('textarea').addClass('error');
+        var message = '<strong>' + $('textarea').attr('drupal-field-name') + '</strong> is over the word limit.'
+        $('textarea').closest('.form-item').append('<p class="group-error-description">' + message + '</p>')
+       }
     }
 
     //Check for valid email address
     if ($('#edit-primary-contact-email').val().length > 1 && !validateEmail($('#edit-primary-contact-email').val())) {
-      $('#edit-primary-contact-email').addClass('error');
-      $('#edit-primary-contact-email').closest('.form-item').addClass('group-error');
-      var message = 'The <strong>' + $('#edit-primary-contact-email').attr('drupal-field-name') + '</strong> is not a valid email address.'
-      $('#edit-primary-contact-email').closest('.form-item').append('<p class="group-error-description">' + message + '</p>')
+      if(!$('#edit-primary-contact-email').hasClass('error')) {
+        $('#edit-primary-contact-email').addClass('error');
+        $('#edit-primary-contact-email').closest('.form-item').addClass('group-error');
+        var message = '<strong>' + $('#edit-primary-contact-email').attr('drupal-field-name') + '</strong> is not a valid email address.'
+        $('#edit-primary-contact-email').closest('.form-item').append('<p class="group-error-description">' + message + '</p>')
+      }
     }
 
     //Add messages to alert above. Show is error count is over 1
@@ -88,23 +119,28 @@
     //Selects all invalid fields and adds parent
     setTimeout(function () {
       $('.error').each(function () {
-        var message = 'The <strong>' + $(this).attr('drupal-field-name') + '</strong> field is required.'
+        var message = '<strong>' + $(this).attr('drupal-field-name') + '</strong> field is required.'
         $(this).closest('.form-item').addClass('group-error');
         $(this).closest('.form-item').append('<p class="group-error-description">' + message + '</p>')
       });
 
       //Add additional validation
-      if ($('textarea').val().length > 150) {
-        $('textarea').addClass('error');
-        var message = 'The <strong>' + $('textarea').attr('drupal-field-name') + '</strong> is over the character limit.'
-        $('textarea').closest('.form-item').append('<p class="group-error-description">' + message + '</p>')
+      if ($('textarea').val().split(' ').length > 150) {
+        if(!$('textarea').hasClass('error')) {
+          $('textarea').addClass('error');
+          var message = '<strong>' + $('textarea').attr('drupal-field-name') + '</strong> is over the word limit.'
+          $('textarea').closest('.form-item').append('<p class="group-error-description">' + message + '</p>')
+         }
       }
 
       //Check for valid email address
       if ($('#edit-primary-contact-email').val().length > 1 && !validateEmail($('#edit-primary-contact-email').val())) {
-        $('#edit-primary-contact-email').addClass('error');
-        var message = 'The <strong>' + $('#edit-primary-contact-email').attr('drupal-field-name') + '</strong> is not a valid email address.'
-        $('#edit-primary-contact-email').closest('.form-item').append('<p class="group-error-description">' + message + '</p>')
+        if(!$('#edit-primary-contact-email').hasClass('error')) {
+          $('#edit-primary-contact-email').addClass('error');
+          $('#edit-primary-contact-email').closest('.form-item').addClass('group-error');
+          var message = '<strong>' + $('#edit-primary-contact-email').attr('drupal-field-name') + '</strong> is not a valid email address.'
+          $('#edit-primary-contact-email').closest('.form-item').append('<p class="group-error-description">' + message + '</p>')
+        }
       }
 
       //Add messages to alert above. Show is error count is over 1
