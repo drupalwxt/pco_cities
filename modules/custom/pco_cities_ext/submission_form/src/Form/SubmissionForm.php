@@ -30,16 +30,18 @@ class SubmissionForm extends FormBase {
       '#attributes' => [
         'class' => [
           'full-width',
-        ],
-        'drupal-field-name' => [
+        ], 'drupal-field-name' => [
           'Summary',
-        ],
-        'data-rule-maxlength' => [
+        ], 'data-rule-maxlength' => [
           '1200',
         ],
       ],
       '#required' => TRUE,
       '#maxlength' => 1200,
+      // Removes the wrapper.
+      '#theme_wrappers'   => [],
+      '#prefix'           => '<div class="form-item form-group">',
+      '#suffix'           => '<div class="word-count"><span class="summary-word-count"></span>/150</div></div>',
     ];
 
     $form['proposal'] = [
