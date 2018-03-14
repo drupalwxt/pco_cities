@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function submission_form_module_theme() {
+
+  return [
+    'submission_form_module_page_theme' => [
+      'render element' => 'form',
+      'template' => 'submission-form-theme-page',
+    ],
+  ];
+}

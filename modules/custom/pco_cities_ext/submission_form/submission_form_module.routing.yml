@@ -1,0 +1,23 @@
+submission_form_module.submission_success_page:
+  path: '/challenges/{challenge}/submission/success'
+  defaults:
+    _controller: 'Drupal\submission_form_module\Controller\SubmissionFormModuleController::submissionSuccessPage'
+    _title: 'Submission Success'
+  requirements:
+    _permission: 'access content'
+
+submission_form_module.submission_form_page:
+  path: '/challenges/{challenge}/submission'
+  defaults:
+    _controller: 'Drupal\submission_form_module\Controller\SubmissionFormModuleController::submissionFormPage'
+    _title: 'Challenge Submission'
+  requirements:
+    _permission: 'access content'
+
+submission_form_module.test_form:
+  path: /admin/config/system/test-form
+  defaults:
+    _form: 'Drupal\submission_form_module\Form\SubmissionForm'
+    _title: 'Submission Form'
+  requirements:
+    _permission: 'configure_form'
