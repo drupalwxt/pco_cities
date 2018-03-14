@@ -5,7 +5,9 @@ dependencies:
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
     - field.field.node.challenge.field_challenge_details_block
+    - field.field.node.challenge.field_challenge_email_contents
     - field.field.node.challenge.field_challenge_image
+    - field.field.node.challenge.field_challenge_submission_email
     - field.field.node.challenge.field_single_line_teaser
     - field.field.node.challenge.field_tags
     - image.style.thumbnail
@@ -45,6 +47,14 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_challenge_email_contents:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_challenge_image:
     type: image_image
     weight: 4
@@ -53,6 +63,14 @@ content:
       progress_indicator: throbber
     region: content
     third_party_settings: {  }
+  field_challenge_submission_email:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
   field_single_line_teaser:
     weight: 3
     settings:

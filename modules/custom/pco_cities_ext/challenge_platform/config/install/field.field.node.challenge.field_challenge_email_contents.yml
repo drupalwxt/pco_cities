@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenge_email_contents
+    - node.type.challenge
+id: node.challenge.field_challenge_email_contents
+field_name: field_challenge_email_contents
+entity_type: node
+bundle: challenge
+label: 'Email Message'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
