@@ -17,8 +17,6 @@ class SubmissionForm extends FormBase {
 
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    $config = $this->config('submission_form_module.settings');
-
     // Title and Summary.
     $form['title'] = [
       '#type' => 'textfield',
@@ -145,7 +143,7 @@ class SubmissionForm extends FormBase {
     $file_uri = file_create_url($file->get('uri')->value);
     array_push($file_arr, ['name' => $file->get('filename')->value, 'link' => $file_uri]);
 
-    // Formulate a template string to be thrown into email template for download links.
+    // Template string to be thrown into email template for download links.
     $template_string = '';
     foreach ($file_arr as $link) {
       $template_string = $template_string . '<a href="' . $link['link'] . '">' . $link['name'] . '</a><br/>';
