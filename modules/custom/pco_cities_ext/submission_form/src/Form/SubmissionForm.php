@@ -2,14 +2,48 @@
 
 namespace Drupal\submission_form_module\Form;
 
-use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Path\AliasManagerInterface;
 use Mailgun\Mailgun;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SubmissionForm extends FormBase {
+
+  /**
+   * The path alias manager.
+   *
+   * @var \Drupal\Core\Path\AliasManagerInterface
+   */
+  protected $aliasManager;
+  /**
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * Constructs a SubmissionFormModuleController object.
+   *
+   * @param \Drupal\Core\Path\AliasManagerInterface $aliasManager
+   *   The path alias manager.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   */
+  public function __construct(AliasManagerInterface $aliasManager, EntityTypeManagerInterface $entityTypeManager) {
+    $this->aliasManager = $aliasManager;
+    $this->entityTypeManager = $entityTypeManager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('path.alias_manager'),
+      $container->get('entity_type.manager')
+    );
+  }
 
   public function getFormId() {
     return 'submission_form';
@@ -119,12 +153,14 @@ class SubmissionForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
     // Current Challenge.
-    $challenge_slug = \Drupal::request()->get('challenge');
-    $path = \Drupal::service('path.alias_manager')->getPathByAlias('/challenges/' . $challenge_slug);
+    $challenge_slug = $this->getRequest()->get('challenge');
+    $path = $this->aliasManager->getPathByAlias('/challenges/' . $challenge_slug);
 
     // Grabs content specific to this challenge node.
     if (preg_match('/node\/(\d+)/', $path, $matches)) {
-      $node = Node::load($matches[1]);
+      $node_storage = $this->entityTypeManager->getStorage('node');
+
+      $node = $node_storage->load($matches[1]);
     }
     else {
       throw new NotFoundHttpException();
@@ -135,13 +171,13 @@ class SubmissionForm extends FormBase {
 
     // Loop through multiple file upload and grab download links.
     foreach ($form_state->getValue('proposal') as $file) {
-      $file = \Drupal::entityTypeManager()->getStorage('file')->load($file);
+      $file = $this->entityTypeManager->getStorage('file')->load($file);
       $file_uri = file_create_url($file->get('uri')->value);
       array_push($file_arr, ['name' => $file->get('filename')->value, 'link' => $file_uri]);
     }
 
     // Also grab download link for the image.
-    $file = \Drupal::entityTypeManager()->getStorage('file')->load($form_state->getValue('proposal_image')[0]);
+    $file = $this->entityTypeManager->getStorage('file')->load($form_state->getValue('proposal_image')[0]);
     $file_uri = file_create_url($file->get('uri')->value);
     array_push($file_arr, ['name' => $file->get('filename')->value, 'link' => $file_uri]);
 
@@ -189,7 +225,7 @@ class SubmissionForm extends FormBase {
       $send_data['to'] = $variables['primary_contact_email'];
 
       // Send the email to the user as confirmation, capture the response.
-      $user_confirmation_email = $mailgun->sendMessage($domain, $send_data);
+      $mailgun->sendMessage($domain, $send_data);
 
       if ($challenge_submission_email->http_response_code === 200) {
         // Redirect to success page. Which should be another module, eventually.
