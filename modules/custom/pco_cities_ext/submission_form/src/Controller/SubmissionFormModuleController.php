@@ -19,9 +19,6 @@ class SubmissionFormModuleController extends ControllerBase {
       throw new NotFoundHttpException();
     }
 
-    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-    $result = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->id()]);
-
     $page['#theme'] = 'submission_form_module_page_theme';
     $page['#attached']['library'][] = 'submission_form_module/submission-form';
 
@@ -47,9 +44,6 @@ class SubmissionFormModuleController extends ControllerBase {
     else {
       throw new NotFoundHttpException();
     }
-
-    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-    $result = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->id()]);
 
     $form = \Drupal::formBuilder()->getForm('Drupal\submission_form_module\Form\SubmissionForm');
 
