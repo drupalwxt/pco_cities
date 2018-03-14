@@ -48,7 +48,7 @@ class SubmissionForm extends FormBase {
       '#type' => 'managed_file',
       '#size' => 20,
       '#multiple' => TRUE,
-      '#description' => t('.docx and .pdf formats only'),
+      '#description' => $this->t('.docx and .pdf formats only'),
       '#upload_location' => 'public://proposals/',
       '#required' => TRUE,
       '#upload_validators' => [
@@ -60,7 +60,7 @@ class SubmissionForm extends FormBase {
     $form['proposal_image'] = [
       '#type' => 'managed_file',
       '#size' => 20,
-      '#description' => t('.jpg and .png formats only'),
+      '#description' => $this->t('.jpg and .png formats only'),
       '#upload_location' => 'public://proposals/images',
       '#required' => TRUE,
       '#upload_validators' => [
