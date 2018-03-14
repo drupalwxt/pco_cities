@@ -37,9 +37,9 @@
   padding: none;
   padding-top: 3px;
   padding-bottom: 3px;
-  border-left: thick solid red !important;
+  border-left: thick solid #DD3030 !important;
   padding-left: 10px;
-  color: red;
+  color: #DD3030;
   font-weight: 300;
   //display: none;
 
@@ -120,28 +120,28 @@ input, textarea, select {
 }
 
 .input-error-desc {
-	color: red !important;
+	color: #DD3030 !important;
 }
 
 input {
   &.error {
-    border: 2px solid red !important;
+    border: 2px solid #DD3030 !important;
   }
 }
 
 .group-error {
-  border-left: thick solid red !important;
+  border-left: thick solid #DD3030 !important;
   padding-left: 10px;
   position: relative;
   margin-left: -15px;
 
   input {
-    border-color: red !important;
+    border-color: #DD3030 !important;
   }
 }
 
 .group-error-description {
-  color: red;
+  color: #DD3030;
   margin-top: 8px;
   font-weight: 300;
 }
@@ -298,7 +298,6 @@ span {
   color: #666666;
   position: absolute;
   right: 15px;
-  margin-top: -30px;
 }
 
 ::-webkit-file-upload-button {

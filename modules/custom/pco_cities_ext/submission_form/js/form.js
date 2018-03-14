@@ -35,11 +35,9 @@
       $(".summary-word-count").html(words);
 
       if (words > maxlength) {
-        $("textarea").css('color', 'red');
-        console.log("hi");
+        $(".word-count").css('color', '#DD3030');
       } else {
-        console.log("hi 2");
-        $("textarea").css('color', 'black');
+        $(".word-count").css('color', 'black');
       }
     });
 
@@ -102,7 +100,7 @@
     if ($('.group-error-description').length > 0) {
       $('.alert-danger-list').show();
       $('.group-error-description').each(function () {
-        $('.error-list').append('<li><a href="#' + $(this).parent().children('input').attr("id") + '">' + $(this).html() + '</a></li>');
+        $('.error-list').append('<li><a href="#' + $(this).parent().find('input, textarea').attr("id") + '">' + $(this).html() + '</a></li>');
       });
     }
   }
@@ -147,7 +145,7 @@
       if ($('.group-error-description').length > 0) {
         $('.alert-danger-list').show();
         $('.group-error-description').each(function () {
-          $('.error-list').append('<li><a href="#' + $(this).parent().children('input').attr("id") + '">' + $(this).html() + '</a></li>');
+          $('.error-list').append('<li><a href="#' + $(this).parent().find('input, textarea').attr("id") + '">' + $(this).html() + '</a></li>');
         });
       }
     });
