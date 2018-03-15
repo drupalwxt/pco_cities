@@ -1,0 +1,9 @@
+challenge-page:
+  version: 1.x
+  css:
+    theme:
+      css/challenge.css: {}
+  js:
+    js/challenge.js: {}
+  dependencies:
+    - core/jquery

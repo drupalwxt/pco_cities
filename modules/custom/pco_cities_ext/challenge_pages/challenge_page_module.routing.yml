@@ -1,0 +1,23 @@
+challenge_page_module.challenge:
+  path: '/challenges/{challenge}/home'
+  defaults:
+    _controller: 'Drupal\challenge_page_module\Controller\ChallengePageModuleController::challenge_page'
+    _title: 'Challenge'
+  requirements:
+    _permission: 'access content'
+
+challenge_page_module.challenge_subpage:
+  path: '/challenges/{challenge}/{url}'
+  defaults:
+    _controller: 'Drupal\challenge_page_module\Controller\ChallengePageModuleController::challenge_subpage'
+    _title: 'Challenge'
+  requirements:
+    _permission: 'access content'
+
+challenge_page_module.challenge_news:
+  path: '/challenges/{challenge}/news'
+  defaults:
+    _controller: 'Drupal\challenge_page_module\Controller\ChallengePageModuleController::challenge_news_page'
+    _title: 'Challenge News'
+  requirements:
+    _permission: 'access content'

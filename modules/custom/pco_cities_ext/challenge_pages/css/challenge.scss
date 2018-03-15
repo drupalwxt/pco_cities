@@ -1,0 +1,27 @@
+.field-challenge-news-item {
+  padding-left: 0px;
+  padding-right: 0px;
+
+  .field-challenge-news-item-title {
+    font-weight: 300 !important;
+    color: gray !important;
+  }
+
+  .field-challenge-news-item-type {
+    text-transform: uppercase;
+  }
+
+  .news-body {
+    padding-right: 10px;
+  }
+}
+
+.btn {
+  border-radius: 0px;
+  border: none;
+  padding: 12px;
+
+  &.btn-primary {
+    background-color: #007897 !important;
+  }
+}

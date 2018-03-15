@@ -1,0 +1,5 @@
+services:
+  challenge_page_module.route_subscriber:
+    class: Drupal\challenge_page_module\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

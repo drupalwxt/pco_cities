@@ -1,0 +1,5 @@
+name: Challenge Pages
+description: This module handles all of the challenge node pages and subpages
+type: module
+core: 8.x
+package: pcocp

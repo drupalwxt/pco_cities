@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function challenge_page_module_theme() {
+
+  return [
+    'challenge_page_module_page_theme' => [
+      'render element' => 'form',
+      'template' => 'challenge-page-theme-page',
+    ],
+    'challenge_subpage_module_page_theme' => [
+      'render element' => 'form',
+      'template' => 'challenge-subpage-theme-page',
+    ],
+    'challenge_news_module_page_theme' => [
+      'render element' => 'form',
+      'template' => 'challenge-news-theme-page',
+    ]
+  ];
+
+  return $theme;
+}
