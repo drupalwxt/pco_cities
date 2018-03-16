@@ -16,3 +16,57 @@ function submission_form_module_theme() {
     ],
   ];
 }
+
+function submission_form_module_schema()
+{
+  $schema['challenge_submission'] = [
+    'fields' => [
+      'csid' => [
+        'type' => 'serial',
+        'not null' => TRUE
+      ],
+      'challenge' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => ''
+      ],
+      'title' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE
+      ],
+      'summary' => [
+        'type' => 'text',
+        'not null' => FALSE
+      ],
+      'primary_contact_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE
+      ],
+      'primary_contact_email' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE
+      ],
+      'link' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE
+      ],
+      'file_links' => [
+        'type' => 'text',
+        'not null' => FALSE
+      ],
+      'submitted_at' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0
+      ]
+    ],
+    'primary key' => ['csid']
+  ];
+
+  return $schema;
+}

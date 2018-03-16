@@ -2,6 +2,7 @@
 
 namespace Drupal\submission_form_module\Form;
 
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Mailgun\Mailgun;
@@ -22,6 +23,10 @@ class SubmissionForm extends FormBase {
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
+  /**
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $db;
 
   /**
    * Constructs a SubmissionFormModuleController object.
@@ -29,10 +34,12 @@ class SubmissionForm extends FormBase {
    * @param \Drupal\Core\Path\AliasManagerInterface $aliasManager
    *   The path alias manager.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\Core\Database\Connection $db
    */
-  public function __construct(AliasManagerInterface $aliasManager, EntityTypeManagerInterface $entityTypeManager) {
+  public function __construct(AliasManagerInterface $aliasManager, EntityTypeManagerInterface $entityTypeManager, Connection $db) {
     $this->aliasManager = $aliasManager;
     $this->entityTypeManager = $entityTypeManager;
+    $this->db = $db;
   }
 
   /**
@@ -41,7 +48,8 @@ class SubmissionForm extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('path.alias_manager'),
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('database')
     );
   }
 
@@ -200,6 +208,8 @@ class SubmissionForm extends FormBase {
       'email_contents' => $node->get('field_challenge_email_contents')->getValue()[0]['value'],
     ];
 
+    $this->saveToAuditLog($variables);
+
     // Generate the template.
     $template = file_get_contents(drupal_get_path('module', 'submission_form_module') . '/templates/submission-email.html');
     $template = $this->renderTemplate($template, $variables);
@@ -254,6 +264,22 @@ class SubmissionForm extends FormBase {
 
   protected function getEditableConfigNames() {
     return ['submission_form_module.settings'];
+  }
+
+  protected function saveToAuditLog(array $data) {
+    $fields = [
+      'challenge' => $data['challenge'],
+      'title' => $data['title'],
+      'summary' => $data['summary'],
+      'primary_contact_name' => $data['primary_contact_name'],
+      'primary_contact_email' => $data['primary_contact_email'],
+      'link' => $data['link'],
+      'file_links' => $data['file_links'],
+      'submitted_at' => strtotime('now')
+    ];
+
+
+    $this->db->insert('challenge_submission')->fields($fields)->execute();
   }
 
 }
