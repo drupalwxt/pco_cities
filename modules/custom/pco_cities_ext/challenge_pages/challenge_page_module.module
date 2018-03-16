@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * @file
+ */
+
+/**
  * Implements hook_theme().
  */
 function challenge_page_module_theme() {
@@ -17,7 +21,7 @@ function challenge_page_module_theme() {
     'challenge_news_module_page_theme' => [
       'render element' => 'form',
       'template' => 'challenge-news-theme-page',
-    ]
+    ],
   ];
 
   return $theme;

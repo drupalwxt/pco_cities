@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\ua_sc_module\Routing\SearchAlterRouteSubscriber.
- */
 
 namespace Drupal\challenge_page_module\Routing;
 
@@ -20,11 +16,10 @@ class RouteSubscriber extends RouteSubscriberBase {
   protected function alterRoutes(RouteCollection $collection) {
 
     if ($route = $collection->get('challenge')) {
-      $route->setDefaults(array(
+      $route->setDefaults([
         '_controller' => 'Drupal\challenge_page_module\Controller\ChallengePageModuleController::challenge_page',
-      ));
+      ]);
     }
   }
 
 }
-

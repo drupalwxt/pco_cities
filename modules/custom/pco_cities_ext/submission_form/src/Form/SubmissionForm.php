@@ -277,7 +277,7 @@ class SubmissionForm extends FormBase {
       'file_links' => $data['file_links'],
       'submitted_at' => strtotime('now'),
     ];
-    
+
     $this->db->insert('challenge_submission')->fields($fields)->execute();
   }
 

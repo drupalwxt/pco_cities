@@ -49,7 +49,7 @@ function submission_form_module_schema() {
         'type' => 'int',
         'not null' => TRUE,
         'default' => 0,
-      ]
+      ],
     ],
     'primary key' => ['csid'],
   ];

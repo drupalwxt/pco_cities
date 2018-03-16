@@ -16,4 +16,3 @@ function submission_form_module_theme() {
     ],
   ];
 }
-
