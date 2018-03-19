@@ -14,10 +14,10 @@ submission_form_module.submission_form_page:
   requirements:
     _permission: 'access content'
 
-submission_form_module.test_form:
-  path: /admin/config/system/test-form
+submission_form_module.submissions_log:
+  path: '/admin/submissions/log'
   defaults:
-    _form: 'Drupal\submission_form_module\Form\SubmissionForm'
-    _title: 'Submission Form'
+    _controller: 'Drupal\submission_form_module\Controller\SubmissionAuditLogController::display'
+    _title: 'Challenge Submissions'
   requirements:
-    _permission: 'configure_form'
+    _permission: 'access content'
