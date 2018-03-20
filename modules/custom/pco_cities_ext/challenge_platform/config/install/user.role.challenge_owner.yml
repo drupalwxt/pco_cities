@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: ''
+id: challenge_owner
+label: 'Challenge Owner'
+weight: 5
+is_admin: null
