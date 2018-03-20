@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\challenge_submission_module\Form;
+namespace Drupal\challenge_submission\Form;
 
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -238,7 +238,7 @@ class SubmissionForm extends FormBase {
     $this->saveToAuditLog($variables);
 
     // Generate the template.
-    $template = file_get_contents(drupal_get_path('module', 'challenge_submission_module') . '/templates/submission-email.html');
+    $template = file_get_contents(drupal_get_path('module', 'challenge_submission') . '/templates/submission-email.html');
     $template = $this->renderTemplate($template, $variables);
 
     // Instantiate Mailgun with API Key and sending domain.
@@ -266,16 +266,16 @@ class SubmissionForm extends FormBase {
 
       if ($challenge_submission_email->http_response_code === 200) {
         // Redirect to success page. Which should be another module, eventually.
-        $form_state->setRedirect('challenge_submission_module.submission_success_page', ['challenge' => $challenge_slug, 'email' => $variables['primary_contact_email']]);
+        $form_state->setRedirect('challenge_submission.submission_success_page', ['challenge' => $challenge_slug, 'email' => $variables['primary_contact_email']]);
       }
       else {
         // Return user to module submission page, display error.
-        $form_state->setRedirect('challenge_submission_module.submission_form_page', ['challenge' => $challenge_slug, 'error' => TRUE]);
+        $form_state->setRedirect('challenge_submission.submission_form_page', ['challenge' => $challenge_slug, 'error' => TRUE]);
       }
     }
     else {
       // Return user to module submission page, display error.
-      $form_state->setRedirect('challenge_submission_module.submission_form_page', ['challenge' => $challenge_slug, 'error' => TRUE]);
+      $form_state->setRedirect('challenge_submission.submission_form_page', ['challenge' => $challenge_slug, 'error' => TRUE]);
     }
   }
 
@@ -290,7 +290,7 @@ class SubmissionForm extends FormBase {
   }
 
   protected function getEditableConfigNames() {
-    return ['challenge_submission_module.settings'];
+    return ['challenge_submission.settings'];
   }
 
   protected function saveToAuditLog(array $data) {

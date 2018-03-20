@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\challenge_page_module\Controller;
+namespace Drupal\challenge_pages\Controller;
 
 use Drupal\node\Entity\Node;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class ChallengePageModuleController extends ControllerBase {
+class ChallengePageController extends ControllerBase {
 
   public function challenge_page($challenge) {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -56,8 +56,8 @@ class ChallengePageModuleController extends ControllerBase {
     $page['#challenge_menu_array'] = $this->generateMenuBar($node);
 
     // Page System Variables.
-    $page['#theme'] = 'challenge_page_module_page_theme';
-    $page['#attached']['library'][] = 'challenge_page_module/challenge-page';
+    $page['#theme'] = 'challenge_pages_page_theme';
+    $page['#attached']['library'][] = 'challenge_pages/challenge-page';
 
     // Page Variables.
     $page['#challenge_name'] = $node->title->value;
@@ -118,7 +118,7 @@ class ChallengePageModuleController extends ControllerBase {
 
     // Page System Variables.
     $page['#theme'] = 'challenge_subpage_module_page_theme';
-    $page['#attached']['library'][] = 'challenge_page_module/challenge-page';
+    $page['#attached']['library'][] = 'challenge_pages/challenge-page';
 
     // Page Variables.
     $page['#challenge_name'] = $node->title->value;
@@ -227,7 +227,7 @@ class ChallengePageModuleController extends ControllerBase {
 
     // Page System Variables.
     $page['#theme'] = 'challenge_news_module_page_theme';
-    $page['#attached']['library'][] = 'challenge_page_module/challenge-page';
+    $page['#attached']['library'][] = 'challenge_pages/challenge-page';
 
     // Page Variables.
     $page['#challenge_name'] = $node->title->value;

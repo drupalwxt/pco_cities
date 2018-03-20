@@ -1,5 +1,5 @@
-challenge_submission_module.submission_log:
+challenge_submission.submission_log:
   title: 'Challenge Submissions Audit Log'
   description: 'See all Challenge Submissions'
-  route_name: challenge_submission_module.submissions_log
+  route_name: challenge_submission.submissions_log
   parent: system.admin_config_system

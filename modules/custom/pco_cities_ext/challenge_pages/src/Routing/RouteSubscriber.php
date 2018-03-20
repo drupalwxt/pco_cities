@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\challenge_page_module\Routing;
+namespace Drupal\challenge_pages\Routing;
 
 use Drupal\Core\Routing\RouteSubscriberBase;
 use Symfony\Component\Routing\RouteCollection;
@@ -17,7 +17,7 @@ class RouteSubscriber extends RouteSubscriberBase {
 
     if ($route = $collection->get('challenge')) {
       $route->setDefaults([
-        '_controller' => 'Drupal\challenge_page_module\Controller\ChallengePageModuleController::challenge_page',
+        '_controller' => 'Drupal\challenge_pages\Controller\ChallengePageController::challenge_page',
       ]);
     }
   }

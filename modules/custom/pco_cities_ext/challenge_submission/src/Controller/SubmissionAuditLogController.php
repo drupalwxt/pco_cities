@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\challenge_submission_module\Controller;
+namespace Drupal\challenge_submission\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
