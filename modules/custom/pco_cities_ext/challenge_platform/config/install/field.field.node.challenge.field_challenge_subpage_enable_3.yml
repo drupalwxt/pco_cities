@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenge_subpage_enable_3
+    - node.type.challenge
+id: node.challenge.field_challenge_subpage_enable_3
+field_name: field_challenge_subpage_enable_3
+entity_type: node
+bundle: challenge
+label: 'Challenge Subpage Enable 3'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

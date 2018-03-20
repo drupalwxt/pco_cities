@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challeng_subpage_url_3
+    - node.type.challenge
+id: node.challenge.field_challeng_subpage_url_3
+field_name: field_challeng_subpage_url_3
+entity_type: node
+bundle: challenge
+label: 'Challeng Subpage Url 3'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

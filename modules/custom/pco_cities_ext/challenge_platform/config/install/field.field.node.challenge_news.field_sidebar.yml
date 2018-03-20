@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar
+    - node.type.challenge_news
+  module:
+    - text
+id: node.challenge_news.field_sidebar
+field_name: field_sidebar
+entity_type: node
+bundle: challenge_news
+label: Sidebar
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

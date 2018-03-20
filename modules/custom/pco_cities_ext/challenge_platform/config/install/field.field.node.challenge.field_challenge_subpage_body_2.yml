@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenge_subpage_body_2
+    - node.type.challenge
+  module:
+    - text
+id: node.challenge.field_challenge_subpage_body_2
+field_name: field_challenge_subpage_body_2
+entity_type: node
+bundle: challenge
+label: 'Challenge Subpage Body 2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

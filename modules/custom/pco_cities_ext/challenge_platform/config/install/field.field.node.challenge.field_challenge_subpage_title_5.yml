@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenge_subpage_title_5
+    - node.type.challenge
+id: node.challenge.field_challenge_subpage_title_5
+field_name: field_challenge_subpage_title_5
+entity_type: node
+bundle: challenge
+label: 'Challenge Subpage Title 5'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
