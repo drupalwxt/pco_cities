@@ -1,0 +1,5 @@
+name: Challenge Submission
+description: Allows for submitting of submissions for challenges
+type: module
+core: 8.x
+package: pcocp

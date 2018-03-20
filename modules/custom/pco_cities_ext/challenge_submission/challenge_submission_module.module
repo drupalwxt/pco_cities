@@ -7,10 +7,10 @@
 /**
  * Implements hook_theme().
  */
-function submission_form_module_theme() {
+function challenge_submission_module_theme() {
 
   return [
-    'submission_form_module_page_theme' => [
+    'challenge_submission_module_page_theme' => [
       'render element' => 'form',
       'template' => 'submission-form-theme-page',
     ],

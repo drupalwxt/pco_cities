@@ -4,7 +4,7 @@
  * @file
  */
 
-function submission_form_module_schema() {
+function challenge_submission_module_schema() {
   $schema['challenge_submission'] = [
     'fields' => [
       'csid' => [

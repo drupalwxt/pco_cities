@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\submission_form_module\Plugin\Block;
+namespace Drupal\challenge_submission_module\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;

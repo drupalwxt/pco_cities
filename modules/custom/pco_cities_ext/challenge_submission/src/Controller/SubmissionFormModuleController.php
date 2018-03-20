@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\submission_form_module\Controller;
+namespace Drupal\challenge_submission_module\Controller;
 
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Controller\ControllerBase;
@@ -68,8 +68,8 @@ class SubmissionFormModuleController extends ControllerBase {
       }
     }
 
-    $page['#theme'] = 'submission_form_module_page_theme';
-    $page['#attached']['library'][] = 'submission_form_module/submission-form';
+    $page['#theme'] = 'challenge_submission_module_page_theme';
+    $page['#attached']['library'][] = 'challenge_submission_module/submission-form';
 
     $page['#challenge_name'] = $node->title->value;
     $page['#challenge_department'] = $node->get('field_challenge_department')->getValue()[0]['value'];
@@ -118,14 +118,17 @@ class SubmissionFormModuleController extends ControllerBase {
       throw new NotFoundHttpException();
     }
 
-    $form = $this->formBuilder()->getForm('Drupal\submission_form_module\Form\SubmissionForm');
+    $form = $this->formBuilder()->getForm('Drupal\challenge_submission_module\Form\SubmissionForm');
+
+    //Add hidden field to form
+    $form['friendly_url']['#value'] = $node->get('field_friendly_url')->getValue()[0]['value'];
 
     // Wrap the theme with WET4 validation tag.
     $form['#prefix'] = '<div class="wb-frmvld">';
     $form['#suffix'] = '</div>';
 
-    $form['#theme'] = 'submission_form_module_page_theme';
-    $form['#attached']['library'][] = 'submission_form_module/submission-form';
+    $form['#theme'] = 'challenge_submission_module_page_theme';
+    $form['#attached']['library'][] = 'challenge_submission_module/submission-form';
 
     $form['#challenge_name'] = $node->title->value;
     $form['#challenge_department'] = $node->get('field_challenge_department')->getValue()[0]['value'];
