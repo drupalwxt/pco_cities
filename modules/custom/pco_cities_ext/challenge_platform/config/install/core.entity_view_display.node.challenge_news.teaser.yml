@@ -4,6 +4,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.challenge_news.body
+    - field.field.node.challenge_news.field_challenge
+    - field.field.node.challenge_news.field_sidebar
+    - field.field.node.challenge_news.field_type
     - node.type.challenge_news
   module:
     - text
@@ -25,4 +28,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_challenge: true
+  field_sidebar: true
+  field_type: true
   langcode: true
