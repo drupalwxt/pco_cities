@@ -9,6 +9,6 @@ dependencies:
   - drupal:wxt_ext_blog
   - drupal:wxt_ext_page
   - drupal:challenge_platform
-  - drupal:challenge_pages
-  - drupal:submission_form
+  - drupal:challenge_page_module
+  - drupal:challenge_submission_module
   - drupal:login_redirect
