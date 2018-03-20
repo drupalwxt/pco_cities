@@ -36,7 +36,7 @@
                     <div class="container">
                       <ul class="menu challenge-nav">
                         <li class="active expanded">
-                          <a href="{{ form['#challenge_home'] }}">Home</a>
+                          <a href="{{ form['#challenge_home'] }}/">Home</a>
                         </li>
                         {% for item in form['#challenge_menu_array'] %}
                         <li>
@@ -44,7 +44,7 @@
                         </li>
                         {% endfor %}
                         <li>
-                          <a href="{{ form['#challenge_root'] }}/news">News</a>
+                          <a href="{{ form['#challenge_root'] }}/{{ 'News'|t }}">{{ 'News'|t }}</a>
                         </li>
                       </ul>
                     </div>
@@ -97,21 +97,18 @@
                           <h4 class="field-challenge-news-item-type">{{ item.header }}</h4>
                           <h2 class="field-challenge-news-item-title mrgn-tp-md">{{ item.title }}</h2>
                           <p class="news-body">
-                            {#{{ form['#challenge_description'] | raw }}#}
                             {% set paragraph = item.body %}
                             {% set body = { '#type':
                             'processed_text', '#text': paragraph.value, '#format': paragraph.format, } %} {{ body }}
                           </p>
                         </div>
                         <div class="col-sm-12 col-md-3 bs-region bs-region--right mrgn-bttm-xl">
-                          {#{{ form['#challenge_description'] | raw }}#}
                             {% set side_paragraph = item.sidebar %}
                             {% set side_body = { '#type':
                             'processed_text', '#text': side_paragraph.value, '#format': side_paragraph.format, } %} {{ side_body }}
                         </div>
                       </div>
                       {% endfor %}
-
                   </section>
                 </div>
               </div>

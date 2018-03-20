@@ -2,12 +2,33 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.challenge.field_challeng_subpage_url_1
+    - field.field.node.challenge.field_challeng_subpage_url_2
+    - field.field.node.challenge.field_challeng_subpage_url_3
+    - field.field.node.challenge.field_challeng_subpage_url_4
+    - field.field.node.challenge.field_challeng_subpage_url_5
     - field.field.node.challenge.field_challenge_department
     - field.field.node.challenge.field_challenge_description
     - field.field.node.challenge.field_challenge_details_block
     - field.field.node.challenge.field_challenge_email_contents
     - field.field.node.challenge.field_challenge_image
     - field.field.node.challenge.field_challenge_submission_email
+    - field.field.node.challenge.field_challenge_subpage_body_1
+    - field.field.node.challenge.field_challenge_subpage_body_2
+    - field.field.node.challenge.field_challenge_subpage_body_3
+    - field.field.node.challenge.field_challenge_subpage_body_4
+    - field.field.node.challenge.field_challenge_subpage_body_5
+    - field.field.node.challenge.field_challenge_subpage_enable_1
+    - field.field.node.challenge.field_challenge_subpage_enable_2
+    - field.field.node.challenge.field_challenge_subpage_enable_3
+    - field.field.node.challenge.field_challenge_subpage_enable_4
+    - field.field.node.challenge.field_challenge_subpage_enable_5
+    - field.field.node.challenge.field_challenge_subpage_title_1
+    - field.field.node.challenge.field_challenge_subpage_title_2
+    - field.field.node.challenge.field_challenge_subpage_title_3
+    - field.field.node.challenge.field_challenge_subpage_title_4
+    - field.field.node.challenge.field_challenge_subpage_title_5
+    - field.field.node.challenge.field_friendly_url
     - field.field.node.challenge.field_single_line_teaser
     - field.field.node.challenge.field_tags
     - node.type.challenge
@@ -198,6 +219,46 @@ targetEntityType: node
 bundle: challenge
 mode: default
 content:
+  field_challeng_subpage_url_1:
+    weight: 125
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_challeng_subpage_url_2:
+    weight: 126
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_challeng_subpage_url_3:
+    weight: 127
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_challeng_subpage_url_4:
+    weight: 128
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_challeng_subpage_url_5:
+    weight: 129
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_challenge_department:
     weight: 107
     label: hidden
@@ -243,6 +304,139 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_challenge_subpage_body_1:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_challenge_subpage_body_2:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_challenge_subpage_body_3:
+    weight: 117
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_challenge_subpage_body_4:
+    weight: 118
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_challenge_subpage_body_5:
+    weight: 119
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_challenge_subpage_enable_1:
+    weight: 130
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_challenge_subpage_enable_2:
+    weight: 131
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_challenge_subpage_enable_3:
+    weight: 132
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_challenge_subpage_enable_4:
+    weight: 133
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_challenge_subpage_enable_5:
+    weight: 134
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_challenge_subpage_title_1:
+    weight: 120
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_challenge_subpage_title_2:
+    weight: 121
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_challenge_subpage_title_3:
+    weight: 122
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_challenge_subpage_title_4:
+    weight: 123
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_challenge_subpage_title_5:
+    weight: 124
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_friendly_url:
+    weight: 135
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_single_line_teaser:
     weight: 110

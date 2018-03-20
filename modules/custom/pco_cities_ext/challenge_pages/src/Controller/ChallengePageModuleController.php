@@ -9,19 +9,44 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ChallengePageModuleController extends ControllerBase {
 
   public function challenge_page($challenge) {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
+    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
+    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+    $node = null;
 
-    $challenge_slug = \Drupal::request()->get('challenge');
-    $path = \Drupal::service('path.alias_manager')->getPathByAlias('/challenges/' . $challenge_slug);
+    foreach($nodes as $item) {
+      if($item->get('field_friendly_url')->getValue())
+      {
+        $url = $item->get('field_friendly_url')->getValue()[0]['value'];
 
-    if (preg_match('/node\/(\d+)/', $path, $matches)) {
-      $node = Node::load($matches[1]);
+        //Check for french translation
+        if($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
+          $url_french = $item->getTranslation($language)->get('field_friendly_url')->getValue()[0]['value'];
+        }
+
+        if($url == $challenge) {
+          $node = $item;
+          break;
+        }
+
+        if($url_french == $challenge) {
+          $node = $item;
+          break;
+        }
+      }
     }
-    else {
+
+    //If no matching node, then we throw an exception
+    if(!$node) {
       throw new NotFoundHttpException();
     }
 
-    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-    $result = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->id()]);
+    if (!array_key_exists($language, $node->getTranslationLanguages())) {
+      $node = $node->getTranslation($defaultLang);
+    } else {
+      $node = $node->getTranslation($language);
+    }
 
     // User variables.
     $user = \Drupal::currentUser();
@@ -38,10 +63,8 @@ class ChallengePageModuleController extends ControllerBase {
     $page['#challenge_name'] = $node->title->value;
     $page['#challenge_department'] = $node->get('field_challenge_department')->getValue()[0]['value'];
     $page['#challenge_image'] = file_create_url($node->field_challenge_image->entity->uri->value);
-    $page['#challenge_home'] = '/challenges/' . $challenge_slug . '/home';
-    $page['#challenge_root'] = '/challenges/' . $challenge_slug;
-
-    $page['#challenge_node'] = $path;
+    $page['#challenge_home'] = '/challenges/' . $challenge;
+    $page['#challenge_root'] = '/challenges/' . $challenge;
 
     // Page Content.
     $page['#challenge_description'] = $node->get('field_challenge_description')->getValue()[0];
@@ -51,19 +74,44 @@ class ChallengePageModuleController extends ControllerBase {
   }
 
   public function challenge_subpage($challenge, $url) {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
+    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
+    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+    $node = null;
 
-    $challenge_slug = \Drupal::request()->get('challenge');
-    $path = \Drupal::service('path.alias_manager')->getPathByAlias('/challenges/' . $challenge_slug);
+    foreach($nodes as $item) {
+      if($item->get('field_friendly_url')->getValue())
+      {
+        $friendly_url = $item->get('field_friendly_url')->getValue()[0]['value'];
 
-    if (preg_match('/node\/(\d+)/', $path, $matches)) {
-      $node = Node::load($matches[1]);
+        //Check for french translation
+        if($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
+          $url_french = $item->getTranslation($language)->get('field_friendly_url')->getValue()[0]['value'];
+        }
+
+        if($friendly_url == $challenge) {
+          $node = $item;
+          break;
+        }
+
+        if($url_french == $challenge) {
+          $node = $item;
+          break;
+        }
+      }
     }
-    else {
+
+    //If no matching node, then we throw an exception
+    if(!$node) {
       throw new NotFoundHttpException();
     }
 
-    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-    $result = $menu_link_manager->loadLinksByRoute('entity.node.canonical', ['node' => $node->id()]);
+    if (!array_key_exists($language, $node->getTranslationLanguages())) {
+      $node = $node->getTranslation($defaultLang);
+    } else {
+      $node = $node->getTranslation($language);
+    }
 
     // Create the Menu.
     $page['#challenge_menu_array'] = $this->generateMenuBar($node);
@@ -76,30 +124,33 @@ class ChallengePageModuleController extends ControllerBase {
     $page['#challenge_name'] = $node->title->value;
     $page['#challenge_department'] = $node->get('field_challenge_department')->getValue()[0]['value'];
     $page['#challenge_image'] = file_create_url($node->field_challenge_image->entity->uri->value);
-    $page['#challenge_home'] = '/challenges/' . $challenge_slug . '/home';
-    $page['#challenge_root'] = '/challenges/' . $challenge_slug;
-    $page['#challenge_node'] = $path;
+    $page['#challenge_home'] = '/challenges/' . $challenge;
+    $page['#challenge_root'] = '/challenges/' . $challenge;
 
     // User variables.
     $user = \Drupal::currentUser();
     $page['#logged_in'] = $user->isAuthenticated();
 
-    // Find out which page we're on.
-    if ($this->validateFriendlyUrlMatch($node->get('field_challenge_subpage_title_1')->getValue()[0]['value'], $url)) {
+    //Find out which page we're on
+    if(($node->get('field_challeng_subpage_url_1')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_1')->getValue()[0]['value'])) {
       $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_1')->getValue()[0]['value'];
       $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_1')->getValue()[0];
     }
-    elseif ($this->validateFriendlyUrlMatch($node->get('field_challenge_subpage_title_2')->getValue()[0]['value'], $url)) {
+    else if(($node->get('field_challeng_subpage_url_2')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_2')->getValue()[0]['value'])) {
       $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_2')->getValue()[0]['value'];
       $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_2')->getValue()[0];
     }
-    elseif ($this->validateFriendlyUrlMatch($node->get('field_challenge_subpage_title_3')->getValue()[0]['value'], $url)) {
+    else if(($node->get('field_challeng_subpage_url_3')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_3')->getValue()[0]['value'])) {
       $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_3')->getValue()[0]['value'];
       $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_3')->getValue()[0];
     }
-    elseif ($this->validateFriendlyUrlMatch($node->get('field_challenge_subpage_title_4')->getValue()[0]['value'], $url)) {
+    else if(($node->get('field_challeng_subpage_url_4')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_4')->getValue()[0]['value'])) {
       $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_4')->getValue()[0]['value'];
       $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_4')->getValue()[0];
+    }
+    else if(($node->get('field_challeng_subpage_url_5')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_5')->getValue()[0]['value'])) {
+      $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_5')->getValue()[0]['value'];
+      $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_5')->getValue()[0];
     }
     else {
       throw new NotFoundHttpException();
@@ -109,21 +160,49 @@ class ChallengePageModuleController extends ControllerBase {
   }
 
   public function challenge_news_page($challenge) {
-    $challenge_slug = \Drupal::request()->get('challenge');
-    $path = \Drupal::service('path.alias_manager')->getPathByAlias('/challenges/' . $challenge_slug);
+    $lang_code = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
 
-    if (preg_match('/node\/(\d+)/', $path, $matches)) {
-      $node = Node::load($matches[1]);
+    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
+    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+    $node = null;
+
+    foreach($nodes as $item) {
+      if($item->get('field_friendly_url')->getValue())
+      {
+        $friendly_url = $item->get('field_friendly_url')->getValue()[0]['value'];
+
+        if($friendly_url == $challenge) {
+          $node = $item;
+        }
+      }
     }
-    else {
+
+    //If no matching node, then we throw an exception
+    if(!$node) {
       throw new NotFoundHttpException();
     }
 
-    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge_news')->execute();
-    $nodes = Node::loadMultiple($nids);
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
+
+    if (!array_key_exists($language, $node->getTranslationLanguages())) {
+      $node = $node->getTranslation($defaultLang);
+    } else {
+      $node = $node->getTranslation($language);
+    }
+
+    $news_nids = \Drupal::entityQuery('node')->condition('type','challenge_news')->execute();
+    $news_nodes =  \Drupal\node\Entity\Node::loadMultiple($news_nids);
     $news_array = [];
 
-    foreach ($nodes as $item) {
+
+    foreach($news_nodes as $item) {
+      if (!array_key_exists($language, $item->getTranslationLanguages())) {
+        $item = $item->getTranslation($defaultLang);
+      } else {
+        $item = $item->getTranslation($language);
+      }
+
       $target_id = $item->get('field_challenge')->getValue()[0]['target_id'];
 
       if ($target_id == $node->id()) {
@@ -154,52 +233,55 @@ class ChallengePageModuleController extends ControllerBase {
     $page['#challenge_name'] = $node->title->value;
     $page['#challenge_department'] = $node->get('field_challenge_department')->getValue()[0]['value'];
     $page['#challenge_image'] = file_create_url($node->field_challenge_image->entity->uri->value);
-    $page['#challenge_home'] = '/challenges/' . $challenge_slug . '/home';
-    $page['#challenge_root'] = '/challenges/' . $challenge_slug;
-    $page['#challenge_node'] = $path;
+    $page['#challenge_home'] = '/challenges/' . $challenge;
+    $page['#challenge_root'] = '/challenges/' . $challenge;
+    //$page['#challenge_node'] = $path;
 
     return $page;
-  }
-
-  private function validateFriendlyUrlMatch($unfriendlyUrl, $friendlyUrl) {
-    if (preg_replace('/\W+/', '-', strtolower($unfriendlyUrl)) == $friendlyUrl) {
-      return TRUE;
-    }
-    else {
-      return FALSE;
-    }
   }
 
   private function generateMenuBar($node) {
     $menu = [];
 
-    if ($node->get('field_challenge_subpage_title_1')->getValue()) {
-      $friendly_url = preg_replace('/\W+/', '-', strtolower($node->get('field_challenge_subpage_title_1')->getValue()[0]['value']));
-      array_push($menu, [
-        'title' => $node->get('field_challenge_subpage_title_1')->getValue()[0]['value'],
-        'url' => $friendly_url,
-      ]);
+    if($node->get('field_challenge_subpage_enable_1')->getValue()[0]['value']) {
+      if($node->get('field_challenge_subpage_title_1')->getValue() && $node->get('field_challeng_subpage_url_1')->getValue()) {
+        array_push($menu, [
+          'title' => $node->get('field_challenge_subpage_title_1')->getValue()[0]['value'],
+          'url' => $node->get('field_challeng_subpage_url_1')->getValue()[0]['value']
+        ]);
+      }
     }
-    if ($node->get('field_challenge_subpage_title_2')->getValue()) {
-      $friendly_url = preg_replace('/\W+/', '-', strtolower($node->get('field_challenge_subpage_title_2')->getValue()[0]['value']));
-      array_push($menu, [
-        'title' => $node->get('field_challenge_subpage_title_2')->getValue()[0]['value'],
-        'url' => $friendly_url,
-      ]);
+    if($node->get('field_challenge_subpage_enable_2')->getValue()[0]['value']) {
+      if($node->get('field_challenge_subpage_title_2')->getValue() && $node->get('field_challeng_subpage_url_2')->getValue()) {
+        array_push($menu, [
+          'title' => $node->get('field_challenge_subpage_title_2')->getValue()[0]['value'],
+          'url' => $node->get('field_challeng_subpage_url_2')->getValue()[0]['value']
+        ]);
+      }
     }
-    if ($node->get('field_challenge_subpage_title_3')->getValue()) {
-      $friendly_url = preg_replace('/\W+/', '-', strtolower($node->get('field_challenge_subpage_title_3')->getValue()[0]['value']));
-      array_push($menu, [
-        'title' => $node->get('field_challenge_subpage_title_3')->getValue()[0]['value'],
-        'url' => $friendly_url,
-      ]);
+    if($node->get('field_challenge_subpage_enable_3')->getValue()[0]['value']) {
+      if($node->get('field_challenge_subpage_title_3')->getValue() && $node->get('field_challeng_subpage_url_3')->getValue()) {
+        array_push($menu, [
+          'title' => $node->get('field_challenge_subpage_title_3')->getValue()[0]['value'],
+          'url' => $node->get('field_challeng_subpage_url_3')->getValue()[0]['value']
+        ]);
+      }
     }
-    if ($node->get('field_challenge_subpage_title_4')->getValue()) {
-      $friendly_url = preg_replace('/\W+/', '-', strtolower($node->get('field_challenge_subpage_title_4')->getValue()[0]['value']));
-      array_push($menu, [
-        'title' => $node->get('field_challenge_subpage_title_4')->getValue()[0]['value'],
-        'url' => $friendly_url,
-      ]);
+    if($node->get('field_challenge_subpage_enable_4')->getValue()[0]['value']) {
+      if($node->get('field_challenge_subpage_title_4')->getValue() && $node->get('field_challeng_subpage_url_4')->getValue()) {
+        array_push($menu, [
+          'title' => $node->get('field_challenge_subpage_title_4')->getValue()[0]['value'],
+          'url' => $node->get('field_challeng_subpage_url_4')->getValue()[0]['value']
+        ]);
+      }
+    }
+    if($node->get('field_challenge_subpage_enable_5')->getValue()[0]['value']) {
+      if($node->get('field_challenge_subpage_title_5')->getValue() && $node->get('field_challeng_subpage_url_5')->getValue()) {
+        array_push($menu, [
+          'title' => $node->get('field_challenge_subpage_title_5')->getValue()[0]['value'],
+          'url' => $node->get('field_challeng_subpage_url_5')->getValue()[0]['value']
+        ]);
+      }
     }
 
     return $menu;

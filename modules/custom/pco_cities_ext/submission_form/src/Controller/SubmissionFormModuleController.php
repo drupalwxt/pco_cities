@@ -6,6 +6,7 @@ use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SubmissionFormModuleController extends ControllerBase {
   /**
@@ -39,13 +40,32 @@ class SubmissionFormModuleController extends ControllerBase {
     $challenge_slug = $request->get('challenge');
     $path = $this->aliasManager->getPathByAlias('/challenges/' . $challenge_slug);
 
-    if (preg_match('/node\/(\d+)/', $path, $matches)) {
-      $node_storage = $this->entityTypeManager()->getStorage('node');
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
+    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
+    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+    $node = null;
 
-      $node = $node_storage->load($matches[1]);
-    }
-    else {
-      throw new NotFoundHttpException();
+    foreach($nodes as $item) {
+      if($item->get('field_friendly_url')->getValue())
+      {
+        $url = $item->get('field_friendly_url')->getValue()[0]['value'];
+
+        //Check for french translation
+        if($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
+          $url_french = $item->getTranslation($language)->get('field_friendly_url')->getValue()[0]['value'];
+        }
+
+        if($url == $challenge) {
+          $node = $item;
+          break;
+        }
+
+        if($url_french == $challenge) {
+          $node = $item;
+          break;
+        }
+      }
     }
 
     $page['#theme'] = 'submission_form_module_page_theme';
@@ -65,14 +85,36 @@ class SubmissionFormModuleController extends ControllerBase {
     $challenge_slug = $request->get('challenge');
     $submission_error = $request->get('error');
 
-    $path = $this->aliasManager->getPathByAlias('/challenges/' . $challenge_slug);
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
+    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
+    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+    $node = null;
 
-    if (preg_match('/node\/(\d+)/', $path, $matches)) {
-      $node_storage = $this->entityTypeManager()->getStorage('node');
+    foreach($nodes as $item) {
+      if($item->get('field_friendly_url')->getValue())
+      {
+        $url = $item->get('field_friendly_url')->getValue()[0]['value'];
 
-      $node = $node_storage->load($matches[1]);
+        //Check for french translation
+        if($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
+          $url_french = $item->getTranslation($language)->get('field_friendly_url')->getValue()[0]['value'];
+        }
+
+        if($url == $challenge) {
+          $node = $item;
+          break;
+        }
+
+        if($url_french == $challenge) {
+          $node = $item;
+          break;
+        }
+      }
     }
-    else {
+
+    //If no matching node, then we throw an exception
+    if(!$node) {
       throw new NotFoundHttpException();
     }
 

@@ -28,7 +28,9 @@
     <ul{{ attributes.addClass('menu', 'challenge-nav') }}>
 
     {{ menus.menu_links(items, attributes, 0) }}
-
+    {% for item in items %}
+      {{ item.content.field.0 }}
+    {% endfor %}
     </ul>
   </div>
 </div>
