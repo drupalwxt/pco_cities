@@ -8,7 +8,6 @@
  * Implements hook_theme().
  */
 function challenge_pages_theme() {
-
   return [
     'challenge_pages_page_theme' => [
       'render element' => 'form',
@@ -23,6 +22,4 @@ function challenge_pages_theme() {
       'template' => 'challenge-news-theme-page',
     ],
   ];
-
-  return $theme;
 }
