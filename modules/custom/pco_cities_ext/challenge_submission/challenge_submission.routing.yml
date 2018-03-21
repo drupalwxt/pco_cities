@@ -21,3 +21,11 @@ challenge_submission.submissions_log:
     _title: 'Challenge Submissions'
   requirements:
     _permission: 'access content'
+
+challenge_submission.config:
+  path: '/admin/config/challenge_submission'
+  defaults:
+    _form: '\Drupal\challenge_submission\Form\MailgunConfigForm'
+    _title: 'Challenge Submission Mailgun Config'
+  requirements:
+    _permission: 'administer site configuration'
