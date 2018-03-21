@@ -15,6 +15,7 @@ class ChallengePageController extends ControllerBase {
     $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
     $nodes = Node::loadMultiple($nids);
     $node = NULL;
+    //$response->setTargetUrl('http://example2.com');
 
     foreach ($nodes as $item) {
       if ($item->get('field_friendly_url')->getValue()) {
@@ -254,51 +255,50 @@ class ChallengePageController extends ControllerBase {
       $challenge_path = substr($challenge_path, 0, -1);
     }
 
+    list($challenge_url, $subpage_url) = explode($node->get('field_friendly_url')->getValue()[0]['value'], $challenge_path);
+
+    $challenge_url = $challenge_url . $node->get('field_friendly_url')->getValue()[0]['value'];
+
     //Remove news path if it exists
     $challenge_path = str_replace('/news', "", $challenge_path);
 
     if($node->get('field_challenge_subpage_enable_1')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_1')->getValue() && $node->get('field_challeng_subpage_url_1')->getValue()) {
-        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_1')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_1')->getValue()[0]['value'],
-          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_1')->getValue()[0]['value']
+          'url' => $challenge_url . '/' . $node->get('field_challeng_subpage_url_1')->getValue()[0]['value']
         ]);
       }
     }
     if($node->get('field_challenge_subpage_enable_2')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_2')->getValue() && $node->get('field_challeng_subpage_url_2')->getValue()) {
-        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_2')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_2')->getValue()[0]['value'],
-          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_2')->getValue()[0]['value']
+          'url' => $challenge_url . '/' . $node->get('field_challeng_subpage_url_2')->getValue()[0]['value']
         ]);
       }
     }
     if($node->get('field_challenge_subpage_enable_3')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_3')->getValue() && $node->get('field_challeng_subpage_url_3')->getValue()) {
-        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_3')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_3')->getValue()[0]['value'],
-          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_3')->getValue()[0]['value']
+          'url' => $challenge_url . '/' . $node->get('field_challeng_subpage_url_3')->getValue()[0]['value']
         ]);
       }
     }
     if($node->get('field_challenge_subpage_enable_4')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_4')->getValue() && $node->get('field_challeng_subpage_url_4')->getValue()) {
-        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_4')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_4')->getValue()[0]['value'],
-          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_4')->getValue()[0]['value']
+          'url' => $challenge_url . '/' . $node->get('field_challeng_subpage_url_4')->getValue()[0]['value']
         ]);
       }
     }
     if($node->get('field_challenge_subpage_enable_5')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_5')->getValue() && $node->get('field_challeng_subpage_url_5')->getValue()) {
-        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_5')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_5')->getValue()[0]['value'],
-          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_5')->getValue()[0]['value']
+          'url' => $challenge_url . '/' . $node->get('field_challeng_subpage_url_5')->getValue()[0]['value']
         ]);
       }
     }
