@@ -2,6 +2,7 @@
 
 namespace Drupal\challenge_submission\Form;
 
+use Drupal;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -241,9 +242,11 @@ class SubmissionForm extends FormBase {
     $template = file_get_contents(drupal_get_path('module', 'challenge_submission') . '/templates/submission-email.html');
     $template = $this->renderTemplate($template, $variables);
 
+    $config = Drupal::config('challenge_submission.settings');
+
     // Instantiate Mailgun with API Key and sending domain.
-    $mailgun = Mailgun::create('key-5q8rkuph2j8fey5owt5kcaydbll9bzb2');
-    $domain = 'mailgun.cds-snc.ca';
+    $mailgun = Mailgun::create($config->get('challenge_submission.mailgun_key'));
+    $domain = $config->get('challenge_submission.mailgun_domain');
 
     $send_data = [
       'from'    => 'contact@mailgun.cds-snc.ca',
