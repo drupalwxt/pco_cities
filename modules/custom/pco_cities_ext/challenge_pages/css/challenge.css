@@ -1,0 +1,29 @@
+/* line 1, ../sass/challenge.scss */
+.field-challenge-news-item {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+/* line 5, ../sass/challenge.scss */
+.field-challenge-news-item .field-challenge-news-item-title {
+  font-weight: 300 !important;
+  color: gray !important;
+}
+/* line 10, ../sass/challenge.scss */
+.field-challenge-news-item .field-challenge-news-item-type {
+  text-transform: uppercase;
+}
+/* line 14, ../sass/challenge.scss */
+.field-challenge-news-item .news-body {
+  padding-right: 10px;
+}
+
+/* line 19, ../sass/challenge.scss */
+.btn {
+  border-radius: 0px;
+  border: none;
+  padding: 12px;
+}
+/* line 24, ../sass/challenge.scss */
+.btn.btn-primary {
+  background-color: #007897 !important;
+}

@@ -2,6 +2,7 @@
 
 namespace Drupal\challenge_submission\Controller;
 
+use Drupal\node\Entity\Node;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -42,26 +43,25 @@ class SubmissionFormModuleController extends ControllerBase {
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
-    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
-    $node = null;
+    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
+    $nodes = Node::loadMultiple($nids);
+    $node = NULL;
 
-    foreach($nodes as $item) {
-      if($item->get('field_friendly_url')->getValue())
-      {
+    foreach ($nodes as $item) {
+      if ($item->get('field_friendly_url')->getValue()) {
         $url = $item->get('field_friendly_url')->getValue()[0]['value'];
 
-        //Check for french translation
-        if($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
+        // Check for french translation.
+        if ($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
           $url_french = $item->getTranslation($language)->get('field_friendly_url')->getValue()[0]['value'];
         }
 
-        if($url == $challenge) {
+        if ($url == $challenge) {
           $node = $item;
           break;
         }
 
-        if($url_french == $challenge) {
+        if ($url_french == $challenge) {
           $node = $item;
           break;
         }
@@ -87,40 +87,39 @@ class SubmissionFormModuleController extends ControllerBase {
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
-    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
-    $node = null;
+    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
+    $nodes = Node::loadMultiple($nids);
+    $node = NULL;
 
-    foreach($nodes as $item) {
-      if($item->get('field_friendly_url')->getValue())
-      {
+    foreach ($nodes as $item) {
+      if ($item->get('field_friendly_url')->getValue()) {
         $url = $item->get('field_friendly_url')->getValue()[0]['value'];
 
-        //Check for french translation
-        if($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
+        // Check for french translation.
+        if ($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
           $url_french = $item->getTranslation($language)->get('field_friendly_url')->getValue()[0]['value'];
         }
 
-        if($url == $challenge) {
+        if ($url == $challenge) {
           $node = $item;
           break;
         }
 
-        if($url_french == $challenge) {
+        if ($url_french == $challenge) {
           $node = $item;
           break;
         }
       }
     }
 
-    //If no matching node, then we throw an exception
-    if(!$node) {
+    // If no matching node, then we throw an exception.
+    if (!$node) {
       throw new NotFoundHttpException();
     }
 
     $form = $this->formBuilder()->getForm('Drupal\challenge_submission\Form\SubmissionForm');
 
-    //Add hidden field to form
+    // Add hidden field to form.
     $form['friendly_url']['#value'] = $node->get('field_friendly_url')->getValue()[0]['value'];
 
     // Wrap the theme with WET4 validation tag.

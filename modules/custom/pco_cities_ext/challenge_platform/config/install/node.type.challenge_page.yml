@@ -5,13 +5,12 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    available_menus:
-      - challenges
-    parent: 'challenges:'
+    available_menus: {  }
+    parent: ''
 name: 'Challenge Subpage'
 type: challenge_page
 description: 'A regular page within a challenge that has a title and body field'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 1
 display_submitted: false

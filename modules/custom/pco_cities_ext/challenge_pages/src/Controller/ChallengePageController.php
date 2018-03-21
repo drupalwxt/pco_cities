@@ -12,40 +12,40 @@ class ChallengePageController extends ControllerBase {
   public function challenge_page($challenge) {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
-    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
-    $node = null;
+    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
+    $nodes = Node::loadMultiple($nids);
+    $node = NULL;
 
-    foreach($nodes as $item) {
-      if($item->get('field_friendly_url')->getValue())
-      {
+    foreach ($nodes as $item) {
+      if ($item->get('field_friendly_url')->getValue()) {
         $url = $item->get('field_friendly_url')->getValue()[0]['value'];
 
-        //Check for french translation
-        if($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
+        // Check for french translation.
+        if ($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
           $url_french = $item->getTranslation($language)->get('field_friendly_url')->getValue()[0]['value'];
         }
 
-        if($url == $challenge) {
+        if ($url == $challenge) {
           $node = $item;
           break;
         }
 
-        if($url_french == $challenge) {
+        if ($url_french == $challenge) {
           $node = $item;
           break;
         }
       }
     }
 
-    //If no matching node, then we throw an exception
-    if(!$node) {
+    // If no matching node, then we throw an exception.
+    if (!$node) {
       throw new NotFoundHttpException();
     }
 
     if (!array_key_exists($language, $node->getTranslationLanguages())) {
       $node = $node->getTranslation($defaultLang);
-    } else {
+    }
+    else {
       $node = $node->getTranslation($language);
     }
 
@@ -79,40 +79,40 @@ class ChallengePageController extends ControllerBase {
   public function challenge_subpage($challenge, $url) {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
-    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
-    $node = null;
+    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
+    $nodes = Node::loadMultiple($nids);
+    $node = NULL;
 
-    foreach($nodes as $item) {
-      if($item->get('field_friendly_url')->getValue())
-      {
+    foreach ($nodes as $item) {
+      if ($item->get('field_friendly_url')->getValue()) {
         $friendly_url = $item->get('field_friendly_url')->getValue()[0]['value'];
 
-        //Check for french translation
-        if($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
+        // Check for french translation.
+        if ($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
           $url_french = $item->getTranslation($language)->get('field_friendly_url')->getValue()[0]['value'];
         }
 
-        if($friendly_url == $challenge) {
+        if ($friendly_url == $challenge) {
           $node = $item;
           break;
         }
 
-        if($url_french == $challenge) {
+        if ($url_french == $challenge) {
           $node = $item;
           break;
         }
       }
     }
 
-    //If no matching node, then we throw an exception
-    if(!$node) {
+    // If no matching node, then we throw an exception.
+    if (!$node) {
       throw new NotFoundHttpException();
     }
 
     if (!array_key_exists($language, $node->getTranslationLanguages())) {
       $node = $node->getTranslation($defaultLang);
-    } else {
+    }
+    else {
       $node = $node->getTranslation($language);
     }
 
@@ -136,24 +136,24 @@ class ChallengePageController extends ControllerBase {
     $user = \Drupal::currentUser();
     $page['#logged_in'] = $user->isAuthenticated();
 
-    //Find out which page we're on
-    if(($node->get('field_challeng_subpage_url_1')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_1')->getValue()[0]['value'])) {
+    // Find out which page we're on.
+    if (($node->get('field_challeng_subpage_url_1')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_1')->getValue()[0]['value'])) {
       $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_1')->getValue()[0]['value'];
       $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_1')->getValue()[0];
     }
-    else if(($node->get('field_challeng_subpage_url_2')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_2')->getValue()[0]['value'])) {
+    elseif (($node->get('field_challeng_subpage_url_2')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_2')->getValue()[0]['value'])) {
       $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_2')->getValue()[0]['value'];
       $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_2')->getValue()[0];
     }
-    else if(($node->get('field_challeng_subpage_url_3')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_3')->getValue()[0]['value'])) {
+    elseif (($node->get('field_challeng_subpage_url_3')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_3')->getValue()[0]['value'])) {
       $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_3')->getValue()[0]['value'];
       $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_3')->getValue()[0];
     }
-    else if(($node->get('field_challeng_subpage_url_4')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_4')->getValue()[0]['value'])) {
+    elseif (($node->get('field_challeng_subpage_url_4')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_4')->getValue()[0]['value'])) {
       $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_4')->getValue()[0]['value'];
       $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_4')->getValue()[0];
     }
-    else if(($node->get('field_challeng_subpage_url_5')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_5')->getValue()[0]['value'])) {
+    elseif (($node->get('field_challeng_subpage_url_5')->getValue()[0]['value'] == $url) && ($node->get('field_challenge_subpage_enable_5')->getValue()[0]['value'])) {
       $page['#challenge_subpage_title'] = $node->get('field_challenge_subpage_title_5')->getValue()[0]['value'];
       $page['#challenge_subpage_body'] = $node->get('field_challenge_subpage_body_5')->getValue()[0];
     }
@@ -167,23 +167,22 @@ class ChallengePageController extends ControllerBase {
   public function challenge_news_page($challenge) {
     $lang_code = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
 
-    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
-    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
-    $node = null;
+    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
+    $nodes = Node::loadMultiple($nids);
+    $node = NULL;
 
-    foreach($nodes as $item) {
-      if($item->get('field_friendly_url')->getValue())
-      {
+    foreach ($nodes as $item) {
+      if ($item->get('field_friendly_url')->getValue()) {
         $friendly_url = $item->get('field_friendly_url')->getValue()[0]['value'];
 
-        if($friendly_url == $challenge) {
+        if ($friendly_url == $challenge) {
           $node = $item;
         }
       }
     }
 
-    //If no matching node, then we throw an exception
-    if(!$node) {
+    // If no matching node, then we throw an exception.
+    if (!$node) {
       throw new NotFoundHttpException();
     }
 
@@ -192,19 +191,20 @@ class ChallengePageController extends ControllerBase {
 
     if (!array_key_exists($language, $node->getTranslationLanguages())) {
       $node = $node->getTranslation($defaultLang);
-    } else {
+    }
+    else {
       $node = $node->getTranslation($language);
     }
 
-    $news_nids = \Drupal::entityQuery('node')->condition('type','challenge_news')->execute();
-    $news_nodes =  \Drupal\node\Entity\Node::loadMultiple($news_nids);
+    $news_nids = \Drupal::entityQuery('node')->condition('type', 'challenge_news')->execute();
+    $news_nodes = Node::loadMultiple($news_nids);
     $news_array = [];
 
-
-    foreach($news_nodes as $item) {
+    foreach ($news_nodes as $item) {
       if (!array_key_exists($language, $item->getTranslationLanguages())) {
         $item = $item->getTranslation($defaultLang);
-      } else {
+      }
+      else {
         $item = $item->getTranslation($language);
       }
 

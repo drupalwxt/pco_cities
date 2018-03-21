@@ -36,6 +36,7 @@ class SubmissionAuditLogController extends ControllerBase {
       'challenge' => $this->t('Challenge'),
       'title' => $this->t('Submission Title'),
       'summary' => $this->t('Summary'),
+      'primary_conact_name' => $this->t('Contact Name'),
       'primary_contact_email' => $this->t('Contact Email'),
       'submitted_at' => $this->t('Submitted'),
     ];
@@ -61,6 +62,7 @@ class SubmissionAuditLogController extends ControllerBase {
         'title' => $data->title,
       // $data->summary,.
         'summary' => mb_strimwidth($data->summary, 0, 200, "..."),
+        'primary_contact_name' => $data->primary_contact_name,
         'primary_contact_email' => $data->primary_contact_email,
         'submitted_at' => date('Y-m-d h:i:s', $data->submitted_at),
       ];

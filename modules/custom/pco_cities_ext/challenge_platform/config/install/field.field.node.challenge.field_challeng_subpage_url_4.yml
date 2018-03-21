@@ -8,7 +8,7 @@ id: node.challenge.field_challeng_subpage_url_4
 field_name: field_challeng_subpage_url_4
 entity_type: node
 bundle: challenge
-label: 'Challeng Subpage Url 4'
+label: 'Challenge Subpage Url 4'
 description: ''
 required: false
 translatable: true

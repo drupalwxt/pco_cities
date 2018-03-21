@@ -1,0 +1,344 @@
+@charset "UTF-8";
+/* line 1, ../sass/form.scss */
+.pcocp-container {
+  background-color: #ffffff !important;
+}
+
+/* line 5, ../sass/form.scss */
+.form-link {
+  color: #007897 !important;
+}
+/* line 8, ../sass/form.scss */
+.form-link:hover {
+  color: #004f64 !important;
+}
+
+/* line 13, ../sass/form.scss */
+.form-control {
+  border: 2px solid #000000 !important;
+}
+
+/* line 18, ../sass/form.scss */
+.alert h4, .alert h5 {
+  margin-left: 0px !important;
+}
+
+/* line 23, ../sass/form.scss */
+.alert-warning > :first-child::before {
+  content: none !important;
+}
+
+/* line 27, ../sass/form.scss */
+.alert-danger > :first-child::before {
+  content: none !important;
+}
+
+/* line 31, ../sass/form.scss */
+.alert-success > :first-child::before {
+  content: none !important;
+}
+
+/* line 35, ../sass/form.scss */
+.alert-danger {
+  background-color: transparent;
+  padding: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-left: thick solid #DD3030 !important;
+  padding-left: 10px;
+  color: #DD3030;
+  font-weight: 300;
+}
+/* line 46, ../sass/form.scss */
+.alert-danger:first-child {
+  display: block !important;
+}
+/* line 50, ../sass/form.scss */
+.alert-danger ul {
+  display: none;
+}
+
+/* line 55, ../sass/form.scss */
+.alert-danger-list {
+  background: #FFE6E6 !important;
+  border-color: #d3080c !important;
+  padding: 15px !important;
+  display: none;
+}
+/* line 61, ../sass/form.scss */
+.alert-danger-list ul {
+  display: block !important;
+  color: black;
+}
+/* line 66, ../sass/form.scss */
+.alert-danger-list ul li a {
+  color: black;
+}
+
+/* line 73, ../sass/form.scss */
+.alert-success {
+  background-color: transparent;
+  padding: none;
+  border-left: thick solid #77b259 !important;
+  padding-left: 10px;
+  color: green;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-weight: 300;
+}
+/* line 84, ../sass/form.scss */
+.alert-success ul {
+  display: none;
+}
+
+/* line 89, ../sass/form.scss */
+.alert-success-list {
+  background: #d8eeca;
+  border-color: #278400;
+  padding: 15px !important;
+}
+/* line 95, ../sass/form.scss */
+.alert-success-list ul {
+  display: block !important;
+}
+
+/* line 100, ../sass/form.scss */
+input, textarea, select {
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  border: 2px solid #000000;
+  background-color: transparent;
+}
+/* line 106, ../sass/form.scss */
+input:focus, textarea:focus, select:focus {
+  border: 2px solid #007897 !important;
+}
+
+/* line 111, ../sass/form.scss */
+.form-file {
+  background-color: transparent !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+/* line 117, ../sass/form.scss */
+.form-submit {
+  border-radius: 0px !important;
+  border: none !important;
+}
+
+/* line 122, ../sass/form.scss */
+.input-error-desc {
+  color: #DD3030 !important;
+}
+
+/* line 127, ../sass/form.scss */
+input.error {
+  border: 2px solid #DD3030 !important;
+}
+
+/* line 132, ../sass/form.scss */
+.group-error {
+  border-left: thick solid #DD3030 !important;
+  padding-left: 10px;
+  position: relative;
+  margin-left: -15px;
+}
+/* line 138, ../sass/form.scss */
+.group-error input {
+  border-color: #DD3030 !important;
+}
+
+/* line 143, ../sass/form.scss */
+.group-error-description {
+  color: #DD3030;
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+/* line 150, ../sass/form.scss */
+.checkbox {
+  display: inline-block;
+}
+/* line 153, ../sass/form.scss */
+.checkbox input[type="checkbox"] {
+  position: relative;
+  margin-left: 0px;
+}
+
+/* line 161, ../sass/form.scss */
+span.file {
+  margin-top: 30px;
+  font-size: 95%;
+  padding-bottom: 8px;
+  border-right: 0px;
+  display: inline;
+  width: 100%;
+}
+/* line 169, ../sass/form.scss */
+span.file .file-icon {
+  display: none;
+}
+/* line 173, ../sass/form.scss */
+span.file .file-link {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  background-color: transparent;
+  padding-left: 32px;
+  padding-top: 5px;
+  width: 475px;
+}
+/* line 183, ../sass/form.scss */
+span.file .file-link a {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+}
+/* line 190, ../sass/form.scss */
+span.file .file-size {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  display: none;
+  background-color: transparent;
+}
+/* line 201, ../sass/form.scss */
+span.file--image {
+  margin-top: 30px;
+  font-size: 95%;
+  padding-bottom: 0px;
+  border-right: 0px;
+  display: inline;
+  width: 485px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+/* line 211, ../sass/form.scss */
+span.file--image .file-icon {
+  display: none;
+}
+/* line 215, ../sass/form.scss */
+span.file--image .file-link {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  background-color: transparent;
+  padding-left: 0px;
+  width: 475px;
+}
+/* line 224, ../sass/form.scss */
+span.file--image .file-link a {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+}
+/* line 231, ../sass/form.scss */
+span.file--image .file-size {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  display: none;
+  background-color: transparent;
+}
+
+/* line 243, ../sass/form.scss */
+.checkbox label {
+  padding-left: 0px;
+  margin: 15px 0px 15px 0px;
+  width: 100%;
+}
+/* line 248, ../sass/form.scss */
+.checkbox label input[type="checkbox"] {
+  position: absolute;
+  margin-left: 0px;
+}
+
+/* line 254, ../sass/form.scss */
+.btn-danger {
+  display: block;
+  font-weight: 400;
+  background-color: transparent !important;
+  color: black;
+}
+/* line 260, ../sass/form.scss */
+.btn-danger:hover {
+  background-color: transparent;
+  font-weight: 700;
+  color: black;
+}
+/* line 266, ../sass/form.scss */
+.btn-danger:nth-child(2) {
+  margin-top: 20px;
+}
+
+/* line 273, ../sass/form.scss */
+.form-managed-file .form-group .alert {
+  display: hidden !important;
+}
+
+/* line 279, ../sass/form.scss */
+.btn-submit {
+  background-color: #007897 !important;
+  padding: 10px 25px 10px 25px;
+  font-weight: 400;
+  font-size: 23px;
+}
+
+/* line 286, ../sass/form.scss */
+.btn-submit-feedback {
+  background-color: #E4C867 !important;
+  padding: 8px 50px 8px 50px;
+  font-weight: 400;
+  font-size: 19px;
+  color: black;
+}
+
+/* line 294, ../sass/form.scss */
+.word-count {
+  font-size: 12px;
+  padding: 5px;
+  float: right;
+  color: #666666;
+  position: absolute;
+  right: 15px;
+}
+
+/* line 303, ../sass/form.scss */
+::-webkit-file-upload-button {
+  border: 2px solid black;
+  padding: 5px 8px 5px 8px !important;
+}
+
+/* line 308, ../sass/form.scss */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Styling checkbox */
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  color: black !important;
+}
+
+/* line 320, ../sass/form.scss */
+input[type="checkbox"]:checked:after {
+  content: '×';
+  font-size: 47px;
+  color: #333 !important;
+  text-align: center;
+  position: absolute;
+  margin: -14px 0px 0px -5px;
+  -webkit-margin-before: -20px;
+  font-weight: 300;
+}
+
+/* line 331, ../sass/form.scss */
+input[type="checkbox"].required::before {
+  content: none !important;
+}

@@ -2,6 +2,7 @@
 
 namespace Drupal\challenge_submission\Form;
 
+use Drupal\node\Entity\Node;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
@@ -170,34 +171,33 @@ class SubmissionForm extends FormBase {
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type','challenge')->execute();
-    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
-    $node = null;
+    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
+    $nodes = Node::loadMultiple($nids);
+    $node = NULL;
 
-    foreach($nodes as $item) {
-      if($item->get('field_friendly_url')->getValue())
-      {
+    foreach ($nodes as $item) {
+      if ($item->get('field_friendly_url')->getValue()) {
         $url = $item->get('field_friendly_url')->getValue()[0]['value'];
 
-        //Check for french translation
-        if($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
+        // Check for french translation.
+        if ($item->getTranslation($language)->get('field_friendly_url')->getValue()) {
           $url_french = $item->getTranslation($language)->get('field_friendly_url')->getValue()[0]['value'];
         }
 
-        if($url == $challenge_slug) {
+        if ($url == $challenge_slug) {
           $node = $item;
           break;
         }
 
-        if($url_french == $challenge_slug) {
+        if ($url_french == $challenge_slug) {
           $node = $item;
           break;
         }
       }
     }
 
-    //If no matching node, then we throw an exception
-    if(!$node) {
+    // If no matching node, then we throw an exception.
+    if (!$node) {
       throw new NotFoundHttpException();
     }
 
