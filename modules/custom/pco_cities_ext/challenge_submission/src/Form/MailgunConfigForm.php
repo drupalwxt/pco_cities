@@ -2,12 +2,11 @@
 
 namespace Drupal\challenge_submission\Form;
 
-
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class MailgunConfigForm extends ConfigFormBase
-{
+class MailgunConfigForm extends ConfigFormBase {
+
   public function getFormId() {
     return 'mailgun_config';
   }
@@ -55,4 +54,5 @@ class MailgunConfigForm extends ConfigFormBase
     ];
 
   }
+
 }

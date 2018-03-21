@@ -245,7 +245,9 @@ class SubmissionForm extends FormBase {
     $config = Drupal::config('challenge_submission.settings');
 
     // Instantiate Mailgun with API Key and sending domain.
+    // Mailgun::create('key-5q8rkuph2j8fey5owt5kcaydbll9bzb2');.
     $mailgun = Mailgun::create($config->get('challenge_submission.mailgun_key'));
+    // 'mailgun.cds-snc.ca';.
     $domain = $config->get('challenge_submission.mailgun_domain');
 
     $send_data = [
