@@ -232,7 +232,7 @@ class SubmissionForm extends FormBase {
       'primary_contact_email' => $form_state->getValue('primary_contact_email'),
       'link' => $form_state->getValue('link'),
       'file_links' => $template_string,
-      'email_contents' => $node->get('field_challenge_email_contents')->getValue()[0]['value'],
+      'email_contents' => $node->get('field_challenge_email_contents')->getValue()[0]['value'] ?? '',
     ];
 
     $this->saveToAuditLog($variables);

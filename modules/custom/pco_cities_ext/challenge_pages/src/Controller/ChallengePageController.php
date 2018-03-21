@@ -4,6 +4,7 @@ namespace Drupal\challenge_pages\Controller;
 
 use Drupal\node\Entity\Node;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Controller\Url;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ChallengePageController extends ControllerBase {
@@ -65,6 +66,8 @@ class ChallengePageController extends ControllerBase {
     $page['#challenge_image'] = file_create_url($node->field_challenge_image->entity->uri->value);
     $page['#challenge_home'] = '/challenges/' . $challenge;
     $page['#challenge_root'] = '/challenges/' . $challenge;
+    $page['#challenge_node'] = '/node/' . $node->id();
+
 
     // Page Content.
     $page['#challenge_description'] = $node->get('field_challenge_description')->getValue()[0];
@@ -126,6 +129,8 @@ class ChallengePageController extends ControllerBase {
     $page['#challenge_image'] = file_create_url($node->field_challenge_image->entity->uri->value);
     $page['#challenge_home'] = '/challenges/' . $challenge;
     $page['#challenge_root'] = '/challenges/' . $challenge;
+    $page['#challenge_node'] = '/node/' . $node->id();
+
 
     // User variables.
     $user = \Drupal::currentUser();
@@ -235,7 +240,7 @@ class ChallengePageController extends ControllerBase {
     $page['#challenge_image'] = file_create_url($node->field_challenge_image->entity->uri->value);
     $page['#challenge_home'] = '/challenges/' . $challenge;
     $page['#challenge_root'] = '/challenges/' . $challenge;
-    //$page['#challenge_node'] = $path;
+    $page['#challenge_node'] = '/node/' . $node->id();
 
     return $page;
   }
@@ -243,43 +248,57 @@ class ChallengePageController extends ControllerBase {
   private function generateMenuBar($node) {
     $menu = [];
 
+    $challenge_path = \Drupal::request()->getRequestUri();
+
+    if(substr($challenge_path, -1) == '/') {
+      $challenge_path = substr($challenge_path, 0, -1);
+    }
+
+    //Remove news path if it exists
+    $challenge_path = str_replace('/news', "", $challenge_path);
+
     if($node->get('field_challenge_subpage_enable_1')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_1')->getValue() && $node->get('field_challeng_subpage_url_1')->getValue()) {
+        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_1')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_1')->getValue()[0]['value'],
-          'url' => $node->get('field_challeng_subpage_url_1')->getValue()[0]['value']
+          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_1')->getValue()[0]['value']
         ]);
       }
     }
     if($node->get('field_challenge_subpage_enable_2')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_2')->getValue() && $node->get('field_challeng_subpage_url_2')->getValue()) {
+        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_2')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_2')->getValue()[0]['value'],
-          'url' => $node->get('field_challeng_subpage_url_2')->getValue()[0]['value']
+          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_2')->getValue()[0]['value']
         ]);
       }
     }
     if($node->get('field_challenge_subpage_enable_3')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_3')->getValue() && $node->get('field_challeng_subpage_url_3')->getValue()) {
+        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_3')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_3')->getValue()[0]['value'],
-          'url' => $node->get('field_challeng_subpage_url_3')->getValue()[0]['value']
+          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_3')->getValue()[0]['value']
         ]);
       }
     }
     if($node->get('field_challenge_subpage_enable_4')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_4')->getValue() && $node->get('field_challeng_subpage_url_4')->getValue()) {
+        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_4')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_4')->getValue()[0]['value'],
-          'url' => $node->get('field_challeng_subpage_url_4')->getValue()[0]['value']
+          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_4')->getValue()[0]['value']
         ]);
       }
     }
     if($node->get('field_challenge_subpage_enable_5')->getValue()[0]['value']) {
       if($node->get('field_challenge_subpage_title_5')->getValue() && $node->get('field_challeng_subpage_url_5')->getValue()) {
+        $challenge_path = str_replace('/'.$node->get('field_challeng_subpage_url_5')->getValue()[0]['value'], "", $challenge_path);
         array_push($menu, [
           'title' => $node->get('field_challenge_subpage_title_5')->getValue()[0]['value'],
-          'url' => $node->get('field_challeng_subpage_url_5')->getValue()[0]['value']
+          'url' => $challenge_path . '/' . $node->get('field_challeng_subpage_url_5')->getValue()[0]['value']
         ]);
       }
     }
