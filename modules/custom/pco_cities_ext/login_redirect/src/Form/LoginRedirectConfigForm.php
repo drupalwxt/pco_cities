@@ -19,7 +19,7 @@ class LoginRedirectConfigForm extends ConfigFormBase {
     $config = $this->config('login_redirect.settings');
 
     $roles = user_role_names(TRUE);
-
+    
     // Create an array of text fields for role-specific paths.
     foreach ($roles as $key => $role) {
       $form['roles[' . $key . ']'] = [

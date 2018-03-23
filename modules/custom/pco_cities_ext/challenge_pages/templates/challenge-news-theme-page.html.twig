@@ -35,7 +35,7 @@
                   <div class="challengeNav--container">
                     <div class="container">
                       <ul class="menu challenge-nav">
-                        <li class="active expanded">
+                        <li>
                           <a href="{{ form['#challenge_home'] }}/">Home</a>
                         </li>
                         {% for item in form['#challenge_menu_array'] %}
@@ -43,7 +43,7 @@
                           <a href="{{ item.url }}">{{ item.title }}</a>
                         </li>
                         {% endfor %}
-                        <li>
+                        <li class="active">
                           <a href="{{ form['#challenge_root'] }}/{{ 'News'|t }}">{{ 'News'|t }}</a>
                         </li>
                       </ul>
@@ -55,7 +55,7 @@
                 <nav class="tabs mrgn-tp-md mrgn-bttm-md" role="navigation" aria-label="Tabs">
                   <h2 class="visually-hidden">Primary tabs</h2>
                   <ul class="tabs--primary nav nav-tabs">
-                    <li class="active">
+                    <li>
                       <a href="{{ form['#challenge_root'] }}" data-drupal-link-system-path="node/4" class="is-active">View
                         <span class="visually-hidden">(active tab)</span>
                       </a>
@@ -109,6 +109,9 @@
                         </div>
                       </div>
                       {% endfor %}
+
+                      {{ form['#pager'] }}
+
                   </section>
                 </div>
               </div>

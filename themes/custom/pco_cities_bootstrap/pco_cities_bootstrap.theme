@@ -6,3 +6,10 @@
  *
  * Place your custom PHP code in this file.
  */
+
+function pco_cities_bootstrap_form_alter(&$form, $form_state, $form_id) {
+
+  if ( $form['#form_id'] == 'user_login_form' ) {
+	$form['#suffix'] = '<br/><a href="/user/password/">Forgot your password?</a>';
+  }
+}

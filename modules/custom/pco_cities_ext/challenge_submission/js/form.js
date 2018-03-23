@@ -71,7 +71,7 @@
     }
 
     //Selects all invalid fields and adds parent
-    $('.error').each(function () {
+    $('input.error, textarea.error').each(function () {
       var message = '<strong>' + $(this).attr('drupal-field-name') + '</strong> field is required.'
       $(this).closest('.form-item').addClass('group-error');
       $(this).closest('.form-item').append('<p class="group-error-description">' + message + '</p>');
@@ -116,7 +116,7 @@
 
     //Selects all invalid fields and adds parent
     setTimeout(function () {
-      $('.error').each(function () {
+      $('input.error, textarea.error').each(function () {
         var message = '<strong>' + $(this).attr('drupal-field-name') + '</strong> field is required.'
         $(this).closest('.form-item').addClass('group-error');
         $(this).closest('.form-item').append('<p class="group-error-description">' + message + '</p>')

@@ -123,7 +123,7 @@ class SubmissionFormModuleController extends ControllerBase {
     $form['friendly_url']['#value'] = $node->get('field_friendly_url')->getValue()[0]['value'];
 
     // Wrap the theme with WET4 validation tag.
-    $form['#prefix'] = '<div class="wb-frmvld">';
+    $form['#prefix'] = '<div class="wb-frmvld">'; //Accessibility, but might be removed
     $form['#suffix'] = '</div>';
 
     $form['#theme'] = 'challenge_submission_page_theme';

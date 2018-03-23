@@ -69,7 +69,6 @@ class ChallengePageController extends ControllerBase {
     $page['#challenge_root'] = '/challenges/' . $challenge;
     $page['#challenge_node'] = '/node/' . $node->id();
 
-
     // Page Content.
     $page['#challenge_description'] = $node->get('field_challenge_description')->getValue()[0];
     $page['#challenge_details'] = $node->get('field_challenge_details_block')->getValue();
@@ -131,6 +130,7 @@ class ChallengePageController extends ControllerBase {
     $page['#challenge_home'] = '/challenges/' . $challenge;
     $page['#challenge_root'] = '/challenges/' . $challenge;
     $page['#challenge_node'] = '/node/' . $node->id();
+    $page['#currentUrl'] = $url;
 
 
     // User variables.
@@ -197,7 +197,7 @@ class ChallengePageController extends ControllerBase {
       $node = $node->getTranslation($language);
     }
 
-    $news_nids = \Drupal::entityQuery('node')->condition('type', 'challenge_news')->execute();
+    $news_nids = \Drupal::entityQuery('node')->condition('type', 'challenge_news')->sort('created', 'DESC')->pager(5)->execute();
     $news_nodes = Node::loadMultiple($news_nids);
     $news_array = [];
 
@@ -216,7 +216,7 @@ class ChallengePageController extends ControllerBase {
           'title' => $item->get('title')->getValue()[0]['value'],
           'header' => $item->get('field_type')->getValue()[0]['value'],
           'body' => $item->get('body')->getValue()[0],
-          'sidebar' => $item->get('field_sidebar')->getValue()[0],
+          'sidebar' => $item->get('field_sidebar')->getValue()[0] ?? '',
         ]);
       }
     }
@@ -242,6 +242,10 @@ class ChallengePageController extends ControllerBase {
     $page['#challenge_home'] = '/challenges/' . $challenge;
     $page['#challenge_root'] = '/challenges/' . $challenge;
     $page['#challenge_node'] = '/node/' . $node->id();
+
+    $page['#pager'] = [
+      '#type' => 'pager',
+    ];
 
     return $page;
   }

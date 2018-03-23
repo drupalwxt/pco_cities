@@ -25,3 +25,17 @@
     background-color: #007897 !important;
   }
 }
+
+.active a::after {
+  background: #007897;
+  bottom: 0.5em;
+  content: '';
+  display: block;
+  height: 5px;
+  position: absolute;
+  width: 100%;
+}
+
+.active a::after {
+  bottom: 1.1em;
+}
