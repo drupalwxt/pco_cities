@@ -4,16 +4,88 @@ namespace Drupal\challenge_pages\Controller;
 
 use Drupal\node\Entity\Node;
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Controller\Url;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Drupal\Core\Path\AliasManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\Core\Session\AccountInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ChallengePageController extends ControllerBase {
 
+  /**
+   * The path alias manager.
+   *
+   * @var \Drupal\Core\Path\AliasManagerInterface
+   */
+  private $aliasManager;
+
+  /**
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * @var \Drupal\Core\Language\LanguageManagerInterface
+   */
+  protected $langManager;
+
+  /**
+   * @var \Drupal\Core\Entity\Query\QueryFactory
+   */
+  protected $query;
+
+  /**
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $currentUser;
+
+  /**
+   * @var \Symfony\Component\HttpFoundation\RequestStack
+   */
+  protected $requestStack;
+
+  /**
+   * Constructs a ChallengePageController object.
+   *
+   * @param \Drupal\Core\Path\AliasManagerInterface $aliasManager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\Core\Language\LanguageManagerInterface $langManager
+   * @param \Drupal\Core\Entity\Query\QueryFactory $query
+   * @param \Drupal\Core\Session\AccountInterface $currentUser
+   * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
+   */
+  public function __construct(AliasManagerInterface $aliasManager, EntityTypeManagerInterface $entityTypeManager, LanguageManagerInterface $langManager, QueryFactory $query, AccountInterface $currentUser, RequestStack $requestStack) {
+    $this->aliasManager = $aliasManager;
+    $this->entityTypeManager = $entityTypeManager;
+    $this->langManager = $langManager;
+    $this->query = $query;
+    $this->currentUser = $currentUser;
+    $this->requestStack = $requestStack;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('path.alias_manager'),
+      $container->get('entity_type.manager'),
+      $container->get('language_manager'),
+      $container->get('entity.query'),
+      $container->get('current_user'),
+      $container->get('request_stack')
+    );
+  }
+
   public function challengePage($challenge) {
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
-    $nodes = Node::loadMultiple($nids);
+    $language = $this->langManager->getCurrentLanguage()->getId();
+    $defaultLang = $this->langManager->getDefaultLanguage()->getId();
+    $nids = $this->query->get('node')->condition('type', 'challenge')->execute();
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    $nodes = $node_storage->loadMultiple($nids);
     $node = NULL;
 
     foreach ($nodes as $item) {
@@ -50,7 +122,7 @@ class ChallengePageController extends ControllerBase {
     }
 
     // User variables.
-    $user = \Drupal::currentUser();
+    $user = $this->currentUser;
     $page['#logged_in'] = $user->isAuthenticated();
 
     // Create the Menu.
@@ -76,10 +148,11 @@ class ChallengePageController extends ControllerBase {
   }
 
   public function challengeSubpage($challenge, $url) {
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
-    $nodes = Node::loadMultiple($nids);
+    $language = $this->langManager->getCurrentLanguage()->getId();
+    $defaultLang = $this->langManager->getDefaultLanguage()->getId();
+    $nids = $this->query->get('node')->condition('type', 'challenge')->execute();
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    $nodes = $node_storage->loadMultiple($nids);
     $node = NULL;
 
     foreach ($nodes as $item) {
@@ -131,7 +204,7 @@ class ChallengePageController extends ControllerBase {
     $page['#challenge_node'] = '/node/' . $node->id();
 
     // User variables.
-    $user = \Drupal::currentUser();
+    $user = $this->currentUser;
     $page['#logged_in'] = $user->isAuthenticated();
 
     // Find out which page we're on.
@@ -163,10 +236,11 @@ class ChallengePageController extends ControllerBase {
   }
 
   public function challengeNewsPage($challenge) {
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
-    $nodes = Node::loadMultiple($nids);
+    $language = $this->langManager->getCurrentLanguage()->getId();
+    $defaultLang = $this->langManager->getDefaultLanguage()->getId();
+    $nids = $this->query->get('node')->condition('type', 'challenge')->execute();
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    $nodes = $node_storage->loadMultiple($nids);
     $node = NULL;
 
     foreach ($nodes as $item) {
@@ -195,9 +269,6 @@ class ChallengePageController extends ControllerBase {
       throw new NotFoundHttpException();
     }
 
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-
     if (!array_key_exists($language, $node->getTranslationLanguages())) {
       $node = $node->getTranslation($defaultLang);
     }
@@ -205,8 +276,9 @@ class ChallengePageController extends ControllerBase {
       $node = $node->getTranslation($language);
     }
 
-    $news_nids = \Drupal::entityQuery('node')->condition('type', 'challenge_news')->sort('created', 'DESC')->pager(5)->execute();
-    $news_nodes = Node::loadMultiple($news_nids);
+    $news_nids = $this->query->get('node')->condition('type', 'challenge_news')->sort('created', 'DESC')->pager(5)->execute();
+    $news_node_storage = $this->entityTypeManager->getStorage('node');
+    $news_nodes = $node_storage->loadMultiple($news_nids);
     $news_array = [];
 
     foreach ($news_nodes as $item) {
@@ -230,7 +302,7 @@ class ChallengePageController extends ControllerBase {
     }
 
     // User variables.
-    $user = \Drupal::currentUser();
+    $user = $this->currentUser;
     $page['#logged_in'] = $user->isAuthenticated();
 
     // Create the Menu.
@@ -261,14 +333,14 @@ class ChallengePageController extends ControllerBase {
   private function generateMenuBar($node) {
     $menu = [];
 
-    $challenge_path = \Drupal::request()->getRequestUri();
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $challenge_path = $this->requestStack->getCurrentRequest()->getRequestUri();
+    $language = $this->langManager->getCurrentLanguage()->getId();
 
     if (substr($challenge_path, -1) == '/') {
       $challenge_path = substr($challenge_path, 0, -1);
     }
 
-    list($challenge_url, $subpage_url) = explode($node->get('field_friendly_url')->getValue()[0]['value'], $challenge_path);
+    list($challenge_url) = explode($node->get('field_friendly_url')->getValue()[0]['value'], $challenge_path);
 
     $challenge_url = $challenge_url . $node->get('field_friendly_url')->getValue()[0]['value'];
 

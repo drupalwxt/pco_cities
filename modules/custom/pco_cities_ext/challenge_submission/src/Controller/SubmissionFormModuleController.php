@@ -4,6 +4,9 @@ namespace Drupal\challenge_submission\Controller;
 
 use Drupal\node\Entity\Node;
 use Drupal\Core\Path\AliasManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,13 +21,33 @@ class SubmissionFormModuleController extends ControllerBase {
   private $aliasManager;
 
   /**
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * @var \Drupal\Core\Language\LanguageManagerInterface
+   */
+  protected $langManager;
+
+  /**
+   * @var \Drupal\Core\Entity\Query\QueryFactory
+   */
+  protected $query;
+
+  /**
    * Constructs a SubmissionFormModuleController object.
    *
    * @param \Drupal\Core\Path\AliasManagerInterface $aliasManager
-   *   The path alias manager.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\Core\Language\LanguageManagerInterface $langManager
+   * @param \Drupal\Core\Entity\Query\QueryFactory $query
    */
-  public function __construct(AliasManagerInterface $aliasManager) {
+  public function __construct(AliasManagerInterface $aliasManager, EntityTypeManagerInterface $entityTypeManager, LanguageManagerInterface $langManager, QueryFactory $query) {
     $this->aliasManager = $aliasManager;
+    $this->entityTypeManager = $entityTypeManager;
+    $this->langManager = $langManager;
+    $this->query = $query;
   }
 
   /**
@@ -32,16 +55,19 @@ class SubmissionFormModuleController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('path.alias_manager')
+      $container->get('path.alias_manager'),
+      $container->get('entity_type.manager'),
+      $container->get('language_manager'),
+      $container->get('entity.query')
     );
   }
 
   public function submissionSuccessPage($challenge, Request $request) {
 
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
-    $nodes = Node::loadMultiple($nids);
+    $language = $this->langManager->getCurrentLanguage()->getId();
+    $nids = $this->query->get('node')->condition('type', 'challenge')->execute();
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    $nodes = $node_storage->loadMultiple($nids);
     $node = NULL;
 
     foreach ($nodes as $item) {
@@ -81,10 +107,10 @@ class SubmissionFormModuleController extends ControllerBase {
   public function submissionFormPage($challenge, Request $request) {
     $submission_error = $request->get('error');
 
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
-    $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
-    $nodes = Node::loadMultiple($nids);
+    $language = $this->langManager->getCurrentLanguage()->getId();
+    $nids = $this->query->get('node')->condition('type', 'challenge')->execute();
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    $nodes = $node_storage->loadMultiple($nids);
     $node = NULL;
 
     foreach ($nodes as $item) {

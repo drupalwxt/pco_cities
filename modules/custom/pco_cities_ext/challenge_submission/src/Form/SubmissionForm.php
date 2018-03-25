@@ -3,12 +3,12 @@
 namespace Drupal\challenge_submission\Form;
 
 use Drupal;
-use Drupal\node\Entity\Node;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Mailgun\Mailgun;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -38,27 +38,32 @@ class SubmissionForm extends FormBase {
   protected $langManager;
 
   /**
-   * @var \Drupal\Core\Entity\Query\QueryFactory;
+   * @var \Drupal\Core\Entity\Query\QueryFactory
    */
   protected $query;
 
+  /**
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
 
   /**
    * Constructs a SubmissionFormModuleController object.
    *
    * @param \Drupal\Core\Path\AliasManagerInterface $aliasManager
-   *   The path alias manager.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    * @param \Drupal\Core\Database\Connection $db
    * @param \Drupal\Core\Language\LanguageManagerInterface $langManager
    * @param \Drupal\Core\Entity\Query\QueryFactory $query
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    */
-  public function __construct(AliasManagerInterface $aliasManager, EntityTypeManagerInterface $entityTypeManager, Connection $db, LanguageManagerInterface $langManager, QueryFactory $query) {
+  public function __construct(AliasManagerInterface $aliasManager, EntityTypeManagerInterface $entityTypeManager, Connection $db, LanguageManagerInterface $langManager, QueryFactory $query, ConfigFactoryInterface $configFactory) {
     $this->aliasManager = $aliasManager;
     $this->entityTypeManager = $entityTypeManager;
     $this->db = $db;
     $this->langManager = $langManager;
     $this->query = $query;
+    $this->configFactory = $configFactory;
   }
 
   /**
@@ -71,7 +76,7 @@ class SubmissionForm extends FormBase {
       $container->get('database'),
       $container->get('language_manager'),
       $container->get('entity.query'),
-      $container->get('entity.manager')
+      $container->get('config.factory')
     );
   }
 
@@ -200,7 +205,6 @@ class SubmissionForm extends FormBase {
     $challenge_slug = $form_state->getValue('friendly_url');
 
     $language = $this->langManager->getCurrentLanguage()->getId();
-    $defaultLang = $this->langManager->getDefaultLanguage()->getId();
     $nids = $this->query->get('node')->condition('type', 'challenge')->execute();
     $node_storage = $this->entityTypeManager->getStorage('node');
     $nodes = $node_storage->loadMultiple($nids);
@@ -272,7 +276,7 @@ class SubmissionForm extends FormBase {
     $template = file_get_contents(drupal_get_path('module', 'challenge_submission') . '/templates/submission-email.html');
     $template = $this->renderTemplate($template, $variables);
 
-    $config = Drupal::config('challenge_submission.settings');
+    $config = $this->configFactory->get('challenge_submission.settings');
 
     // Instantiate Mailgun with API Key and sending domain.
     $mailgun = Mailgun::create($config->get('challenge_submission.mailgun_key'));
