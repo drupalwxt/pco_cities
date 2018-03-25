@@ -2,7 +2,6 @@
 
 namespace Drupal\challenge_pages\Controller;
 
-use Drupal\node\Entity\Node;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Drupal\Core\Path\AliasManagerInterface;
@@ -277,7 +276,6 @@ class ChallengePageController extends ControllerBase {
     }
 
     $news_nids = $this->query->get('node')->condition('type', 'challenge_news')->sort('created', 'DESC')->pager(5)->execute();
-    $news_node_storage = $this->entityTypeManager->getStorage('node');
     $news_nodes = $node_storage->loadMultiple($news_nids);
     $news_array = [];
 

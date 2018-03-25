@@ -2,7 +2,6 @@
 
 namespace Drupal\challenge_submission\Controller;
 
-use Drupal\node\Entity\Node;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;

@@ -2,7 +2,6 @@
 
 namespace Drupal\challenge_submission\Form;
 
-use Drupal;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
