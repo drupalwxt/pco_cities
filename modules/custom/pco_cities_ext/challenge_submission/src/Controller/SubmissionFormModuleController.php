@@ -132,5 +132,7 @@ class SubmissionFormModuleController extends ControllerBase {
     $form['#submission_error'] = $submission_error;
 
     return $form;
+
   }
+
 }

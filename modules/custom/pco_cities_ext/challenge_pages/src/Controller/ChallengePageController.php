@@ -316,7 +316,7 @@ class ChallengePageController extends ControllerBase {
     }
 
     array_push($menu, [
-      'title' =>  $language == 'fr' ? 'Nouvelles' : 'News',
+      'title' => $language == 'fr' ? 'Nouvelles' : 'News',
       'url' => $language == 'fr' ? $challenge_url . '/nouvelles' : $challenge_url . '/news',
     ]);
 
