@@ -73,7 +73,7 @@ class SubmissionForm extends FormBase {
       '#id' => 'title',
       '#attributes' => ['class' => ['full-width'], 'drupal-field-name' => ['Title']],
       '#required' => TRUE,
-      '#title' => 'Title'
+      '#title' => 'Title',
     ];
 
     $form['summary'] = [
@@ -93,7 +93,7 @@ class SubmissionForm extends FormBase {
       '#theme_wrappers'   => [],
       '#prefix'           => '<div class="form-item form-group">',
       '#suffix'           => '<div class="word-count"><span class="summary-word-count"></span>/150</div></div>',
-      '#title' => 'Summary'
+      '#title' => 'Summary',
     ];
 
     $form['proposal'] = [
@@ -107,7 +107,7 @@ class SubmissionForm extends FormBase {
         'file_validate_size' => [25 * 1024 * 1024],
         'file_validate_extensions' => ['pdf docx'],
       ],
-      '#title' => 'Primary Files'
+      '#title' => 'Primary Files',
     ];
 
     $form['proposal_image'] = [
@@ -121,27 +121,27 @@ class SubmissionForm extends FormBase {
         'file_validate_image_resolution' => ['1920x1080'],
         'file_validate_extensions' => ['gif png jpg jpeg'],
       ],
-      '#title' => 'Proposal Image'
+      '#title' => 'Proposal Image',
     ];
 
     $form['link'] = [
       '#type' => 'textfield',
       '#attributes' => ['class' => ['full-width'], 'drupal-field-name' => ['Video Link']],
-      '#title' => 'Video Link'
+      '#title' => 'Video Link',
     ];
 
     $form['primary_contact_name'] = [
       '#type' => 'textfield',
       '#attributes' => ['class' => ['full-width'], 'drupal-field-name' => ['Full Name']],
       '#required' => TRUE,
-      '#title' => 'Primary Contact Name'
+      '#title' => 'Primary Contact Name',
     ];
 
     $form['primary_contact_email'] = [
       '#type' => 'textfield',
       '#attributes' => ['class' => ['full-width'], 'drupal-field-name' => ['Email Address']],
       '#required' => TRUE,
-      '#title' => 'Primary Contact Email'
+      '#title' => 'Primary Contact Email',
     ];
 
     $form['terms_agreement'] = [

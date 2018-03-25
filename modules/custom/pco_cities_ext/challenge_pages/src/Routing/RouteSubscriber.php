@@ -17,7 +17,7 @@ class RouteSubscriber extends RouteSubscriberBase {
 
     if ($route = $collection->get('challenge')) {
       $route->setDefaults([
-        '_controller' => 'Drupal\challenge_pages\Controller\ChallengePageController::challenge_page',
+        '_controller' => 'Drupal\challenge_pages\Controller\ChallengePageController::challengePage',
       ]);
     }
   }

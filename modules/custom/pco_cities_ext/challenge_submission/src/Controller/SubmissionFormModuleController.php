@@ -38,9 +38,6 @@ class SubmissionFormModuleController extends ControllerBase {
 
   public function submissionSuccessPage($challenge, Request $request) {
 
-    $challenge_slug = $request->get('challenge');
-    $path = $this->aliasManager->getPathByAlias('/challenges/' . $challenge_slug);
-
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $defaultLang = \Drupal::languageManager()->getDefaultLanguage()->getId();
     $nids = \Drupal::entityQuery('node')->condition('type', 'challenge')->execute();
@@ -82,7 +79,6 @@ class SubmissionFormModuleController extends ControllerBase {
   }
 
   public function submissionFormPage($challenge, Request $request) {
-    $challenge_slug = $request->get('challenge');
     $submission_error = $request->get('error');
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -123,7 +119,7 @@ class SubmissionFormModuleController extends ControllerBase {
     $form['friendly_url']['#value'] = $node->get('field_friendly_url')->getValue()[0]['value'];
 
     // Wrap the theme with WET4 validation tag.
-    $form['#prefix'] = '<div class="wb-frmvld">'; //Accessibility, but might be removed
+    $form['#prefix'] = '<div class="wb-frmvld">';
     $form['#suffix'] = '</div>';
 
     $form['#theme'] = 'challenge_submission_page_theme';
@@ -137,5 +133,4 @@ class SubmissionFormModuleController extends ControllerBase {
 
     return $form;
   }
-
 }

@@ -1,7 +1,7 @@
 challenge_pages.challenge:
   path: '/challenges/{challenge}'
   defaults:
-    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challenge_page'
+    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challengePage'
     _title: 'Challenge'
   requirements:
     _permission: 'access content'
@@ -9,7 +9,7 @@ challenge_pages.challenge:
 challenge_pages.challenge_french:
   path: '/defis/{challenge}'
   defaults:
-    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challenge_page'
+    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challengePage'
     _title: 'Challenge'
   requirements:
     _permission: 'access content'
@@ -17,7 +17,7 @@ challenge_pages.challenge_french:
 challenge_pages.challenge_subpage:
   path: '/challenges/{challenge}/{url}'
   defaults:
-    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challenge_subpage'
+    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challengeSubpage'
     _title: 'Challenge'
   requirements:
     _permission: 'access content'
@@ -25,7 +25,7 @@ challenge_pages.challenge_subpage:
 challenge_pages.challenge_french_subpage:
   path: '/defis/{challenge}/{url}'
   defaults:
-    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challenge_subpage'
+    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challengeSubpage'
     _title: 'Challenge'
   requirements:
     _permission: 'access content'
@@ -33,7 +33,7 @@ challenge_pages.challenge_french_subpage:
 challenge_pages.challenge_news:
   path: '/challenges/{challenge}/news'
   defaults:
-    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challenge_news_page'
+    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challengeNewsPage'
     _title: 'Challenge News'
   requirements:
     _permission: 'access content'
@@ -41,7 +41,7 @@ challenge_pages.challenge_news:
 challenge_pages.challenge_french_news:
   path: '/defis/{challenge}/nouvelles'
   defaults:
-    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challenge_news_page'
+    _controller: 'Drupal\challenge_pages\Controller\ChallengePageController::challengeNewsPage'
     _title: 'Challenge News'
   requirements:
     _permission: 'access content'
