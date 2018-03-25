@@ -3,3 +3,9 @@ challenge_submission.submission_log:
   description: 'See all Challenge Submissions'
   route_name: challenge_submission.submissions_log
   parent: system.admin_config_system
+challenge_submission.admin:
+  title: 'Challenge Submission Mail Config'
+  description: 'Configure Mailgun settings'
+  parent: system.admin_config_system
+  route_name: challenge_submission.config
+  weight: 100
