@@ -187,6 +187,16 @@ class ChallengePageController extends ControllerBase {
       $node = $node->getTranslation($language);
     }
 
+    $challenge_path = $this->requestStack->getCurrentRequest()->getRequestUri();
+
+    if (substr($challenge_path, -1) == '/') {
+      $challenge_path = substr($challenge_path, 0, -1);
+    }
+    list($challenge_url, $subpage_url) = explode($node->get('field_friendly_url')->getValue()[0]['value'], $challenge_path);
+    $url = str_replace("/", "", $subpage_url);
+    $url = strpos($url, "?q=") ? substr($url, 0, strpos($url, "?q=")) : $url;
+    unset($challenge_url);
+
     // Create the Menu.
     $page['#challenge_menu_array'] = $this->generateMenuBar($node);
 
