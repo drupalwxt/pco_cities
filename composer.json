@@ -251,7 +251,8 @@
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drupalwxt/wxt": "2.1.0",
         "harvesthq/chosen": "1.6.1",
-        "drupal/mailgun": "^1.0"
+        "drupal/mailgun": "^1.0",
+        "drupal/smtp": "^1.0"
     },
     "autoload": {
         "psr-4": {
