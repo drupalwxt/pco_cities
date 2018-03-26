@@ -36,9 +36,16 @@
                     <div class="container">
                       <ul class="menu challenge-nav">
                         {% for item in form['#challenge_menu_array'] %}
-                        <li>
-                          <a href="{{ item.url }}">{{ item.title }}</a>
-                        </li>
+
+                          {% if item.title == "News" or item.title == "Nouvelles" %}
+                            <li class="active">
+                              <a href="{{ item.url }}">{{ item.title }}</a>
+                            </li>
+                          {% else %}
+                            <li>
+                              <a href="{{ item.url }}">{{ item.title }}</a>
+                            </li>
+                          {% endif %}
                         {% endfor %}
                       </ul>
                     </div>
