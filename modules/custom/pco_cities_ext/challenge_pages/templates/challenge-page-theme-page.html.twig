@@ -35,9 +35,6 @@
                   <div class="challengeNav--container">
                     <div class="container">
                       <ul class="menu challenge-nav">
-                        <li class="active">
-                          <a href="{{ form['#challenge_home'] }}">Home</a>
-                        </li>
                         {% for item in form['#challenge_menu_array'] %}
                         <li>
                           <a href="{{ item.url }}">{{ item.title }}</a>

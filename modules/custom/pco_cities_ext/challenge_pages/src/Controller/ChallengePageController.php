@@ -344,6 +344,13 @@ class ChallengePageController extends ControllerBase {
 
     $challenge_path = str_replace('/news', "", $challenge_path);
 
+    // Add home menu item.
+    array_push($menu, [
+      'title' => $language == 'fr' ? 'Accueil' : 'Home',
+      'url' => $challenge_url,
+    ]);
+
+    // Add subpage menu items.
     if ($node->get('field_challenge_subpage_enable_1')->getValue()[0]['value']) {
       if ($node->get('field_challenge_subpage_title_1')->getValue() && $node->get('field_challeng_subpage_url_1')->getValue()) {
         array_push($menu, [
@@ -385,10 +392,26 @@ class ChallengePageController extends ControllerBase {
       }
     }
 
-    array_push($menu, [
-      'title' => $language == 'fr' ? 'Nouvelles' : 'News',
-      'url' => $language == 'fr' ? $challenge_url . '/nouvelles' : $challenge_url . '/news',
-    ]);
+    //Add news.. add check to include or not.
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    $news_nids = $this->query->get('node')->condition('type', 'challenge_news')->execute();
+    $news_nodes = $node_storage->loadMultiple($news_nids);
+    $news_exists = false;
+
+    foreach ($news_nodes as $item) {
+      $target_id = $item->get('field_challenge')->getValue()[0]['target_id'];
+
+      if ($target_id == $node->id()) {
+        $news_exists = true;
+      }
+    }
+    if($news_exists)
+    {
+      array_push($menu, [
+        'title' => $language == 'fr' ? 'Nouvelles' : 'News',
+        'url' => $language == 'fr' ? $challenge_url . '/nouvelles' : $challenge_url . '/news',
+      ]);
+    }
 
     return $menu;
   }
