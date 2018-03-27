@@ -1,5 +1,5 @@
 services:
-  challenge_pages.route_subscriber:
-    class: Drupal\challenge_pages\Routing\RouteSubscriber
+  challenge_pages.redirectmycontenttype:
+    class: Drupal\challenge_pages\EventSubscriber\ChallengePagesRedirectSubscriber
     tags:
       - { name: event_subscriber }
