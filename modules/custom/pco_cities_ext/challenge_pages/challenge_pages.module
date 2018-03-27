@@ -31,8 +31,7 @@ function challenge_pages_theme() {
  * Implements hook_presave().
  */
 function challenge_pages_node_presave(NodeInterface $node) {
-  if ($node->getType() == 'challenge')
-  {
+  if ($node->getType() == 'challenge') {
 
     // Check for conflict on friendly url name. Must be unique.
     $friendly_url = clean_url($node->getTranslation('en')->get('field_friendly_url')->getValue()[0]['value']);
@@ -41,7 +40,7 @@ function challenge_pages_node_presave(NodeInterface $node) {
     if (get_friendly_url_name($friendly_url) and $friendly_url != $original_friendly_url) {
       $response = new RedirectResponse(\Drupal::request()->getRequestUri());
       $response->send();
-      drupal_set_message(t('Friendly URL must be unique. There is already a challenge with the \'' . $friendly_url . '\' URL'), 'error', TRUE);
+      drupal_set_message(t('Friendly URL must be unique. There is already a challenge with that friendly URL'), 'error', TRUE);
       exit;
     }
 
@@ -73,21 +72,21 @@ function challenge_pages_node_presave(NodeInterface $node) {
     // Check if french alias already exists, if not then create.
     if ($node->getTranslation('fr')->get('field_friendly_url')->getValue()) {
       if (!empty(get_url_alias('/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value']))) {
-        db_insert('url_alias')->fields(array(
+        db_insert('url_alias')->fields([
           'source' => '/challenges/' . $friendly_url,
           'alias' => '/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value'],
           'langcode' => 'fr',
-        ))->execute();
+        ])->execute();
       }
     };
 
     if ($node->getTranslation('fr')->get('field_friendly_url')->getValue()) {
       if (!empty(get_url_alias('/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value']) . '/nouvelles')) {
-        db_insert('url_alias')->fields(array(
+        db_insert('url_alias')->fields([
           'source' => '/challenges/' . $friendly_url . '/news',
           'alias' => '/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value'] . '/nouvelles',
           'langcode' => 'fr',
-        ))->execute();
+        ])->execute();
       }
     };
 
@@ -100,11 +99,11 @@ function challenge_pages_node_presave(NodeInterface $node) {
 
       if ($node->getTranslation('fr')->get('field_friendly_url')->getValue() && $node->getTranslation('fr')->get('field_challeng_subpage_url_1')->getValue()) {
         if (!empty(get_url_alias('/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value']) . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_1')->getValue()[0]['value'])) {
-          db_insert('url_alias')->fields(array(
+          db_insert('url_alias')->fields([
             'source' => '/challenges/' . $node->getTranslation('en')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('en')->get('field_challeng_subpage_url_1')->getValue()[0]['value'],
             'alias' => '/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_1')->getValue()[0]['value'],
             'langcode' => 'fr',
-          ))->execute();
+          ])->execute();
         }
       };
     }
@@ -116,11 +115,11 @@ function challenge_pages_node_presave(NodeInterface $node) {
 
       if ($node->getTranslation('fr')->get('field_friendly_url')->getValue() && $node->getTranslation('fr')->get('field_challeng_subpage_url_2')->getValue()) {
         if (!empty(get_url_alias('/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value']) . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_2')->getValue()[0]['value'])) {
-          db_insert('url_alias')->fields(array(
+          db_insert('url_alias')->fields([
             'source' => '/challenges/' . $node->getTranslation('en')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('en')->get('field_challeng_subpage_url_2')->getValue()[0]['value'],
             'alias' => '/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_2')->getValue()[0]['value'],
             'langcode' => 'fr',
-          ))->execute();
+          ])->execute();
         }
       };
     }
@@ -132,11 +131,11 @@ function challenge_pages_node_presave(NodeInterface $node) {
 
       if ($node->getTranslation('fr')->get('field_friendly_url')->getValue() && $node->getTranslation('fr')->get('field_challeng_subpage_url_3')->getValue()) {
         if (!empty(get_url_alias('/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value']) . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_3')->getValue()[0]['value'])) {
-          db_insert('url_alias')->fields(array(
+          db_insert('url_alias')->fields([
             'source' => '/challenges/' . $node->getTranslation('en')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('en')->get('field_challeng_subpage_url_3')->getValue()[0]['value'],
             'alias' => '/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_3')->getValue()[0]['value'],
             'langcode' => 'fr',
-          ))->execute();
+          ])->execute();
         }
       };
     }
@@ -148,11 +147,11 @@ function challenge_pages_node_presave(NodeInterface $node) {
 
       if ($node->getTranslation('fr')->get('field_friendly_url')->getValue() && $node->getTranslation('fr')->get('field_challeng_subpage_url_4')->getValue()) {
         if (!empty(get_url_alias('/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value']) . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_4')->getValue()[0]['value'])) {
-          db_insert('url_alias')->fields(array(
+          db_insert('url_alias')->fields([
             'source' => '/challenges/' . $node->getTranslation('en')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('en')->get('field_challeng_subpage_url_4')->getValue()[0]['value'],
             'alias' => '/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_4')->getValue()[0]['value'],
             'langcode' => 'fr',
-          ))->execute();
+          ])->execute();
         }
       };
     }
@@ -164,11 +163,11 @@ function challenge_pages_node_presave(NodeInterface $node) {
 
       if ($node->getTranslation('fr')->get('field_friendly_url')->getValue() && $node->getTranslation('fr')->get('field_challeng_subpage_url_5')->getValue()) {
         if (!empty(get_url_alias('/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value']) . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_5')->getValue()[0]['value'])) {
-          db_insert('url_alias')->fields(array(
+          db_insert('url_alias')->fields([
             'source' => '/challenges/' . $node->getTranslation('en')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('en')->get('field_challeng_subpage_url_5')->getValue()[0]['value'],
             'alias' => '/defis/' . $node->getTranslation('fr')->get('field_friendly_url')->getValue()[0]['value'] . '/' . $node->getTranslation('fr')->get('field_challeng_subpage_url_5')->getValue()[0]['value'],
             'langcode' => 'fr',
-          ))->execute();
+          ])->execute();
         }
       };
     }
@@ -180,7 +179,7 @@ function challenge_pages_node_presave(NodeInterface $node) {
 
 function get_url_alias($customAlias) {
 
-  $query = db_query("SELECT pid FROM url_alias WHERE alias =:alias", array(':alias'=>$customAlias));
+  $query = db_query("SELECT pid FROM url_alias WHERE alias =:alias", [':alias' => $customAlias]);
 
   $query->allowRowCount = TRUE;
 
@@ -202,9 +201,8 @@ function clean_url($dirtyUrl) {
   return $friendly_url;
 }
 
-// Checks to see if URL Name is already being used.
 function get_friendly_url_name($urlName) {
-  $query = db_query("SELECT * FROM node__field_friendly_url WHERE field_friendly_url_value =:field_friendly_url_value", array(':field_friendly_url_value' => $urlName));
+  $query = db_query("SELECT * FROM node__field_friendly_url WHERE field_friendly_url_value =:field_friendly_url_value", [':field_friendly_url_value' => $urlName]);
 
   $query->allowRowCount = TRUE;
 
