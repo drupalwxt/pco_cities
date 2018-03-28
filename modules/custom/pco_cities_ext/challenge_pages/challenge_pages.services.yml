@@ -1,5 +1,6 @@
 services:
   challenge_pages.redirectmycontenttype:
     class: Drupal\challenge_pages\EventSubscriber\ChallengePagesRedirectSubscriber
+    arguments: ['@language_manager']
     tags:
       - { name: event_subscriber }
