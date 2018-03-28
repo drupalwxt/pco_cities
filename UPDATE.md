@@ -35,7 +35,7 @@ totally disregards all of that and may therefore break your site.
 To update PCO CITIES safely:
 
 1. Download the latest version of PCO CITIES from
-   https://github.com/drupalwxt/pco_cities and extract it.
+   https://github.com/pco-bcp/pco_cities and extract it.
 2. Replace your ```profiles/pco_cities``` directory with the one included in the
    fresh copy of PCO CITIES.
 3. Replace your ```core``` directory with the one included in the fresh copy
